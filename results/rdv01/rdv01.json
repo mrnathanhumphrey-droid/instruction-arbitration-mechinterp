@@ -1,0 +1,73 @@
+{
+  "prereg": "PREREG_RDV01.md",
+  "version": "v2",
+  "chained_to_H4v3": "23d169b02ea9c555d6e58179749b836a3c0d06d1ac35e1d0c84583ba706dad4d",
+  "SMOKE": false,
+  "transformers": "4.46.0",
+  "n_spans": 720,
+  "substrate": "contested imperative spans, both counterbalance cells, group-disjoint by template",
+  "k8": 25,
+  "dv8_norm": 1.3766,
+  "k30": 25,
+  "dv30_norm": 5.8782,
+  "scramble_min": 0.3,
+  "recover_frac": 0.2,
+  "gate_edit_landed": true,
+  "pe_edit_L8": 1.0,
+  "gate_ctrl_landed": true,
+  "pe_edit_L30": 1.0,
+  "positive_control_L31": {
+    "pe_unedited": 0.0023,
+    "pe_edited": 0.9931,
+    "gap_closed": -0.9908,
+    "persists": true
+  },
+  "L8_recovery_trajectory": {
+    "9": {
+      "pe_unedited": 0.0,
+      "pe_edited": 0.9147,
+      "gap_closed": -0.8294,
+      "recovered": false
+    },
+    "12": {
+      "pe_unedited": 0.0,
+      "pe_edited": 0.0174,
+      "gap_closed": 0.9652,
+      "recovered": true
+    },
+    "16": {
+      "pe_unedited": 0.0,
+      "pe_edited": 0.0079,
+      "gap_closed": 0.9843,
+      "recovered": true
+    },
+    "24": {
+      "pe_unedited": 0.0003,
+      "pe_edited": 0.0079,
+      "gap_closed": 0.9849,
+      "recovered": true
+    },
+    "31": {
+      "pe_unedited": 0.0023,
+      "pe_edited": 0.0066,
+      "gap_closed": 0.9914,
+      "recovered": true
+    }
+  },
+  "gapclosed_L31_ci95": [
+    0.9834,
+    1.0
+  ],
+  "pe_unedited_all": {
+    "8": 0.0,
+    "9": 0.0,
+    "12": 0.0,
+    "16": 0.0,
+    "24": 0.0003,
+    "30": 0.0,
+    "31": 0.0023
+  },
+  "verdict": "RE-DERIVATION-DEMONSTRATED (control persists; L8 recovers, gap_closed@L31=0.99)",
+  "note": "MECHANISM test. Recovery of provenance decodability is the behavioral signature of re-derivation, not a watched circuit rebuild. Fixed probe + positive control + hard scramble gate (v1 failed silently on a content shortcut).",
+  "runtime_s": 233.6
+}

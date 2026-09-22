@@ -1,0 +1,14 @@
+{
+  "prereg_sha256": "debcf7b69f00b2cb90b83d350e757e7fada7ff29a4496d6755080c33ec79ee64",
+  "n_items": 720,
+  "mean_span_len_tokens": 6.383333333333334,
+  "proj_mean_system_slot": -0.10073861758638587,
+  "proj_mean_user_slot": -0.2501185740240746,
+  "imperative_gap_sys_minus_usr": 0.14937995643768875,
+  "passage_Delta_ref": 0.24209976196289062,
+  "gap_over_passageDelta": 0.6170181879839515,
+  "AUC_whit_separates_slot": 0.945733024691358,
+  "threshold_acc": 0.8652777777777778,
+  "w_hat_TRANSFERS_to_imperatives": true,
+  "reading": "w-hat reads role on short imperative spans -> on-distribution, intervention meaningful"
+}

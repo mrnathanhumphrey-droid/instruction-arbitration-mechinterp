@@ -1,0 +1,7 @@
+arm,n_heads,M_att,ci_lo,ci_hi,ci_excl0,M_att_pos,M_att_neg,delivered_swap_tv,match_ok,floor_compliance,VOID
+survivor_blk_10,10,0.00165,0.00075,0.00257,True,0.00029,0.00428,0.0351,False,0.9833,False
+survivor_blk_25,25,-0.00015,-0.00127,0.00085,False,-0.00122,0.00191,0.0357,False,0.9833,False
+bookkeeper_25,25,-0.00401,-0.00974,0.00056,False,-0.0091,0.00585,0.0448,True,0.9833,False
+random_layermatched,25,0.00351,0.00179,0.00518,True,0.00323,0.00404,0.0378,False,0.9833,False
+survivor_imp_10,10,-0.00064,-0.00159,0.00016,False,-0.00066,-0.0006,0.0256,False,0.9833,False
+defeater_allsurv,173,-0.0288,-0.0376,-0.02314,True,-0.0243,-0.03751,0.0371,False,0.9833,False

@@ -1,0 +1,56 @@
+{
+  "prereg_sha256": "debcf7b69f00b2cb90b83d350e757e7fada7ff29a4496d6755080c33ec79ee64",
+  "sign_convention": "delta=0.2421>0 => higher w_raw proj = SYSTEM/trusted (verified on frozen pool)",
+  "DELTA": 0.24209976196289062,
+  "control_v": {
+    "perp_to_w": true,
+    "pool_proj_SD": 0.14311611652374268,
+    "w_pool_proj_SD": 0.14309559762477875
+  },
+  "B_grand_mean": -3.9150906018084948,
+  "B_template_cluster": {
+    "mean": -3.9150906018084943,
+    "SD_template": 2.4426674463030267,
+    "range": [
+      -8.029947936534882,
+      0.8359375074505806
+    ]
+  },
+  "manip_check": {
+    "sys_span_to_user_rate": 0.9875,
+    "usr_span_to_system_rate": 0.9972222222222222,
+    "both_ge_80pct": true
+  },
+  "dY_swap_at_1": 0.05060492911272579,
+  "dY_ctrl_at_1": 0.05351782735023233,
+  "M_point": -0.00037200904573715367,
+  "M_ci95_paired_template_bootstrap": [
+    -0.0029871971240995583,
+    0.0020886140161908134
+  ],
+  "additivity": {
+    "dY_sys_only": 0.00913764519823922,
+    "dY_usr_only": 0.03754883110523224,
+    "sum": 0.04668647630347146,
+    "dY_swap": 0.05060492911272579,
+    "additive_within_20pct": true,
+    "note": "if not additive, the 2B normalization is not earned -> report asymmetry, not M"
+  },
+  "dose_response_w": {
+    "-2.0": -0.06580675285723474,
+    "-1.5": -0.04518500972125265,
+    "-1.0": -0.03475748002529144,
+    "-0.5": -0.02711724415421486,
+    "0.5": 0.03829073756933212,
+    "1.0": 0.05060492911272579,
+    "1.5": 0.0637071367353201,
+    "2.0": 0.07808701561556922
+  },
+  "dose_response_ctrl": {
+    "0.5": 0.03302103189958466,
+    "1.0": 0.05351782735023233,
+    "1.5": 0.08433294056190385,
+    "2.0": 0.10352512250343958
+  },
+  "runtime_s": 4191.6
+}

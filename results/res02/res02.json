@@ -1,0 +1,60 @@
+{
+  "prereg": "PREREG_RES02.md",
+  "SMOKE": false,
+  "chained_to_RES01B": "d00e885241a61246f9aabcd23abae9157488013d1b16e49b79bbe1eb9308d9b0",
+  "transformers": "4.46.0",
+  "layers": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "B": -3.879241260348095,
+  "n_pairs": 720,
+  "n_skipped": 0,
+  "M1_cross_role": 0.4616541170034375,
+  "M1_ci": [
+    0.3454014933444859,
+    0.5597207915946448
+  ],
+  "M2_disruption": 0.039563700949899805,
+  "M2_ci": [
+    -0.013633484595647746,
+    0.09868877515499162
+  ],
+  "M1_minus_M2": 0.4220904160535377,
+  "M1_minus_M2_ci": [
+    0.2651650044902492,
+    0.5531975666432979
+  ],
+  "arm1_gg_arm2": true,
+  "dY1": 3.5817353973786035,
+  "dY2": 0.30695428227384886,
+  "floor_unsteered": 1.0,
+  "floor_steered": NaN,
+  "void_threshold": 0.9,
+  "VOID": false,
+  "verdict": "CEILING-HALF-OR-LESS (even complete exchange ~half -> remainder not in residual at these positions)",
+  "limitation": "Arm1 imports twin POSITION with provenance (PREREG \u00a72b); ceiling reading robust, decomposition not. Arm2 is a conservative (lower-bound) disruption floor.",
+  "runtime_s": 114.1
+}

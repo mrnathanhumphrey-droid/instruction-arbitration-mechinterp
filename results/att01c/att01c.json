@@ -1,0 +1,54 @@
+{
+  "prereg": "PREREG_ATT01C.md",
+  "chained_to_PRV04": "a71824cfe2924a22098c194433c0ffea5f78ae83b83c93a6712c97d33ab6a458",
+  "SMOKE": false,
+  "n": 720,
+  "n_level_+1": 360,
+  "n_level_-1": 360,
+  "transformers": "4.46.0",
+  "boot": 5000,
+  "lock_floor": 0.1,
+  "reproduction": {
+    "max_abs_delta_imp": 4.998386873844574e-07,
+    "max_abs_delta_blk": 4.999291134122341e-07,
+    "median_abs_delta_imp": 2.500155538848192e-07,
+    "median_abs_delta_blk": 2.485177229005764e-07
+  },
+  "arms": {
+    "blk_survivors": {
+      "n": 733,
+      "P@0.05": 0.1651,
+      "P@0.1": 0.1514,
+      "P@0.15": 0.101
+    },
+    "imp_survivors": {
+      "n": 662,
+      "P@0.05": 0.0559,
+      "P@0.1": 0.0544,
+      "P@0.15": 0.0332
+    },
+    "marker_readers": {
+      "n": 192,
+      "P@0.05": 0.2031,
+      "P@0.1": 0.1979,
+      "P@0.15": 0.151
+    },
+    "text_readers": {
+      "n": 121,
+      "P@0.05": 0.0744,
+      "P@0.1": 0.0661,
+      "P@0.15": 0.0496
+    },
+    "top10": {
+      "n": 10,
+      "P@0.05": 0.7,
+      "P@0.1": 0.7,
+      "P@0.15": 0.7
+    }
+  },
+  "P_primary": 0.1514,
+  "top10_fail_frac": 0.3,
+  "verdict": "PARTIAL",
+  "note": "Within-level corr(A_raw,R) with sign stripped. PASS = both levels same-sign CI-excl-0 & |r|>=0.10. TRACKING-REAL P>=0.50 / ARTIFACT P<0.10 or top10 collapse / else PARTIAL.",
+  "runtime_s": 86.2
+}

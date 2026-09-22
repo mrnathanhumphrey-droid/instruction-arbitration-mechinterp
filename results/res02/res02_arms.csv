@@ -1,0 +1,4 @@
+arm,M,ci_lo,ci_hi,dY,n_pairs,VOID
+cross_role,0.46165,0.3454,0.55972,3.58174,720,False
+same_role_disruption,0.03956,-0.01363,0.09869,0.30695,720,False
+cross_minus_disruption,0.42209,0.26517,0.5532,,720,False

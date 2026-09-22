@@ -1,0 +1,43 @@
+{
+  "prereg": "PREREG_RES03.md",
+  "SMOKE": false,
+  "chained_to_RES02": "66ec4cee6f380fc9f33e308eb077fe73dbbc5eee94c163a21bc39a9809bb6cc5",
+  "transformers": "4.46.0",
+  "B": -3.869150443280908,
+  "n_pairs": 696,
+  "n_skipped": 24,
+  "M1_cross_role": 0.47324860075254543,
+  "M1_ci": [
+    0.3551302185905589,
+    0.5712849483433132
+  ],
+  "MP_position_only": 0.059146694487298826,
+  "MP_ci": [
+    0.017485908141782237,
+    0.09993798882645837
+  ],
+  "M2_disruption": 0.03787249053902225,
+  "M2_ci": [
+    -0.01706753750725104,
+    0.09932015188934017
+  ],
+  "M1_minus_MP_provenance": 0.4141019062652466,
+  "M1_minus_MP_ci": [
+    0.29813503462632895,
+    0.5102360254480832
+  ],
+  "M1_minus_M2": 0.4353761102135232,
+  "M1_minus_M2_ci": [
+    0.27624142059970636,
+    0.5659775063155176
+  ],
+  "shift_cross": 23.2816091954023,
+  "shift_pos_only": 11.833333333333334,
+  "shift_disrupt": 2.0,
+  "shift_ok": false,
+  "floor_unsteered": 1.0,
+  "floor_steered": 1.0,
+  "VOID": false,
+  "verdict": "POSITION-UNDER-TESTED (pos-only shift 11.8 < 0.6*cross shift 23.3); M_P=+0.059 but inconclusive on position",
+  "runtime_s": 158.0
+}

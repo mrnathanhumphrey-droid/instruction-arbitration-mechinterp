@@ -1,0 +1,63 @@
+{
+  "prereg": "PREREG_RES04.md (re-locked markers+span 2026-09-21)",
+  "SMOKE": false,
+  "supersedes_lock": "3cea2712be34cf988ae6b514a83066f3283d4857729d89861d1f9ec843235cc4",
+  "chained_to_RES02": "66ec4cee6f380fc9f33e308eb077fe73dbbc5eee94c163a21bc39a9809bb6cc5",
+  "transformers": "4.46.0",
+  "B": -3.879241260348095,
+  "n_pairs": 720,
+  "n_skipped": 0,
+  "MS_span_cross": 0.4616541170034375,
+  "MS_ci": [
+    0.3454014933444859,
+    0.5597207915946448
+  ],
+  "MK_marker_cross": 0.09115404404601828,
+  "MK_ci": [
+    0.048396291035238626,
+    0.13440749947632147
+  ],
+  "MM_markerspan_cross": 0.5167461693579587,
+  "MM_ci": [
+    0.3926622541209683,
+    0.6197330515895308
+  ],
+  "MS2_floor": 0.039563700949899805,
+  "MK2_floor": 0.032290275655290086,
+  "MM2_floor": 0.04697236894103185,
+  "MM_minus_MS_extent": 0.05509205235452119,
+  "MM_minus_MS_ci": [
+    0.030941750810526573,
+    0.07883830701928699
+  ],
+  "additivity_MM_minus_KplusS": -0.03606199169149704,
+  "additivity_ci": [
+    -0.0740069955398968,
+    0.0024905897409585797
+  ],
+  "MS_net_of_floor": 0.4220904160535377,
+  "MS_net_ci": [
+    0.2651650044902492,
+    0.5531975666432979
+  ],
+  "MK_net_of_floor": 0.05886376839072819,
+  "MK_net_ci": [
+    0.015485677391602618,
+    0.10041705056358394
+  ],
+  "MM_net_of_floor": 0.46977380041692685,
+  "MM_net_ci": [
+    0.307519435115158,
+    0.6054297473261507
+  ],
+  "shift_span": 23.216666666666665,
+  "shift_marker": 42.05,
+  "shift_markerspan": 32.63333333333333,
+  "floor_unsteered": 1.0,
+  "floor_steered": 1.0,
+  "VOID": false,
+  "res02_span_reference": 0.462,
+  "verdict": "PARTIAL-EXTENT (report band)",
+  "additivity_note": "ADDITIVE (K,S independent channels)",
+  "runtime_s": 205.5
+}

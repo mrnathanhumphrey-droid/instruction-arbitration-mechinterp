@@ -1,0 +1,91 @@
+{
+  "prereg": "PREREG_RES01A.md",
+  "SMOKE": false,
+  "chained_to_PRV04C": "e33230a7b02e475c152dfefd3a7346beee60c85994376559e29a89d70450545c",
+  "layers": [
+    8,
+    24,
+    31,
+    16
+  ],
+  "saturated": [
+    8,
+    24,
+    31
+  ],
+  "train_split_val": 1,
+  "n_tr": 80576,
+  "n_te": 34928,
+  "verdicts": {
+    "8": {
+      "saturated": true,
+      "repro_ok": true,
+      "k": 43,
+      "pe_final": 0.450984883188273,
+      "post_mlp_acc": 0.9499828218048557,
+      "post_mlp_ci": [
+        0.9367348157131469,
+        0.9626276476286804
+      ],
+      "post_lin_acc": 0.5426305542830967,
+      "post_mlp_null_p95": 0.5075627004122767,
+      "pre_mlp_acc": 0.9722858451672011,
+      "pre_lin_acc": 0.9664738891433806,
+      "pass_threshold": 0.5726305542830967,
+      "NONLINEAR_PROVENANCE": true
+    },
+    "24": {
+      "saturated": true,
+      "repro_ok": true,
+      "k": 40,
+      "pe_final": 0.4505267979844251,
+      "post_mlp_acc": 0.8979042601923958,
+      "post_mlp_ci": [
+        0.8761879118952096,
+        0.9171307353980854
+      ],
+      "post_lin_acc": 0.5472686669720568,
+      "post_mlp_null_p95": 0.5072592189647275,
+      "pre_mlp_acc": 0.9232420980302336,
+      "pre_lin_acc": 0.8900022904260192,
+      "pass_threshold": 0.5772686669720568,
+      "NONLINEAR_PROVENANCE": true
+    },
+    "31": {
+      "saturated": true,
+      "repro_ok": true,
+      "k": 32,
+      "pe_final": 0.45069857993586804,
+      "post_mlp_acc": 0.9042029317453046,
+      "post_mlp_ci": [
+        0.886136142706643,
+        0.9222487899926324
+      ],
+      "post_lin_acc": 0.5434894640403115,
+      "post_mlp_null_p95": 0.5065563444800733,
+      "pre_mlp_acc": 0.9277370590929913,
+      "pre_lin_acc": 0.8980760421438387,
+      "pass_threshold": 0.5734894640403115,
+      "NONLINEAR_PROVENANCE": true
+    },
+    "16": {
+      "saturated": false,
+      "repro_ok": true,
+      "k": 50,
+      "pe_final": 0.43495190105359594,
+      "post_mlp_acc": 0.9359825927622538,
+      "post_mlp_ci": [
+        0.9187423846325214,
+        0.9508545109158603
+      ],
+      "post_lin_acc": 0.5590643609711407,
+      "post_mlp_null_p95": 0.5110856619331196,
+      "pre_mlp_acc": 0.9667601923957856,
+      "pre_lin_acc": 0.9551649106733853,
+      "pass_threshold": 0.5890643609711407,
+      "NONLINEAR_PROVENANCE": true
+    }
+  },
+  "reading": "NON-LINEAR-PROVENANCE-EXISTS at saturated layers [8, 24, 31] -> 'linear' is load-bearing; earned next = non-linear intervention (NOT Arm B)",
+  "runtime_s": 6418.6
+}

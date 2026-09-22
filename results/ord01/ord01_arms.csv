@@ -1,0 +1,11 @@
+quantity,value,ci_lo,ci_hi
+B_normal,-3.8792,-4.7486,-3.0066
+B_flipped,1.6392,1.0059,2.2778
+recency_frac,0.7113,0.6454,0.78
+recency_B_nats,-10.8938,-12.1854,-9.2947
+MS_exch_normal,0.4617,0.3454,0.5597
+MS_exch_flipped,0.201,-0.0538,0.3513
+MS_twin_normal,0.9966,0.9855,1.0061
+MS_twin_flipped,0.9996,0.9756,1.0201
+twin_void_normal,1.0,,
+twin_void_flip,1.0,,

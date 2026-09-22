@@ -1,0 +1,118 @@
+{
+  "prereg": "PREREG_PRV04C.md",
+  "SMOKE": false,
+  "tau": 0.05,
+  "cannot_test": false,
+  "chained_to_PRV04B": "49bbc89306355f4e139a266b6f81875097004dae92e4d08d670ce5cebd8dbeae",
+  "transformers": "4.46.0",
+  "B": -3.871283643775516,
+  "n_items": 720,
+  "cap_counts": {
+    "blk": 110,
+    "blk_total": 173,
+    "imp": 25,
+    "book": 102,
+    "nonpass": 566
+  },
+  "arms": {
+    "survivor_matched": {
+      "M_att": 0.0034688997359356485,
+      "ci95": [
+        0.0015284385563543946,
+        0.005452786050239191
+      ],
+      "ci_excl0": true,
+      "M_att_pos": 0.0024943155501544697,
+      "M_att_neg": 0.0053563005148360545,
+      "n_heads": 25,
+      "delivered_swap_tv": 0.04422045925988091,
+      "match_ok": true,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "bookkeeper_matched": {
+      "M_att": -0.004008975523559031,
+      "ci95": [
+        -0.009736353492620687,
+        0.0005579253805139523
+      ],
+      "ci_excl0": false,
+      "M_att_pos": -0.009100930962641314,
+      "M_att_neg": 0.005852215333079716,
+      "n_heads": 25,
+      "delivered_swap_tv": 0.04479232976701525,
+      "match_ok": true,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "random_matched": {
+      "M_att": 0.008052639080371635,
+      "ci95": [
+        0.006159216119901469,
+        0.01040098119886203
+      ],
+      "ci_excl0": true,
+      "M_att_pos": 0.0029804291421343158,
+      "M_att_neg": 0.017875590373698874,
+      "n_heads": 25,
+      "delivered_swap_tv": 0.04548722995122273,
+      "match_ok": true,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "survivor_imp_matched": {
+      "M_att": 0.0007143815053339923,
+      "ci95": [
+        -0.0003143353412847002,
+        0.0017162773018979988
+      ],
+      "ci_excl0": false,
+      "M_att_pos": -0.0011464818935254,
+      "M_att_neg": 0.004318169746181832,
+      "n_heads": 10,
+      "delivered_swap_tv": 0.045886019971635605,
+      "match_ok": true,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "defeater_matched": {
+      "M_att": -0.026444527161354012,
+      "ci95": [
+        -0.03474261719602259,
+        -0.020977268389815933
+      ],
+      "ci_excl0": true,
+      "M_att_pos": -0.023511114840837,
+      "M_att_neg": -0.03212543680400541,
+      "n_heads": 110,
+      "delivered_swap_tv": 0.046152139172409526,
+      "match_ok": true,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    }
+  },
+  "delta_survivor_minus_bookkeeper": {
+    "delta": 0.007477875259494679,
+    "ci95": [
+      0.0030893931367453865,
+      0.012924704267505168
+    ],
+    "excl0": true
+  },
+  "delta_survivor_minus_random": {
+    "delta": -0.0045837393444359865,
+    "ci95": [
+      -0.007500925314151431,
+      -0.0025093970679032985
+    ],
+    "excl0": true
+  },
+  "reading": "NOTHING-ROUTES: at matched per-head tau all arms ~0 -> block-attention routing at readout isn't the path",
+  "note": "Per-head matched (cap>=tau -> deliver exactly tau). M_att IS per-unit efficiency. Do NOT sum M and M_att (\u00a77).",
+  "runtime_s": 226.8
+}

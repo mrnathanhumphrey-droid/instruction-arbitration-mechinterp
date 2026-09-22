@@ -1,0 +1,6 @@
+arm,M,ci_lo,ci_hi,pos_shift,floor_M,n_pairs,VOID
+span(S),0.46165,0.3454,0.55972,23.22,0.03956,720,False
+marker(K),0.09115,0.0484,0.13441,42.05,0.03229,720,False
+marker+span(M),0.51675,0.39266,0.61973,32.63,0.04697,720,False
+M_minus_S(extent),0.05509,0.03094,0.07884,,,720,False
+additivity_M-(K+S),-0.03606,-0.07401,0.00249,,,720,False

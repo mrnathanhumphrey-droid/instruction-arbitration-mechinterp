@@ -1,0 +1,65 @@
+{
+  "prereg": "PREREG_ORD01.md",
+  "SMOKE": false,
+  "chained_to_DIST01": "9f8f30080acb2ee1ed59b3d8a48dc4f32720133d4191a110e54095b1c0a5c445",
+  "transformers": "4.46.0",
+  "n_pairs": 720,
+  "n_skipped": 0,
+  "B_normal": -3.879241260348095,
+  "B_normal_ci": [
+    -4.748559168976629,
+    -3.0065983425867238
+  ],
+  "B_flipped": 1.6391520193053617,
+  "B_flipped_ci": [
+    1.0058789780197872,
+    2.277833659518509
+  ],
+  "recency_frac": 0.7112722449181049,
+  "recency_frac_ci": [
+    0.6453599023510584,
+    0.7799558703095458
+  ],
+  "recency_B_nats": -10.89375,
+  "recency_B_ci": [
+    -12.185442708333333,
+    -9.294687500000002
+  ],
+  "recency_B_frac_of_B": -2.8082166766349754,
+  "MS_exch_normal": 0.4616541170034375,
+  "MS_exch_normal_ci": [
+    0.3454014933444859,
+    0.5597207915946448
+  ],
+  "MS_exch_flipped": 0.2010411152398102,
+  "MS_exch_flipped_ci": [
+    -0.053763747166700925,
+    0.35133105975355167
+  ],
+  "MS_twin_normal": 0.9966172358398695,
+  "MS_twin_normal_ci": [
+    0.9855346733583282,
+    1.0061330250125318
+  ],
+  "MS_twin_flipped": 0.999561831795643,
+  "MS_twin_flipped_ci": [
+    0.9756162462887844,
+    1.0201026790622747
+  ],
+  "d_exch_flip_minus_norm": -0.26061300176362734,
+  "d_exch_ci": [
+    -0.4851485087629967,
+    -0.11262354840659171
+  ],
+  "d_twin_flip_minus_norm": 0.0029445959557734547,
+  "d_twin_ci": [
+    -0.019985688822656077,
+    0.024239506633201926
+  ],
+  "twin_void_normal": 1.0,
+  "twin_void_flip": 1.0,
+  "VOID": false,
+  "verdict": "B-IS-RECENCY-DOMINANT (recency_frac>0.50; every M partly recency, re-express)",
+  "stability_note": "DECOMPOSITION MOVES WITH ORDER (re-express per order)",
+  "runtime_s": 192.0
+}

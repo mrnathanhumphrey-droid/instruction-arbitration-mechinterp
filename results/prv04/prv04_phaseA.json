@@ -1,0 +1,141 @@
+{
+  "prereg": "PREREG_PRV04.md",
+  "phase": "A",
+  "SMOKE": false,
+  "chained_to_KDR01": "e2b7887640630bd8c2710348cfb13e51ccca98c7858b15e1f535387d5d95ebd0",
+  "transformers": "4.46.0",
+  "B": -3.871283643775516,
+  "n_pairs": 360,
+  "arms": {
+    "marker_3": {
+      "M_att": 0.0005577709030934848,
+      "ci95": [
+        -0.0005177238488611872,
+        0.0015884675380937498
+      ],
+      "ci_excl0": false,
+      "n_heads": 3,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.01334063136536214,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "marker_10": {
+      "M_att": -0.0016270621960793642,
+      "ci95": [
+        -0.002741968549630806,
+        -0.00040448882157364884
+      ],
+      "ci_excl0": true,
+      "n_heads": 10,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.018224051618017257,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "marker_25": {
+      "M_att": -0.0061587743582091166,
+      "ci95": [
+        -0.010281369259201763,
+        -0.0026289964390803907
+      ],
+      "ci_excl0": true,
+      "n_heads": 25,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.018224051618017257,
+      "floor_compliance": 0.9791666666666666,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "text_3": {
+      "M_att": 2.3299893184991126e-05,
+      "ci95": [
+        -0.0007507971142780416,
+        0.0008957161005746962
+      ],
+      "ci_excl0": false,
+      "n_heads": 3,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.01893129051766462,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "text_10": {
+      "M_att": 0.0022098862599466106,
+      "ci95": [
+        -0.0020444777395677337,
+        0.006540703176896511
+      ],
+      "ci_excl0": false,
+      "n_heads": 10,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.015705231612082572,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "text_25": {
+      "M_att": -0.007491143715915423,
+      "ci95": [
+        -0.01539649433132077,
+        -0.00040593581874051203
+      ],
+      "ci_excl0": true,
+      "n_heads": 25,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.015705231612082572,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "bookkeeper_25": {
+      "M_att": 0.03183483680175821,
+      "ci95": [
+        0.0158027753678963,
+        0.04540399717230822
+      ],
+      "ci_excl0": true,
+      "n_heads": 25,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.037588219367899,
+      "floor_compliance": 0.7791666666666667,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": true
+    },
+    "random_layermatched": {
+      "M_att": 0.004710920652326245,
+      "ci95": [
+        0.0004079628428456183,
+        0.009359087905056162
+      ],
+      "ci_excl0": true,
+      "n_heads": 25,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.021822838735533878,
+      "floor_compliance": 0.975,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "defeater_alltrack": {
+      "M_att": 0.017503907027735965,
+      "ci95": [
+        -0.007282981095573694,
+        0.03549513679171738
+      ],
+      "ci_excl0": false,
+      "n_heads": 854,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.02304591059607143,
+      "floor_compliance": 0.975,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    }
+  },
+  "reading": "INVALID: swap is ~no-op (marker swap_tv=0.018224051618017257) -- twins too similar at these heads; null uninterpretable",
+  "phaseB_combined_triggered": false,
+  "note": "OBSERVED via causal swap. Do NOT sum M and M_att (\u00a77). Plumbing = zero inferential weight.",
+  "runtime_s": 622.0
+}

@@ -1,0 +1,5 @@
+arm,M,ci_lo,ci_hi,pos_shift,n_pairs,VOID
+cross_role,0.47325,0.35513,0.57128,23.28,696,False
+position_only,0.05915,0.01749,0.09994,11.83,696,False
+disruption,0.03787,-0.01707,0.09932,2.0,696,False
+cross_minus_posonly(prov),0.4141,0.29814,0.51024,,696,False

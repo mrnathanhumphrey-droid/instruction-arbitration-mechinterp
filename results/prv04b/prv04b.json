@@ -1,0 +1,126 @@
+{
+  "prereg": "PREREG_PRV04B.md",
+  "SMOKE": false,
+  "tau": 0.05,
+  "chained_to_PRV04A": "07d708224e827d2a119355cbb27d281ec3959e64e65143aea293549b6c3a3962",
+  "transformers": "4.46.0",
+  "B": -3.871283643775516,
+  "n_items": 720,
+  "arms": {
+    "survivor_blk_10": {
+      "M_att": 0.0016507156553075162,
+      "ci95": [
+        0.0007546991052071489,
+        0.0025705817782395667
+      ],
+      "ci_excl0": true,
+      "M_att_pos": 0.0002911384378154539,
+      "M_att_neg": 0.004283702252779273,
+      "n_heads": 10,
+      "delivered_swap_tv": 0.03510286411974165,
+      "match_ok": false,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "survivor_blk_25": {
+      "M_att": -0.00015152820798306133,
+      "ci95": [
+        -0.0012709119826675556,
+        0.0008539069842227988
+      ],
+      "ci_excl0": false,
+      "M_att_pos": -0.0012184680852285205,
+      "M_att_neg": 0.0019147305972928208,
+      "n_heads": 25,
+      "delivered_swap_tv": 0.03567708734406365,
+      "match_ok": false,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "bookkeeper_25": {
+      "M_att": -0.004008975523559031,
+      "ci95": [
+        -0.009736353492620687,
+        0.0005579253805139523
+      ],
+      "ci_excl0": false,
+      "M_att_pos": -0.009100930962641314,
+      "M_att_neg": 0.005852215333079716,
+      "n_heads": 25,
+      "delivered_swap_tv": 0.04479232976701525,
+      "match_ok": true,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "random_layermatched": {
+      "M_att": 0.0035051621206843887,
+      "ci95": [
+        0.0017930180102297807,
+        0.005184389195352332
+      ],
+      "ci_excl0": true,
+      "M_att_pos": 0.003227202886659665,
+      "M_att_neg": 0.0040434639754187846,
+      "n_heads": 25,
+      "delivered_swap_tv": 0.037841709020402695,
+      "match_ok": false,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "survivor_imp_10": {
+      "M_att": -0.0006387026226484678,
+      "ci95": [
+        -0.0015862364739831385,
+        0.00015839126689042282
+      ],
+      "ci_excl0": false,
+      "M_att_pos": -0.00066036945267506,
+      "M_att_neg": -0.000596742171755542,
+      "n_heads": 10,
+      "delivered_swap_tv": 0.025563253654374018,
+      "match_ok": false,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "defeater_allsurv": {
+      "M_att": -0.02879615397752509,
+      "ci95": [
+        -0.03759775544504572,
+        -0.023143173944534298
+      ],
+      "ci_excl0": true,
+      "M_att_pos": -0.0242958002813104,
+      "M_att_neg": -0.037511636124154195,
+      "n_heads": 173,
+      "delivered_swap_tv": 0.037104927950186384,
+      "match_ok": false,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    }
+  },
+  "delta_survivor_minus_bookkeeper": {
+    "delta": 0.0038574473155759694,
+    "ci95": [
+      -0.00046499561881899155,
+      0.009202430648668027
+    ],
+    "excl0": false
+  },
+  "delta_survivor_minus_random": {
+    "delta": -0.0036566903286674502,
+    "ci95": [
+      -0.005454890347771973,
+      -0.001926125555151553
+    ],
+    "excl0": true
+  },
+  "reading": "INVALID: magnitude match failed (sv deliv=0.03567708734406365, bk deliv=0.04479232976701525)",
+  "note": "Matched-magnitude block-swap; M_att IS per-unit-attention efficiency. Do NOT sum M and M_att (\u00a77).",
+  "runtime_s": 271.8
+}

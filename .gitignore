@@ -1,0 +1,24 @@
+# Large tensor caches / intermediates — never commit
+*.npy
+*.npz
+*.pt
+*.bin
+*.safetensors
+work/
+*.log
+
+# Secrets / infra — never commit
+.env
+*.lam_key
+*_ed25519*
+*.pem
+
+# Third-party corpora / papers (not ours to redistribute)
+lit/
+**/bipia_repo/
+**/g0_data/repos/
+
+# OS / editor cruft
+.DS_Store
+__pycache__/
+*.pyc

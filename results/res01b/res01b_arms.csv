@@ -1,0 +1,17 @@
+layer,arm,condition,heldout_score,ci_lo,ci_hi,null_p95,chance,n_or_matched
+8,P_position_bucket,post_deflation,0.723,0.6883,0.7565,0.104,0.1,115504
+8,M_matched_role,post_deflation,0.9487,0.9354,0.9617,0.5084,0.5,102948
+8,R_role_after_posdefl,post_posdeflation,0.9503,0.9372,0.9629,0.5076,0.5,115504
+8,ref_role_unmatched,post_deflation,0.95,0.9367,0.9626,0.5076,0.5,115504
+24,P_position_bucket,post_deflation,0.6247,0.5865,0.6636,0.1042,0.1,115504
+24,M_matched_role,post_deflation,0.8898,0.8663,0.9105,0.5066,0.5,102948
+24,R_role_after_posdefl,post_posdeflation,0.8972,0.8753,0.9169,0.5069,0.5,115504
+24,ref_role_unmatched,post_deflation,0.8979,0.8762,0.9171,0.5073,0.5,115504
+31,P_position_bucket,post_deflation,0.6289,0.5888,0.6678,0.1043,0.1,115504
+31,M_matched_role,post_deflation,0.897,0.8778,0.9159,0.5068,0.5,102948
+31,R_role_after_posdefl,post_posdeflation,0.9038,0.8859,0.9221,0.508,0.5,115504
+31,ref_role_unmatched,post_deflation,0.9042,0.8861,0.9222,0.5066,0.5,115504
+16,P_position_bucket,post_deflation,0.6813,0.6423,0.7187,0.1055,0.1,115504
+16,M_matched_role,post_deflation,0.9313,0.9126,0.9472,0.5086,0.5,102948
+16,R_role_after_posdefl,post_posdeflation,0.9358,0.9186,0.9507,0.5102,0.5,115504
+16,ref_role_unmatched,post_deflation,0.936,0.9187,0.9509,0.5111,0.5,115504

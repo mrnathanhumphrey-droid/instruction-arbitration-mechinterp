@@ -1,0 +1,25 @@
+{
+  "prereg": "PREREG_MMD01.md",
+  "prereg_sha256": "9a80ce7133c0e9d2595f3014f00937c839007c37ab05a6760bc499fb70de7d8e",
+  "REGISTERED_GATE": {
+    "resample": "within-300 bootstrap (rows with replacement), per-layer bw2 fixed on canonical pool",
+    "B_gate": 200,
+    "seed": 20260914,
+    "canonical_curve": {
+      "L0": 0.2251998374789005,
+      "L8": 0.3224802921920161,
+      "L16": 0.33703393319962816,
+      "L24": 0.24560019778133524,
+      "L31": 0.25316175755978
+    },
+    "canonical_peak": 16,
+    "peak_histogram": {
+      "16": 200
+    },
+    "modal_layer": 16,
+    "modal_frac": 1.0,
+    "estimable_criterion": ">= 0.80 modal",
+    "ESTIMABLE": true
+  },
+  "RECON_note": "which-300 resampling recorded in mmd01_recon_gate10.txt (gate10.py stdout); informational, ran pre-lock, NOT the gate."
+}

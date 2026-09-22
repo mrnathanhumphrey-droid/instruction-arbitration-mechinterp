@@ -1,0 +1,89 @@
+{
+  "prereg": "PREREG_RES01B.md",
+  "SMOKE": false,
+  "chained_to_RES01A": "7a098124afdae9ea3f6f7e06e996441675eccd13efe2b683eea42a239dcc7e37",
+  "layers": [
+    8,
+    24,
+    31,
+    16
+  ],
+  "saturated": [
+    8,
+    24,
+    31
+  ],
+  "train_split_val": 1,
+  "verdicts": {
+    "8": {
+      "saturated": true,
+      "repro_ok": true,
+      "k": 43,
+      "armP_pos_acc": 0.723030233623454,
+      "armP_chance": 0.1,
+      "armM_matched_role_acc": 0.9486817627814484,
+      "armM_ci": [
+        0.9354164766922155,
+        0.9616819685397207
+      ],
+      "armM_matched_n": 102948,
+      "armR_role_after_posdefl_acc": 0.9502977553825012,
+      "armR_ndir": 20,
+      "ref_unmatched_role_acc": 0.9499828218048557,
+      "verdict": "PROVENANCE-REAL-POSITION-INDEPENDENT"
+    },
+    "24": {
+      "saturated": true,
+      "repro_ok": true,
+      "k": 40,
+      "armP_pos_acc": 0.6246564360971141,
+      "armP_chance": 0.1,
+      "armM_matched_role_acc": 0.8897940855731605,
+      "armM_ci": [
+        0.8662952858605997,
+        0.910480216041438
+      ],
+      "armM_matched_n": 102948,
+      "armR_role_after_posdefl_acc": 0.897159871736143,
+      "armR_ndir": 20,
+      "ref_unmatched_role_acc": 0.8979042601923958,
+      "verdict": "PROVENANCE-REAL-POSITION-INDEPENDENT"
+    },
+    "31": {
+      "saturated": true,
+      "repro_ok": true,
+      "k": 32,
+      "armP_pos_acc": 0.6288650939074668,
+      "armP_chance": 0.1,
+      "armM_matched_role_acc": 0.8970107126820194,
+      "armM_ci": [
+        0.8777826368127558,
+        0.9159382399869148
+      ],
+      "armM_matched_n": 102948,
+      "armR_role_after_posdefl_acc": 0.9038307375171782,
+      "armR_ndir": 20,
+      "ref_unmatched_role_acc": 0.9042029317453046,
+      "verdict": "PROVENANCE-REAL-POSITION-INDEPENDENT"
+    },
+    "16": {
+      "saturated": false,
+      "repro_ok": true,
+      "k": 50,
+      "armP_pos_acc": 0.6812872194228127,
+      "armP_chance": 0.1,
+      "armM_matched_role_acc": 0.9313297838219258,
+      "armM_ci": [
+        0.9125847648533669,
+        0.9472348572942149
+      ],
+      "armM_matched_n": 102948,
+      "armR_role_after_posdefl_acc": 0.9357821804855703,
+      "armR_ndir": 20,
+      "ref_unmatched_role_acc": 0.9359825927622538,
+      "verdict": "PROVENANCE-REAL-POSITION-INDEPENDENT"
+    }
+  },
+  "reading": "PROVENANCE-REAL-POSITION-INDEPENDENT at [8, 24, 31] -> RES-01a stands; reframe stands; non-linear intervention earned",
+  "runtime_s": 8909.6
+}

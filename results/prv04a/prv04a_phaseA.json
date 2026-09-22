@@ -1,0 +1,128 @@
+{
+  "prereg": "PREREG_PRV04A.md",
+  "phase": "A",
+  "SMOKE": false,
+  "supersedes": "PREREG_PRV04.md",
+  "chained_to_ATT01C": "c99fdaa9ccea199d5e2cd3709cfacafb3ffd00f67499c6081337df6f26800a84",
+  "transformers": "4.46.0",
+  "B": -3.871283643775516,
+  "n_items": 720,
+  "arms": {
+    "survivor_blk_3": {
+      "M_att": 0.005873321169888767,
+      "ci95": [
+        0.004447829993194979,
+        0.007848757462871557
+      ],
+      "ci_excl0": true,
+      "M_att_pos": 0.006925908119012923,
+      "M_att_neg": 0.003834858555143035,
+      "n_heads": 3,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.19147754653736396,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "survivor_blk_10": {
+      "M_att": 0.007679158136866273,
+      "ci95": [
+        0.006167592771028384,
+        0.009596926897578463
+      ],
+      "ci_excl0": true,
+      "M_att_pos": 0.00398612512464376,
+      "M_att_neg": 0.014831165613969645,
+      "n_heads": 10,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.13463296772291264,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "survivor_blk_25": {
+      "M_att": 0.003406360646401834,
+      "ci95": [
+        0.0012693285193152235,
+        0.00569560972350419
+      ],
+      "ci_excl0": true,
+      "M_att_pos": 0.0006308846809192067,
+      "M_att_neg": 0.008781407333489623,
+      "n_heads": 25,
+      "plumbing_rate": 0.9722222222222222,
+      "swap_tv": 0.13691148619788387,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "survivor_imp_10": {
+      "M_att": -0.0004717573185395269,
+      "ci95": [
+        -0.0017511121823880252,
+        0.0006817254627397489
+      ],
+      "ci_excl0": false,
+      "M_att_pos": -0.0014992460008024374,
+      "M_att_neg": 0.001518099450642439,
+      "n_heads": 10,
+      "plumbing_rate": 1.0,
+      "swap_tv": 0.03634057530305452,
+      "floor_compliance": 0.9833333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "random_layermatched": {
+      "M_att": 0.010790208268182508,
+      "ci95": [
+        0.007595759113720876,
+        0.01460605631755185
+      ],
+      "ci_excl0": true,
+      "M_att_pos": 0.009215420536075792,
+      "M_att_neg": 0.013839976195412522,
+      "n_heads": 25,
+      "plumbing_rate": 0.9930555555555556,
+      "swap_tv": 0.12898664554167125,
+      "floor_compliance": 0.9791666666666666,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "bookkeeper_25": {
+      "M_att": 0.22783002024472881,
+      "ci95": [
+        0.20147527682549976,
+        0.25185774322331195
+      ],
+      "ci_excl0": true,
+      "M_att_pos": 0.1427917199704453,
+      "M_att_neg": 0.3925170288333195,
+      "n_heads": 25,
+      "plumbing_rate": 0.4444444444444444,
+      "swap_tv": 0.28515731054358184,
+      "floor_compliance": 0.9458333333333333,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    },
+    "defeater_allsurv": {
+      "M_att": -0.12875916926188363,
+      "ci95": [
+        -0.16685450827850423,
+        -0.10281051070743252
+      ],
+      "ci_excl0": true,
+      "M_att_pos": -0.1100835141502539,
+      "M_att_neg": -0.16492684622445597,
+      "n_heads": 173,
+      "plumbing_rate": 0.6041666666666666,
+      "swap_tv": 0.15716924658045173,
+      "floor_compliance": 0.975,
+      "floor_unsteered": 0.9833333333333333,
+      "VOID": false
+    }
+  },
+  "reading": "INSTRUMENT-FAILURE: bookkeepers move/VOID -> generic disruption; other arms uninterpretable",
+  "phaseB_combined_triggered": false,
+  "note": "Constructed block-swap (no twin). Do NOT sum M and M_att (\u00a77). Plumbing 0 weight. Per-level M_att is the shared-sign guard.",
+  "runtime_s": 277.3
+}

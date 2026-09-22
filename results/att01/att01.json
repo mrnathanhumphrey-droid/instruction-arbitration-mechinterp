@@ -1,0 +1,129 @@
+{
+  "prereg": "PREREG_ATT01.md",
+  "chained_to_H4": "da688c1ec1194bd04cc147aa0aeadc1cc2d5407da8d59670943019abb63f9f75",
+  "SMOKE": false,
+  "n": 720,
+  "n_layers": 32,
+  "n_heads": 32,
+  "head_family": 1024,
+  "bonferroni_alpha": 4.8828125e-05,
+  "transformers": "4.46.0",
+  "boot": 5000,
+  "null_draws": 1000,
+  "n_survivors_imp": 662,
+  "n_survivors_blk": 733,
+  "falsifier_fired_no_tracking_head": false,
+  "top_head": {
+    "layer": 28,
+    "head": 1,
+    "track_imp_r": 0.27079769448316415,
+    "track_imp_nullp": 0.0,
+    "track_blk_r": -0.4058453204973632,
+    "track_blk_nullp": 0.0
+  },
+  "top10": [
+    {
+      "layer": 28,
+      "head": 1,
+      "track_imp_r": 0.2708,
+      "track_imp_nullp": 0.0,
+      "track_blk_r": -0.4058,
+      "track_blk_nullp": 0.0,
+      "surv_imp": true,
+      "surv_blk": true
+    },
+    {
+      "layer": 30,
+      "head": 31,
+      "track_imp_r": -0.3097,
+      "track_imp_nullp": 0.0,
+      "track_blk_r": -0.4051,
+      "track_blk_nullp": 0.0,
+      "surv_imp": true,
+      "surv_blk": true
+    },
+    {
+      "layer": 27,
+      "head": 21,
+      "track_imp_r": -0.1035,
+      "track_imp_nullp": 0.467,
+      "track_blk_r": -0.3877,
+      "track_blk_nullp": 0.0,
+      "surv_imp": false,
+      "surv_blk": true
+    },
+    {
+      "layer": 19,
+      "head": 29,
+      "track_imp_r": -0.0528,
+      "track_imp_nullp": 0.148,
+      "track_blk_r": -0.3719,
+      "track_blk_nullp": 0.0,
+      "surv_imp": false,
+      "surv_blk": true
+    },
+    {
+      "layer": 22,
+      "head": 23,
+      "track_imp_r": -0.0531,
+      "track_imp_nullp": 0.155,
+      "track_blk_r": -0.3717,
+      "track_blk_nullp": 0.0,
+      "surv_imp": false,
+      "surv_blk": true
+    },
+    {
+      "layer": 28,
+      "head": 8,
+      "track_imp_r": 0.3675,
+      "track_imp_nullp": 0.0,
+      "track_blk_r": -0.1617,
+      "track_blk_nullp": 0.0,
+      "surv_imp": true,
+      "surv_blk": true
+    },
+    {
+      "layer": 30,
+      "head": 16,
+      "track_imp_r": -0.0835,
+      "track_imp_nullp": 0.193,
+      "track_blk_r": -0.3642,
+      "track_blk_nullp": 0.0,
+      "surv_imp": false,
+      "surv_blk": true
+    },
+    {
+      "layer": 31,
+      "head": 13,
+      "track_imp_r": 0.3524,
+      "track_imp_nullp": 0.0,
+      "track_blk_r": 0.3594,
+      "track_blk_nullp": 0.0,
+      "surv_imp": true,
+      "surv_blk": true
+    },
+    {
+      "layer": 24,
+      "head": 19,
+      "track_imp_r": -0.0799,
+      "track_imp_nullp": 0.98,
+      "track_blk_r": -0.3561,
+      "track_blk_nullp": 0.0,
+      "surv_imp": false,
+      "surv_blk": true
+    },
+    {
+      "layer": 27,
+      "head": 15,
+      "track_imp_r": 0.354,
+      "track_imp_nullp": 0.0,
+      "track_blk_r": -0.19,
+      "track_blk_nullp": 0.0,
+      "surv_imp": true,
+      "surv_blk": true
+    }
+  ],
+  "imp_blk_top_disagree": true,
+  "note": "OBSERVATIONAL. correlation is correlation; ranked list = targets for a future patching probe, NOT a causal path. No causal verb in the verdict.",
+  "runtime_s": 69.3
+}
