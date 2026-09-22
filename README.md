@@ -46,7 +46,9 @@ Model under study: **Llama-3.1-8B-Instruct** (bf16). The program probes, empiric
 - **Indirect injection via a tool result still wins — and JSON-rendering it does not help (TOOL-01).** Where prompt
   injection actually lives (an untrusted instruction in a tool/`ipython` result, arriving *last*), the model still obeys
   the injected instruction on net (raw ΔY excludes zero in every layout). The tool role *does* blunt the effect by
-  ~2.5 nats versus the same instruction in a user turn — but that resistance is carried by the tool **role header**, not
+  ~2.5 nats versus the same instruction in a user turn — a genuine *role* effect, not a distance artifact (the injected
+  content sits at an identical distance from the readout in both arms, delta 0.000 tokens over all 720 items) — but that
+  resistance is carried by the tool **role header**, not
   by Llama's `tojson` JSON rendering, which is behaviorally **inert** (its effect's CI includes zero, and its point
   estimate is the wrong sign). So the "privilege bit" people might hope protects them does not; the only observed
   mitigation is a partial, role-header-carried blunting that injection still overcomes.

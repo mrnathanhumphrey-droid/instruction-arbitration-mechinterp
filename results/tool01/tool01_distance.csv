@@ -1,0 +1,6 @@
+arm,header_tok_len,mean_total_len,mean_dist_start_to_readout,mean_dist_end_to_readout
+user,4,98.267,16.717,11.333
+tool_raw,5,99.267,16.717,11.333
+tool_json,5,104.267,17.717,12.333
+d_role_dist_end_delta(tool_raw-user),,,,"0.000 (min 0,max 0)"
+d_tojson_dist_end_delta(tool_json-tool_raw),,,,"1.000 (min 1,max 1)"

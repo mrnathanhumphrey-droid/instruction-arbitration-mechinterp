@@ -4,7 +4,9 @@
 (B_tool − B_user = +2.03 nats, CI [+0.92, +3.07] > 1) → the coarse "tool distrust overrides recency" branch fired.
 ⚠BUT the pre-committed FINE test unbundles it: the `tojson` privilege bit is BEHAVIORALLY INERT (d_tojson =
 B_tool − B_tool_raw = −0.47, CI [−1.31, +0.31] includes 0), and the resistance is carried by the tool ROLE HEADER
-(d_role = B_tool_raw − B_user = +2.51, CI [+1.74, +3.29] excludes 0). Injection through the tool role is STILL obeyed
+(d_role = B_tool_raw − B_user = +2.51, CI [+1.74, +3.29] excludes 0; **distance-confound ruled out — the injected
+content sits at an IDENTICAL distance from the readout in both arms, delta = 0.000 tokens over all 720 items**, see
+Distance check below). Injection through the tool role is STILL obeyed
 on net (B_tool = −1.97, B_tool_raw = −1.50, both CI exclude 0 = net obeys the last/tool block) — just blunted ~2 nats
 vs a user-role injection. So the fired label "PRIVILEGE-BIT-OVERRIDES" is a MISNOMER of its own §3 fine arm: the
 overriding is the ROLE HEADER, not the `tojson` JSON wrapper.** Ran 2026-09-22, Lambda a100_sxm4, FULL n=720 (0
@@ -28,6 +30,31 @@ assistant-stub · <final block>`), so each contrast changes exactly one thing: r
 | dY_exch (cross-role exchange, raw-tool layout) | −0.109 | [−1.41, +1.22] | exchange moves ~nothing here |
 | dY_twin (same-slot twin-patch = content flip) | +3.016 | [+0.93, +5.09] | content flip ≈ full (M_twin 1.005) |
 | twin-VOID (raw layout) | **1.000** | — | twin-patch coherent; arm valid |
+
+## Distance check — d_role is NOT a distance confound (added 2026-09-22, before d_role stands as a role effect)
+ORD-01 taught that the baseline is ~71% recency (last-block-wins). The `ipython` header is a different token sequence
+and length from the `user` header, so the injected content could sit at a different distance from the generation
+position in the two arms — meaning d_role could be recency in a new costume. Measured (tokenizer-only, no model), token
+distance from the injected imperative span to the readout (generation position), per arm, all 720 items:
+| arm | header tok len | total len | dist_start→readout | dist_end→readout |
+|---|---|---|---|---|
+| B_user (user role) | 4 | 98.27 | 16.72 | 11.33 |
+| B_tool_raw (ipython) | 5 | 99.27 | 16.72 | 11.33 |
+| B_tool (ipython, JSON) | 5 | 104.27 | 17.72 | 12.33 |
+
+- **d_role distance delta (tool_raw − user) = +0.000 tokens, EXACTLY, min 0 / max 0 over all 720 items** (both
+  dist_start and dist_end). The extra `ipython` header token shifts the content AND the readout back together by 1, so
+  the content-to-readout distance is identical. **⇒ d_role = +2.51 nats is a CLEAN role-header effect; the ORD-01
+  distance/recency confound is ruled out here — decisively, per-item, exact zero.**
+- d_tojson distance delta (tool_json − tool_raw) = +1.000 token (the JSON `"}` after content). d_tojson is already
+  behaviorally inert (CI includes 0); a +1-token shift, in the regime RES-03b showed has no usable dynamic range, cannot
+  manufacture or mask the −0.47 estimate. Noted; does not change the tojson-inert reading.
+- **⚠Portability: the exact zero is an ACCIDENT of Llama-3.1's template, not a property of tool roles.** The `ipython`
+  header happens to be exactly one token longer than `user`, so the extra token shifts the content and the readout
+  together and the distance delta nets to zero. On a model whose tool header exceeds its user header by more than that,
+  d_role WOULD carry a distance component. Anyone replicating this on another chat template must RUN the distance check,
+  not assume it — this is exactly the kind of confound that bites a replication and gets misattributed to the model.
+- Reproducer: `runners/tool01_distance.py` (tokenizer-only), numbers in `results/tool01/tool01_distance.csv`.
 
 ## Pre-committed §3 readings, mapped to what fired
 - **"B_tool ≈ B_user, both obey-last → RECENCY-DOMINATES, tojson inert, injection by position"** — **did NOT fire.**
