@@ -1,0 +1,67 @@
+{
+  "prereg": "PREREG_TOOL01.md",
+  "SMOKE": false,
+  "prereg_sha256": "f74871490f7be6efdd4ebc830751f44f949c7055cda9046984428a0831694456",
+  "chained_to_ORD01": "fab3eaafbe1f81c85e8288f4686022ca062f5478bd4b3d6a81359ced42198780",
+  "transformers": "4.46.0",
+  "n_pairs": 720,
+  "n_skipped": 0,
+  "manual_block_mismatch": 0,
+  "quantity_convention": "RE-01: raw dY (nats) primary, order-tagged tool-normal; B per condition; M descriptive.",
+  "B_tool_json": -1.9712836364077198,
+  "B_tool_json_ci": [
+    -2.654429799637033,
+    -1.2681707083495957
+  ],
+  "B_tool_raw": -1.5000428514348136,
+  "B_tool_raw_ci": [
+    -2.540614005830139,
+    -0.44705184764746214
+  ],
+  "B_user": -4.005959745910433,
+  "B_user_ci": [
+    -5.016803514222718,
+    -2.98742913408619
+  ],
+  "d_tojson_B_tool_minus_raw": -0.4712407849729061,
+  "d_tojson_ci": [
+    -1.3143368228669794,
+    0.306916975966758
+  ],
+  "d_role_raw_minus_user": 2.505916894475619,
+  "d_role_ci": [
+    1.7412124887046716,
+    3.2939963718276055
+  ],
+  "d_total_tool_minus_user": 2.034676109502713,
+  "d_total_ci": [
+    0.9206494730690299,
+    3.069221664505699
+  ],
+  "dY_exch_raw_nats": -0.10942405064900704,
+  "dY_exch_ci": [
+    -1.4123985947937598,
+    1.2177418845788468
+  ],
+  "dY_twin_raw_nats": 3.015823829794923,
+  "dY_twin_ci": [
+    0.9260347858143763,
+    5.086549162513885
+  ],
+  "M_exch_rawlayout": -0.03647364158441917,
+  "M_exch_ci": [
+    -1.4215387568019229,
+    0.2502946845345917
+  ],
+  "M_twin_rawlayout": 1.0052458924457532,
+  "M_twin_ci": [
+    0.9914517286758536,
+    1.0386257505339616
+  ],
+  "twin_void_raw": 1.0,
+  "VOID": false,
+  "verdict": "PRIVILEGE-BIT-OVERRIDES (B_tool moved >1 nat toward system vs B_user; tool distrust beats recency)",
+  "tojson_note": "tojson NOT carried by the JSON wrapper (B_tool-B_raw ~= 0)",
+  "TOOL02_note": "conditional system-vs-tool decodability deferred to TOOL-02 (needs a training pass).",
+  "runtime_s": 132.6
+}

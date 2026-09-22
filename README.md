@@ -43,6 +43,13 @@ Model under study: **Llama-3.1-8B-Instruct** (bf16). The program probes, empiric
   provenance-preserving operations (RES-05, RES-06).
 - **The estimator is unbiased** on a hand-built toy with known ground truth (CAL-01), and **the exchange operation is
   coherent** — the model accepts the edited state rather than rejecting it (DIST-01).
+- **Indirect injection via a tool result still wins — and JSON-rendering it does not help (TOOL-01).** Where prompt
+  injection actually lives (an untrusted instruction in a tool/`ipython` result, arriving *last*), the model still obeys
+  the injected instruction on net (raw ΔY excludes zero in every layout). The tool role *does* blunt the effect by
+  ~2.5 nats versus the same instruction in a user turn — but that resistance is carried by the tool **role header**, not
+  by Llama's `tojson` JSON rendering, which is behaviorally **inert** (its effect's CI includes zero, and its point
+  estimate is the wrong sign). So the "privilege bit" people might hope protects them does not; the only observed
+  mitigation is a partial, role-header-carried blunting that injection still overcomes.
 
 **What is currently rescoped (ORD-01):**
 
@@ -75,7 +82,8 @@ data/       make_stimuli.py, stimuli_*.jsonl   — the constructed contested/unc
 Probes, roughly in order: `PRV-01…04` (is provenance recoverable / used / routed) · `MMD-01` (reproduction of a prior
 separability measurement) · `H4`, `RDV-01`, `KDR-01` (distributed mediation and re-derivation) · `ATT-01` (attention
 observation) · `RES-01…06` (representation, causal ceiling, extent, decomposition) · `CAL-01` (estimator calibration) ·
-`DIST-01` (operation coherence) · `ORD-01` (denominator / order-counterbalance).
+`DIST-01` (operation coherence) · `ORD-01` (denominator / order-counterbalance) · `TOOL-01` (system-vs-tool contest:
+recency vs the `tojson` privilege bit, at the real indirect-injection surface).
 
 ## Reproducing
 
@@ -83,14 +91,15 @@ observation) · `RES-01…06` (representation, causal ceiling, extent, decomposi
   ranges are constants at the top of each runner. Runners expect the stimuli from `data/` alongside them (the cloud
   launchers that placed files and provisioned GPUs are intentionally omitted — they are infrastructure, not method).
 - `data/make_stimuli.py` generates the contested/uncontested battery; the exact battery used is included as
-  `stimuli_contested.jsonl` / `stimuli_uncontested.jsonl`.
+  `stimuli_contested.jsonl` / `stimuli_uncontested.jsonl`. `data/make_tool_stimuli.py` generates the system-vs-tool
+  battery for TOOL-01 (`stimuli_tool_contested.jsonl`).
 - Verdicts quote the run that produced them; results JSON/CSV carry the numbers and confidence intervals.
 
 ## Scope and caveats
 
 - **Single model, single readout, synthetic battery.** All results are Llama-3.1-8B-Instruct on a two-token
-  (DONE/READY) log-probability readout over a constructed imperative battery. Cross-model and cross-role (tool/data
-  slot) replication are open.
+  (DONE/READY) log-probability readout over a constructed imperative battery. Cross-model replication is open; the
+  cross-role tool slot is now probed (TOOL-01), the data slot is not.
 - **The baseline is recency-confounded** (ORD-01) — see above; treat any "fraction of the arbitration" statement as under
   re-expression.
 - **Living record.** Findings, and their corrections, are updated as the program continues.

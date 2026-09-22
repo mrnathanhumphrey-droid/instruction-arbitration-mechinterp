@@ -1,0 +1,12 @@
+quantity,value,ci_lo,ci_hi
+B_tool_json,-1.9713,-2.6544,-1.2682
+B_tool_raw,-1.5,-2.5406,-0.4471
+B_user,-4.006,-5.0168,-2.9874
+d_tojson(B_tool-B_raw),-0.4712,-1.3143,0.3069
+d_role(B_raw-B_user),2.5059,1.7412,3.294
+d_total(B_tool-B_user),2.0347,0.9206,3.0692
+dY_exch_raw_nats,-0.1094,-1.4124,1.2177
+dY_twin_raw_nats,3.0158,0.926,5.0865
+M_exch_rawlayout,-0.0365,-1.4215,0.2503
+M_twin_rawlayout,1.0052,0.9915,1.0386
+twin_void_raw,1.0,,
