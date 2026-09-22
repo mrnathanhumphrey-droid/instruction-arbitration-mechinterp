@@ -53,6 +53,15 @@ Model under study: **Llama-3.1-8B-Instruct** (bf16). The program probes, empiric
   The *qualitative* results above are unaffected; the *quantitative fraction* is being re-expressed. This is exactly the
   kind of confound the pre-registration + control discipline exists to catch — see `verdicts/VERDICT_ORD01.md`.
 
+**Re-expression (RE-01).** The program now retires *normalized* `M` as its primary quantity in favor of **raw ΔY in nats,
+order-tagged, with the baseline reported per order**. The re-expression also shows cross-role *exchange* never isolated
+provenance: it moves +3.58 nats at normal order — more than the whole role budget (2·|role| = 2.24 nats) and 5× more than
+at flipped order — so it rides the recency channel, not role. Exchange (a context/recency-signature swap) and twin-patch
+(a content flip) are *different counterfactuals*, so the earlier "half provenance / half content" split loses its premise,
+not just its denominator. The cleanest surviving result is a pairing: **the representation is position-independent
+(RES-01b) while the behavior is position-dominated (ORD-01)** — representation ≠ causation, stated without any ratio. See
+`verdicts/RE01_reexpression.md`.
+
 ## Repository layout
 
 ```
