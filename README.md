@@ -57,9 +57,12 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   Stated carefully — the removed subspace is procedure-relative, not a "dimension" ([arXiv 2608.10566](https://arxiv.org/abs/2608.10566)) —
   *decodability and causal role come apart.* And at the input level the role marker and the serialization are **redundant**
   "this-is-data" signals: either alone suffices, and once serialization marks content as data the role header adds nothing.
-- **Per-head attention is not the causal router (PRV-04c).** Patching individual role-tracking attention heads does not move
-  the arbitration. *Caveat:* measured one head at a time — the regime where self-repair / backup heads can manufacture a
-  false null; a co-ablation retest is planned.
+- **Attention is not the carrier at the readout row, under pattern-swap (PRV-04c).** Swapping the generation-position
+  (readout-row) block-attention of role-tracking heads toward the counterfactual twin — including **all 110 testable tracking
+  heads co-swapped at once, across all layers**, at matched per-head magnitude — moves the arbitration by only −0.026 nats
+  against a 0.20 bar. That is a *bounded* null (co-ablated, so not a self-repair false null), but two qualifiers are
+  load-bearing: it is the **readout row** and a **pattern-swap** operator. **Attention at non-generation positions (e.g. the
+  instruction span) is untested and remains a live candidate locus** — RES-02/06 covered the *residual* there, not attention.
 - **Representation is position-independent; behavior is position-dominated (RES-01b, ORD-01).** A cross-role exchange never
   isolated provenance — it rides recency (see *Corrections* below). The cleanest surviving pairing is stated without any
   ratio: what the model *represents* about role is not what *drives* its choice.
