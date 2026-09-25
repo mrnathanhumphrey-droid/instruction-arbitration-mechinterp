@@ -82,22 +82,27 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   instruction *more* obeyed than the same text in a user turn, and TOOL-03 isolates the cause to the template **markers**
   themselves (a pure commitment / tool-call turn is inert, ≈0), not the agent-loop flow. This is a property of the template a
   vendor ships, and it is inspectable before deployment.
-- **Can you rank a model's injection resistance by reading its template? The *order*, not the *size* (TPL-01).** A
-  prospective, six-model test transplants each serialization between templates while holding the host's role slot. The
-  serialization **ordering** is host-independent — all three tool-role hosts rank the serializations identically (Kendall's
-  W = 1.000; `<tool_response>` tags safest, `[TOOL_RESULTS]` worst). But the **magnitude** is model-bound: swapping the
-  serialization moves each host <1 nat against a ~6.5-nat between-model gap, and neither pre-committed sharp cell moved —
-  transplanting Mistral's serialization into Llama does *not* drag Llama toward Mistral's level. So reading the template
-  predicts the *ranking* of serialization choices, but the resistance itself lives in the model / native role-slot, not the
-  transplantable wrapper. (Separately: forcing a foreign serialization into Mistral's tool slot makes it stop answering — an
-  availability effect, not a resistance gain.)
+- **Can you rank a model's injection resistance by reading its template? The extreme, not the fine order — and partly by
+  length (TPL-01).** A prospective, six-model test transplants each serialization between templates while holding the host's
+  role slot. Across the three tool-role hosts the robust, CI-backed result is the **extreme contrast**: `<tool_response>`-style
+  tags resist more than Mistral's `[TOOL_RESULTS]` in every host (paired differences +0.6 to +1.0 nats, all excluding zero).
+  The full strict 3-way order (Kendall's *W* = 1.000 on the point estimates) is **not** individually resolved per host — one
+  adjacent pair is CI-ambiguous in two of the three hosts — and the ordering **correlates with wrapper token length**
+  (Spearman +0.5: `[TOOL_RESULTS]` is both the longest wrapper and the worst-resisting), so a semantic template property
+  cannot be cleanly separated from a length effect. Length is not the whole story (`<tool_response>` wrappers are longer than
+  Llama's `{"output":…}` yet resist more), but the honest claim is "the extremes order consistently," not "the template's
+  semantics fix a full ranking." The **magnitude** is model-bound regardless: swapping the serialization moves each host
+  <1 nat against a ~6.5-nat between-model gap, and neither pre-committed sharp cell moved — transplanting Mistral's
+  serialization into Llama does *not* drag Llama toward Mistral's level. The resistance lives in the model / native
+  role-slot, not the transplantable wrapper. (Separately: forcing a foreign serialization into Mistral's tool slot makes it
+  stop answering — an availability effect, not a resistance gain.)
 
 ### The throughline
 
 Twice now, at two different levels, a **readable structural feature that correlates with the arbitration turns out not to
 be the thing that carries it.** Internally, role provenance is decodable at 95% yet ablating it leaves resistance intact.
-Across models, the serialization predicts the *order* of injection-following yet transplanting it moves almost none of the
-*magnitude*. What is genuinely actionable is narrower and honest than "inspect the feature and you understand the behavior":
+Across models, the serialization predicts the *coarse order* of injection-following (the extremes, and partly by wrapper
+length) yet transplanting it moves almost none of the *magnitude*. What is genuinely actionable is narrower and honest than "inspect the feature and you understand the behavior":
 the readable signal ranks, it does not cause; the large effects live in the model and its native template — including one
 template (Mistral-v0.3's `[TOOL_RESULTS]`) that measurably amplifies injection.
 

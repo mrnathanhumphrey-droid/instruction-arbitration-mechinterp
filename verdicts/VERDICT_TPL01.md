@@ -72,6 +72,25 @@ remains an unvalidated hypothesis.
   something the mistral serialization does to other models. Nothing here generalizes the vendor finding in a way that changes the
   Mistral disclosure. the lead researcher's call as always.
 
+## Post-hoc robustness checks (the reviewer, 2026-09-25 — NOT pre-registered; basis for the public correction)
+Two free checks after the W=1.000 ordering was first stated publicly. Both qualify the ordering claim; neither changes the
+magnitude/mass results.
+- **Wrapper token length vs the ordering.** Wrapper token overhead per host: `{"output":}` ≈5, `<tool_response>` ≈8–12,
+  `[TOOL_RESULTS]{…call_id…}` ≈18–25 (same rank in all three hosts). Length rank llama<qwen<mistral; resistance rank
+  qwen>llama>mistral. **Spearman ρ(resistance, length) = +0.50 in every host.** Length perfectly predicts the *worst*
+  serialization (mistral-ser longest AND least-resisting) but is contradicted at the top (qwen-ser is longer than llama-ser
+  yet resists more). ⇒ the ordering is a **partial length confound** — not reducible to length, but the single most robust
+  contrast (qwen vs mistral) is also the largest length gap. The full "semantic template ranking" reading is not clean.
+- **Per-host pairwise paired CIs (template-cluster bootstrap on Y_forced diffs).** Strict 3-way order individually
+  significant only in the **llama** host (all pairs exclude 0). **mistral** host: qwen−llama +0.211 [−0.031,+0.439] INCLUDES
+  0. **qwen** host: llama−mistral +0.184 [−0.196,+0.533] INCLUDES 0. The extreme **qwen−mistral** excludes 0 in all three
+  (+0.83/+0.61/+0.95). ⇒ W=1.000 on point estimates **oversells per-host resolution**; the CI-backed claim is the extreme
+  contrast (qwen-tags > `[TOOL_RESULTS]`), not a fully-resolved strict ranking.
+- **Correction shipped** to public README + this verdict: claim softened to the extreme contrast, length correlation
+  disclosed, fine-order-resolved-in-one-host noted. ⛔ **Standing rule banked (token-matched-control-for-marker-manipulation):
+  the ρ=+0.5 is exactly why any marker/wrapper manipulation must carry a token-matched, meaning-free control** — TPL-01 lacked
+  one for the length dimension.
+
 ## Defender-actionable takeaway (for the lead researcher's reading, not a mechanical output)
 Reading the template's serialization style predicts the *order* of injection-following across serializations, host-independently
 (qwen-style `<tool_response>` tags safest, mistral `[TOOL_RESULTS]` worst) — a real, prospective, inspectable ranking. But swapping
