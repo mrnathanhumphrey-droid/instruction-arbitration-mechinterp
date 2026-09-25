@@ -1,0 +1,74 @@
+{
+  "prereg": "PREREG_AUTH01.md",
+  "phase": 2,
+  "SMOKE": false,
+  "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "prereg_sha256": "b2d1cc09d924470bb9d03e31ac988f13667c6437b49653e911e388ab09289f42",
+  "chained_to_TOOL03": "a41a922bae201bad3beda073fc760ddd4bcf5102d6e9921c7f958907c8f15a78",
+  "transformers": "4.46.0",
+  "n": 720,
+  "readout": [
+    "TRUE",
+    "FALSE"
+  ],
+  "baseline_Y": -7.330778373612298,
+  "cells": {
+    "baseline": {
+      "Y": -7.330778373612298,
+      "nats_recovered": 0.0,
+      "nats_recovered_ci": [
+        0.0,
+        0.0
+      ],
+      "added_tokens": 0.0,
+      "nats_per_added_token": null,
+      "uncontested_compliance": 1.050702491085682e-09,
+      "compliance_ratio": 1.0,
+      "VALID": true,
+      "verdict": "VALID"
+    },
+    "restatement": {
+      "Y": -1.049746819337209,
+      "nats_recovered": 6.2810315542750885,
+      "nats_recovered_ci": [
+        5.50659962364369,
+        6.999784396671586
+      ],
+      "added_tokens": 13.733333333333334,
+      "nats_per_added_token": 0.45735666657342877,
+      "uncontested_compliance": 0.034489877847625736,
+      "compliance_ratio": 32825541.14056362,
+      "VALID": true,
+      "verdict": "VALID"
+    },
+    "delimiter": {
+      "Y": -7.404299248092705,
+      "nats_recovered": -0.07352087448040656,
+      "nats_recovered_ci": [
+        -0.31274636314974863,
+        0.14142724441985083
+      ],
+      "added_tokens": 8.86666666666666,
+      "nats_per_added_token": -0.00829182794891804,
+      "uncontested_compliance": 1.2547611993844975e-09,
+      "compliance_ratio": 1.194211691730133,
+      "VALID": true,
+      "verdict": "VALID"
+    },
+    "both": {
+      "Y": -0.7783493030402395,
+      "nats_recovered": 6.5524290705720585,
+      "nats_recovered_ci": [
+        5.772332526644071,
+        7.2847202173992995
+      ],
+      "added_tokens": 22.599999999999994,
+      "nats_per_added_token": 0.28993048984832126,
+      "uncontested_compliance": 0.04993564636699984,
+      "compliance_ratio": 47525961.71671941,
+      "VALID": true,
+      "verdict": "VALID"
+    }
+  },
+  "runtime_s": 188.4
+}

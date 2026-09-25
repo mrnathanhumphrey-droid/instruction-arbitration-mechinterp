@@ -1,0 +1,66 @@
+{
+  "prereg": "PREREG_TOOL03.md",
+  "SMOKE": false,
+  "model_key": "qwen",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "prereg_sha256": "a41a922bae201bad3beda073fc760ddd4bcf5102d6e9921c7f958907c8f15a78",
+  "chained_to_TOOL02": "348608042a6ebbf5f83afc2050e6d4e92113a29ea88efd7d90f717d0c96221e0",
+  "transformers": "4.46.0",
+  "n": 720,
+  "readout": [
+    "TRUE",
+    "FALSE"
+  ],
+  "means": {
+    "U": -4.354777015497287,
+    "Tnc": -3.1630723766982554,
+    "Tc": -2.8693254248549542
+  },
+  "readout_mass": {
+    "U": 0.8347589015257106,
+    "Tnc": 0.7770250481067191,
+    "Tc": 0.8240543167235447
+  },
+  "dist_end": {
+    "U": 15.466666666666667,
+    "Tnc": 15.466666666666667,
+    "Tc": 15.466666666666667
+  },
+  "mistral_tnc_coherent": true,
+  "values": {
+    "B_user": -4.354777015497287,
+    "B_Tnc": -3.1630723766982554,
+    "B_Tc": -2.8693254248549542,
+    "d_marker": 1.191704638799032,
+    "d_commit": 0.29374695184330113,
+    "d_deployed": 1.4854515906423331
+  },
+  "cis": {
+    "B_user": [
+      -5.28047578882633,
+      -3.4254107035303285
+    ],
+    "B_Tnc": [
+      -4.133680695836536,
+      -2.198974065109055
+    ],
+    "B_Tc": [
+      -4.214156967620882,
+      -1.5355692894932715
+    ],
+    "d_marker": [
+      0.6731081625488058,
+      1.740122745352694
+    ],
+    "d_commit": [
+      -0.25212651381269036,
+      0.8136694512599045
+    ],
+    "d_deployed": [
+      0.6767249233368785,
+      2.3159776802112657
+    ]
+  },
+  "note": "d_marker=Tnc-U structure-matched template effect (no commitment); d_commit=Tc-Tnc pure commitment-turn effect (identical tool block); d_deployed=Tc-U full agentic flow = d_marker+d_commit. Mistral Tnc is hand-built (OOD), read only if coherent.",
+  "runtime_s": 60.5
+}

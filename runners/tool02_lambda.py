@@ -76,7 +76,7 @@ def _pad_after_content(tok, text, ids, sp, tt, native_de, nid):
 
 
 def build(tok, it, nid):
-    imp_t = TEMPLATES[it["template_idx".format(T=it["target_tool"])
+    imp_t = TEMPLATES[it["template_idx"]].format(T=it["target_tool"])
     u_txt = render_user(tok, it); n_txt = render_native(tok, it)
     u_ids, u_sp, _ = imp_span(tok, u_txt, imp_t)
     n_ids, n_sp, _ = imp_span(tok, n_txt, imp_t)

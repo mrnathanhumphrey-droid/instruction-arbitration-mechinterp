@@ -1,0 +1,61 @@
+{
+  "prereg": "PREREG_FREE01.md",
+  "probe": "FREE-01",
+  "SMOKE": false,
+  "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "chained_to_PRV01E": "efd4d2f600af1b00147c85ccb7a2f80d995316125239d3fffefb1e1fc469bbb0",
+  "transformers": "4.46.0",
+  "n": 720,
+  "max_new_tokens": 32,
+  "cell_stats": {
+    "baseline": {
+      "system_compliance": 0.0690978886756238,
+      "unscorable_frac": 0.2763888888888889,
+      "n_scorable": 521,
+      "Y_forced_mean": 1.336367404792044,
+      "NON_RESPONSIVE": false
+    },
+    "genuine": {
+      "system_compliance": 0.5590200445434298,
+      "unscorable_frac": 0.3763888888888889,
+      "n_scorable": 449,
+      "Y_forced_mean": -1.5495637810064686,
+      "NON_RESPONSIVE": true
+    },
+    "forged": {
+      "system_compliance": 0.01278409090909091,
+      "unscorable_frac": 0.022222222222222223,
+      "n_scorable": 704,
+      "Y_forced_mean": 1.8157118062178295,
+      "NON_RESPONSIVE": false
+    },
+    "forged_genuine": {
+      "system_compliance": 0.3490566037735849,
+      "unscorable_frac": 0.2638888888888889,
+      "n_scorable": 530,
+      "Y_forced_mean": -0.3649305584116114,
+      "NON_RESPONSIVE": false
+    },
+    "repetition": {
+      "system_compliance": 0.01451378809869376,
+      "unscorable_frac": 0.043055555555555555,
+      "n_scorable": 689,
+      "Y_forced_mean": 1.954361981815762,
+      "NON_RESPONSIVE": false
+    }
+  },
+  "kendall_tau_comp_vs_Yforced": -0.8,
+  "per_item_agreement": 0.49671621154510887,
+  "sampled_greedy_modal_agreement": {
+    "baseline": 0.8861111111111111,
+    "genuine": 0.725
+  },
+  "outcome": "READOUT-ONLY (tau<1 or per-item<0.55: arc numbers are pinned-token-contrast properties, permanently labeled; no 'obeys/complies/answers correctly' anywhere) -- HARD RELABEL",
+  "disclosure": "TRIP: READOUT-ONLY or NON-RESPONSIVE genuine cell -> recovery must not be characterized behaviorally",
+  "thresholds": {
+    "NONRESP": 0.3,
+    "GROUND": 0.75,
+    "AGG": 0.55
+  },
+  "runtime_s": 606.7
+}

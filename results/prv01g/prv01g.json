@@ -1,0 +1,62 @@
+{
+  "prereg": "PREREG_PRV01G.md",
+  "probe": "PRV-01g",
+  "SMOKE": false,
+  "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+  "chained_to_PRV01D": "06eeb0971ce039e2a140dc1aac0adad4ce3805ef188cf77b294736de23e538c5",
+  "transformers": "4.46.0",
+  "n": 720,
+  "readout": [
+    "TRUE",
+    "FALSE"
+  ],
+  "gconstruct_identical": 720,
+  "num_layers": 32,
+  "Y_U": -3.1911892318891155,
+  "Y_H": -0.8048149911893738,
+  "denom": 2.386374240699742,
+  "anchor_want": [
+    -3.191,
+    -0.805
+  ],
+  "anchor_ok": true,
+  "mass_U": 0.4773331834052535,
+  "mass_H": 0.4522416111680263,
+  "Y_Hproj_rand_all": -0.792979771643877,
+  "mass_Hproj_rand_all": 0.45246750939889385,
+  "dynrange_move": 0.011835219545496822,
+  "dynrange_bar": 0.5965935601749355,
+  "dynrange_ok": true,
+  "mean_resid_norm": 1.033398896207412,
+  "Y_Hproj_v_all": -0.8270450125137965,
+  "Y_Hproj_v_L1": -0.8017483154104815,
+  "mass_Hproj_v_all": 0.4527250395893407,
+  "mass_Hproj_v_L1": 0.45288968114740447,
+  "necessity": 0.00931539611234836,
+  "necessity_ci": [
+    0.0029929390650476613,
+    0.016508948844751837
+  ],
+  "necessity_L1_diag": -0.0012850774730090448,
+  "g_coherence_ok": true,
+  "necessity_sysTRUE": 0.011019504615522202,
+  "necessity_sysFALSE": 0.0076112876091745,
+  "addition_window_probe": {
+    "0.05": {
+      "eff_v": -0.010054525981346766,
+      "eff_rand": -0.0033101460999912687,
+      "ratio_rand_over_v": 0.32921950832215036,
+      "mass_v": 0.4784914710451595,
+      "inert_window": false
+    },
+    "0.1": {
+      "eff_v": -0.03135037625001536,
+      "eff_rand": -0.012322321203019885,
+      "ratio_rand_over_v": 0.39305178045554867,
+      "mass_v": 0.47982091321564485,
+      "inert_window": false
+    }
+  },
+  "outcome": "NOT-NECESSARY (necessity=0.01 < 0.15: resistance routes around v_hat; readable direction is a correlate, not the carrier)",
+  "runtime_s": 194.9
+}

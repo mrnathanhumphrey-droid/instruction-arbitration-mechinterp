@@ -1,0 +1,108 @@
+{
+  "prereg": "PREREG_PRV01D.md",
+  "probe": "PRV-01d",
+  "SMOKE": false,
+  "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+  "chained_to_PRV01F": "0ba39250c77dd6ebad211558bd765542c44d160ca7da03b632f7752f3e3a07c4",
+  "transformers": "4.46.0",
+  "n": 720,
+  "readout": [
+    "TRUE",
+    "FALSE"
+  ],
+  "gconstruct_identical": 720,
+  "anchor_ok": true,
+  "Y_U": -3.1911892318891155,
+  "Y_H": -0.8048149911893738,
+  "denom": 2.386374240699742,
+  "anchor_want": [
+    -3.2,
+    -0.73
+  ],
+  "G0_L0_acc": 0.5,
+  "G_VALIDITY_L1_acc": 0.9989012498283203,
+  "G_VALIDITY_d1_acc": 1.0,
+  "fit_ok": true,
+  "mean_resid_norm": 1.0328285694122314,
+  "mass_U": 0.4773331834052535,
+  "mass_H": 0.4522416111680263,
+  "alphas": [
+    0.25,
+    0.5,
+    1.0,
+    2.0
+  ],
+  "by_alpha": {
+    "0.25": {
+      "eff_v": -0.10274454239341947,
+      "eff_vneg": -0.018943278243144353,
+      "eff_rand": -0.049221128639247685,
+      "closure": -0.04305466453714834,
+      "closure_ci": [
+        -0.06640416280201766,
+        -0.021901886236571393
+      ],
+      "mass_v": 0.4881976859265428,
+      "g_null_direction": false,
+      "g_sign": true,
+      "g_coherence": true,
+      "passes_controls": false,
+      "closure_sysTRUE": -0.09984808034367032,
+      "closure_sysFALSE": -0.10564100444316864
+    },
+    "0.5": {
+      "eff_v": -0.3490592062473297,
+      "eff_vneg": -0.14175346824857923,
+      "eff_rand": -0.22184728094273143,
+      "closure": -0.14627177929350144,
+      "closure_ci": [
+        -0.19915790046858123,
+        -0.09736417550636142
+      ],
+      "mass_v": 0.5168213508110042,
+      "g_null_direction": false,
+      "g_sign": false,
+      "g_coherence": true,
+      "passes_controls": false,
+      "closure_sysTRUE": -0.3204861107799742,
+      "closure_sysFALSE": -0.3776323017146852
+    },
+    "1.0": {
+      "eff_v": -0.9521932013332843,
+      "eff_vneg": -0.2041280144618617,
+      "eff_rand": -0.5049730055862003,
+      "closure": -0.3990125207914072,
+      "closure_ci": [
+        -0.5261004712215027,
+        -0.299445890627007
+      ],
+      "mass_v": 0.5612355656773608,
+      "g_null_direction": false,
+      "g_sign": true,
+      "g_coherence": true,
+      "passes_controls": false,
+      "closure_sysTRUE": -0.7168077189061377,
+      "closure_sysFALSE": -1.1875786837604312
+    },
+    "2.0": {
+      "eff_v": 3.506591804739502,
+      "eff_vneg": 3.325933838635683,
+      "eff_rand": 4.073873894661665,
+      "closure": 1.4694224170435588,
+      "closure_ci": [
+        1.1974271497632785,
+        1.7918177868670526
+      ],
+      "mass_v": 0.1515293554373687,
+      "g_null_direction": false,
+      "g_sign": false,
+      "g_coherence": true,
+      "passes_controls": false,
+      "closure_sysTRUE": 4.58984375529819,
+      "closure_sysFALSE": 2.4233398541808127
+    }
+  },
+  "passing_alphas": [],
+  "outcome": "NOT-THE-PATHWAY (controls fail at every alpha; the direction does not carry the effect cleanly)",
+  "runtime_s": 313.4
+}

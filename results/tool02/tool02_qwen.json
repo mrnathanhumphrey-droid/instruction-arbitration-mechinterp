@@ -1,0 +1,57 @@
+{
+  "prereg": "PREREG_TOOL02.md",
+  "SMOKE": false,
+  "model_key": "qwen",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "prereg_sha256": "348608042a6ebbf5f83afc2050e6d4e92113a29ea88efd7d90f717d0c96221e0",
+  "chained_to_TOOL01": "f74871490f7be6efdd4ebc830751f44f949c7055cda9046984428a0831694456",
+  "transformers": "4.46.0",
+  "n": 720,
+  "readout": [
+    "TRUE",
+    "FALSE"
+  ],
+  "has_markeronly": false,
+  "means": {
+    "user": -4.638004556008511,
+    "user_pad": -4.415218100531233,
+    "native": -3.1943549254288275
+  },
+  "dist_end_means": {
+    "user": 11.333333333333334,
+    "user_pad": 15.466666666666667,
+    "native": 15.466666666666667
+  },
+  "values": {
+    "B_user": -4.638004556008511,
+    "B_native": -3.1943549254288275,
+    "d_native_raw": 1.4436496305796833,
+    "d_native_matched": 1.220863175102406,
+    "pad_only": 0.22278645547727738
+  },
+  "cis": {
+    "B_user": [
+      -5.575837255493841,
+      -3.7367154945226186
+    ],
+    "B_native": [
+      -4.167825922016055,
+      -2.224330510396718
+    ],
+    "d_native_raw": [
+      0.9317149380190918,
+      1.9432456550829944
+    ],
+    "d_native_matched": [
+      0.7011524158747245,
+      1.7708858878020617
+    ],
+    "pad_only": [
+      -0.10033747154495133,
+      0.5239800312783967
+    ]
+  },
+  "note_mistral": "",
+  "note_qwen": "Qwen renders tool output as a user turn + <tool_response> tags = NO privileged tool role; markeronly N/A; d_native IS the combined tag effect.",
+  "runtime_s": 112.5
+}

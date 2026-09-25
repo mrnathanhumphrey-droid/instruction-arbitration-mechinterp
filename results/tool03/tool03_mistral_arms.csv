@@ -1,0 +1,14 @@
+quantity,value,ci_lo,ci_hi
+B_user,-0.4682,-1.1756,0.2536
+B_Tnc,-7.2841,-7.9324,-6.5978
+B_Tc,-7.3308,-8.0756,-6.523
+d_marker,-6.816,-7.9717,-5.623
+d_commit,-0.0467,-0.2538,0.1755
+d_deployed,-6.8626,-8.1167,-5.5627
+dist_end_U,21.383,,
+dist_end_Tnc,21.383,,
+dist_end_Tc,21.383,,
+readout_mass_U,0.7384,,
+readout_mass_Tnc,0.4609,,
+readout_mass_Tc,0.4848,,
+mistral_tnc_coherent,True,,

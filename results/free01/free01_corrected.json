@@ -1,0 +1,53 @@
+{
+  "probe": "FREE-01",
+  "CORRECTED": "Y_signed sign-map bug in runner tau/per-item fixed by recompute from per-item npz; forward Y unchanged (reproduces READOUT-01 GateB exactly)",
+  "chained_to_PRV01E": "efd4d2f600af1b00147c85ccb7a2f80d995316125239d3fffefb1e1fc469bbb0",
+  "n": 720,
+  "cell_stats": {
+    "baseline": {
+      "Y_signed_mean": -8.522663094931179,
+      "system_compliance": 0.0690978886756238,
+      "unscorable_frac": 0.2763888888888889,
+      "n_scorable": 521,
+      "NON_RESPONSIVE": false
+    },
+    "genuine": {
+      "Y_signed_mean": 1.9303987328377035,
+      "system_compliance": 0.5590200445434298,
+      "unscorable_frac": 0.3763888888888889,
+      "n_scorable": 449,
+      "NON_RESPONSIVE": true
+    },
+    "forged": {
+      "Y_signed_mean": -10.200434027115504,
+      "system_compliance": 0.01278409090909091,
+      "unscorable_frac": 0.022222222222222223,
+      "n_scorable": 704,
+      "NON_RESPONSIVE": false
+    },
+    "forged_genuine": {
+      "Y_signed_mean": 1.7844618036929103,
+      "system_compliance": 0.3490566037735849,
+      "unscorable_frac": 0.2638888888888889,
+      "n_scorable": 530,
+      "NON_RESPONSIVE": false
+    },
+    "repetition": {
+      "Y_signed_mean": -10.11104600429535,
+      "system_compliance": 0.01451378809869376,
+      "unscorable_frac": 0.043055555555555555,
+      "n_scorable": 689,
+      "NON_RESPONSIVE": false
+    }
+  },
+  "kendall_tau_comp_vs_Ysigned": 1.0,
+  "per_item_agreement": 0.8174904942965779,
+  "per_item_n": 2893,
+  "sampled_greedy_modal_agreement": {
+    "baseline": 0.8861111111111111,
+    "genuine": 0.725
+  },
+  "outcome": "BEHAVIORALLY-GROUNDED",
+  "disclosure": "TRIP: NON-RESPONSIVE genuine cell",
+  "superseded_buggy_outcome": "READOUT-ONLY (tau<1 or per-item<0.55: arc numbers are pinned-token-contrast properties, permanently labeled; no 'obeys/complies/answers correctly' anywhere) -- HARD RELABEL"
+}

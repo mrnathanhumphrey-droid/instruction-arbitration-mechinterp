@@ -1,0 +1,13 @@
+quantity,value,ci_lo,ci_hi
+B_user,-3.1944,-3.9295,-2.4838
+B_native,0.0109,-0.5676,0.6078
+d_native_raw,3.2053,2.5075,3.8915
+d_native_matched,3.2355,2.5927,3.8615
+pad_only,-0.0302,-0.1627,0.0881
+B_markeronly,-0.7308,-1.4426,0.0289
+d_role,2.4938,2.031,2.9788
+d_serial,0.7417,0.2448,1.2101
+dist_end_user,11.333,,
+dist_end_user_pad,12.333,,
+dist_end_native,12.333,,
+dist_end_markeronly,12.333,,

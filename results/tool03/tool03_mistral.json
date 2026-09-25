@@ -1,0 +1,66 @@
+{
+  "prereg": "PREREG_TOOL03.md",
+  "SMOKE": false,
+  "model_key": "mistral",
+  "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "prereg_sha256": "a41a922bae201bad3beda073fc760ddd4bcf5102d6e9921c7f958907c8f15a78",
+  "chained_to_TOOL02": "348608042a6ebbf5f83afc2050e6d4e92113a29ea88efd7d90f717d0c96221e0",
+  "transformers": "4.46.0",
+  "n": 720,
+  "readout": [
+    "TRUE",
+    "FALSE"
+  ],
+  "means": {
+    "U": -0.46815592207842405,
+    "Tnc": -7.284118915266461,
+    "Tc": -7.330778373612298
+  },
+  "readout_mass": {
+    "U": 0.7384447823192317,
+    "Tnc": 0.46094568118556234,
+    "Tc": 0.4848392834276606
+  },
+  "dist_end": {
+    "U": 21.383333333333333,
+    "Tnc": 21.383333333333333,
+    "Tc": 21.383333333333333
+  },
+  "mistral_tnc_coherent": true,
+  "values": {
+    "B_user": -0.46815592207842405,
+    "B_Tnc": -7.284118915266461,
+    "B_Tc": -7.330778373612298,
+    "d_marker": -6.8159629931880374,
+    "d_commit": -0.046659458345836846,
+    "d_deployed": -6.862622451533874
+  },
+  "cis": {
+    "B_user": [
+      -1.175647510194944,
+      0.25359707524792957
+    ],
+    "B_Tnc": [
+      -7.932362669325537,
+      -6.597849677370655
+    ],
+    "B_Tc": [
+      -8.075590635571213,
+      -6.5229994505643845
+    ],
+    "d_marker": [
+      -7.9716642895672045,
+      -5.623049158228356
+    ],
+    "d_commit": [
+      -0.25383281086881904,
+      0.1754795678291085
+    ],
+    "d_deployed": [
+      -8.11667277763701,
+      -5.562655444602586
+    ]
+  },
+  "note": "d_marker=Tnc-U structure-matched template effect (no commitment); d_commit=Tc-Tnc pure commitment-turn effect (identical tool block); d_deployed=Tc-U full agentic flow = d_marker+d_commit. Mistral Tnc is hand-built (OOD), read only if coherent.",
+  "runtime_s": 75.7
+}

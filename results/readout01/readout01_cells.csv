@@ -1,0 +1,6 @@
+cell,YA,landed,repl_delta,massA,Ysyn_A,modal_top1,is_synonym,YB,massB
+baseline,-7.322,-7.322,-0.0,0.4842,-7.315,TRUE,True,-8.512,0.4751
+genuine,-1.054,-1.054,0.0,0.0082,-0.631,\n,False,1.933,0.4025
+forged,-9.005,-9.005,0.0,0.9082,-9.022,TRUE,True,-10.199,0.9723
+forged_genuine,-2.223,-2.223,0.0,0.1701,-1.69,\n,False,1.785,0.8173
+repetition,-8.699,-8.699,0.0,0.8881,-8.707,TRUE,True,-10.111,0.9585

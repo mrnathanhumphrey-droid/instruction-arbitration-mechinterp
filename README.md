@@ -1,75 +1,118 @@
 # Instruction–Arbitration Mechanistic Interpretability
 
-A pre-registered mechanistic-interpretability program studying **how an instruction-tuned language model decides which
-instruction to obey when a system-role instruction and a user-role instruction conflict** — the mechanism underneath
-prompt injection and the "instruction hierarchy."
+A pre-registered mechanistic-interpretability program on **how an instruction-tuned language model decides which
+instruction to obey when instructions conflict** — the mechanism underneath prompt injection and the "instruction
+hierarchy." It runs two joined threads:
 
-Model under study: **Llama-3.1-8B-Instruct** (bf16). The program probes, empirically and causally, the separation of
-*instructions* from *data* — the setting of the impossibility results in
-[*On the Inseparability of Instructions and Data in Shared-Embedding Sequence Models*](https://arxiv.org/abs/2606.27567)
-(Assumption 3 / Theorem 3: provenance-recovery is impossible under distributional overlap).
+1. **Internally**, in a single model, *where and how* does the arbitration happen — is the role an instruction came from
+   (its "provenance") represented, and is that representation what actually drives which instruction wins?
+2. **Externally**, across models, does that mechanism surface in the **chat template a vendor ships** — well enough that you
+   could inspect a template and rank a model's injection resistance before deploying it?
 
-> **Status: active, living record.** Every probe is pre-registered and sha256-locked *before* the model is run; verdicts
-> are written after. Findings are updated as the program continues — including corrections. The most recent correction
-> (**ORD-01**) rescoped a quantitative headline; see *Current status* below. This repository is released for
-> reproducibility and public good.
+The program probes, empirically and causally, the separation of *instructions* from *data* — the setting of the
+impossibility results in [*On the Inseparability of Instructions and Data in Shared-Embedding Sequence
+Models*](https://arxiv.org/abs/2606.27567) (Assumption 3 / Theorem 3: provenance-recovery is impossible under
+distributional overlap).
+
+Model scope: **Llama-3.1-8B-Instruct** (bf16) for the internal causal program; the tool-template arm (TOOL-02/03, TPL-01)
+spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nemo, Gemma-2, Phi-3.5.
+
+> **Status: active, living record.** Every probe is pre-registered and sha256-locked *before* the model is run; the verdict
+> is written after, its mechanical result computed from the locked criteria and its interpretation a separate, labeled step.
+> Findings — and their corrections — are updated as the program continues. The current throughline: *a readable structural
+> feature that correlates with the arbitration is not the same as the thing that causes it.* Released for reproducibility and
+> the public good.
 
 ## Method
 
 - **Pre-registration + hash chain.** Each probe has a `PREREG_*.md` whose sha256 is committed (`*.sha256`) *before* the
-  run, chained to the previous probe's hash. Thresholds and readings are fixed in advance; the mechanical verdict is
-  computed from the locked criteria, and the interpretation is a separate, labeled step.
-- **Causal mediation by activation patching.** The core estimand is `M = −ΔY / (2·B)`, where `Y = logP(DONE) − logP(READY)`
-  at the first assistant token (signed by which role holds the target), and `B` is the baseline effect. Interventions
-  overwrite residual-stream activations at chosen token spans / layers and measure the behavioral change.
+  run, chained to the previous probe's hash. Thresholds and readings are fixed in advance; the mechanical verdict follows
+  from the locked criteria; the reading is separate and labeled.
+- **Readout.** `Y = logP(POS) − logP(NEG)` at the first assistant token, signed by which role holds the target
+  (`+Y` = obeys the system slot). The internal program uses a DONE/READY readout; the cross-model tool arm uses TRUE/FALSE.
+  A per-cell probability-mass gate guards against reading logprobs off a collapsed distribution.
+- **Causal mediation (internal).** The estimand is `M = −ΔY / (2·B)`; interventions overwrite residual-stream activations
+  at chosen spans/layers (exchange, twin-patch, subspace ablation, INLP deflation) and measure the behavioral change.
+- **Resistance measurement (cross-model).** The tool arm contrasts an instruction injected in a model's **native tool
+  template** against the same bytes as plain user text (the resistance "anchor"), then **transplants the serialization
+  between templates while holding the host's role slot fixed** to ask whether the effect travels with the template or the
+  model. Ordering agreement across hosts is scored with **Kendall's W**.
 - **Uncertainty.** Template-cluster bootstrap (the template is the unit of independence); paired where the contrast is
   within-item.
 - **Controls the program insists on.** A same-condition floor for every treatment; a VOID guard (a patch that lobotomizes
-  the model cannot be read as a null); an estimator calibration against hand-built ground truth (CAL-01); an
-  operation-coherence check (DIST-01); and a denominator check (ORD-01).
+  the model cannot be read as a null); a dynamic-range guard (a random intervention of matched size must be inert before a
+  targeted one is read); an estimator calibration against hand-built ground truth (CAL-01); an operation-coherence check
+  (DIST-01); and a denominator / order-counterbalance check (ORD-01).
 
 ## The findings, honestly
 
-**What stands:**
+### The internal mechanism (Llama-3.1-8B)
 
 - **Provenance is richly represented.** Which role an instruction came from is decodable from the residual stream at high
   accuracy (~95%), non-linearly, and independently of token position (RES-01).
-- **Per-head attention is not the causal router.** Patching individual role-tracking attention heads does not move the
-  arbitration (PRV-04c). *Caveat:* this was measured one head at a time, the regime where self-repair / backup heads can
-  manufacture a false null; a co-ablation retest is planned.
-- **A residual exchange moves a large, specific fraction of behavior;** a counterfactual "twin" patch (which flips the
-  literal instruction text) moves essentially all of it (RES-02, RES-06).
-- **The effect is distributed, not localized** to any single site (markers, readout, intermediate content) under
-  provenance-preserving operations (RES-05, RES-06).
-- **The estimator is unbiased** on a hand-built toy with known ground truth (CAL-01), and **the exchange operation is
-  coherent** — the model accepts the edited state rather than rejecting it (DIST-01).
-- **Indirect injection via a tool result still wins — and JSON-rendering it does not help (TOOL-01).** Where prompt
-  injection actually lives (an untrusted instruction in a tool/`ipython` result, arriving *last*), the model still obeys
-  the injected instruction on net (raw ΔY excludes zero in every layout). The tool role *does* blunt the effect by
-  ~2.5 nats versus the same instruction in a user turn — a genuine *role* effect, not a distance artifact (the injected
-  content sits at an identical distance from the readout in both arms, delta 0.000 tokens over all 720 items) — but that
-  resistance is carried by the tool **role header**, not
-  by Llama's `tojson` JSON rendering, which is behaviorally **inert** (its effect's CI includes zero, and its point
-  estimate is the wrong sign). So the "privilege bit" people might hope protects them does not; the only observed
-  mitigation is a partial, role-header-carried blunting that injection still overcomes.
+- **…but the readable provenance code is a *correlate*, not the causal carrier (PRV-01d/f/g/h/h-r).** Ablating the decodable
+  code does not remove the resistance. No single read direction is individually necessary (PRV-01g); iterative deflation
+  drives decodability down to its stopping bar while resistance stays intact, and this **existential dissociation is robust
+  across two independent whitening geometries** (PRV-01h-r), with the removed subspace's necessity zero-to-slightly-negative.
+  Stated carefully — the removed subspace is procedure-relative, not a "dimension" ([arXiv 2608.10566](https://arxiv.org/abs/2608.10566)) —
+  *decodability and causal role come apart.* And at the input level the role marker and the serialization are **redundant**
+  "this-is-data" signals: either alone suffices, and once serialization marks content as data the role header adds nothing.
+- **Per-head attention is not the causal router (PRV-04c).** Patching individual role-tracking attention heads does not move
+  the arbitration. *Caveat:* measured one head at a time — the regime where self-repair / backup heads can manufacture a
+  false null; a co-ablation retest is planned.
+- **Representation is position-independent; behavior is position-dominated (RES-01b, ORD-01).** A cross-role exchange never
+  isolated provenance — it rides recency (see *Corrections* below). The cleanest surviving pairing is stated without any
+  ratio: what the model *represents* about role is not what *drives* its choice.
+- **The behavioral effect is distributed, not localized** to any single site under provenance-preserving operations
+  (RES-05, RES-06); the estimator is unbiased on a known-ground-truth toy (CAL-01) and the exchange operation is coherent
+  (the model accepts the edited state rather than rejecting it — DIST-01).
 
-**What is currently rescoped (ORD-01):**
+### At the real injection surface, across models
 
-- The model's baseline preference in this benign contest is **recency-dominant**: flipping the order of the role blocks
-  flips the sign of the baseline (the model largely obeys the *last* block), so **~71%** of the baseline is recency and
-  **~29%** is role. Because every `M` divides by that baseline, **the single-number "the arbitration is ~half
-  provenance-movable, ~half content-bound" headline is retracted pending re-expression** (order-resolved `M` and raw ΔY).
-  The *qualitative* results above are unaffected; the *quantitative fraction* is being re-expressed. This is exactly the
-  kind of confound the pre-registration + control discipline exists to catch — see `verdicts/VERDICT_ORD01.md`.
+- **Indirect injection via a tool result still wins — and JSON-rendering it does not help (TOOL-01).** Where injection
+  actually lives (an untrusted instruction in a tool/`ipython` result, arriving *last*), the model obeys the injected
+  instruction on net (raw ΔY excludes zero in every layout). The tool role blunts the effect by ~2.5 nats versus the same
+  instruction in a user turn — a genuine *role* effect, not a distance artifact (identical readout distance in both arms,
+  delta 0.000 tokens over 720 items) — but that blunting is carried by the tool **role header**, not by Llama's `tojson`
+  rendering, which is behaviorally **inert** (CI includes zero, point estimate the wrong sign). The "privilege bit" does not
+  protect you; the only mitigation is a partial, role-header blunting that injection still overcomes.
+- **Chat-template design maps to injection resistance — heterogeneously and with a sign (TOOL-02, TOOL-03).** Ported across
+  three families, the tool-role effect is not a shared "tool distrust": **Llama +3.23 nats (resists), Qwen +1.19 (resists),
+  Mistral-v0.3 −6.82 (amplifies)** — a ~10-nat signed spread. Mistral-v0.3's `[TOOL_RESULTS]` template makes an injected
+  instruction *more* obeyed than the same text in a user turn, and TOOL-03 isolates the cause to the template **markers**
+  themselves (a pure commitment / tool-call turn is inert, ≈0), not the agent-loop flow. This is a property of the template a
+  vendor ships, and it is inspectable before deployment.
+- **Can you rank a model's injection resistance by reading its template? The *order*, not the *size* (TPL-01).** A
+  prospective, six-model test transplants each serialization between templates while holding the host's role slot. The
+  serialization **ordering** is host-independent — all three tool-role hosts rank the serializations identically (Kendall's
+  W = 1.000; `<tool_response>` tags safest, `[TOOL_RESULTS]` worst). But the **magnitude** is model-bound: swapping the
+  serialization moves each host <1 nat against a ~6.5-nat between-model gap, and neither pre-committed sharp cell moved —
+  transplanting Mistral's serialization into Llama does *not* drag Llama toward Mistral's level. So reading the template
+  predicts the *ranking* of serialization choices, but the resistance itself lives in the model / native role-slot, not the
+  transplantable wrapper. (Separately: forcing a foreign serialization into Mistral's tool slot makes it stop answering — an
+  availability effect, not a resistance gain.)
 
-**Re-expression (RE-01).** The program now retires *normalized* `M` as its primary quantity in favor of **raw ΔY in nats,
-order-tagged, with the baseline reported per order**. The re-expression also shows cross-role *exchange* never isolated
-provenance: it moves +3.58 nats at normal order — more than the whole role budget (2·|role| = 2.24 nats) and 5× more than
-at flipped order — so it rides the recency channel, not role. Exchange (a context/recency-signature swap) and twin-patch
-(a content flip) are *different counterfactuals*, so the earlier "half provenance / half content" split loses its premise,
-not just its denominator. The cleanest surviving result is a pairing: **the representation is position-independent
-(RES-01b) while the behavior is position-dominated (ORD-01)** — representation ≠ causation, stated without any ratio. See
-`verdicts/RE01_reexpression.md`.
+### The throughline
+
+Twice now, at two different levels, a **readable structural feature that correlates with the arbitration turns out not to
+be the thing that carries it.** Internally, role provenance is decodable at 95% yet ablating it leaves resistance intact.
+Across models, the serialization predicts the *order* of injection-following yet transplanting it moves almost none of the
+*magnitude*. What is genuinely actionable is narrower and honest than "inspect the feature and you understand the behavior":
+the readable signal ranks, it does not cause; the large effects live in the model and its native template — including one
+template (Mistral-v0.3's `[TOOL_RESULTS]`) that measurably amplifies injection.
+
+### Corrections on the record
+
+- **ORD-01 (rescope).** The baseline in this benign contest is **recency-dominant**: flipping the order of the role blocks
+  flips the baseline's sign (~71% recency, ~29% role). Because every `M` divides by that baseline, the single-number "the
+  arbitration is ~half provenance-movable" headline was **retracted pending re-expression**. Qualitative results unaffected;
+  the quantitative fraction re-expressed. Exactly the confound the pre-registration + control discipline exists to catch —
+  `verdicts/VERDICT_ORD01.md`.
+- **RE-01 (re-expression).** Normalized `M` is retired as the primary quantity in favor of **raw ΔY in nats, order-tagged,
+  baseline reported per order**. Cross-role *exchange* moves +3.58 nats at normal order — more than the whole role budget
+  (2·|role| = 2.24) and 5× more than at flipped order — so it rides recency, not role. Exchange (a recency-signature swap)
+  and twin-patch (a content flip) are different counterfactuals, so the "half provenance / half content" split loses its
+  premise, not just its denominator — `verdicts/RE01_reexpression.md`.
 
 ## Repository layout
 
@@ -78,31 +121,43 @@ prereg/     PREREG_*.md + PREREG_*.md.sha256   — pre-registrations and their l
 runners/    *_lambda.py, *_toy.py, watchdog.py — the experiment code (GPU/CPU runners; cloud launchers are not published)
 verdicts/   VERDICT_*.md                        — the written verdict for each probe (facts; reading labeled separately)
 results/    <probe>/*.json, *.csv              — the numeric results the verdicts are computed from
-data/       make_stimuli.py, stimuli_*.jsonl   — the constructed contested/uncontested battery
+data/       make_*stimuli*.py, stimuli_*.jsonl — the constructed batteries
 ```
 
 Probes, roughly in order: `PRV-01…04` (is provenance recoverable / used / routed) · `MMD-01` (reproduction of a prior
 separability measurement) · `H4`, `RDV-01`, `KDR-01` (distributed mediation and re-derivation) · `ATT-01` (attention
 observation) · `RES-01…06` (representation, causal ceiling, extent, decomposition) · `CAL-01` (estimator calibration) ·
 `DIST-01` (operation coherence) · `ORD-01` (denominator / order-counterbalance) · `TOOL-01` (system-vs-tool contest:
-recency vs the `tojson` privilege bit, at the real indirect-injection surface).
+recency vs the `tojson` privilege bit) · `FREE-01`/`AUTH-01`/`SPOOF-01` (authority and spoofed-role contests) ·
+`READOUT-01` (forced-readout method check) · `TOOL-02`/`TOOL-03` (cross-model tool-template resistance; template markers vs
+agent-loop flow) · `PRV-01d…h-r` (is the decodable provenance code the causal carrier — pathway, necessity, subspace
+ablation, reparameterization robustness) · `TPL-01` (prospective: can you rank injection resistance by reading the template).
 
 ## Reproducing
 
-- The runners target Llama-3.1-8B-Instruct via `transformers`; set `HF_TOKEN` in the environment. `MODEL_ID` and layer
-  ranges are constants at the top of each runner. Runners expect the stimuli from `data/` alongside them (the cloud
-  launchers that placed files and provisioned GPUs are intentionally omitted — they are infrastructure, not method).
-- `data/make_stimuli.py` generates the contested/uncontested battery; the exact battery used is included as
-  `stimuli_contested.jsonl` / `stimuli_uncontested.jsonl`. `data/make_tool_stimuli.py` generates the system-vs-tool
-  battery for TOOL-01 (`stimuli_tool_contested.jsonl`).
-- Verdicts quote the run that produced them; results JSON/CSV carry the numbers and confidence intervals.
+- Runners target the model IDs named as constants at the top of each file, via `transformers`; set `HF_TOKEN` in the
+  environment. Runners expect the stimuli from `data/` alongside them. The cloud launchers that provisioned GPUs and placed
+  files are intentionally omitted — they are infrastructure, not method.
+- `data/make_stimuli.py` generates the contested/uncontested battery (`stimuli_contested.jsonl` /
+  `stimuli_uncontested.jsonl`). `data/make_tool_stimuli.py` generates the system-vs-tool battery for TOOL-01
+  (`stimuli_tool_contested.jsonl`). `data/make_tool_stimuli_cross.py` generates the cross-model TRUE/FALSE tool battery
+  (`stimuli_tool_contested_true_false.jsonl`) used by TOOL-02/03 and TPL-01.
+- The tool-template runners (`tool02_lambda.py`, `tool03_lambda.py`, `tpl01_phase23.py`) load six model families
+  sequentially; the model IDs are constants at the top of each runner, and `HF_TOKEN` gates the download.
+- Verdicts quote the run that produced them; results JSON/CSV carry the numbers and confidence intervals. A public prereg's
+  `.md` is a scrubbed rendering; its `.sha256` sidecar is the hash of the original locked file (so the sidecar, not the
+  rendered `.md`, is the tamper-evident lock).
 
 ## Scope and caveats
 
-- **Single model, single readout, synthetic battery.** All results are Llama-3.1-8B-Instruct on a two-token
-  (DONE/READY) log-probability readout over a constructed imperative battery. Cross-model replication is open; the
-  cross-role tool slot is now probed (TOOL-01), the data slot is not.
-- **The baseline is recency-confounded** (ORD-01) — see above; treat any "fraction of the arbitration" statement as under
+- **One model for the internal causal program; six families for the tool-template arm.** The residual-stream causal work
+  (RES/PRV/ORD/H4/etc.) is Llama-3.1-8B-Instruct on a two-token DONE/READY readout over a constructed imperative battery.
+  The tool-template findings (TOOL-02/03, TPL-01) span Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nemo, Gemma-2, Phi-3.5 on a
+  TRUE/FALSE readout. Within-family pairs (Nemo↔Mistral-v0.3) are reproducibility checks, **not** out-of-sample
+  discriminative ranking tests; the prospective evidence is the within-model serialization swap (TPL-01).
+- **Synthetic battery, log-probability readout.** Results are on a constructed imperative battery read at the first
+  assistant token, not on free-form agentic traces. No serialization swap is a deployment configuration.
+- **The internal baseline is recency-confounded** (ORD-01); treat any "fraction of the arbitration" statement as under
   re-expression.
 - **Living record.** Findings, and their corrections, are updated as the program continues.
 

@@ -1,0 +1,74 @@
+{
+  "prereg": "PREREG_TOOL02.md",
+  "SMOKE": false,
+  "model_key": "mistral",
+  "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "prereg_sha256": "348608042a6ebbf5f83afc2050e6d4e92113a29ea88efd7d90f717d0c96221e0",
+  "chained_to_TOOL01": "f74871490f7be6efdd4ebc830751f44f949c7055cda9046984428a0831694456",
+  "transformers": "4.46.0",
+  "n": 720,
+  "readout": [
+    "TRUE",
+    "FALSE"
+  ],
+  "has_markeronly": true,
+  "means": {
+    "user": -0.7234130894558297,
+    "user_pad": -0.466718212970429,
+    "native": -7.32246893843015,
+    "markeronly": -6.778028537829717
+  },
+  "dist_end_means": {
+    "user": 8.25,
+    "user_pad": 21.383333333333333,
+    "native": 21.383333333333333,
+    "markeronly": 21.383333333333333
+  },
+  "values": {
+    "B_user": -0.7234130894558297,
+    "B_native": -7.32246893843015,
+    "d_native_raw": -6.59905584897432,
+    "d_native_matched": -6.855750725459721,
+    "pad_only": 0.25669487648540074,
+    "B_markeronly": -6.778028537829717,
+    "d_role": -6.311310324859288,
+    "d_serial": -0.5444404006004335
+  },
+  "cis": {
+    "B_user": [
+      -1.3572943816572016,
+      -0.09065734785153691
+    ],
+    "B_native": [
+      -8.066124573383064,
+      -6.512891608062717
+    ],
+    "d_native_raw": [
+      -7.764235050807603,
+      -5.36157160856761
+    ],
+    "d_native_matched": [
+      -8.110479048925141,
+      -5.55426890649833
+    ],
+    "pad_only": [
+      0.0723685756936256,
+      0.4366908006245889
+    ],
+    "B_markeronly": [
+      -7.383268615003261,
+      -6.141954414997665
+    ],
+    "d_role": [
+      -7.421565819940427,
+      -5.205569399123391
+    ],
+    "d_serial": [
+      -0.9016461723546175,
+      -0.15575976444201342
+    ]
+  },
+  "note_mistral": "Mistral tool flow requires an assistant tool_call turn; B_user/pad use a text stub, so d_native/d_role include that assistant-turn difference (intrinsic to routing through the tool channel); d_serial (native vs markeronly) is clean (shared tool_call prefix).",
+  "note_qwen": "",
+  "runtime_s": 140.3
+}

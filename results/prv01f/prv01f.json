@@ -1,0 +1,32 @@
+{
+  "prereg": "PREREG_PRV01F.md",
+  "probe": "PRV-01f",
+  "SMOKE": false,
+  "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+  "chained_to_PRV01E_V2": "9350d4f24237f2f4ec127ab554b71e08bddc25294945a87639b6d988f9f1eec6",
+  "transformers": "4.46.0",
+  "n": 720,
+  "readout": [
+    "TRUE",
+    "FALSE"
+  ],
+  "gconstruct_identical": 720,
+  "Y_A": 0.010852557669083277,
+  "Y_B": -0.12299737156265311,
+  "dY": 0.1338499292317364,
+  "dY_ci": [
+    -0.11190460955724124,
+    0.41640140206759974
+  ],
+  "dY_sysTRUE": 0.007231656130817201,
+  "dY_sysFALSE": 0.2604682023326556,
+  "mass_A": 0.3963209503873108,
+  "mass_B": 0.3941964274794586,
+  "anchor_A_ok": true,
+  "anchor_A_want": 0.0,
+  "d_marker_ref_TOOL03": 3.229,
+  "dY_vs_d_marker": -3.0951500707682635,
+  "cosine_L1probe_vs_headerembed": 0.04085406368075953,
+  "outcome": "HEADER-INERT (|dY|<0.5: the header token alone does not move behavior; TOOL d_marker was rendering/distance; dissociation HOLDS = encoded+propagates but behaviorally inert)",
+  "runtime_s": 118.4
+}

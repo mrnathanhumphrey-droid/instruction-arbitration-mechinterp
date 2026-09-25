@@ -1,0 +1,6 @@
+cell,Y,R_sysTRUE,R_sysFALSE,added_tokens,readout_mass,gap_forged_to_readout,gap_genuine_to_readout
+baseline,-7.322,-6.53,8.115,0.0,0.4842,,
+genuine,-1.054,-2.444,-0.337,13.7,0.0082,,13.7
+forged,-9.005,-7.511,10.498,14.9,0.9082,29.0,
+forged_genuine,-2.223,-2.574,1.871,28.6,0.1701,42.7,13.7
+repetition,-8.699,-7.251,10.146,14.9,0.8881,29.0,

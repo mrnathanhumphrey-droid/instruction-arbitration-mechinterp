@@ -1,0 +1,419 @@
+{
+  "prereg": "PREREG_READOUT01.md",
+  "probe": "READOUT-01",
+  "SMOKE": false,
+  "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+  "chained_to_SPOOF01": "02212d6d6563d6321318072ea5d9a106927c922be7bc1a7054be2c79454d77f0",
+  "transformers": "4.46.0",
+  "n": 720,
+  "readout": [
+    "TRUE",
+    "FALSE"
+  ],
+  "prefix_str": "Answer:",
+  "prefix_ids": [
+    27075,
+    29515
+  ],
+  "prefix_append_identical": true,
+  "distance_prompt_side_delta_gateB_minus_gateA": 0.0,
+  "gateA": {
+    "Y": {
+      "baseline": -7.32246893843015,
+      "genuine": -1.0535362154245376,
+      "forged": -9.004644096559948,
+      "forged_genuine": -2.2225464741388956,
+      "repetition": -8.698608397444088
+    },
+    "mass": {
+      "baseline": 0.4841799806253554,
+      "genuine": 0.008232301080644749,
+      "forged": 0.9081681206456728,
+      "forged_genuine": 0.1701470195566069,
+      "repetition": 0.8881267038231642
+    },
+    "Y_synonym_widened": {
+      "baseline": -7.315379236157686,
+      "genuine": -0.6309756279819542,
+      "forged": -9.02244290307329,
+      "forged_genuine": -1.6896867589507667,
+      "repetition": -8.707094308785194
+    },
+    "Rdir": {
+      "baseline": {
+        "sysTRUE": -6.529603804482354,
+        "sysFALSE": 8.115334072377946
+      },
+      "genuine": {
+        "sysTRUE": -2.443681487109926,
+        "sysFALSE": -0.3366090562608507
+      },
+      "forged": {
+        "sysTRUE": -7.51145832935969,
+        "sysFALSE": 10.497829863760206
+      },
+      "forged_genuine": {
+        "sysTRUE": -2.574033447768953,
+        "sysFALSE": 1.8710595005088382
+      },
+      "repetition": {
+        "sysTRUE": -7.25119899974929,
+        "sysFALSE": 10.146017795138889
+      }
+    },
+    "replication": {
+      "baseline": {
+        "Y": -7.32246893843015,
+        "landed": -7.322,
+        "delta": -0.00046893843015016756,
+        "ok": true
+      },
+      "genuine": {
+        "Y": -1.0535362154245376,
+        "landed": -1.054,
+        "delta": 0.0004637845754624781,
+        "ok": true
+      },
+      "forged": {
+        "Y": -9.004644096559948,
+        "landed": -9.005,
+        "delta": 0.0003559034400524297,
+        "ok": true
+      },
+      "forged_genuine": {
+        "Y": -2.2225464741388956,
+        "landed": -2.223,
+        "delta": 0.00045352586110425364,
+        "ok": true
+      },
+      "repetition": {
+        "Y": -8.698608397444088,
+        "landed": -8.699,
+        "delta": 0.0003916025559114189,
+        "ok": true
+      }
+    },
+    "replication_ok": true,
+    "GateA_pass_all_mass_ge_floor": false,
+    "mass_classification": {
+      "baseline": {
+        "modal_top1_id": 12673,
+        "modal_top1": "TRUE",
+        "modal_frac": 0.2986111111111111,
+        "is_readout_synonym": true,
+        "top5": [
+          [
+            "TRUE",
+            0.2782
+          ],
+          [
+            "The",
+            0.2285
+          ],
+          [
+            "FALSE",
+            0.2047
+          ],
+          [
+            "This",
+            0.0613
+          ],
+          [
+            "I",
+            0.034
+          ]
+        ]
+      },
+      "genuine": {
+        "modal_top1_id": 781,
+        "modal_top1": "\n",
+        "modal_frac": 0.44722222222222224,
+        "is_readout_synonym": false,
+        "top5": [
+          [
+            "\\n",
+            0.3491
+          ],
+          [
+            "The",
+            0.147
+          ],
+          [
+            "Ret",
+            0.0649
+          ],
+          [
+            "Query",
+            0.0551
+          ],
+          [
+            ",",
+            0.042
+          ]
+        ]
+      },
+      "forged": {
+        "modal_top1_id": 12673,
+        "modal_top1": "TRUE",
+        "modal_frac": 0.4722222222222222,
+        "is_readout_synonym": true,
+        "top5": [
+          [
+            "TRUE",
+            0.4588
+          ],
+          [
+            "FALSE",
+            0.4492
+          ],
+          [
+            "The",
+            0.042
+          ],
+          [
+            "True",
+            0.011
+          ],
+          [
+            "This",
+            0.0099
+          ]
+        ]
+      },
+      "forged_genuine": {
+        "modal_top1_id": 781,
+        "modal_top1": "\n",
+        "modal_frac": 0.23333333333333334,
+        "is_readout_synonym": false,
+        "top5": [
+          [
+            "\\n",
+            0.2244
+          ],
+          [
+            "The",
+            0.1112
+          ],
+          [
+            "TRUE",
+            0.0915
+          ],
+          [
+            "FALSE",
+            0.0744
+          ],
+          [
+            "Query",
+            0.0639
+          ]
+        ]
+      },
+      "repetition": {
+        "modal_top1_id": 12673,
+        "modal_top1": "TRUE",
+        "modal_frac": 0.4583333333333333,
+        "is_readout_synonym": true,
+        "top5": [
+          [
+            "TRUE",
+            0.4458
+          ],
+          [
+            "FALSE",
+            0.4421
+          ],
+          [
+            "The",
+            0.0635
+          ],
+          [
+            "This",
+            0.0138
+          ],
+          [
+            "True",
+            0.0083
+          ]
+        ]
+      }
+    }
+  },
+  "gateB": {
+    "Y": {
+      "baseline": -8.512323685487111,
+      "genuine": 1.9332962144580152,
+      "forged": -10.199045138226616,
+      "forged_genuine": 1.7847656225992574,
+      "repetition": -10.11070963607894
+    },
+    "mass": {
+      "baseline": 0.4750985910292054,
+      "genuine": 0.40249649317515807,
+      "forged": 0.9722882524029248,
+      "forged_genuine": 0.8173114113080575,
+      "repetition": 0.9585223187246701
+    },
+    "Rdir": {
+      "baseline": {
+        "sysTRUE": -7.178617029719883,
+        "sysFALSE": 9.846030341254341
+      },
+      "genuine": {
+        "sysTRUE": 0.37790969063838326,
+        "sysFALSE": -3.4886827382776473
+      },
+      "forged": {
+        "sysTRUE": -8.382638887564342,
+        "sysFALSE": 12.01545138888889
+      },
+      "forged_genuine": {
+        "sysTRUE": 1.4097222175035211,
+        "sysFALSE": -2.1598090276949935
+      },
+      "repetition": {
+        "sysTRUE": -8.153710938824547,
+        "sysFALSE": 12.067708333333334
+      }
+    },
+    "kendall_tau_vs_landed": 1.0,
+    "recovery_genuine_minus_baseline": 10.445619899945125,
+    "cond1_rank_preserved": true,
+    "cond2_magnitude_replicates": false,
+    "cond3_mass_restored_even": true
+  },
+  "counterbalance_split": {
+    "A": {
+      "baseline": {
+        "sysTRUE_delta": 0.0,
+        "sysTRUE_ci": [
+          0.0,
+          0.0
+        ],
+        "sysFALSE_delta": 0.0,
+        "sysFALSE_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "genuine": {
+        "sysTRUE_delta": 4.086471130136649,
+        "sysTRUE_ci": [
+          3.4549666521615445,
+          4.670962638772195
+        ],
+        "sysFALSE_delta": -8.45404138224668,
+        "sysFALSE_ci": [
+          -9.354294466955794,
+          -7.479806270814605
+        ]
+      },
+      "forged": {
+        "sysTRUE_delta": -0.9797863207284605,
+        "sysTRUE_ci": [
+          -1.6427120572990828,
+          -0.4112792244553555
+        ],
+        "sysFALSE_delta": 2.3804092837172086,
+        "sysFALSE_ci": [
+          1.7163409567210404,
+          3.1047941796316043
+        ]
+      },
+      "forged_genuine": {
+        "sysTRUE_delta": 3.956587285561396,
+        "sysTRUE_ci": [
+          3.114973251608512,
+          4.728396691580613
+        ],
+        "sysFALSE_delta": -6.249916031787792,
+        "sysFALSE_ci": [
+          -7.003998089134692,
+          -5.4762945965098
+        ]
+      },
+      "repetition": {
+        "sysTRUE_delta": -0.7231161771002076,
+        "sysTRUE_ci": [
+          -1.4390630707475867,
+          -0.11273620696531506
+        ],
+        "sysFALSE_delta": 2.030325318300724,
+        "sysFALSE_ci": [
+          1.405339574317139,
+          2.725963800946874
+        ]
+      }
+    },
+    "B": {
+      "baseline": {
+        "sysTRUE_delta": 0.0,
+        "sysTRUE_ci": [
+          0.0,
+          0.0
+        ],
+        "sysFALSE_delta": 0.0,
+        "sysFALSE_ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "genuine": {
+        "sysTRUE_delta": 7.5578728163346325,
+        "sysTRUE_ci": [
+          6.243485058177677,
+          8.788787822984157
+        ],
+        "sysFALSE_delta": -13.321413442371552,
+        "sysFALSE_ci": [
+          -14.819881713812551,
+          -11.671859220854111
+        ]
+      },
+      "forged": {
+        "sysTRUE_delta": -1.2023247808032567,
+        "sysTRUE_ci": [
+          -1.8193688791659137,
+          -0.6655206627812649
+        ],
+        "sysFALSE_delta": 2.174722120140128,
+        "sysFALSE_ci": [
+          1.3909634149074555,
+          3.02917922185527
+        ]
+      },
+      "forged_genuine": {
+        "sysTRUE_delta": 8.587007053430842,
+        "sysTRUE_ci": [
+          7.625207653314704,
+          9.46521690391004
+        ],
+        "sysFALSE_delta": -11.996251386752792,
+        "sysFALSE_ci": [
+          -13.238724413282341,
+          -10.705174599647936
+        ]
+      },
+      "repetition": {
+        "sysTRUE_delta": -0.9728502565370672,
+        "sysTRUE_ci": [
+          -1.5245064265529298,
+          -0.48997460977898827
+        ],
+        "sysFALSE_delta": 2.2249976756956826,
+        "sysFALSE_ci": [
+          1.4802321267459146,
+          3.0243344490395607
+        ]
+      }
+    }
+  },
+  "outcome": "REGIME-LIMITED (order holds, magnitude moved >1.0 nats; replace 6.27 with prefixed value; MISTRAL THREAD TRIPS -- correction)",
+  "thresholds": {
+    "REPL_TOL": 0.02,
+    "MASS_FLOOR": 0.1,
+    "REC_TOL": 1.0,
+    "MASS_RATIO_MAX": 3.0,
+    "REC_ANCHOR": 6.27
+  },
+  "runtime_s": 345.8
+}

@@ -1,0 +1,60 @@
+{
+  "prereg": "PREREG_PRV01E.md",
+  "probe": "PRV-01e",
+  "SMOKE": false,
+  "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+  "chained_to_PRV01C_R2": "2f58285c622a0aac35f06c56d3067cd34fdc57aea4380b15fe0d74863ff529f3",
+  "transformers": "4.46.0",
+  "N": 300,
+  "n_layers": 33,
+  "DS": [
+    1,
+    4,
+    8,
+    16,
+    32,
+    64
+  ],
+  "header_diff_k": 1,
+  "gconstruct_identical": 300,
+  "peak_layer": 1,
+  "curve_vs_d_at_peak": {
+    "1": 1.0,
+    "4": 1.0,
+    "8": 1.0,
+    "16": 0.995,
+    "32": 0.9083333333333333,
+    "64": 0.8933333333333333
+  },
+  "gates": {
+    "G0_embedding_chance": {
+      "L0_by_d": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "pass": true
+    },
+    "G_POSITION": {
+      "maxdiff_padA_vs_padB": 0.04166666666666674,
+      "pass": true
+    },
+    "G_SHUFFLE": {
+      "null_mean": 0.47200000000000003,
+      "null_std": 0.23241342474134322,
+      "null_p95": 0.8799999999999998,
+      "real_d1": 1.0,
+      "n_perm": 25,
+      "pass": true
+    },
+    "G_VALIDITY": {
+      "acc_d1": 1.0,
+      "pass": true
+    }
+  },
+  "outcome": "PROPAGATED (acc>0.70 at d>=32: acc(d32)=0.91 acc(d64)=0.89; true provenance survives a perfect payload forgery downstream -> PRV-01d well-posed)",
+  "runtime_s": 300.7
+}
