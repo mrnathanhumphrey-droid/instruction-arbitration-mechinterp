@@ -77,6 +77,13 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   blocks contend for a bounded allocation — not a plain additive readout, and it is the attention-mass framing with numbers.
   (Narrow: this rules out interaction *in the difference measure at these spans*, not that the computation is
   non-interactional; whether the renormalization is recency- or role-bound is open.)
+- **Recency and role dissociate — the "recency-dominant" story splits in two (OPX-02).** Re-running the one-sided flips under
+  reversed block order (system last): the **baseline flips sign** (obeys whichever block is last — recency-dominant, as ORD-01
+  found), but the **span-flip asymmetry keeps its signs with the roles** — the **user** span is the dominant lever and the
+  **system** span the weak/counteracting one in *both* orders (recency-swap rejected by ~27 nats). So the default tilt is
+  recency while the per-span causal weighting is **role** (user > system): OPX-01's competition is role-anchored, not
+  position-anchored. Position still modulates the *magnitude* (~5 nats on reversal), not the structure. The program had these
+  two fused; they are distinct.
 
 ### At the real injection surface, across models
 
@@ -155,7 +162,7 @@ agent-loop flow) · `PRV-01d…h-r` (is the decodable provenance code the causal
 ablation, reparameterization robustness) · `TPL-01` (prospective: can you rank injection resistance by reading the template)
 · `EXT-01` (does swapping the role-word marker token carry RES-02's residual "missing half" — a real but minor slice) ·
 `OPX-01` (why does exchange extract 0.46 where the spans additively carry ~0.97 — operator deficit + a competition/renorm sign
-structure).
+structure) · `OPX-02` (does that asymmetry follow recency or role — role, and the two dissociate).
 
 ## Reproducing
 

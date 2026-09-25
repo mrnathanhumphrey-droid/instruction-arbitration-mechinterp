@@ -1,0 +1,88 @@
+{
+  "prereg": "PREREG_OPX02.md",
+  "SMOKE": false,
+  "chained_to_OPX01": "bd3604acc00e29ce473b87481f604193406cc3fa28108247f481efb0325bb42a",
+  "transformers": "4.46.0",
+  "layers": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "B_normal": -3.879241260348095,
+  "B_flipped": 1.6391520193053617,
+  "B_flips_sign": true,
+  "n_pairs": 720,
+  "mass_B": 0.6262917838394334,
+  "dY_normal": {
+    "A_sys": -7.218535700978505,
+    "A_usr": 14.730971266619033,
+    "EXCH": 3.5817353973786035,
+    "CONSTR": 7.732237404088179
+  },
+  "dY_flipped": {
+    "A_sys": -12.102128093358543,
+    "A_usr": 9.356708435962597,
+    "EXCH": -0.6590739000174735,
+    "CONSTR": -3.276867590016789
+  },
+  "M_normal": {
+    "A_sys": -0.9304056149798177,
+    "A_usr": 1.8986923315639797,
+    "EXCH": 0.4616541170034375,
+    "CONSTR": 0.9966172358398695
+  },
+  "M_flipped": {
+    "A_sys": 3.6915819737351674,
+    "A_usr": -2.8541307718144937,
+    "EXCH": 0.20104111523981022,
+    "CONSTR": 0.9995618317956431
+  },
+  "keep_sys_dYf_minus_dYn_sys": -4.883592392380038,
+  "keep_sys_ci": [
+    -6.228902125385489,
+    -3.5379787345158165
+  ],
+  "swap_sys_dYf_minus_dYn_usr": -26.833099359977574,
+  "swap_sys_ci": [
+    -29.805083464395466,
+    -23.613627576991494
+  ],
+  "keep_usr": -5.374262830656436,
+  "keep_usr_ci": [
+    -6.882780224913729,
+    -3.8274233661343615
+  ],
+  "swap_usr": 16.5752441369411,
+  "swap_usr_ci": [
+    14.808082068001644,
+    18.33679751579339
+  ],
+  "signs_swap": false,
+  "signs_keep": true,
+  "anchor_normal_reproduces_opx01": true,
+  "construction_check_both_orders_ge_0.95": true,
+  "verdict": "ROLE (the asymmetry stays with the roles; recency and role come apart at the span level)",
+  "scope": "Property of these spans/layers/model/battery under residual overwrite; B flips with order so raw dY is primary and M is reported per-order. Tests whether the OPX-01 -0.93/+1.90 asymmetry is recency- or role-bound; does not relocate arbitration. CONSTR ~1.0 is a construction identity, never evidence.",
+  "runtime_s": 256.2
+}
