@@ -1,5 +1,11 @@
 # VERDICT — RES-02: lens-free ceiling (full-residual cross-role exchange)
 
+> **RE-SCOPED by OPX-01 (2026-09-25):** this 0.462 is an **exchange-operator deficit**, not "half the arbitration lives in the
+> residual." OPX-01 patched each span one-sided, same-index: the two spans sum to M≈0.97 (additivity gap +0.032). The material
+> is all in the spans; the two-sided cross-index *exchange* under-reads it. Read "≈half **under exchange**," not "half in the
+> residual." (Component signs are the finding: A_sys −0.93 / A_usr +1.90 — competition with renormalization. See
+> `verdicts/VERDICT_OPX01.md`.)
+
 **VERDICT: CEILING-HALF-OR-LESS.** Even complete, lens-free residual exchange at the imperative spans (all layers
 L8–31, no probe/subspace/linearity) moves behavior only ~half. Ran 2026-09-20, Lambda a100_sxm4, FULL n=720
 (all usable, 0 skipped), terminated clean, $0.25. PREREG_RES02.md sha256

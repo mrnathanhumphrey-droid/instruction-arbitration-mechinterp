@@ -69,6 +69,14 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
 - **The behavioral effect is distributed, not localized** to any single site under provenance-preserving operations
   (RES-05, RES-06); the estimator is unbiased on a known-ground-truth toy (CAL-01) and the exchange operation is coherent
   (the model accepts the edited state rather than rejecting it — DIST-01).
+- **The "half" was our instrument, not a missing account (OPX-01).** RES-02's cross-role *exchange* recovers ~0.46; but
+  patching each span one-sided and same-index, the two spans sum to **M ≈ 0.97** (additivity gap +0.032). The material is all
+  in the spans — the two-sided cross-index exchange simply under-reads it — so the RES-02 "≈half" is an **operator deficit**,
+  re-scoped to "under exchange." The finding is the **component signs**: flipping only the system span moves *away* from the
+  target (**−0.93**), flipping only the user span *overshoots* (**+1.90**). That is competition with renormalization — the two
+  blocks contend for a bounded allocation — not a plain additive readout, and it is the attention-mass framing with numbers.
+  (Narrow: this rules out interaction *in the difference measure at these spans*, not that the computation is
+  non-interactional; whether the renormalization is recency- or role-bound is open.)
 
 ### At the real injection surface, across models
 
@@ -145,7 +153,9 @@ recency vs the `tojson` privilege bit) · `FREE-01`/`AUTH-01`/`SPOOF-01` (author
 `READOUT-01` (forced-readout method check) · `TOOL-02`/`TOOL-03` (cross-model tool-template resistance; template markers vs
 agent-loop flow) · `PRV-01d…h-r` (is the decodable provenance code the causal carrier — pathway, necessity, subspace
 ablation, reparameterization robustness) · `TPL-01` (prospective: can you rank injection resistance by reading the template)
-· `EXT-01` (does swapping the role-word marker token carry RES-02's residual "missing half" — a real but minor slice).
+· `EXT-01` (does swapping the role-word marker token carry RES-02's residual "missing half" — a real but minor slice) ·
+`OPX-01` (why does exchange extract 0.46 where the spans additively carry ~0.97 — operator deficit + a competition/renorm sign
+structure).
 
 ## Reproducing
 

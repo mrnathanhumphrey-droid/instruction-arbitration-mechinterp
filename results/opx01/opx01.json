@@ -1,0 +1,113 @@
+{
+  "prereg": "PREREG_OPX01.md",
+  "SMOKE": false,
+  "chained_to_EXT01": "86b066c70025e518f16abf009e752235b42b96997df209b27376e0d38962b9fe",
+  "transformers": "4.46.0",
+  "layers": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "B": -3.879241260348095,
+  "n_pairs": 720,
+  "M": {
+    "A_sys": -0.9304056149798177,
+    "A_usr": 1.8986923315639797,
+    "B_sys": -0.06906977547983141,
+    "B_usr": 0.29173553088863163,
+    "EXCH": 0.4616541170034375,
+    "CONSTR": 0.9966172358398695
+  },
+  "M_ci": {
+    "A_sys": [
+      -1.2619564771245375,
+      -0.7236377553045691
+    ],
+    "A_usr": [
+      1.6952393946598447,
+      2.2246912698409678
+    ],
+    "B_sys": [
+      -0.20180218849052234,
+      0.020618695335403458
+    ],
+    "B_usr": [
+      0.216009451068966,
+      0.351657269144101
+    ],
+    "EXCH": [
+      0.3412051936189671,
+      0.5632012304415782
+    ],
+    "CONSTR": [
+      0.9855687538067457,
+      1.0061413271577346
+    ]
+  },
+  "mass": {
+    "A_sys": 0.6262612190098253,
+    "A_usr": 0.6159844422226346,
+    "B_sys": 0.34649043553512693,
+    "B_usr": 0.6978485726669665,
+    "EXCH": 0.637803803673423,
+    "CONSTR": 0.6225993427064569
+  },
+  "mass_B": 0.6262917838394334,
+  "gap_additivity_1_minus_Asys_plus_Ausr": 0.03171328341583801,
+  "gap_ci": [
+    0.019343207142345005,
+    0.046636179168326186
+  ],
+  "region_effect_sys_AminusB": -0.8613358394999863,
+  "region_sys_ci": [
+    -1.093845046731074,
+    -0.7109052526994742
+  ],
+  "region_effect_usr_AminusB": 1.606956800675348,
+  "region_usr_ci": [
+    1.3782625805980135,
+    1.975718506537955
+  ],
+  "sidedness_Bsum_minus_EXCH": -0.23898836159463727,
+  "sidedness_ci": [
+    -0.37055262671668937,
+    -0.13534423515853883
+  ],
+  "dY": {
+    "A_sys": -7.218535700978505,
+    "A_usr": 14.730971266619033,
+    "B_sys": -0.5358766457686822,
+    "B_usr": 2.263425017065472,
+    "EXCH": 3.5817353973786035,
+    "CONSTR": 7.732237404088179
+  },
+  "anchor_exch_reproduces_0.462_pm0.03": true,
+  "construction_check_constr_ge_0.97": true,
+  "floor_unsteered": 1.0,
+  "floor_steered": NaN,
+  "VOID": false,
+  "verdict": "INTERMEDIATE (gap small/uncertain; report table)",
+  "scope": "Explains the exchange OPERATOR, not the model. CONSTR=1.0 is a construction identity (become-the-twin), never evidence. gap large => the missing half is interactional (between-block comparison), which is why 6 single-component interventions came back null: there is no component. Property of these span positions/layers under residual overwrite; single model.",
+  "runtime_s": 174.6
+}
