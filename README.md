@@ -102,12 +102,17 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
 
 ### The throughline
 
-Twice now, at two different levels, a **readable structural feature that correlates with the arbitration turns out not to
-be the thing that carries it.** Internally, role provenance is decodable at 95% yet ablating it leaves resistance intact.
-Across models, the serialization predicts the *coarse order* of injection-following (the extremes, and partly by wrapper
-length) yet transplanting it moves almost none of the *magnitude*. What is genuinely actionable is narrower and honest than "inspect the feature and you understand the behavior":
-the readable signal ranks, it does not cause; the large effects live in the model and its native template — including one
-template (Mistral-v0.3's `[TOOL_RESULTS]`) that measurably amplifies injection.
+Repeatedly, at several levels, a **readable structural feature that correlates with the arbitration turns out to be, at
+most, a minority of what carries it.** Internally, role provenance is decodable at 95% yet ablating it leaves resistance
+intact. Across models, the serialization predicts the *coarse order* of injection-following (the extremes, and partly by
+wrapper length) yet transplanting it moves almost none of the *magnitude*. And when we gave the readable feature its best
+shot — directly swapping the role-word marker token in the residual, not just reading it (EXT-01) — it carried a **real but
+small** slice: ~13% of what a content-flip recovers, specific to the role lexeme, with the other ~87% still elsewhere. The
+honest actionable statement is narrower than "inspect the feature and you understand the behavior": the readable signal
+mostly ranks rather than causes, its causal slice where it has one is minor, and the large effects live in the model and its
+native template — including one template (Mistral-v0.3's `[TOOL_RESULTS]`) that measurably amplifies injection. Where the
+bulk of the causal work lives is still open — the leading candidate is attention at non-generation positions (the
+instruction span), which nothing has yet tested.
 
 ### Corrections on the record
 
@@ -139,7 +144,8 @@ observation) · `RES-01…06` (representation, causal ceiling, extent, decomposi
 recency vs the `tojson` privilege bit) · `FREE-01`/`AUTH-01`/`SPOOF-01` (authority and spoofed-role contests) ·
 `READOUT-01` (forced-readout method check) · `TOOL-02`/`TOOL-03` (cross-model tool-template resistance; template markers vs
 agent-loop flow) · `PRV-01d…h-r` (is the decodable provenance code the causal carrier — pathway, necessity, subspace
-ablation, reparameterization robustness) · `TPL-01` (prospective: can you rank injection resistance by reading the template).
+ablation, reparameterization robustness) · `TPL-01` (prospective: can you rank injection resistance by reading the template)
+· `EXT-01` (does swapping the role-word marker token carry RES-02's residual "missing half" — a real but minor slice).
 
 ## Reproducing
 

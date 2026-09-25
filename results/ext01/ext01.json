@@ -1,0 +1,74 @@
+{
+  "prereg": "PREREG_EXT01.md",
+  "SMOKE": false,
+  "chained_to_TPL01_PHASE23": "08d2f0827031b1f4707052b438ae111696b56eb3583c733d3f0483c3cbb661d6",
+  "transformers": "4.46.0",
+  "layers": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "B": -3.908599173857106,
+  "n_pairs": 720,
+  "n_skipped": 0,
+  "M_L0_imperative": 0.4599993173106029,
+  "M_L0_ci": [
+    0.3418926158074233,
+    0.558981399902685
+  ],
+  "M_ROLE_word": 0.5277504981077545,
+  "M_ROLE_ci": [
+    0.4015413613886981,
+    0.6334870086699577
+  ],
+  "M_CTRL_endhdr": 0.45808237062037016,
+  "M_CTRL_ci": [
+    0.33915376356189203,
+    0.5572034516699373
+  ],
+  "marker_gain_role_minus_ctrl": 0.06966812748738438,
+  "marker_gain_ci": [
+    0.04277783161694099,
+    0.09608415561661472
+  ],
+  "M_DISR_disruption": 0.039917660919652445,
+  "M_L0_minus_DISR": 0.42008165639095046,
+  "M_L0_minus_DISR_ci": [
+    0.2588723463446131,
+    0.5517042007431094
+  ],
+  "dY_L0": 3.595905903230111,
+  "dY_ROLE": 4.125530321813292,
+  "dY_CTRL": 3.5809207507305674,
+  "mass_B": 0.6264949831512914,
+  "mass_L0": 0.6381830381244882,
+  "mass_ROLE": 0.6577841969280632,
+  "anchor_L0_reproduces_RES02_0.462_pm0.05": true,
+  "floor_unsteered": 1.0,
+  "floor_steered": NaN,
+  "VOID": false,
+  "verdict": "INTERMEDIATE (marker gain small but nonzero; report, no headline)",
+  "scope": "Property of the EXCHANGE operation; RES-06 twin-patch reached ~0.997 where exchange got 0.462 at identical positions. No number here is 'the ceiling on role arbitration', only 'under exchange'. On Llama the only cross-role-swappable role-distinguishing marker token is the role word; delimiters are shared (inert to swap) and the system date preamble is asymmetric (unalignable) -- so this is the sharp form of the extent question, not a graded curve.",
+  "runtime_s": 257.1
+}
