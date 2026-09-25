@@ -45,6 +45,14 @@ arbitration follows recency while the per-span causal asymmetry follows role —
 - Position still matters to **magnitude** (the ~−5 nat shift when order reverses), just not to the **structure**. A full
   mechanism would explain both the role-anchored signs and the recency-modulated magnitudes.
 
+## Free consistency check — B reproduces ORD-01's 71/29 split (the reviewer)
+B is not symmetric under reversal (−3.879 → +1.639). Model it as a flipping recency term plus a constant role term,
+B = ∓R + ρ: **ρ = (Bn+Bf)/2 = −1.120, R = (Bf−Bn)/2 = 2.759** → **recency share R/(R+|ρ|) = 71.1%, role share = 28.9%.**
+ORD-01 (entirely different arms) reported ~71% recency / 29% role. **Independent reproduction from two numbers already in this
+run** — the two runs measure the same object, which makes the recency/role dissociation considerably harder to attack (the
+same 71/29 recency/role split shows up in the baseline *and* the dissociation is between that baseline and the span-flip
+weighting).
+
 ## Prediction outcome
 - Anchors reproduce, CONSTR ≈ 1.0 both orders, B flips — **HIT.**
 - **RECENCY (reversal swaps which span overshoots) — MISSED.** Mechanistic prediction, so the miss is the finding: the

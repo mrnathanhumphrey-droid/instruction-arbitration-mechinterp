@@ -125,9 +125,16 @@ shot — directly swapping the role-word marker token in the residual, not just 
 small** slice: ~13% of what a content-flip recovers, specific to the role lexeme, with the other ~87% still elsewhere. The
 honest actionable statement is narrower than "inspect the feature and you understand the behavior": the readable signal
 mostly ranks rather than causes, its causal slice where it has one is minor, and the large effects live in the model and its
-native template — including one template (Mistral-v0.3's `[TOOL_RESULTS]`) that measurably amplifies injection. Where the
-bulk of the causal work lives is still open — the leading candidate is attention at non-generation positions (the
-instruction span), which nothing has yet tested.
+native template — including one template (Mistral-v0.3's `[TOOL_RESULTS]`) that measurably amplifies injection.
+
+**A second throughline, cutting the other way (OPX-01/02).** The runs above are about a readable feature *not* carrying the
+behavior; the exchange-operator work is the counterweight, and it is not a footnote. When the operator artifact is removed,
+the causal structure at the imperative spans is **legible, modular, and additive**: the two spans additively determine the
+answer (gap +0.03), with a **fixed role weighting** — the user span dominant, the system span weak — that stays with the roles
+under block reversal, on a recency-tilted baseline (the same 71/29 recency/role split as ORD-01). So the same system that hides
+its causal carrier behind readable *correlates* in one place exposes a clean, separable, role-weighted mechanism in another.
+Both are true of it. Where the *arbitration's* bulk carrier lives remains open — a candidate is attention at non-generation
+positions (the instruction span), untested.
 
 ### Corrections on the record
 
