@@ -1,0 +1,106 @@
+{
+  "prereg": "PREREG_OPX05.md",
+  "SMOKE": false,
+  "chained_to_OPX04": "356ca526d60fe1aa1026d988c778456b2c0cff932486c3eb22c80dc50bbd6248",
+  "transformers": "4.46.0",
+  "layers": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "NEUTRAL": "info",
+  "n_pairs": 720,
+  "B_per_arm": {
+    "BASE": -3.899759927185045,
+    "PM": 1.3239637682835261,
+    "STRIP": -7.098177045583725,
+    "JOINT": -0.7213541666666666
+  },
+  "mass_per_arm": {
+    "BASE": 0.6272472747681717,
+    "PM": 0.6496405409518194,
+    "STRIP": 0.7872976715379385,
+    "JOINT": 0.7048228642937497
+  },
+  "dY_sys": {
+    "BASE": -7.208523223673304,
+    "PM": -11.859421121742992,
+    "STRIP": -5.909114636977514,
+    "JOINT": -9.653645825386047
+  },
+  "dY_usr": {
+    "BASE": 14.756802017945384,
+    "PM": 8.717244450582399,
+    "STRIP": 19.575260370969772,
+    "JOINT": 10.198697892824809
+  },
+  "raw_asym": {
+    "BASE": 21.96532524161869,
+    "PM": 20.57666557232539,
+    "STRIP": 25.484375007947285,
+    "JOINT": 19.852343718210854
+  },
+  "raw_asym_ci": {
+    "BASE": [
+      19.48044619293676,
+      24.28844305819935
+    ],
+    "PM": [
+      18.6698661705686,
+      22.316079089277324
+    ],
+    "STRIP": [
+      21.006992195645967,
+      29.683880208333335
+    ],
+    "JOINT": [
+      17.261445249319078,
+      22.380579419533408
+    ]
+  },
+  "joint_ratio_r": 0.9038037679767985,
+  "joint_ratio_ci": [
+    0.8431823874253336,
+    0.9639045411552746
+  ],
+  "pm_frac_of_base": 0.9367794624473784,
+  "strip_frac_of_base": 1.1602093175320207,
+  "M_A_sys_BASE_advisory": -0.92422653679564,
+  "M_A_usr_BASE_advisory": 1.8920141615739474,
+  "corr_jointeff_vs_totlen": -0.09729307079464668,
+  "corr_jointeff_vs_totlen_ci": [
+    -0.16253812979940535,
+    -0.0319463828809253
+  ],
+  "corr_jointeff_vs_diflen": 0.16807127480498527,
+  "corr_jointeff_vs_diflen_ci": [
+    0.09540153788682351,
+    0.24408709722209557
+  ],
+  "anchor_base_reproduces_opx01": true,
+  "verdict_band": "TEXTUAL-EXHAUSTED",
+  "verdict": "TEXTUAL-EXHAUSTED: asymmetry SURVIVES the joint strip (r=0.90 > 0.75). Every textual difference (marker+preamble+filler) removed at once and it persists -> textual enumeration genuinely exhausted; fork (a) fires -> non-textual / positional-slot probe class. [PM +20.58(94%,OPX-03 repro) STRIP +25.48(116%,OPX-04 repro) JOINT +19.85(90%) r=0.90 CI[0.8431823874253336, 0.9639045411552746]]",
+  "scope": "raw dY primary (surgeries change B). r = asym_JOINT/asym_BASE with pre-registered bands (<=0.25 redundant / 0.25-0.75 partial / >0.75 textual-exhausted). JOINT = PM u STRIP = all textual differences removed at once; first genuine construction check of the textual enumeration. PM/STRIP reproduce OPX-03/OPX-04 in-run. Property of these spans/layers/model/battery, normal order. NEUTRAL='info'.",
+  "runtime_s": 321.4
+}

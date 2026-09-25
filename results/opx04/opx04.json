@@ -1,0 +1,127 @@
+{
+  "prereg": "PREREG_OPX04.md",
+  "SMOKE": false,
+  "chained_to_OPX03": "ef1e7eb6e76db57e776bae49675ad8b7493df7ea098930ebd4167040a986c4ea",
+  "transformers": "4.46.0",
+  "layers": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "MATCH_neutral_filler": "The following is a short block of text.",
+  "n_pairs": 720,
+  "B_per_arm": {
+    "BASE": -3.899759927185045,
+    "SWAP": -5.675596786124839,
+    "MATCH": -2.6247395878036817,
+    "STRIP": -7.098177045583725
+  },
+  "mass_per_arm": {
+    "BASE": 0.6272472747681717,
+    "SWAP": 0.682057798717923,
+    "MATCH": 0.7049952931649879,
+    "STRIP": 0.7872976715379385
+  },
+  "dY_sys": {
+    "BASE": -7.208523223673304,
+    "SWAP": -6.120936424285172,
+    "MATCH": -7.70989580899477,
+    "STRIP": -5.909114636977514
+  },
+  "dY_usr": {
+    "BASE": 14.756802017945384,
+    "SWAP": 17.246782757755785,
+    "MATCH": 12.847916663189729,
+    "STRIP": 19.575260370969772
+  },
+  "raw_asym": {
+    "BASE": 21.96532524161869,
+    "SWAP": 23.367719182040958,
+    "MATCH": 20.557812472184498,
+    "STRIP": 25.484375007947285
+  },
+  "raw_asym_ci": {
+    "BASE": [
+      19.48044619293676,
+      24.28844305819935
+    ],
+    "SWAP": [
+      20.581605231588085,
+      25.957472198531033
+    ],
+    "MATCH": [
+      17.82174474388361,
+      23.061041629314424
+    ],
+    "STRIP": [
+      21.006992195645967,
+      29.683880208333335
+    ]
+  },
+  "M_A_sys_BASE_advisory": -0.92422653679564,
+  "M_A_usr_BASE_advisory": 1.8920141615739474,
+  "swap_ratio_r": 1.0638458081087316,
+  "swap_ratio_ci": [
+    1.0407967116171366,
+    1.0884235379521796
+  ],
+  "invert_test_asymBASE_plus_asymSWAP": 45.35514772145576,
+  "invert_ci": [
+    40.090296520185134,
+    50.20693616429965
+  ],
+  "swap_move_asymBASE_minus_asymSWAP": -1.3977030319856272,
+  "swap_move_ci": [
+    -1.9543638198905566,
+    -0.867608342907493
+  ],
+  "swap_ci_excludes_0": true,
+  "strip_survival_frac": 1.1602093175320207,
+  "strip_survival_ci": [
+    1.033022406260739,
+    1.2747433772993562
+  ],
+  "match_residual_asym": 20.557812472184498,
+  "match_residual_ci": [
+    17.82174474388361,
+    23.061041629314424
+  ],
+  "filler_len_fsys_mean": 10.666666666666666,
+  "filler_len_fusr_mean": 13.0,
+  "filler_len_delta_abs_mean": 2.3333333333333335,
+  "filler_len_delta_abs_max": 6.0,
+  "FN_neutral_filler_len": 9,
+  "corr_fillerdelta_vs_swapmove": 0.012841645915216877,
+  "corr_fillerdelta_vs_swapmove_ci": [
+    -0.07302045176328788,
+    0.0898174926644152
+  ],
+  "corr_fillerdelta_vs_asymBASE": -0.1244410514456987,
+  "corr_fillerdelta_vs_asymSWAP": -0.12400040768511895,
+  "anchor_base_reproduces_opx01": true,
+  "verdict_band": "BODY-NULL",
+  "verdict": "BODY-NULL: SWAP holds sign and preserves magnitude (r=+1.06 > 0.5; +21.97->+23.37) -> the filler does NOT carry it; with marker+preamble already ruled out (OPX-03), enumeration is still incomplete, go deeper. [STRIP +25.48 (116% of BASE, CI[21.006992195645967, 29.683880208333335]) survives; MATCH resid +20.56 (CI[17.82174474388361, 23.061041629314424])]",
+  "scope": "raw dY is primary (surgeries change B; OPX-02/03). SWAP is the primary discriminator: inversion of the asym sign is the unique body-content signature (offset only shifts magnitude, never flips -- OPX-02). MATCH is a collapse-only construction check. STRIP is high-upside: survival with marker+preamble already ruled out leaves almost nothing standing. Property of these spans/layers/model/battery, normal order. FN neutral filler is a judgment call (flagged); the filler length asymmetry under SWAP is a named, offset-robust confound.",
+  "runtime_s": 276.9
+}

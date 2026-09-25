@@ -95,6 +95,23 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   methodology note is attached to the verdict: neutralizing the markers drives the normalization baseline toward zero, so the
   analysis is on raw ΔY, not the normalized effect. This is the third straight mechanistic prediction (exchange-operator,
   recency, marker) to miss — each miss narrowing the carrier toward block content.
+- **It isn't the filler either (OPX-04).** Testing the block body/filler content directly — a *swap* design (matching can only
+  collapse; swapping *inverts*, and inversion is the one signature no other cause produces): swapping the two blocks' fillers does
+  not invert or shrink the asymmetry (ratio +1.06), matching them does not collapse it, and removing them entirely does not either
+  (STRIP 116%). Verdict **BODY-NULL** — the filler carries none of it. A pre-registered filler-length correlation check comes back
+  null, so the (accepted, unmatched) filler lengths do not explain the result. Fourth straight prediction miss.
+- **The carrier is outside the lexical enumeration — 90% survives the joint strip (OPX-05).** The decisive construction check:
+  remove the marker, the preamble, *and* the filler **simultaneously**, so the two blocks are token-identical apart from order and
+  a counterbalanced target word. If the earlier single-feature survivals had been a *redundant lexical code* (any one of several
+  features sufficient), the joint strip would collapse it. Instead **90% survives** (ratio 0.90 [0.84, 0.96]) — and the run
+  reproduces OPX-03's PM (94%) and OPX-04's STRIP (116%) in-run, two figures that could have failed independently. A free
+  counterbalance-split re-analysis rules out the remaining lexical suspect, the **target word**: the asymmetry is the same sign and
+  magnitude in both counterbalance halves (identical under the joint strip), so it is not a target effect wearing a role label. The
+  carrier is therefore **not lexical** — no word or wrapper carries it (stated precisely: outside the lexical enumeration, *not*
+  "non-textual" — position is realized through token index, which the text still determines). What remains is block **order /
+  position**, which OPX-02 constrained (reversal kept the signs) and which the next probe — the joint strip under reversed order —
+  is built to resolve. Fifth straight miss, and the sharpest result: one construction check ruled out the entire lexical
+  enumeration at once.
 
 ### At the real injection surface, across models
 
@@ -182,7 +199,9 @@ ablation, reparameterization robustness) · `TPL-01` (prospective: can you rank 
 `OPX-01` (why does exchange extract 0.46 where the spans additively carry ~0.97 — operator deficit + a competition/renorm sign
 structure) · `OPX-02` (does that asymmetry follow recency or the block — the block, and block-vs-recency dissociate) ·
 `OPX-03` (which textual feature carries it — not the role-word marker (~0%) and not the preamble (~6%); 94% survives, carrier
-still unenumerated, pointing at block content).
+still unenumerated, pointing at block content) · `OPX-04` (does the block filler carry it — swap/match/strip: BODY-NULL, it does
+not) · `OPX-05` (the joint strip — remove marker+preamble+filler at once: 90% survives, plus a counterbalance split ruling out the
+target word, so the carrier is outside the lexical enumeration; next is the joint strip under reversed order).
 
 ## Reproducing
 
