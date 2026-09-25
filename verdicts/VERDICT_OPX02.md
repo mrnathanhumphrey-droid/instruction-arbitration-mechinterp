@@ -65,3 +65,14 @@ Property of these spans/layers/model/battery under residual overwrite; single mo
 never evidence. The dissociation is between the *baseline* (recency) and the *span-flip causal asymmetry* (role); it does not
 relocate arbitration, and "role-bound" here means the span-level flip response, not a claim about where arbitration is
 computed.
+
+## ⚠ Scope correction (self-caught, forced by OPX-03) — "role" here means the *block* (label + body), not the label alone
+OPX-03 shows the role-dominance asymmetry survives neutralizing the role-word **marker** (~0%, CI includes 0) and stripping the
+system **preamble** (~6%): **94% is carried by an unenumerated feature, leading candidate the block body/filler content.** This
+probe's only manipulation is block-order reversal, which **moves the body along with the label** — label and body travel
+together inside a block and cannot be separated by a reversal. Therefore what OPX-02 actually establishes is narrower than
+written above: the per-span causal asymmetry **stays with the block (role-label + body content, together) and dissociates from
+position/recency** — it does **not** isolate the role *label* as the carrier. Read every "role-bound" / "role-anchored" claim in
+this verdict as **"block-bound (label+body), not position-bound."** The recency-vs-block dissociation, the decisive recency-swap
+rejection, and the 71/29 reproduction of ORD-01 are all **unaffected**; only the attribution of the surviving asymmetry to the
+label *specifically* is narrowed. Separating label from body is what the body-swap probe (OPX-04) is built to do.

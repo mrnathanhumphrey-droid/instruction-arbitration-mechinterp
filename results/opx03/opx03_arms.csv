@@ -1,0 +1,7 @@
+arm,M_A_sys,M_A_usr,asym,B,mass
+BASE,-0.9195,1.8868,2.8062,-3.9086,0.626
+NEUTRAL,-5.7395,6.5899,12.3294,-0.8858,0.587
+PM,4.4301,-3.2451,-7.6752,1.3402,0.65
+marker_share,-9.5232,,,,
+preamble_offset_share,20.0047,,,,
+residual_at_PM,-7.6752,,,,

@@ -81,9 +81,20 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   reversed block order (system last): the **baseline flips sign** (obeys whichever block is last — recency-dominant, as ORD-01
   found), but the **span-flip asymmetry keeps its signs with the roles** — the **user** span is the dominant lever and the
   **system** span the weak/counteracting one in *both* orders (recency-swap rejected by ~27 nats). So the default tilt is
-  recency while the per-span causal weighting is **role** (user > system): OPX-01's competition is role-anchored, not
-  position-anchored. Position still modulates the *magnitude* (~5 nats on reversal), not the structure. The program had these
-  two fused; they are distinct.
+  recency while the per-span causal weighting stays with the **block** (user-block > system-block): OPX-01's competition is
+  block-anchored, not position-anchored. Position still modulates the *magnitude* (~5 nats on reversal), not the structure. The
+  program had these two fused; they are distinct. (**Scope correction, forced by OPX-03:** block-order reversal moves a block's
+  *body* along with its *label*, so this cannot isolate the label — "block-anchored" means label-and-body-together. OPX-03 below
+  shows the label itself carries ≈0 of the asymmetry, so the carrier is the block's *content*, not the role word.)
+- **The carrier is not the role word and not the preamble — 94% survives both (OPX-03).** Attributing the OPX-01/02 asymmetry to
+  named textual features: neutralizing the role-word marker (`system`/`user` → `info`) removes **~0%** (share +0.09 nats, CI
+  includes 0), and additionally stripping Llama's system-only date preamble removes **~6%**. **94% of the asymmetry survives**
+  even when the two blocks are token-identical apart from order (which OPX-02 already ruled out). Per a pre-committed
+  construction check, survival is **enumeration-incomplete**, not evidence of a "slot prior": an unlisted feature carries it, the
+  leading candidate being the **block body/filler content** (never matched — step zero matched only the imperative spans). A
+  methodology note is attached to the verdict: neutralizing the markers drives the normalization baseline toward zero, so the
+  analysis is on raw ΔY, not the normalized effect. This is the third straight mechanistic prediction (exchange-operator,
+  recency, marker) to miss — each miss narrowing the carrier toward block content.
 
 ### At the real injection surface, across models
 
@@ -169,7 +180,9 @@ agent-loop flow) · `PRV-01d…h-r` (is the decodable provenance code the causal
 ablation, reparameterization robustness) · `TPL-01` (prospective: can you rank injection resistance by reading the template)
 · `EXT-01` (does swapping the role-word marker token carry RES-02's residual "missing half" — a real but minor slice) ·
 `OPX-01` (why does exchange extract 0.46 where the spans additively carry ~0.97 — operator deficit + a competition/renorm sign
-structure) · `OPX-02` (does that asymmetry follow recency or role — role, and the two dissociate).
+structure) · `OPX-02` (does that asymmetry follow recency or the block — the block, and block-vs-recency dissociate) ·
+`OPX-03` (which textual feature carries it — not the role-word marker (~0%) and not the preamble (~6%); 94% survives, carrier
+still unenumerated, pointing at block content).
 
 ## Reproducing
 
