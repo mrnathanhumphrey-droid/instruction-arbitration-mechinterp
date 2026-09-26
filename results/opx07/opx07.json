@@ -1,0 +1,159 @@
+{
+  "prereg": "PREREG_OPX07.md",
+  "SMOKE": false,
+  "transformers": "4.46.0",
+  "layers": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "n_pairs": 720,
+  "nuisance_0.06xasymROLE": 1.3169704180558521,
+  "determinacy_threshold_3x": 3.9509112541675564,
+  "asym_ROLE_normal": 21.949506967597536,
+  "arms": {
+    "ROLE": {
+      "dY_sys_n": -7.218535700978505,
+      "dY_sys_f": -12.102128093358543,
+      "dY_usr_n": 14.730971266619031,
+      "dY_usr_f": 9.356708435962595,
+      "ci_sys_n": [
+        -8.232629900552952,
+        -6.235423281909899
+      ],
+      "ci_sys_f": [
+        -13.417153894025834,
+        -10.709658895486761
+      ],
+      "ci_usr_n": [
+        12.79468792841563,
+        16.519998810965976
+      ],
+      "ci_usr_f": [
+        8.424627818579062,
+        10.233956901642182
+      ],
+      "asym_n": 21.949506967597536,
+      "asym_f": 21.45883652932114,
+      "B_n": -3.879241260348095,
+      "B_f": 1.6391520193053617,
+      "determinate": true,
+      "outcome": "keep"
+    },
+    "NSAME": {
+      "dY_sys_n": -10.211442897303238,
+      "dY_sys_f": -12.263465697152748,
+      "dY_usr_n": 11.61459824682938,
+      "dY_usr_f": 10.589535852190519,
+      "ci_sys_n": [
+        -11.402903201023321,
+        -8.927474575930587
+      ],
+      "ci_sys_f": [
+        -13.6803181869785,
+        -10.737453320562425
+      ],
+      "ci_usr_n": [
+        9.984807127838334,
+        13.105387827317335
+      ],
+      "ci_usr_f": [
+        9.653418291664371,
+        11.480029407338137
+      ],
+      "asym_n": 21.826041144132617,
+      "asym_f": 22.85300154934327,
+      "B_n": -0.8310770658155282,
+      "B_f": 1.103504775878456,
+      "determinate": true,
+      "outcome": "keep"
+    },
+    "NDIST": {
+      "dY_sys_n": -9.496472168299887,
+      "dY_sys_f": -11.915873885858389,
+      "dY_usr_n": 9.950843982232941,
+      "dY_usr_f": 9.800274653525815,
+      "ci_sys_n": [
+        -10.856861215349703,
+        -8.058928813201687
+      ],
+      "ci_sys_f": [
+        -13.5485959209212,
+        -10.246058189936193
+      ],
+      "ci_usr_n": [
+        8.343606420136574,
+        11.544988912722717
+      ],
+      "ci_usr_f": [
+        8.848115305665672,
+        10.719149055069105
+      ],
+      "asym_n": 19.447316150532828,
+      "asym_f": 21.716148539384204,
+      "B_n": -0.31056416663858627,
+      "B_f": 1.3596835694793197,
+      "determinate": true,
+      "outcome": "keep"
+    },
+    "NSTRIP": {
+      "dY_sys_n": -11.852989371452065,
+      "dY_sys_f": -9.92864448254307,
+      "dY_usr_n": 8.725450308289792,
+      "dY_usr_f": 11.379162586149244,
+      "ci_sys_n": [
+        -12.78699856029409,
+        -10.857919801078324
+      ],
+      "ci_sys_f": [
+        -11.432538788053726,
+        -8.408269118258938
+      ],
+      "ci_usr_n": [
+        7.375764975914111,
+        9.987233616426174
+      ],
+      "ci_usr_f": [
+        10.598061348096365,
+        12.155848085609163
+      ],
+      "asym_n": 20.578439679741855,
+      "asym_f": 21.307807068692313,
+      "B_n": 1.3163845501012272,
+      "B_f": -0.5068725566897128,
+      "determinate": true,
+      "outcome": "keep"
+    }
+  },
+  "pattern": [
+    "keep",
+    "keep",
+    "keep",
+    "keep"
+  ],
+  "anchor_ROLE_keeps": true,
+  "verdict": "CONTENT-MEDIATED (block content/filler mediates anchoring; marker does NOT)",
+  "scope": "raw dY primary (B flips w/ order). signs_keep=block-anchored, signs_swap=position; SIGN-DETERMINACY gate per arm (|dY| CIs excl 0 AND >=3x the 6% OPX-03 offset nuisance) else INDETERMINATE. Content+filler kept => non-degenerate (flip!=twin 0/720 step-zero). 4-arm matrix isolates role-semantic/symmetry-breaking/preamble/content. Single model.",
+  "runtime_s": 635.4
+}

@@ -118,6 +118,17 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   paired counterbalance item the analysis already averages over. The order metric is therefore 1.000 by construction and carries no
   information; the run is recorded as degenerate, not as a finding. (It did reproduce OPX-02's block-anchored asymmetry and the
   OPX-05 anchor in-run, confirming the harness.)
+- **The anchoring is content-mediated — the marker was never doing the binding (OPX-07).** OPX-06 was degenerate because it stripped
+  the content too; keep the content and the order test works. Four arms × two orders, one-sided span patches, testing whether the
+  asymmetry keeps its sign under block-order reversal (anchored) or follows position: **ROLE** (native markers), **NSAME** (both role
+  words → `info`), **NDIST** (role-agnostic distinct labels `alpha`/`beta`), and **NSTRIP** (marker neutralized *and* the system
+  preamble stripped, content kept — the arm that separates preamble-mediation from content-mediation). Result: **all four keep**
+  (every arm determinate; a per-arm sign-determinacy gate guards against a collapsed magnitude faking a sign). So the block-anchoring
+  survives removing the marker, the distinct label, *and* the preamble — it is carried by the **block content**, not the role marker
+  (~0% of magnitude anyway) or the preamble. This refutes the marker-mediation reading by its own construction check and supplies the
+  mechanism under OPX-02: the asymmetry only *looked* role-anchored because the role word travels with its block's content. It also
+  completes a dissociation across the line — none of marker/preamble/filler carries the effect's **magnitude** (OPX-03/04), while the
+  **content** is what binds the effect to a block rather than a position (OPX-07). ROLE reproduces OPX-02 to the digit.
 
 ### At the real injection surface, across models
 
@@ -224,7 +235,9 @@ target word; establishes that none of the three lexical features *individually* 
 OPX-06 correction — cannot reach "non-lexical carrier," since with all three gone the quantity becomes a span-index contrast by
 construction) · `OPX-06` (attempted order test at the joint strip — **degenerate by construction**: with the blocks indistinguishable,
 reversal equals the counterbalance-twin map, so it carries no information; reconciles OPX-02's block-anchoring with the index reading —
-the marker is what makes the asymmetry attach to a block rather than a position).
+the marker is what makes the asymmetry attach to a block rather than a position) · `OPX-07` (does the marker or the content mediate
+the anchoring — 4 arms incl. marker-neutralized + preamble-stripped, all keep → **content-mediated**; the marker does not bind it,
+resolving the OPX-02/06 question).
 
 ## Reproducing
 
