@@ -1,5 +1,24 @@
 # VERDICT — OPX-05: joint strip — is the role-dominance asymmetry a redundant lexical code or outside the lexical enumeration?
 
+## ⚠⚠ SCOPE CORRECTION (2026-09-25, forced by OPX-06) — the "outside the lexical enumeration" headline is WITHDRAWN
+OPX-06 showed the joint strip has a **construction degeneracy**: once marker + preamble + filler are all removed, the two blocks are
+indistinguishable, so `asym = dY_usr − dY_sys` is **definitionally** patch-the-later-span − patch-the-earlier-span — an
+**earlier-vs-later span-index contrast** (ORD-01's positional-leverage gradient), not a measurement of any carrier. The 90% "survival"
+is therefore not evidence that a carrier is non-lexical; it is that an index contrast, which lexical stripping cannot touch, remains.
+This is the same shape as the OPX-02 correction: a claim attributed to a carrier in a design where the contrast had degenerated.
+
+**What OPX-03/04/05 actually establish, stated honestly:** *None of the marker, the preamble, or the filler individually carries the
+**block-anchored** asymmetry.* The JOINT arm cannot extend that to "the carrier is non-lexical," because with all three removed the
+blocks are indistinguishable and the measured quantity becomes an index contrast by construction. That is still a real set of bounded
+negatives — it just does not reach a positive claim about a non-lexical carrier.
+
+**Reconciliation with OPX-02 (not a contradiction):** markers present → blocks are lexically distinguishable, block identity exists,
+and the asymmetry attaches to the *block* (OPX-02, ~27 nats, reproduced in-run at BASE +21.94/+21.45). Markers absent → block identity
+is gone, "block-anchored" has no referent, and the contrast collapses to an index contrast. Together these say **the marker is what
+makes the asymmetry attach to a block rather than a position** — the marker-mediation hypothesis — and **OPX-05 cannot test it**,
+because JOINT destroys the block identity that mediation requires. Why a marker converts a positional gradient into a block-anchored
+one is a *mechanism* question, parked. The rest of this verdict reads as of the run; this correction governs.
+
 **Verdict (mechanical): TEXTUAL-EXHAUSTED.** Removing every lexical difference between the two blocks at once — role-word marker →
 `info`, system preamble stripped, and filler removed, so both blocks are `[info-header][\n\n][imperative]` (identical save order and
 the imperative's counterbalanced target word) — leaves **90% of the asymmetry intact** (r = asym_JOINT/asym_BASE = **0.904

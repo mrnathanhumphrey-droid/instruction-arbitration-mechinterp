@@ -1,0 +1,91 @@
+{
+  "prereg": "PREREG_OPX06.md",
+  "SMOKE": false,
+  "chained_to_OPX05": "e110307e317778e9ae9a3cd2f81c6dd9a5ce49ad8bb436ac7ae01b7eb890079c",
+  "transformers": "4.46.0",
+  "layers": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "n_pairs": 720,
+  "asym": {
+    "BASE_n": 21.93697340355979,
+    "BASE_f": 21.449921329319476,
+    "JOINT_n": 19.839908826351166,
+    "JOINT_f": 19.839908826351166
+  },
+  "asym_ci": {
+    "BASE_n": [
+      19.06170469327933,
+      24.37634835651351
+    ],
+    "BASE_f": [
+      19.23138597076552,
+      22.933147306574714
+    ],
+    "JOINT_n": [
+      16.914703765908875,
+      22.43893227994442
+    ],
+    "JOINT_f": [
+      17.036106695135434,
+      22.259010408520698
+    ]
+  },
+  "B_per_cell": {
+    "BASE_n": -3.908599173857106,
+    "BASE_f": 1.6668036501440737,
+    "JOINT_n": -0.7182291607062022,
+    "JOINT_f": 0.7182291607062022
+  },
+  "mass_per_cell": {
+    "BASE_n": 0.6264949831512914,
+    "BASE_f": 0.6814980240627267,
+    "JOINT_n": 0.7063235449115268,
+    "JOINT_f": 0.7063235449115268
+  },
+  "q_joint_rev_over_norm": 1.0,
+  "q_ci": [
+    1.0,
+    1.0
+  ],
+  "q_DONEsys": 0.9970837444479008,
+  "q_READYsys": 1.002924784972514,
+  "anchor_ratio_JOINTn_over_BASEn": 0.9044050180200188,
+  "anchor_ci": [
+    0.8438976417632932,
+    0.9640393803144798
+  ],
+  "anchor_ok": true,
+  "opx02_inrun_BASE_flip_keeps_sign": true,
+  "asym_BASE_normal": 21.93697340355979,
+  "asym_BASE_flipped": 21.449921329319476,
+  "asym_JOINT_normal": 19.839908826351166,
+  "asym_JOINT_flipped": 19.839908826351166,
+  "verdict_band": "NO-FLIP",
+  "verdict": "NO-FLIP: reversal does NOT move the asymmetry (q=1.00 > 0.5). Neither marker nor position; target already excluded (OPX-05 cb-split) -> NOTHING IN THE PROMPT distinguishes the two blocks. The asymmetry is a property of the PATCHING OPERATION (how A_sys/A_usr are constructed), not of what it acts on. The OPX chain's subject needs renaming: 'role asymmetry' would be a property of the contrast's construction (an instrument), NOT a slot prior (there is no slot left). Next probe = the operation: are A_sys/A_usr symmetric in source and write?",
+  "scope": "raw dY primary (B~0 at JOINT; M uninterpretable). q=asym_JOINT_rev/asym_JOINT_norm with pre-registered bands (<=-0.5 marker-mediated-position / |q|<=0.5 order-destroys / >0.5 no-flip). NO-FLIP points at the PATCHING OPERATION (design/instrument), NOT a slot prior -- there is no slot left after the joint strip. Flip disambiguated position-vs-target*position via per-counterbalance-half q. Property of these spans/layers/model/battery. BASE-n/JOINT-n reproduce OPX-01/05; BASE-f reproduces OPX-02 (role-keep).",
+  "runtime_s": 525.2
+}

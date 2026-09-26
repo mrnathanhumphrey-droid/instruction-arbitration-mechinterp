@@ -1,0 +1,7 @@
+cell,asym,B,mass
+BASE_n,21.937,-3.9086,0.626
+BASE_f,21.4499,1.6668,0.681
+JOINT_n,19.8399,-0.7182,0.706
+JOINT_f,19.8399,0.7182,0.706
+q_rev_over_norm,1.0,,
+anchor_JOINTn_over_BASEn,0.9044,,

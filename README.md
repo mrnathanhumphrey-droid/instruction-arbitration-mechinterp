@@ -100,18 +100,24 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   not invert or shrink the asymmetry (ratio +1.06), matching them does not collapse it, and removing them entirely does not either
   (STRIP 116%). Verdict **BODY-NULL** — the filler carries none of it. A pre-registered filler-length correlation check comes back
   null, so the (accepted, unmatched) filler lengths do not explain the result. Fourth straight prediction miss.
-- **The carrier is outside the lexical enumeration — 90% survives the joint strip (OPX-05).** The decisive construction check:
-  remove the marker, the preamble, *and* the filler **simultaneously**, so the two blocks are token-identical apart from order and
-  a counterbalanced target word. If the earlier single-feature survivals had been a *redundant lexical code* (any one of several
-  features sufficient), the joint strip would collapse it. Instead **90% survives** (ratio 0.90 [0.84, 0.96]) — and the run
-  reproduces OPX-03's PM (94%) and OPX-04's STRIP (116%) in-run, two figures that could have failed independently. A free
-  counterbalance-split re-analysis rules out the remaining lexical suspect, the **target word**: the asymmetry is the same sign and
-  magnitude in both counterbalance halves (identical under the joint strip), so it is not a target effect wearing a role label. The
-  carrier is therefore **not lexical** — no word or wrapper carries it (stated precisely: outside the lexical enumeration, *not*
-  "non-textual" — position is realized through token index, which the text still determines). What remains is block **order /
-  position**, which OPX-02 constrained (reversal kept the signs) and which the next probe — the joint strip under reversed order —
-  is built to resolve. Fifth straight miss, and the sharpest result: one construction check ruled out the entire lexical
-  enumeration at once.
+- **None of the marker, preamble, or filler *individually* carries the block-anchored asymmetry (OPX-03/04/05) — and the joint
+  strip cannot say more than that.** Removing all three at once leaves ~90% of the measured asymmetry (ratio 0.90 [0.84, 0.96]), and
+  the run reproduces OPX-03's PM (94%) and OPX-04's STRIP (116%) in-run. **Scope correction (forced by OPX-06):** an earlier draft
+  read this 90% as "the carrier is outside the lexical enumeration." That over-reaches. Once the marker, preamble, and filler are all
+  removed the two blocks are indistinguishable, so the quantity `dY_usr − dY_sys` is *by construction* patch-the-later-span −
+  patch-the-earlier-span — an earlier-vs-later **span-index contrast** (the positional-leverage gradient ORD-01 already established),
+  not a measurement of any carrier. The 90% is an index contrast that lexical stripping cannot touch, not evidence of a non-lexical
+  carrier. What stands is the **set of bounded negatives**: none of the three lexical features alone carries the block-anchored
+  asymmetry. This also *reconciles* with OPX-02 rather than extending past it — with markers present the asymmetry attaches to the
+  **block** (reversal keeps the signs); with markers absent block identity is gone and the contrast reduces to an index effect. So
+  the marker is what makes the asymmetry attach to a block rather than a position — a marker-mediation hypothesis the joint strip
+  **cannot test**, because it destroys the block identity mediation requires. Why a marker does that is a mechanism question, left
+  open. (See the OPX-06 note below.)
+- **OPX-06 was a null design, not a result.** It tried to test order/position at the joint strip by reversing block order, but with
+  the blocks already indistinguishable a reversal is *token-identical to swapping the counterbalanced target* — i.e. to becoming the
+  paired counterbalance item the analysis already averages over. The order metric is therefore 1.000 by construction and carries no
+  information; the run is recorded as degenerate, not as a finding. (It did reproduce OPX-02's block-anchored asymmetry and the
+  OPX-05 anchor in-run, confirming the harness.)
 
 ### At the real injection surface, across models
 
@@ -201,7 +207,11 @@ structure) · `OPX-02` (does that asymmetry follow recency or the block — the 
 `OPX-03` (which textual feature carries it — not the role-word marker (~0%) and not the preamble (~6%); 94% survives, carrier
 still unenumerated, pointing at block content) · `OPX-04` (does the block filler carry it — swap/match/strip: BODY-NULL, it does
 not) · `OPX-05` (the joint strip — remove marker+preamble+filler at once: 90% survives, plus a counterbalance split ruling out the
-target word, so the carrier is outside the lexical enumeration; next is the joint strip under reversed order).
+target word; establishes that none of the three lexical features *individually* carries the block-anchored asymmetry, but — per the
+OPX-06 correction — cannot reach "non-lexical carrier," since with all three gone the quantity becomes a span-index contrast by
+construction) · `OPX-06` (attempted order test at the joint strip — **degenerate by construction**: with the blocks indistinguishable,
+reversal equals the counterbalance-twin map, so it carries no information; reconciles OPX-02's block-anchoring with the index reading —
+the marker is what makes the asymmetry attach to a block rather than a position).
 
 ## Reproducing
 
