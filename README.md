@@ -148,6 +148,18 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   serialization into Llama does *not* drag Llama toward Mistral's level. The resistance lives in the model / native
   role-slot, not the transplantable wrapper. (Separately: forcing a foreign serialization into Mistral's tool slot makes it
   stop answering — an availability effect, not a resistance gain.)
+- **The template "rule" does not predict out of sample — and the collision term's sign flips across models (TPL-02).** TPL-01's
+  concordance was confounded with training exposure (each host had seen its own wrapper). TPL-02 removes that: it wraps the
+  injection in **synthetic** delimiters no host has seen, in a 2×2 on serialization (S: JSON-escaped) × collision (C: uses the
+  host's own instruction-delimiter tokens), with a fifth cell and a counterbalanced-length design so the length confound loads off
+  the effects of interest (verified: length effect < ½ the C effect on every host). The candidate rule predicts a positive S and a
+  large-negative C (collision helps the attacker) for all hosts. Result: **RULE-DEAD — 1 of 5 hosts** (only Llama, the host the
+  rule was tuned on) matches. The dominant term's **sign is host-dependent**: wrapping the injection in a model's own control
+  tokens made Mistral, Qwen and Gemma **more** resistant, not less (bC ≈ +0.9 on Mistral/Qwen vs −0.5 on Llama), plausibly because
+  those tokenizers absorb their own control tokens as structure rather than being hijacked by them. So you **cannot** read a
+  model's injection resistance off a portable template rule, and "collision with the instruction delimiters" is not a reliable
+  attacker win — on most models tested it favors the defender. (Prospective, exposure-controlled; R — the role slot itself —
+  remains untested out of sample, since a synthetic wrapper cannot occupy its own role token.)
 
 ### The throughline
 
@@ -200,7 +212,8 @@ observation) · `RES-01…06` (representation, causal ceiling, extent, decomposi
 recency vs the `tojson` privilege bit) · `FREE-01`/`AUTH-01`/`SPOOF-01` (authority and spoofed-role contests) ·
 `READOUT-01` (forced-readout method check) · `TOOL-02`/`TOOL-03` (cross-model tool-template resistance; template markers vs
 agent-loop flow) · `PRV-01d…h-r` (is the decodable provenance code the causal carrier — pathway, necessity, subspace
-ablation, reparameterization robustness) · `TPL-01` (prospective: can you rank injection resistance by reading the template)
+ablation, reparameterization robustness) · `TPL-01` (prospective: can you rank injection resistance by reading the template) · `TPL-02` (prospective, exposure-free: does
+the S/C template rule predict out of sample across 5 hosts — RULE-DEAD 1/5, and the collision term's sign is host-dependent)
 · `EXT-01` (does swapping the role-word marker token carry RES-02's residual "missing half" — a real but minor slice) ·
 `OPX-01` (why does exchange extract 0.46 where the spans additively carry ~0.97 — operator deficit + a competition/renorm sign
 structure) · `OPX-02` (does that asymmetry follow recency or the block — the block, and block-vs-recency dissociate) ·
@@ -232,9 +245,11 @@ the marker is what makes the asymmetry attach to a block rather than a position)
 
 - **One model for the internal causal program; six families for the tool-template arm.** The residual-stream causal work
   (RES/PRV/ORD/H4/etc.) is Llama-3.1-8B-Instruct on a two-token DONE/READY readout over a constructed imperative battery.
-  The tool-template findings (TOOL-02/03, TPL-01) span Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nemo, Gemma-2, Phi-3.5 on a
+  The tool-template findings (TOOL-02/03, TPL-01, TPL-02) span Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nemo, Gemma-2, Phi-3.5 on a
   TRUE/FALSE readout. Within-family pairs (Nemo↔Mistral-v0.3) are reproducibility checks, **not** out-of-sample
-  discriminative ranking tests; the prospective evidence is the within-model serialization swap (TPL-01).
+  discriminative ranking tests; the within-model serialization swap (TPL-01) is prospective but exposure-confounded, and **TPL-02
+  is the discriminative out-of-sample test** (synthetic, exposure-free wrappers) — it comes back RULE-DEAD (1/5), so the portable
+  template rule is not supported out of sample. R (the role slot) remains untested out of sample.
 - **Synthetic battery, log-probability readout.** Results are on a constructed imperative battery read at the first
   assistant token, not on free-form agentic traces. No serialization swap is a deployment configuration.
 - **The internal baseline is recency-confounded** (ORD-01); treat any "fraction of the arbitration" statement as under
