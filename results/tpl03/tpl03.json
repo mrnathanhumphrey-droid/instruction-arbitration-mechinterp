@@ -1,0 +1,392 @@
+{
+  "prereg": "PREREG_TPL03_PHASE1.md",
+  "phase1_lock": "bf7785437de54e4e9c06e4520ab2bdc732ed3cee31bf64ba27f0add6ba39d7b9",
+  "chained_to_OPX07": "32c0364cad520ca99ac7a8c27a598fdeb34a8f0d13274fe3153300124620b9f0",
+  "SMOKE": false,
+  "transformers": "4.46.0",
+  "n": 720,
+  "seed": 20260925,
+  "boot": 5000,
+  "anchored_hosts": [
+    "llama",
+    "qwen"
+  ],
+  "determinate": [
+    "llama"
+  ],
+  "indeterminate": [
+    "qwen"
+  ],
+  "match": [],
+  "miss": [
+    "llama"
+  ],
+  "verdict": "SIGN-IDENTITY-DEAD-AS-TESTED (0 determinate matches; miss=['llama'], indeterminate=['qwen']) -- one-sided per SCOPE-F (nested same-family wrap != bC's novel wrap)",
+  "proportional_form_falsifier_gemma": "PROPORTIONAL-FORM DEAD (gemma|D_own|CIlo=0.045 vs llama|D_own|pt=0.013)",
+  "control_suspect_hosts": [
+    "llama",
+    "qwen",
+    "gemma"
+  ],
+  "results": {
+    "llama": {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "kind": "llama",
+      "anchored": true,
+      "bC": -0.519,
+      "pred_sign": 1,
+      "effects": {
+        "forced": {
+          "D_own_absent": {
+            "eff": -0.013422307123740485,
+            "ci": [
+              -0.026117892606804815,
+              -0.00043403219638694647
+            ]
+          },
+          "D_own_present": {
+            "eff": -0.005989586520525947,
+            "ci": [
+              -0.026822919111905586,
+              0.014672306945754523
+            ]
+          },
+          "D_dil_absent": {
+            "eff": -0.12052951231598907,
+            "ci": [
+              -0.16595106355432032,
+              -0.07854600969288077
+            ]
+          },
+          "D_dil_present": {
+            "eff": -0.1617621519499357,
+            "ci": [
+              -0.2217480514405499,
+              -0.09895724859295613
+            ]
+          },
+          "own_minus_native_absent": {
+            "eff": -0.13395181943972956,
+            "ci": [
+              -0.1843966899232733,
+              -0.08643663832296918
+            ]
+          }
+        },
+        "raw": {
+          "D_own_absent": {
+            "eff": 0.010970539185735984,
+            "ci": [
+              -0.0030703199985955775,
+              0.024928066233793664
+            ]
+          },
+          "D_own_present": {
+            "eff": -0.004490821974145076,
+            "ci": [
+              -0.028753554409162923,
+              0.019670388338466443
+            ]
+          },
+          "D_dil_absent": {
+            "eff": -0.21189734637737345,
+            "ci": [
+              -0.2722815850708219,
+              -0.15279667576154107
+            ]
+          },
+          "D_dil_present": {
+            "eff": -0.2749728741745154,
+            "ci": [
+              -0.35402577002015373,
+              -0.1877725970496734
+            ]
+          },
+          "own_minus_native_absent": {
+            "eff": -0.20092680719163747,
+            "ci": [
+              -0.26820097731219417,
+              -0.13792553652491846
+            ]
+          }
+        }
+      },
+      "D_own_absent_sign": -1,
+      "D_own_absent_ci_excl0": true,
+      "sign_matches_pred": false,
+      "control_suspect": true,
+      "abs_D_own_absent": 0.013422307123740485,
+      "abs_D_own_absent_ci": [
+        0.00043403219638694647,
+        0.026117892606804815
+      ],
+      "cell_Yf": {
+        "native_absent": 2.679003905256589,
+        "native_present": -1.6144531230959627,
+        "own_absent": 2.5450520858168604,
+        "own_present": -1.7822048615664243,
+        "neu_absent": 2.558474392940601,
+        "neu_present": -1.7762152750458982
+      },
+      "cell_Yr": {
+        "native_absent": 2.1653753734297223,
+        "native_present": 0.0037136510014533996,
+        "own_absent": 1.9644485662380855,
+        "own_present": -0.275750045147207,
+        "neu_absent": 1.9534780270523495,
+        "neu_present": -0.271259223173062
+      },
+      "cell_mass": {
+        "native_absent": 0.3040806771234737,
+        "native_present": 0.7727153988183946,
+        "own_absent": 0.2717809880409192,
+        "own_present": 0.754392303808162,
+        "neu_absent": 0.2732290269948575,
+        "neu_present": 0.753012110725443
+      },
+      "low_mass_cells": [],
+      "gconstruct_ok": true,
+      "collision_realized_ok": true
+    },
+    "qwen": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "kind": "qwen",
+      "anchored": true,
+      "bC": 0.935,
+      "pred_sign": -1,
+      "effects": {
+        "forced": {
+          "D_own_absent": {
+            "eff": 0.02343194774455437,
+            "ci": [
+              -0.07861795520203119,
+              0.14000771183934468
+            ]
+          },
+          "D_own_present": {
+            "eff": -0.16636285136143325,
+            "ci": [
+              -0.24053928997988464,
+              -0.0875602181007455
+            ]
+          },
+          "D_dil_absent": {
+            "eff": -0.2610059587905784,
+            "ci": [
+              -0.5084692508002953,
+              -0.042373700747267325
+            ]
+          },
+          "D_dil_present": {
+            "eff": -0.06540255430671937,
+            "ci": [
+              -0.25638345969944365,
+              0.14712471293285379
+            ]
+          },
+          "own_minus_native_absent": {
+            "eff": -0.23757401104602405,
+            "ci": [
+              -0.4011609244212078,
+              -0.07777441694711885
+            ]
+          }
+        },
+        "raw": {
+          "D_own_absent": {
+            "eff": 0.1205762840807445,
+            "ci": [
+              0.007555645340018337,
+              0.25720401301359147
+            ]
+          },
+          "D_own_present": {
+            "eff": -0.17862651356392378,
+            "ci": [
+              -0.2912523202163477,
+              -0.06732587390682876
+            ]
+          },
+          "D_dil_absent": {
+            "eff": -0.42381981031762095,
+            "ci": [
+              -0.6672588196624454,
+              -0.21624780817992137
+            ]
+          },
+          "D_dil_present": {
+            "eff": 0.022964816540479216,
+            "ci": [
+              -0.20251600278230963,
+              0.2555628039429177
+            ]
+          },
+          "own_minus_native_absent": {
+            "eff": -0.30324352623687645,
+            "ci": [
+              -0.4656272247619938,
+              -0.1391828590155475
+            ]
+          }
+        }
+      },
+      "D_own_absent_sign": 1,
+      "D_own_absent_ci_excl0": false,
+      "sign_matches_pred": false,
+      "control_suspect": true,
+      "abs_D_own_absent": 0.02343194774455437,
+      "abs_D_own_absent_ci": [
+        0.0,
+        0.14000771183934468
+      ],
+      "cell_Yf": {
+        "native_absent": 6.715654246964388,
+        "native_present": -4.135221357064115,
+        "own_absent": 6.478080235918363,
+        "own_present": -4.366986762732267,
+        "neu_absent": 6.454648288173808,
+        "neu_present": -4.200623911370834
+      },
+      "cell_Yr": {
+        "native_absent": 7.363518104453882,
+        "native_present": -3.1630723766982554,
+        "own_absent": 7.060274578217003,
+        "own_present": -3.3187340737217004,
+        "neu_absent": 6.939698294136259,
+        "neu_present": -3.1401075601577757
+      },
+      "cell_mass": {
+        "native_absent": 0.6227169301921028,
+        "native_present": 0.9045235255367534,
+        "own_absent": 0.5897598874558955,
+        "own_present": 0.891723275363982,
+        "neu_absent": 0.586979590518032,
+        "neu_present": 0.8902411398156409
+      },
+      "low_mass_cells": [],
+      "gconstruct_ok": true,
+      "collision_realized_ok": true
+    },
+    "gemma": {
+      "model_id": "google/gemma-2-9b-it",
+      "kind": "gemma",
+      "anchored": false,
+      "bC": 0.121,
+      "pred_sign": -1,
+      "effects": {
+        "forced": {
+          "D_own_absent": {
+            "eff": -0.08298611218730567,
+            "ci": [
+              -0.11605902784814438,
+              -0.045310325156898146
+            ]
+          },
+          "D_own_present": {
+            "eff": 0.0789930551416349,
+            "ci": [
+              0.0539930555162325,
+              0.10460286622453094
+            ]
+          },
+          "D_dil_absent": {
+            "eff": 0.22977430547277056,
+            "ci": [
+              0.151901039276271,
+              0.3030381942167876
+            ]
+          },
+          "D_dil_present": {
+            "eff": -0.31414930572112354,
+            "ci": [
+              -0.3783875857272904,
+              -0.2482552090452775
+            ]
+          },
+          "own_minus_native_absent": {
+            "eff": 0.14678819328546489,
+            "ci": [
+              0.09210069317577645,
+              0.19922091862186794
+            ]
+          }
+        },
+        "raw": {
+          "D_own_absent": {
+            "eff": -0.00421007143126495,
+            "ci": [
+              -0.040498047462769235,
+              0.035591338521074864
+            ]
+          },
+          "D_own_present": {
+            "eff": 0.08836805278228432,
+            "ci": [
+              0.053776038220772523,
+              0.12343912436419809
+            ]
+          },
+          "D_dil_absent": {
+            "eff": 0.1095160598556193,
+            "ci": [
+              0.024615886335571015,
+              0.19096218357069486
+            ]
+          },
+          "D_dil_present": {
+            "eff": -0.26078559218181585,
+            "ci": [
+              -0.34234104181122477,
+              -0.18153157862731248
+            ]
+          },
+          "own_minus_native_absent": {
+            "eff": 0.10530598842435435,
+            "ci": [
+              0.041915142823837084,
+              0.16751763001084224
+            ]
+          }
+        }
+      },
+      "D_own_absent_sign": -1,
+      "D_own_absent_ci_excl0": true,
+      "sign_matches_pred": false,
+      "control_suspect": true,
+      "abs_D_own_absent": 0.08298611218730567,
+      "abs_D_own_absent_ci": [
+        0.045310325156898146,
+        0.11605902784814438
+      ],
+      "cell_Yf": {
+        "native_absent": 3.6722222201526167,
+        "native_present": -4.1869791641003555,
+        "own_absent": 3.8190104134380816,
+        "own_present": -4.422135414679845,
+        "neu_absent": 3.9019965256253877,
+        "neu_present": -4.50112846982148
+      },
+      "cell_Yr": {
+        "native_absent": 5.02830946346124,
+        "native_present": -4.294292529424031,
+        "own_absent": 5.1336154518855945,
+        "own_present": -4.466710068823563,
+        "neu_absent": 5.13782552331686,
+        "neu_present": -4.555078121605846
+      },
+      "cell_mass": {
+        "native_absent": 0.6497790589778863,
+        "native_present": 0.8414877429903855,
+        "own_absent": 0.6422579438073525,
+        "own_present": 0.841324868590972,
+        "neu_absent": 0.6587798496384942,
+        "neu_present": 0.8460491251047239
+      },
+      "low_mass_cells": [],
+      "gconstruct_ok": true,
+      "collision_realized_ok": true
+    }
+  },
+  "scope": "PRIMARY = D_own = Y(own-wrap system) - Y(neutral-wrap system) @ injection-absent, FORCED Y_signed (same channel as bC); sign(D_own) vs -sign(bC) over llama/qwen. Neutral is the length-matched same-position BASELINE (dilution subtracted), NOT a gate (RULING C). D_dil = Y(neutral)-Y(native) reported; |D_dil|>|D_own| -> host control-suspect (reported, not void). gemma = one-sided proportionality falsifier (RULING E). mistral+phi excluded. SCOPE-F: own-wrap on the system turn is a NESTED same-family delimiter, NOT bC's novel wrap of a naked span -> a sign MISMATCH is one-sided (consistent with no type effect OR the two operators differing); a HIT reads clean.",
+  "runtime_s": 961.6
+}

@@ -171,6 +171,19 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   model's injection resistance off a portable template rule, and "collision with the instruction delimiters" is not a reliable
   attacker win — on most models tested it favors the defender. (Prospective, exposure-controlled; R — the role slot itself —
   remains untested out of sample, since a synthetic wrapper cannot occupy its own role token.)
+- **Wrapping a model's own system prompt in its own delimiter is near-idempotent — so this can't test whether the delimiter is a
+  boundary or an authority marker (TPL-03).** TPL-02 left a sign pattern: colliding a host's own delimiter around the *injection*
+  helped the defender on most hosts (bC>0) but the attacker on Llama (bC<0). TPL-03 asked whether that sign is a property of the
+  delimiter itself — a BOUNDARY that segregates what it wraps, vs an AUTHORITY marker that lends weight — by wrapping the *system*
+  instruction in the host's own delimiter and pre-committing that the force effect flips sign relative to bC. It doesn't: on
+  llama/qwen the own-wrap, measured against a length-matched **inert reserved-token baseline**, moved system-following by <0.1 nat —
+  an order of magnitude below bC (±0.5–0.9) — and the inert token perturbed it as much or more (control-suspect on every host).
+  Wrapping the already-delimited system in a redundant copy of its own family delimiter changes almost nothing:
+  **SIGN-IDENTITY-DEAD-AS-TESTED**, but *one-sided by pre-registration* — a nested same-family wrap is a different operation than
+  TPL-02's novel wrap of a naked span, so this does not refute delimiter-type; it says the test needs a different operator (a
+  cross-family delimiter, or a naked span). The pre-registered next step is a double-wrap vs single-wrap idempotence check.
+  (This run also caught that Mistral's chat template silently drops the system message on tool-final turns → its TPL-02 bC was
+  measured system-absent and has been withdrawn; see the TPL-02 correction.)
 
 ### The throughline
 
@@ -237,7 +250,10 @@ construction) · `OPX-06` (attempted order test at the joint strip — **degener
 reversal equals the counterbalance-twin map, so it carries no information; reconciles OPX-02's block-anchoring with the index reading —
 the marker is what makes the asymmetry attach to a block rather than a position) · `OPX-07` (does the marker or the content mediate
 the anchoring — 4 arms incl. marker-neutralized + preamble-stripped, all keep → **content-mediated**; the marker does not bind it,
-resolving the OPX-02/06 question).
+resolving the OPX-02/06 question) · `TPL-03` (is a host's instruction delimiter a boundary or an authority marker — wrap the *system*
+in its own delimiter, pre-commit that the force sign flips vs TPL-02's bC: **SIGN-IDENTITY-DEAD-AS-TESTED**, one-sided — the nested
+same-family wrap is near-idempotent (<0.1 nat vs bC ±0.5–0.9, control-suspect on all hosts), so the operator can't test the question;
+also surfaced and corrected the Mistral system-drop in TPL-02).
 
 ## Reproducing
 

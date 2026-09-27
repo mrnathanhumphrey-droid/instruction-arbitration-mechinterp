@@ -4,6 +4,14 @@
 R/S/C weighting does **not** predict injection resistance out of sample. Per prediction-or-bust (§7 of the lock), the rule is
 **dead as a predictor and is not refit.** The one host that passes is Llama — the host the rule was most closely fit to in TPL-01.
 
+> **⚠ CORRECTION (2026-09-26) — mistral's bC and anchor were measured system-absent.** A later probe (TPL-03) found that
+> Mistral-v0.3's chat template emits the system message only on a conversation ending on a *user* turn; these probes end on a
+> *tool-result* turn, so mistral's system directive was silently dropped from every render. **mistral's `bC = +0.89` and its
+> `native−rawuser` anchor `−6.53` are therefore WITHDRAWN as comparable per-host quantities** (marked † below). The **headline
+> stands unchanged** — RULE-DEAD (1/5, Llama only): mistral was a failing host either way, and removing it leaves RULE-DEAD 1/4.
+> The **host-dependent-C-sign** conclusion also stands on the clean hosts (llama −0.52 vs qwen +0.94, gemma +0.12), whose renders
+> were audited system-present. Full detail: `CORRECTION_TPL02_mistral_bC_2026-09-26.md`.
+
 - prereg: `PREREG_TPL02_PHASE1.md` sha256 `0e20e5a0d6676c708be64b41a09409ed9c0f2423a00576ffe0ba7c13951ca819` (chained OPX-06
   `71ce191f…`); runner `run/tpl02/tpl02_lambda.py` sha256 `a897e2cb96cf170c9ad973b41556d0469d41c0c8d87dfc023dbe7494e7bdaa4d`
 - run: a10-class @ Lambda, FULL n=720, 5 hosts, $1.50, terminated clean, no orphan. `run/tpl02/results/tpl02.json` +
@@ -22,7 +30,8 @@ R/S/C weighting does **not** predict injection resistance out of sample. Per pre
 | host | anchor | bS (escape) | bC (collision) | \|bC\|>\|bS\| | pass | C length-matched (W01−W00s) |
 |---|---|---|---|---|---|---|
 | **llama** | +3.19 | **+0.41 [0.26, 0.56]** | **−0.52 [−0.77, −0.30]** | ✓ | **PASS** | −0.52 |
-| mistral | −6.53 | +0.24 [0.12, 0.35] | **+0.89 [0.60, 1.21]** | ✓ | fail (C sign) | +0.84 |
+| ⚠ mistral† | −6.53† | +0.24 [0.12, 0.35] | **+0.89 [0.60, 1.21]†** | ✓ | fail (C sign) | +0.84† |
+| | | | *† system-absent — WITHDRAWN (see correction above)* | | | |
 | qwen | +1.42 | −0.21 [−0.55, 0.10] | **+0.94 [0.68, 1.18]** | ✓ | fail (C sign, S sign) | +0.93 |
 | gemma | (N) | +0.28 [0.05, 0.50] | +0.12 [0.07, 0.17] | — | fail (C sign) | +0.13 |
 | phi | (N) | +0.39 [−0.05, 0.83] | −0.27 [−0.60, 0.03] | ✗ | fail (\|C\|<\|S\|; C CI incl 0) | −0.27 |
