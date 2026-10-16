@@ -1,8 +1,8 @@
-# CORRECTION (DRAFT — not published) — TPL-02, mistral bC anchor measured system-absent
+# CORRECTION — TPL-02, mistral bC anchor measured system-absent
 
-**Status: draft for the lead researcher's review. Nothing published or altered yet.** Drafted 2026-09-26 after a TPL-03 pre-spend
-dry-run surfaced the mechanism. This note proposes what to correct in the public `VERDICT_TPL02.md`; the lead researcher decides
-whether/how it goes out.
+**Status: published 2026-09-26 with TPL-03 (`30f50a3`).** Drafted after a TPL-03 pre-spend dry-run surfaced the mechanism.
+The follow-on check listed at the end is answered by
+[`CORRECTION_MISTRAL_SYSTEM_DROP_2026-10-16.md`](CORRECTION_MISTRAL_SYSTEM_DROP_2026-10-16.md).
 
 ## What was found
 Mistral-v0.3's chat template emits the system message **only on a conversation whose last message is a user turn**

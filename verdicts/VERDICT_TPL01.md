@@ -1,5 +1,10 @@
 # VERDICT — TPL-01 Phase 2 (native) + Phase 3 (serialization swap)
 
+> ⚠ **CORRECTION (2026-10-16): the Mistral-family results below were measured with the system instruction absent.**
+> Mistral's template drops the system message on tool-final turns, so its tool cells contained only the injected
+> instruction (0/720 vs 720/720 in the user baseline). The Mistral "amplifier" reading is withdrawn; Llama and Qwen results
+> stand. See [`CORRECTION_MISTRAL_SYSTEM_DROP_2026-10-16.md`](CORRECTION_MISTRAL_SYSTEM_DROP_2026-10-16.md).
+
 **Question:** Can you rank a model's injection resistance by reading its chat template?
 **Verdict (mechanical, from pre-committed gates):** **ORDERING-PREDICTIVE / MAGNITUDE-MODEL-BOUND** (split).
 The serialization *ordering* is host-independent and template-predictable (§4 bar W≥0.7 cleared: **W=1.000** anchor). The

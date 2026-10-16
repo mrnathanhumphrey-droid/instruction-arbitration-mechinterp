@@ -1,5 +1,10 @@
 # VERDICT — TOOL-03: template or commitment turn? The confound is resolved — it's the TEMPLATE.
 
+> ⚠ **CORRECTION (2026-10-16): the Mistral-family results below were measured with the system instruction absent.**
+> Mistral's template drops the system message on tool-final turns, so its tool cells contained only the injected
+> instruction (0/720 vs 720/720 in the user baseline). The Mistral "amplifier" reading is withdrawn; Llama and Qwen results
+> stand. See [`CORRECTION_MISTRAL_SYSTEM_DROP_2026-10-16.md`](CORRECTION_MISTRAL_SYSTEM_DROP_2026-10-16.md).
+
 **Result: the agentic commitment turn is INERT (d_commit ≈ 0 across all three models); the signed cross-model
 injection-resistance mapping is a property of the chat TEMPLATE's native tool rendering, structure-matched. Mistral-7B-v0.3's
 `[TOOL_RESULTS]` markers alone — with a plain assistant text stub and no tool_call — amplify tool-borne injection by

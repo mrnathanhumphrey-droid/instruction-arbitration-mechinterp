@@ -1,5 +1,20 @@
 # Instruction–Arbitration Mechanistic Interpretability
 
+> **TL;DR**
+> - **Mistral-7B-Instruct-v0.3's shipped chat template drops the system prompt whenever a conversation ends on a tool
+>   result.** Rendered through the vendor template, 0 of 720 tool-final prompts contained the system instruction (720 of 720
+>   when the turn ended on a user message), so an injection arriving in a tool result competes with nothing. This program
+>   first read it as the tool channel amplifying injection, and corrected that
+>   ([correction](verdicts/CORRECTION_MISTRAL_SYSTEM_DROP_2026-10-16.md)).
+> - **On templates that keep the system prompt, the native tool role resists injection:** Llama-3.1's `ipython` role by
+>   +3.23 nats and Qwen2.5's tags by +1.19, structure-matched. A tool-call commitment turn is inert
+>   ([TOOL-02](verdicts/VERDICT_TOOL02.md), [TOOL-03](verdicts/VERDICT_TOOL03.md)).
+> - **Readable is not causal.** In Llama-3.1-8B, which role an instruction came from decodes from activations at 0.999;
+>   deflating that signal to near chance leaves injection resistance intact ([PRV-01h-r](verdicts/VERDICT_PRV01HR.md)).
+> - **The pre-registered template rule failed out of sample (1 of 5 hosts) and was not refit**
+>   ([TPL-02](verdicts/VERDICT_TPL02.md)).
+> - Every design was sha256-locked before its run; the original locked files are in [`prereg/locked/`](prereg/locked/).
+
 A pre-registered mechanistic-interpretability program on **how an instruction-tuned language model decides which
 instruction to obey when instructions conflict** — the mechanism underneath prompt injection and the "instruction
 hierarchy." It runs two joined threads:
@@ -139,12 +154,13 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   delta 0.000 tokens over 720 items) — but that blunting is carried by the tool **role header**, not by Llama's `tojson`
   rendering, which is behaviorally **inert** (CI includes zero, point estimate the wrong sign). The "privilege bit" does not
   protect you; the only mitigation is a partial, role-header blunting that injection still overcomes.
-- **Chat-template design maps to injection resistance — heterogeneously and with a sign (TOOL-02, TOOL-03).** Ported across
-  three families, the tool-role effect is not a shared "tool distrust": **Llama +3.23 nats (resists), Qwen +1.19 (resists),
-  Mistral-v0.3 −6.82 (amplifies)** — a ~10-nat signed spread. Mistral-v0.3's `[TOOL_RESULTS]` template makes an injected
-  instruction *more* obeyed than the same text in a user turn, and TOOL-03 isolates the cause to the template **markers**
-  themselves (a pure commitment / tool-call turn is inert, ≈0), not the agent-loop flow. This is a property of the template a
-  vendor ships, and it is inspectable before deployment.
+- **Chat-template design maps to injection resistance (TOOL-02, TOOL-03), and one template drops the defender's
+  instruction entirely.** Llama-3.1's `ipython` role resists a tool-borne injection by **+3.23 nats** and Qwen2.5's tags by
+  **+1.19**, structure-matched; a pure tool-call commitment turn is inert (≈0) in all three models. ⚠ **Corrected
+  2026-10-16:** Mistral-v0.3's −6.82 was first read as its template *amplifying* injection. Mistral's shipped template omits
+  the system message whenever the conversation ends on a tool result, so every Mistral tool-arm prompt held the injected
+  instruction and no system instruction (0/720; the user baseline had it 720/720). The finding is that defect
+  ([correction](verdicts/CORRECTION_MISTRAL_SYSTEM_DROP_2026-10-16.md)).
 - **Can you rank a model's injection resistance by reading its template? The extreme, not the fine order — and partly by
   length (TPL-01).** A prospective, six-model test transplants each serialization between templates while holding the host's
   role slot. Across the three tool-role hosts the robust, CI-backed result is the **extreme contrast**: `<tool_response>`-style
@@ -155,8 +171,10 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   cannot be cleanly separated from a length effect. Length is not the whole story (`<tool_response>` wrappers are longer than
   Llama's `{"output":…}` yet resist more), but the honest claim is "the extremes order consistently," not "the template's
   semantics fix a full ranking." The **magnitude** is model-bound regardless: swapping the serialization moves each host
-  <1 nat against a ~6.5-nat between-model gap, and neither pre-committed sharp cell moved — transplanting Mistral's
-  serialization into Llama does *not* drag Llama toward Mistral's level. The resistance lives in the model / native
+  <1 nat against a ~6.5-nat between-model gap (⚠ the Mistral-family host cells were measured system-absent, so that gap is
+  not a resistance gap; see the 2026-10-16 correction), and neither pre-committed sharp cell moved — transplanting Mistral's
+  serialization into Llama does *not* drag Llama toward Mistral's level, consistent with the correction: Mistral's level came
+  from the missing system instruction, not its wrapper. The resistance lives in the model / native
   role-slot, not the transplantable wrapper. (Separately: forcing a foreign serialization into Mistral's tool slot makes it
   stop answering — an availability effect, not a resistance gain.)
 - **The template "rule" does not predict out of sample — and the collision term's sign flips across models (TPL-02).** TPL-01's
@@ -166,7 +184,8 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   the effects of interest (verified: length effect < ½ the C effect on every host). The candidate rule predicts a positive S and a
   large-negative C (collision helps the attacker) for all hosts. Result: **RULE-DEAD — 1 of 5 hosts** (only Llama, the host the
   rule was tuned on) matches. The dominant term's **sign is host-dependent**: wrapping the injection in a model's own control
-  tokens made Mistral, Qwen and Gemma **more** resistant, not less (bC ≈ +0.9 on Mistral/Qwen vs −0.5 on Llama), plausibly because
+  tokens made Qwen and Gemma **more** resistant, not less (bC +0.94 on Qwen, +0.12 on Gemma vs −0.52 on Llama; Mistral's +0.89
+  is withdrawn, measured system-absent), plausibly because
   those tokenizers absorb their own control tokens as structure rather than being hijacked by them. So you **cannot** read a
   model's injection resistance off a portable template rule, and "collision with the instruction delimiters" is not a reliable
   attacker win — on most models tested it favors the defender. (Prospective, exposure-controlled; R — the role slot itself —
@@ -195,7 +214,7 @@ shot — directly swapping the role-word marker token in the residual, not just 
 small** slice: ~13% of what a content-flip recovers, specific to the role lexeme, with the other ~87% still elsewhere. The
 honest actionable statement is narrower than "inspect the feature and you understand the behavior": the readable signal
 mostly ranks rather than causes, its causal slice where it has one is minor, and the large effects live in the model and its
-native template — including one template (Mistral-v0.3's `[TOOL_RESULTS]`) that measurably amplifies injection.
+native template — including one shipped template (Mistral-v0.3's) that silently drops the system message on tool-final turns.
 
 **A second throughline, cutting the other way (OPX-01/02).** The runs above are about a readable feature *not* carrying the
 behavior; the exchange-operator work is the counterweight, and it is not a footnote. When the operator artifact is removed,
@@ -208,6 +227,10 @@ positions (the instruction span), untested.
 
 ### Corrections on the record
 
+- **TOOL-02 / TOOL-03 / TPL-01, Mistral (2026-10-16).** The Mistral-family tool cells were measured with the system
+  instruction absent: Mistral's template drops it on tool-final turns (0/720 vs 720/720). The "tool channel amplifies
+  injection" reading and the cross-model spreads built on it are withdrawn; Llama and Qwen results stand. Check script:
+  `runners/check_system_presence.py` ([correction](verdicts/CORRECTION_MISTRAL_SYSTEM_DROP_2026-10-16.md)).
 - **ORD-01 (rescope).** The baseline in this benign contest is **recency-dominant**: flipping the order of the role blocks
   flips the baseline's sign (~71% recency, ~29% role). Because every `M` divides by that baseline, the single-number "the
   arbitration is ~half provenance-movable" headline was **retracted pending re-expression**. Qualitative results unaffected;
