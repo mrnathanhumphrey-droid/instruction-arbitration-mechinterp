@@ -7,7 +7,7 @@
 
 ---
 
-## REV NOTES (supersession deltas from PRV-01 → PRV-01b; delete before lock for a clean doc)
+## REV NOTES (supersession deltas from PRV-01 → PRV-01b; kept in the locked file as written)
 Pre-model setup (agent, on PRV-01) surfaced run-killers before any model compute; paper-text verification then settled the model variant and exposed a second, deeper mismatch. All are folded here:
 1. **Window** — the [16,256] clip on a Table-dominated pool gave a 13-token window (n=28). Rule corrected to **clip→balance→IQR = [114,222], n≈166** (in-band-subset IQR); length-matching, not IQR, is the goal; 1.95× spread (§4).
 2. **G5** — only 3 BIPIA scenarios ship benign context → **3-way (Email/Table/Code)**, plus a **bag-of-tokens baseline** so a lexical pass isn't mistaken for a contextual one (§5-G5).

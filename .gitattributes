@@ -1,0 +1,3 @@
+# Locked pre-registrations are hashed byte-for-byte: never normalise their line endings.
+prereg/locked/** -text
+prereg/*.sha256 -text

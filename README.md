@@ -267,8 +267,9 @@ also surfaced and corrected the Mistral system-drop in TPL-02).
 - The tool-template runners (`tool02_lambda.py`, `tool03_lambda.py`, `tpl01_phase23.py`) load six model families
   sequentially; the model IDs are constants at the top of each runner, and `HF_TOKEN` gates the download.
 - Verdicts quote the run that produced them; results JSON/CSV carry the numbers and confidence intervals. A public prereg's
-  `.md` is a scrubbed rendering; its `.sha256` sidecar is the hash of the original locked file (so the sidecar, not the
-  rendered `.md`, is the tamper-evident lock).
+  `.md` is a scrubbed rendering; its `.sha256` sidecar is the hash of the original locked file. **The original locked
+  files are in [`prereg/locked/`](prereg/locked/), byte for byte, and 53 of 54 verify against their sidecars** (the
+  original of `PRV01c` was not retained). [`prereg/locked/VERIFY.md`](prereg/locked/VERIFY.md) has the one-loop check.
 
 ## Scope and caveats
 

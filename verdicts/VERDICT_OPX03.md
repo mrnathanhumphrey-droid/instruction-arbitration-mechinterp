@@ -8,7 +8,7 @@ prior."** Go find the tell.
 
 - prereg: `PREREG_OPX03.md` sha256 `ef1e7eb6e76db57e776bae49675ad8b7493df7ea098930ebd4167040a986c4ea` (chained OPX-02
   `bce39438…`); runner sha256 `6670794eff01d9ae0dbda92ce92ed066fd6505acf5c75f3bb2f779a29b4a0877`
-- run: a10 @ us-west-1, FULL n=720, terminated clean, no orphan. `run/opx03/results/opx03.json` + `_arms.csv` +
+- run: a10 @ us-west-1, FULL n=720, terminated clean, no orphan. `results/opx03/opx03.json` + `_arms.csv` +
   `_peritem.npz`. NEUTRAL = `info` (single token 2801, both headers).
 
 ## ⚠ Methodology correction (self-caught) — analyze on raw ΔY, not M

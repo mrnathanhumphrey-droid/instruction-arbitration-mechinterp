@@ -7,9 +7,9 @@ delimiter-type effect OR the two operations being different operators. The resul
 delimiter property.**
 
 - prereg: `PREREG_TPL03_PHASE1.md` sha256 `bf7785437de54e4e9c06e4520ab2bdc732ed3cee31bf64ba27f0add6ba39d7b9` (chained OPX-07
-  `32c0364c…`); runner `run/tpl03/tpl03_lambda.py` sha256 `133cb7992be7cbef288878ec1f836825f4212eb8f3ae5d25494fe83689998ac6`.
+  `32c0364c…`); runner `runners/tpl03_lambda.py` sha256 `133cb7992be7cbef288878ec1f836825f4212eb8f3ae5d25494fe83689998ac6`.
 - run: gpu_1x_a100_sxm4 @ asia-south-1, FULL n=720, 3 hosts (llama/qwen anchored, gemma magnitude falsifier), $0.87, terminated
-  clean, no orphan. transformers 4.46.0. `run/tpl03/results/tpl03.json` + `tpl03_{host}_peritem.npz`.
+  clean, no orphan. transformers 4.46.0. `results/tpl03/tpl03.json` + `tpl03_{host}_peritem.npz`.
 
 ## Gates
 - **G-CONSTRUCT ✓** payload recoverable in every cell, all hosts. **COLLISION-REALIZED ✓** the own-wrap family delimiter tokenizes to

@@ -7,7 +7,7 @@
 
 ---
 
-## 0. NATE-FIXED INVARIANTS (do NOT move — the definition and the structure it forces)
+## 0. FIXED INVARIANTS (set by the lead researcher; do NOT move — the definition and the structure it forces)
 
 **0.1 The estimand — "use" is a causal-mediation property, not a behavioral one.**
 > **"Use" = the model's behavioral role-sensitivity that is MEDIATED by the provenance direction identified in PRV-01c. Operationally: the causal effect on behavior of intervening on that direction, with content and position held fixed.**

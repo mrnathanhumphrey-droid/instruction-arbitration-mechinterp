@@ -8,7 +8,7 @@ block content/filler does.**
 
 - prereg: `PREREG_OPX07.md` sha256 `32c0364cad520ca99ac7a8c27a598fdeb34a8f0d13274fe3153300124620b9f0` (chained TPL-02 Phase-1
   `0e20e5a0…`); runner sha256 `8af333744d6843a7a2b0d250b15df9fc0300072181e5696f94f71943eb700fc4`
-- run: a100_sxm4 @ asia-south-1, FULL n=720, $0.60, terminated clean, no orphan. `run/opx07/results/opx07.json` + `_arms.csv` +
+- run: a100_sxm4 @ asia-south-1, FULL n=720, $0.60, terminated clean, no orphan. `results/opx07/opx07.json` + `_arms.csv` +
   `_peritem.npz`.
 
 ## Per-arm (raw ΔY; signs_keep = block-anchored, signs_swap = position-follow)

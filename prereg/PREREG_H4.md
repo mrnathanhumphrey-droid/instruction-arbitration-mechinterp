@@ -58,7 +58,7 @@ Both arms are results. Neither is a shrug. **A VOID (§2.8) is a void, not a nul
 
 ---
 
-## §2 — DoF (RESOLVED — six the lead researcher rulings folded 2026-09-15; frozen at lock)
+## §2 — DoF (RESOLVED — six rulings by the lead researcher folded 2026-09-15; frozen at lock)
 
 **0. POSITION SET (NEW — the hole I missed): edit the FULL role block, not just the imperative span.**
    If the intervention touches only the imperative spans, the role-marker and header positions stay clean at

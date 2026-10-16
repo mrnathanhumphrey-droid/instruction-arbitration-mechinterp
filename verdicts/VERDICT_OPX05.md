@@ -34,7 +34,7 @@ text determines. OPX-05 shows the carrier is not *lexical* (no word/wrapper); it
 
 - prereg: `PREREG_OPX05.md` sha256 `e110307e317778e9ae9a3cd2f81c6dd9a5ce49ad8bb436ac7ae01b7eb890079c` (chained OPX-04
   `356ca526…`); runner sha256 `634c2ecf0efe4798ee7d4a0e7b9ec7d48f9adfc7c7a65b35786d47687a1c4b6c`
-- run: gh200-class @ Lambda, FULL n=720, $0.31, terminated clean, no orphan. `run/opx05/results/opx05.json` + `_arms.csv` +
+- run: gh200-class @ Lambda, FULL n=720, $0.31, terminated clean, no orphan. `results/opx05/opx05.json` + `_arms.csv` +
   `_peritem.npz`.
 
 ## Raw ΔY (nats) per arm — primary (B varies/collapses per arm; raw dY is the discriminator)

@@ -56,7 +56,7 @@ position slope (+0.031/tok, CI[0.012,0.050]) over the narrow tested range (11–
 possibly dominant; the "~7× implausible" argument does not hold. **The decomposition of RES-02's 0.46 into
 provenance vs position is UNRESOLVED** (extrapolation from a 3-tok base is unreliable AND confounded with template
 length, so it is not clean position-dominance either). RES-02's 0.46 stands as an UNDECOMPOSED span-exchange
-ceiling. See `run/res03b/results/VERDICT_RES03b.md`.
+ceiling. See `verdicts/VERDICT_RES03b.md`.
 ~~*Provenance ≈ 0.41 [0.30, 0.51] after subtracting a position-import of 0.059 at 11.8 tokens…*~~ (retracted)
 
 ## Consequence for the arc (conditional on accepting the direction)

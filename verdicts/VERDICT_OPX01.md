@@ -11,7 +11,7 @@ the **component sign structure**, not the additive sum; a reader who sees only 0
 
 - prereg: `PREREG_OPX01.md` sha256 `bd3604acc00e29ce473b87481f604193406cc3fa28108247f481efb0325bb42a` (chained EXT-01
   `86b066c7…`); runner sha256 `ba5de4e13ae41fa7254667dfe4767a55df90e55376dca761ceadf01ef115ec74`
-- run: a100_sxm4 @ us-east-1, FULL n=720, $0.29, terminated clean, no orphan. `run/opx01/results/opx01.json` +
+- run: a100_sxm4 @ us-east-1, FULL n=720, $0.29, terminated clean, no orphan. `results/opx01/opx01.json` +
   `opx01_arms.csv` + `opx01_peritem.npz`. B = −3.8792.
 
 ## Gates

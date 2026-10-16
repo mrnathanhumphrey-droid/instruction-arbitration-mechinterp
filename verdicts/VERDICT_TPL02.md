@@ -13,8 +13,8 @@ R/S/C weighting does **not** predict injection resistance out of sample. Per pre
 > were audited system-present. Full detail: `CORRECTION_TPL02_mistral_bC_2026-09-26.md`.
 
 - prereg: `PREREG_TPL02_PHASE1.md` sha256 `0e20e5a0d6676c708be64b41a09409ed9c0f2423a00576ffe0ba7c13951ca819` (chained OPX-06
-  `71ce191f…`); runner `run/tpl02/tpl02_lambda.py` sha256 `a897e2cb96cf170c9ad973b41556d0469d41c0c8d87dfc023dbe7494e7bdaa4d`
-- run: a10-class @ Lambda, FULL n=720, 5 hosts, $1.50, terminated clean, no orphan. `run/tpl02/results/tpl02.json` +
+  `71ce191f…`); runner `runners/tpl02_lambda.py` sha256 `a897e2cb96cf170c9ad973b41556d0469d41c0c8d87dfc023dbe7494e7bdaa4d`
+- run: a10-class @ Lambda, FULL n=720, 5 hosts, $1.50, terminated clean, no orphan. `results/tpl02/tpl02.json` +
   `tpl02_{host}_peritem.npz`. transformers 4.46.0.
 
 ## Gates

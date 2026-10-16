@@ -9,7 +9,7 @@ BODY-CARRIES.
 - prereg: `PREREG_OPX04.md` sha256 `356ca526d60fe1aa1026d988c778456b2c0cff932486c3eb22c80dc50bbd6248` (chained OPX-03
   `ef1e7eb6…`); runner sha256 `805f27464d4ea1c01674c2bbec647fa4d6825348860870bd60b861ca7524e764`
 - run: gh200 @ us-east-3, FULL n=720, $0.30, terminated clean, no orphan (1st fire dead-boot $0.33 + a no-capacity $0 bail
-  preceded it; poller caught fresh capacity). `run/opx04/results/opx04.json` + `_arms.csv` + `_peritem.npz`.
+  preceded it; poller caught fresh capacity). `results/opx04/opx04.json` + `_arms.csv` + `_peritem.npz`.
 
 ## Raw ΔY (nats) per arm — primary (B varies per arm; raw dY is the discriminator)
 | arm | dY_sys | dY_usr | raw asym (usr−sys) | B | mass |
