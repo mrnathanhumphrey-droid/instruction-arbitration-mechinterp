@@ -1,0 +1,482 @@
+{
+ "0": {
+  "ntok": 4459,
+  "DONE": 0,
+  "READY": 3
+ },
+ "1": {
+  "ntok": 8103,
+  "DONE": 0,
+  "READY": 3
+ },
+ "2": {
+  "ntok": 4542,
+  "DONE": 0,
+  "READY": 3
+ },
+ "3": {
+  "ntok": 8011,
+  "DONE": 6,
+  "READY": 1
+ },
+ "4": {
+  "ntok": 7692,
+  "DONE": 3,
+  "READY": 0
+ },
+ "5": {
+  "ntok": 7870,
+  "DONE": 3,
+  "READY": 0
+ },
+ "6": {
+  "ntok": 8026,
+  "DONE": 3,
+  "READY": 3
+ },
+ "7": {
+  "ntok": 8193,
+  "DONE": 0,
+  "READY": 2
+ },
+ "16": {
+  "ntok": 7805,
+  "DONE": 0,
+  "READY": 2
+ },
+ "17": {
+  "ntok": 7624,
+  "DONE": 0,
+  "READY": 2
+ },
+ "18": {
+  "ntok": 7659,
+  "DONE": 0,
+  "READY": 0
+ },
+ "19": {
+  "ntok": 7516,
+  "DONE": 0,
+  "READY": 0
+ },
+ "20": {
+  "ntok": 7586,
+  "DONE": 0,
+  "READY": 0
+ },
+ "21": {
+  "ntok": 7612,
+  "DONE": 0,
+  "READY": 0
+ },
+ "22": {
+  "ntok": 7840,
+  "DONE": 3,
+  "READY": 0
+ },
+ "23": {
+  "ntok": 7770,
+  "DONE": 0,
+  "READY": 0
+ },
+ "32": {
+  "ntok": 8256,
+  "DONE": 11,
+  "READY": 3
+ },
+ "33": {
+  "ntok": 8190,
+  "DONE": 8,
+  "READY": 0
+ },
+ "34": {
+  "ntok": 8249,
+  "DONE": 0,
+  "READY": 2
+ },
+ "35": {
+  "ntok": 8256,
+  "DONE": 3,
+  "READY": 7
+ },
+ "36": {
+  "ntok": 8256,
+  "DONE": 1,
+  "READY": 0
+ },
+ "37": {
+  "ntok": 8203,
+  "DONE": 0,
+  "READY": 2
+ },
+ "38": {
+  "ntok": 8256,
+  "DONE": 0,
+  "READY": 0
+ },
+ "39": {
+  "ntok": 8256,
+  "DONE": 12,
+  "READY": 1
+ },
+ "8": {
+  "ntok": 8071,
+  "DONE": 1,
+  "READY": 1
+ },
+ "9": {
+  "ntok": 7882,
+  "DONE": 3,
+  "READY": 4
+ },
+ "10": {
+  "ntok": 8050,
+  "DONE": 3,
+  "READY": 4
+ },
+ "11": {
+  "ntok": 7441,
+  "DONE": 4,
+  "READY": 0
+ },
+ "12": {
+  "ntok": 7655,
+  "DONE": 7,
+  "READY": 0
+ },
+ "13": {
+  "ntok": 7593,
+  "DONE": 0,
+  "READY": 0
+ },
+ "14": {
+  "ntok": 7678,
+  "DONE": 0,
+  "READY": 4
+ },
+ "15": {
+  "ntok": 8019,
+  "DONE": 0,
+  "READY": 3
+ },
+ "24": {
+  "ntok": 7642,
+  "DONE": 1,
+  "READY": 0
+ },
+ "25": {
+  "ntok": 7627,
+  "DONE": 8,
+  "READY": 0
+ },
+ "26": {
+  "ntok": 7494,
+  "DONE": 0,
+  "READY": 0
+ },
+ "27": {
+  "ntok": 7587,
+  "DONE": 8,
+  "READY": 0
+ },
+ "28": {
+  "ntok": 6636,
+  "DONE": 0,
+  "READY": 0
+ },
+ "29": {
+  "ntok": 7775,
+  "DONE": 0,
+  "READY": 6
+ },
+ "30": {
+  "ntok": 6972,
+  "DONE": 0,
+  "READY": 0
+ },
+ "31": {
+  "ntok": 8068,
+  "DONE": 2,
+  "READY": 0
+ },
+ "40": {
+  "ntok": 8082,
+  "DONE": 3,
+  "READY": 2
+ },
+ "41": {
+  "ntok": 8138,
+  "DONE": 0,
+  "READY": 4
+ },
+ "42": {
+  "ntok": 8256,
+  "DONE": 0,
+  "READY": 0
+ },
+ "43": {
+  "ntok": 8230,
+  "DONE": 0,
+  "READY": 0
+ },
+ "44": {
+  "ntok": 4889,
+  "DONE": 1,
+  "READY": 0
+ },
+ "45": {
+  "ntok": 8251,
+  "DONE": 2,
+  "READY": 0
+ },
+ "46": {
+  "ntok": 8256,
+  "DONE": 6,
+  "READY": 1
+ },
+ "47": {
+  "ntok": 8256,
+  "DONE": 1,
+  "READY": 1
+ },
+ "48": {
+  "ntok": 8301,
+  "DONE": 2,
+  "READY": 0
+ },
+ "49": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 0
+ },
+ "50": {
+  "ntok": 8301,
+  "DONE": 1,
+  "READY": 0
+ },
+ "51": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 2
+ },
+ "52": {
+  "ntok": 8301,
+  "DONE": 6,
+  "READY": 0
+ },
+ "53": {
+  "ntok": 8301,
+  "DONE": 2,
+  "READY": 0
+ },
+ "54": {
+  "ntok": 8301,
+  "DONE": 8,
+  "READY": 0
+ },
+ "55": {
+  "ntok": 8301,
+  "DONE": 12,
+  "READY": 1
+ },
+ "64": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 2
+ },
+ "65": {
+  "ntok": 8301,
+  "DONE": 3,
+  "READY": 4
+ },
+ "66": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 0
+ },
+ "67": {
+  "ntok": 8301,
+  "DONE": 2,
+  "READY": 6
+ },
+ "68": {
+  "ntok": 8301,
+  "DONE": 4,
+  "READY": 0
+ },
+ "69": {
+  "ntok": 8301,
+  "DONE": 3,
+  "READY": 3
+ },
+ "70": {
+  "ntok": 8227,
+  "DONE": 2,
+  "READY": 0
+ },
+ "71": {
+  "ntok": 8301,
+  "DONE": 1,
+  "READY": 2
+ },
+ "80": {
+  "ntok": 8301,
+  "DONE": 4,
+  "READY": 0
+ },
+ "81": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 0
+ },
+ "82": {
+  "ntok": 8301,
+  "DONE": 11,
+  "READY": 0
+ },
+ "83": {
+  "ntok": 8301,
+  "DONE": 1,
+  "READY": 1
+ },
+ "84": {
+  "ntok": 8301,
+  "DONE": 6,
+  "READY": 1
+ },
+ "85": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 0
+ },
+ "86": {
+  "ntok": 8301,
+  "DONE": 1,
+  "READY": 0
+ },
+ "87": {
+  "ntok": 8301,
+  "DONE": 11,
+  "READY": 0
+ },
+ "56": {
+  "ntok": 7933,
+  "DONE": 0,
+  "READY": 0
+ },
+ "57": {
+  "ntok": 8198,
+  "DONE": 11,
+  "READY": 1
+ },
+ "58": {
+  "ntok": 8301,
+  "DONE": 4,
+  "READY": 0
+ },
+ "59": {
+  "ntok": 8070,
+  "DONE": 0,
+  "READY": 0
+ },
+ "60": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 0
+ },
+ "61": {
+  "ntok": 8301,
+  "DONE": 3,
+  "READY": 3
+ },
+ "62": {
+  "ntok": 8282,
+  "DONE": 0,
+  "READY": 0
+ },
+ "63": {
+  "ntok": 8234,
+  "DONE": 2,
+  "READY": 2
+ },
+ "72": {
+  "ntok": 8301,
+  "DONE": 2,
+  "READY": 0
+ },
+ "73": {
+  "ntok": 8281,
+  "DONE": 0,
+  "READY": 0
+ },
+ "74": {
+  "ntok": 7438,
+  "DONE": 3,
+  "READY": 4
+ },
+ "75": {
+  "ntok": 8188,
+  "DONE": 1,
+  "READY": 2
+ },
+ "76": {
+  "ntok": 8301,
+  "DONE": 3,
+  "READY": 3
+ },
+ "77": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 0
+ },
+ "78": {
+  "ntok": 8299,
+  "DONE": 2,
+  "READY": 6
+ },
+ "79": {
+  "ntok": 8301,
+  "DONE": 11,
+  "READY": 0
+ },
+ "88": {
+  "ntok": 8142,
+  "DONE": 0,
+  "READY": 0
+ },
+ "89": {
+  "ntok": 8301,
+  "DONE": 13,
+  "READY": 1
+ },
+ "90": {
+  "ntok": 8301,
+  "DONE": 2,
+  "READY": 0
+ },
+ "91": {
+  "ntok": 8281,
+  "DONE": 0,
+  "READY": 0
+ },
+ "92": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 0
+ },
+ "93": {
+  "ntok": 8285,
+  "DONE": 2,
+  "READY": 0
+ },
+ "94": {
+  "ntok": 8301,
+  "DONE": 0,
+  "READY": 0
+ },
+ "95": {
+  "ntok": 8085,
+  "DONE": 0,
+  "READY": 0
+ }
+}

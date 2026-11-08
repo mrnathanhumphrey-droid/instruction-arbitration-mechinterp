@@ -1,0 +1,12 @@
+{
+ "units": 23040,
+ "pairs": 48,
+ "cells": [
+  "M1.M1",
+  "M3.M3",
+  "M1.M3",
+  "M3.M1"
+ ],
+ "items": 120,
+ "row_tokens_max": 419
+}

@@ -13,6 +13,10 @@
 >   deflating that signal to near chance leaves injection resistance intact ([PRV-01h-r](verdicts/VERDICT_PRV01HR.md)).
 > - **The pre-registered template rule failed out of sample (1 of 5 hosts) and was not refit**
 >   ([TPL-02](verdicts/VERDICT_TPL02.md)).
+> - **Over a conversation, what the assistant has *done* about the user's requests carries authority; its own words do
+>   not (HUNT-DRIFT-01).** One-word replies that went against the user push the readout away from whatever the user asks
+>   (−15.85 nats when the user asks for the system word), and drift's short-distance damage runs through a compliant first
+>   reply (−1.27) ([verdict](verdicts/VERDICT_DRIFT01.md)).
 > - Every design was sha256-locked before its run; the original locked files are in [`prereg/locked/`](prereg/locked/).
 
 A pre-registered mechanistic-interpretability program on **how an instruction-tuned language model decides which
@@ -204,6 +208,29 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   (This run also caught that Mistral's chat template silently drops the system message on tool-final turns → its TPL-02 bC was
   measured system-absent and has been withdrawn; see the TPL-02 correction.)
 
+### Over a conversation: HUNT-DRIFT-01 (Llama-3.1-8B)
+
+A separate hunt on the same model and battery: after a system instruction and a long, task-less conversation, does the
+system instruction keep its authority over a later contradicting user instruction? Transcripts were generated once and
+frozen (hashed); every probe is teacher-forced on them. Full table and corrections: [`VERDICT_DRIFT01`](verdicts/VERDICT_DRIFT01.md).
+
+- **Drift erodes authority by content, not distance.** Against token-matched word-pool filler, drift weakens the system
+  target close to the readout (k 1–4: −1.32 [−1.79, −0.83]) and coherent prose strengthens it far from it (k 8–32: +1.48
+  [+1.07, +1.95]); both pre-registered from a post-hoc split and supported on 120 fresh items (97.5% CIs). The effect is a
+  property of the transcript (per-transcript agreement across disjoint items, ρ +0.99, post-hoc).
+- **The agent's own words carry little authority.** The same line pulls ≈ 5 nats less from the assistant turn than from the
+  user turn, and once layout and distance are matched the own turn discounts a quote like every other slot.
+- **What it has done about the user's requests carries a lot.** In a token-identical 2 × 2 of one-word demonstrations
+  (demo user asks the competing or the system word × demo assistant gives the system or the competing word), I =
+  (defer − obey) − (agree − defy) = +10.41, replicated at +10.19 on fresh items. When the probe user asks for the system
+  word, the same contrast is −15.85: the demonstrations teach *going against the user*, not following the system. Copying
+  the demonstrated word is small (+0.5 to +0.7).
+- **Drift's damage runs through the first reply.** Splicing frozen transcripts' first turns 2 × 2, a compliant answer
+  weakens the system target more than a clarification request whichever user turn preceded it (−1.27 [−1.78, −0.78]), most
+  of all when it answers the request that asked for it (interaction −0.95, secondary).
+- **Reading, not tested as a whole:** the model reads its history as evidence of what kind of assistant it is toward this
+  user. These are log-odds shifts, not flipped answers.
+
 ### The throughline
 
 Repeatedly, at several levels, a **readable structural feature that correlates with the arbitration turns out to be, at
@@ -241,6 +268,12 @@ positions (the instruction span), untested.
   (2·|role| = 2.24) and 5× more than at flipped order — so it rides recency, not role. Exchange (a recency-signature swap)
   and twin-patch (a content flip) are different counterfactuals, so the "half provenance / half content" split loses its
   premise, not just its denominator — `verdicts/RE01_reexpression.md`.
+- **HUNT-DRIFT-01.** B-a's "own turn is exempt from the quote discount" was layout and distance, not voice (matched in
+  Amendment 3: +0.01 [−1.04, +1.10]); B3's pre-registered yes is a design artifact (selection on the sampled word); the
+  full run's attractor / loop flags are withdrawn (filler is flagged 144/144 by the same metric); Amendment 4's
+  starting-lean hypothesis did not replicate; the locked readout reads the leading-space token while one-word
+  demonstrations use the no-space token (both stored from Amendment 6 on, r ≥ +0.97, same verdicts); two pre-fire errata
+  (Amendments 7 and 8) corrected readings and wording before any data existed — `verdicts/VERDICT_DRIFT01.md`.
 
 ## Repository layout
 
@@ -250,6 +283,9 @@ runners/    *_lambda.py, *_toy.py, watchdog.py — the experiment code (GPU/CPU 
 verdicts/   VERDICT_*.md                        — the written verdict for each probe (facts; reading labeled separately)
 results/    <probe>/*.json, *.csv              — the numeric results the verdicts are computed from
 data/       make_*stimuli*.py, stimuli_*.jsonl — the constructed batteries
+*/drift01/  HUNT-DRIFT-01: locked plan + amendments + errata (prereg/locked/drift01, hashes in prereg/DRIFT01_LOCKED.sha256),
+            runners + analyses + FAKE-model tests (runners/drift01), item draws and inputs (data/drift01), every run's
+            pulled outputs incl. frozen transcripts and .npz readouts (results/drift01/<run>)
 ```
 
 Probes, roughly in order: `PRV-01…04` (is provenance recoverable / used / routed) · `MMD-01` (reproduction of a prior
@@ -293,6 +329,12 @@ also surfaced and corrected the Mistral system-drop in TPL-02).
   `.md` is a scrubbed rendering; its `.sha256` sidecar is the hash of the original locked file. **The original locked
   files are in [`prereg/locked/`](prereg/locked/), byte for byte, and 53 of 54 verify against their sidecars** (the
   original of `PRV01c` was not retained). [`prereg/locked/VERIFY.md`](prereg/locked/VERIFY.md) has the one-loop check.
+- **HUNT-DRIFT-01** (`runners/drift01/`): `drift01_lambda.py` generated and froze the transcripts; `phaseb_lambda.py`
+  (`PHASEB=a…h`) runs every later stage on them; each stage's `*_analysis.py` recomputes its verdict from the published
+  `results/drift01/<run>/REAL_*.npz`, and `*_test.py` runs it end to end on a FAKE model (no GPU). File paths at the top of
+  each script are the author's — point them at `data/` and `data/drift01/`. The locked files verify with
+  `sha256sum -c prereg/DRIFT01_LOCKED.sha256` from `prereg/`. Not published: the full run's 144 MB pooled-residual file
+  (it backs the withdrawn loop metric) and the cloud launcher.
 
 ## Scope and caveats
 
@@ -305,6 +347,8 @@ also surfaced and corrected the Mistral system-drop in TPL-02).
   template rule is not supported out of sample. R (the role slot) remains untested out of sample.
 - **Synthetic battery, log-probability readout.** Results are on a constructed imperative battery read at the first
   assistant token, not on free-form agentic traces. No serialization swap is a deployment configuration.
+- **HUNT-DRIFT-01 is exploratory:** one model, one task family (one-word DONE / READY rules), teacher-forced on frozen
+  task-less transcripts; its intervals speak for the 12 conversation types and 30 templates sampled.
 - **The internal baseline is recency-confounded** (ORD-01); treat any "fraction of the arbitration" statement as under
   re-expression.
 - **Living record.** Findings, and their corrections, are updated as the program continues.

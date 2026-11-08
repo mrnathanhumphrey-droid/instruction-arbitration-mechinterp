@@ -1,0 +1,1066 @@
+{
+ "seed": 7101701,
+ "amendment": "PLAN_AMENDMENT_7.md a66ef98b",
+ "source": "D:\\Resolve Research\\Prompt_Injection\\run\\prv02\\setup\\stimuli_contested.jsonl",
+ "source_sha256": "d4145f1add05ec293d210ce40fe2ad3b858cc6abc2a4b86761e6f04573e629b4",
+ "excluded_panel": [
+  62,
+  84,
+  144,
+  209,
+  239,
+  315,
+  454,
+  457,
+  525,
+  550,
+  668,
+  679
+ ],
+ "excluded_a4": [
+  1,
+  10,
+  22,
+  34,
+  41,
+  52,
+  63,
+  64,
+  68,
+  69,
+  86,
+  99,
+  102,
+  115,
+  118,
+  121,
+  127,
+  137,
+  145,
+  181,
+  189,
+  191,
+  192,
+  214,
+  223,
+  226,
+  235,
+  249,
+  259,
+  268,
+  275,
+  287,
+  291,
+  307,
+  312,
+  336,
+  339,
+  340,
+  354,
+  398,
+  440,
+  452,
+  472,
+  473,
+  482,
+  498,
+  501,
+  502,
+  503,
+  517,
+  520,
+  532,
+  548,
+  552,
+  556,
+  572,
+  580,
+  585,
+  587,
+  588,
+  596,
+  600,
+  606,
+  613,
+  619,
+  630,
+  646,
+  649,
+  651,
+  653,
+  670,
+  673,
+  674,
+  676,
+  685,
+  686,
+  692,
+  693,
+  702,
+  717
+ ],
+ "excluded_a5": [
+  5,
+  6,
+  9,
+  14,
+  20,
+  25,
+  26,
+  31,
+  35,
+  37,
+  45,
+  56,
+  57,
+  65,
+  85,
+  96,
+  104,
+  105,
+  125,
+  130,
+  140,
+  143,
+  149,
+  155,
+  157,
+  159,
+  168,
+  184,
+  197,
+  203,
+  218,
+  227,
+  230,
+  233,
+  245,
+  248,
+  250,
+  255,
+  256,
+  258,
+  260,
+  265,
+  271,
+  273,
+  276,
+  288,
+  293,
+  295,
+  298,
+  304,
+  310,
+  314,
+  316,
+  329,
+  331,
+  344,
+  346,
+  351,
+  357,
+  359,
+  368,
+  374,
+  381,
+  389,
+  397,
+  401,
+  411,
+  414,
+  418,
+  423,
+  426,
+  427,
+  436,
+  442,
+  451,
+  459,
+  469,
+  471,
+  476,
+  483,
+  490,
+  493,
+  499,
+  514,
+  530,
+  534,
+  544,
+  545,
+  546,
+  553,
+  560,
+  564,
+  570,
+  574,
+  584,
+  586,
+  590,
+  604,
+  617,
+  621,
+  625,
+  627,
+  631,
+  637,
+  643,
+  647,
+  655,
+  665,
+  669,
+  672,
+  678,
+  687,
+  688,
+  691,
+  698,
+  701,
+  703,
+  705,
+  713,
+  718
+ ],
+ "items": [
+  {
+   "item": 4,
+   "id": "c0004",
+   "cell": "DONEsys|early",
+   "template_idx": 0,
+   "filler_idx": 4
+  },
+  {
+   "item": 11,
+   "id": "c0011",
+   "cell": "DONEsys|early",
+   "template_idx": 1,
+   "filler_idx": 5
+  },
+  {
+   "item": 12,
+   "id": "c0012",
+   "cell": "DONEsys|early",
+   "template_idx": 2,
+   "filler_idx": 0
+  },
+  {
+   "item": 23,
+   "id": "c0023",
+   "cell": "DONEsys|early",
+   "template_idx": 3,
+   "filler_idx": 5
+  },
+  {
+   "item": 27,
+   "id": "c0027",
+   "cell": "DONEsys|early",
+   "template_idx": 4,
+   "filler_idx": 3
+  },
+  {
+   "item": 28,
+   "id": "c0028",
+   "cell": "DONEsys|early",
+   "template_idx": 4,
+   "filler_idx": 4
+  },
+  {
+   "item": 42,
+   "id": "c0042",
+   "cell": "DONEsys|early",
+   "template_idx": 7,
+   "filler_idx": 0
+  },
+  {
+   "item": 53,
+   "id": "c0053",
+   "cell": "DONEsys|early",
+   "template_idx": 8,
+   "filler_idx": 5
+  },
+  {
+   "item": 59,
+   "id": "c0059",
+   "cell": "DONEsys|early",
+   "template_idx": 9,
+   "filler_idx": 5
+  },
+  {
+   "item": 67,
+   "id": "c0067",
+   "cell": "DONEsys|early",
+   "template_idx": 11,
+   "filler_idx": 1
+  },
+  {
+   "item": 72,
+   "id": "c0072",
+   "cell": "DONEsys|early",
+   "template_idx": 12,
+   "filler_idx": 0
+  },
+  {
+   "item": 77,
+   "id": "c0077",
+   "cell": "DONEsys|early",
+   "template_idx": 12,
+   "filler_idx": 5
+  },
+  {
+   "item": 88,
+   "id": "c0088",
+   "cell": "DONEsys|early",
+   "template_idx": 14,
+   "filler_idx": 4
+  },
+  {
+   "item": 90,
+   "id": "c0090",
+   "cell": "DONEsys|early",
+   "template_idx": 15,
+   "filler_idx": 0
+  },
+  {
+   "item": 100,
+   "id": "c0100",
+   "cell": "DONEsys|early",
+   "template_idx": 16,
+   "filler_idx": 4
+  },
+  {
+   "item": 106,
+   "id": "c0106",
+   "cell": "DONEsys|early",
+   "template_idx": 17,
+   "filler_idx": 4
+  },
+  {
+   "item": 111,
+   "id": "c0111",
+   "cell": "DONEsys|early",
+   "template_idx": 18,
+   "filler_idx": 3
+  },
+  {
+   "item": 112,
+   "id": "c0112",
+   "cell": "DONEsys|early",
+   "template_idx": 18,
+   "filler_idx": 4
+  },
+  {
+   "item": 119,
+   "id": "c0119",
+   "cell": "DONEsys|early",
+   "template_idx": 19,
+   "filler_idx": 5
+  },
+  {
+   "item": 129,
+   "id": "c0129",
+   "cell": "DONEsys|early",
+   "template_idx": 21,
+   "filler_idx": 3
+  },
+  {
+   "item": 132,
+   "id": "c0132",
+   "cell": "DONEsys|early",
+   "template_idx": 22,
+   "filler_idx": 0
+  },
+  {
+   "item": 139,
+   "id": "c0139",
+   "cell": "DONEsys|early",
+   "template_idx": 23,
+   "filler_idx": 1
+  },
+  {
+   "item": 150,
+   "id": "c0150",
+   "cell": "DONEsys|early",
+   "template_idx": 25,
+   "filler_idx": 0
+  },
+  {
+   "item": 158,
+   "id": "c0158",
+   "cell": "DONEsys|early",
+   "template_idx": 26,
+   "filler_idx": 2
+  },
+  {
+   "item": 162,
+   "id": "c0162",
+   "cell": "DONEsys|early",
+   "template_idx": 27,
+   "filler_idx": 0
+  },
+  {
+   "item": 163,
+   "id": "c0163",
+   "cell": "DONEsys|early",
+   "template_idx": 27,
+   "filler_idx": 1
+  },
+  {
+   "item": 171,
+   "id": "c0171",
+   "cell": "DONEsys|early",
+   "template_idx": 28,
+   "filler_idx": 3
+  },
+  {
+   "item": 174,
+   "id": "c0174",
+   "cell": "DONEsys|early",
+   "template_idx": 29,
+   "filler_idx": 0
+  },
+  {
+   "item": 175,
+   "id": "c0175",
+   "cell": "DONEsys|early",
+   "template_idx": 29,
+   "filler_idx": 1
+  },
+  {
+   "item": 183,
+   "id": "c0183",
+   "cell": "DONEsys|late",
+   "template_idx": 0,
+   "filler_idx": 3
+  },
+  {
+   "item": 187,
+   "id": "c0187",
+   "cell": "DONEsys|late",
+   "template_idx": 1,
+   "filler_idx": 1
+  },
+  {
+   "item": 196,
+   "id": "c0196",
+   "cell": "DONEsys|late",
+   "template_idx": 2,
+   "filler_idx": 4
+  },
+  {
+   "item": 200,
+   "id": "c0200",
+   "cell": "DONEsys|late",
+   "template_idx": 3,
+   "filler_idx": 2
+  },
+  {
+   "item": 210,
+   "id": "c0210",
+   "cell": "DONEsys|late",
+   "template_idx": 5,
+   "filler_idx": 0
+  },
+  {
+   "item": 212,
+   "id": "c0212",
+   "cell": "DONEsys|late",
+   "template_idx": 5,
+   "filler_idx": 2
+  },
+  {
+   "item": 217,
+   "id": "c0217",
+   "cell": "DONEsys|late",
+   "template_idx": 6,
+   "filler_idx": 1
+  },
+  {
+   "item": 220,
+   "id": "c0220",
+   "cell": "DONEsys|late",
+   "template_idx": 6,
+   "filler_idx": 4
+  },
+  {
+   "item": 222,
+   "id": "c0222",
+   "cell": "DONEsys|late",
+   "template_idx": 7,
+   "filler_idx": 0
+  },
+  {
+   "item": 231,
+   "id": "c0231",
+   "cell": "DONEsys|late",
+   "template_idx": 8,
+   "filler_idx": 3
+  },
+  {
+   "item": 237,
+   "id": "c0237",
+   "cell": "DONEsys|late",
+   "template_idx": 9,
+   "filler_idx": 3
+  },
+  {
+   "item": 242,
+   "id": "c0242",
+   "cell": "DONEsys|late",
+   "template_idx": 10,
+   "filler_idx": 2
+  },
+  {
+   "item": 244,
+   "id": "c0244",
+   "cell": "DONEsys|late",
+   "template_idx": 10,
+   "filler_idx": 4
+  },
+  {
+   "item": 247,
+   "id": "c0247",
+   "cell": "DONEsys|late",
+   "template_idx": 11,
+   "filler_idx": 1
+  },
+  {
+   "item": 262,
+   "id": "c0262",
+   "cell": "DONEsys|late",
+   "template_idx": 13,
+   "filler_idx": 4
+  },
+  {
+   "item": 263,
+   "id": "c0263",
+   "cell": "DONEsys|late",
+   "template_idx": 13,
+   "filler_idx": 5
+  },
+  {
+   "item": 269,
+   "id": "c0269",
+   "cell": "DONEsys|late",
+   "template_idx": 14,
+   "filler_idx": 5
+  },
+  {
+   "item": 274,
+   "id": "c0274",
+   "cell": "DONEsys|late",
+   "template_idx": 15,
+   "filler_idx": 4
+  },
+  {
+   "item": 281,
+   "id": "c0281",
+   "cell": "DONEsys|late",
+   "template_idx": 16,
+   "filler_idx": 5
+  },
+  {
+   "item": 285,
+   "id": "c0285",
+   "cell": "DONEsys|late",
+   "template_idx": 17,
+   "filler_idx": 3
+  },
+  {
+   "item": 296,
+   "id": "c0296",
+   "cell": "DONEsys|late",
+   "template_idx": 19,
+   "filler_idx": 2
+  },
+  {
+   "item": 303,
+   "id": "c0303",
+   "cell": "DONEsys|late",
+   "template_idx": 20,
+   "filler_idx": 3
+  },
+  {
+   "item": 305,
+   "id": "c0305",
+   "cell": "DONEsys|late",
+   "template_idx": 20,
+   "filler_idx": 5
+  },
+  {
+   "item": 308,
+   "id": "c0308",
+   "cell": "DONEsys|late",
+   "template_idx": 21,
+   "filler_idx": 2
+  },
+  {
+   "item": 313,
+   "id": "c0313",
+   "cell": "DONEsys|late",
+   "template_idx": 22,
+   "filler_idx": 1
+  },
+  {
+   "item": 318,
+   "id": "c0318",
+   "cell": "DONEsys|late",
+   "template_idx": 23,
+   "filler_idx": 0
+  },
+  {
+   "item": 325,
+   "id": "c0325",
+   "cell": "DONEsys|late",
+   "template_idx": 24,
+   "filler_idx": 1
+  },
+  {
+   "item": 328,
+   "id": "c0328",
+   "cell": "DONEsys|late",
+   "template_idx": 24,
+   "filler_idx": 4
+  },
+  {
+   "item": 330,
+   "id": "c0330",
+   "cell": "DONEsys|late",
+   "template_idx": 25,
+   "filler_idx": 0
+  },
+  {
+   "item": 338,
+   "id": "c0338",
+   "cell": "DONEsys|late",
+   "template_idx": 26,
+   "filler_idx": 2
+  },
+  {
+   "item": 353,
+   "id": "c0353",
+   "cell": "DONEsys|late",
+   "template_idx": 28,
+   "filler_idx": 5
+  },
+  {
+   "item": 364,
+   "id": "c0364",
+   "cell": "READYsys|early",
+   "template_idx": 0,
+   "filler_idx": 4
+  },
+  {
+   "item": 369,
+   "id": "c0369",
+   "cell": "READYsys|early",
+   "template_idx": 1,
+   "filler_idx": 3
+  },
+  {
+   "item": 370,
+   "id": "c0370",
+   "cell": "READYsys|early",
+   "template_idx": 1,
+   "filler_idx": 4
+  },
+  {
+   "item": 372,
+   "id": "c0372",
+   "cell": "READYsys|early",
+   "template_idx": 2,
+   "filler_idx": 0
+  },
+  {
+   "item": 379,
+   "id": "c0379",
+   "cell": "READYsys|early",
+   "template_idx": 3,
+   "filler_idx": 1
+  },
+  {
+   "item": 385,
+   "id": "c0385",
+   "cell": "READYsys|early",
+   "template_idx": 4,
+   "filler_idx": 1
+  },
+  {
+   "item": 392,
+   "id": "c0392",
+   "cell": "READYsys|early",
+   "template_idx": 5,
+   "filler_idx": 2
+  },
+  {
+   "item": 400,
+   "id": "c0400",
+   "cell": "READYsys|early",
+   "template_idx": 6,
+   "filler_idx": 4
+  },
+  {
+   "item": 407,
+   "id": "c0407",
+   "cell": "READYsys|early",
+   "template_idx": 7,
+   "filler_idx": 5
+  },
+  {
+   "item": 408,
+   "id": "c0408",
+   "cell": "READYsys|early",
+   "template_idx": 8,
+   "filler_idx": 0
+  },
+  {
+   "item": 412,
+   "id": "c0412",
+   "cell": "READYsys|early",
+   "template_idx": 8,
+   "filler_idx": 4
+  },
+  {
+   "item": 419,
+   "id": "c0419",
+   "cell": "READYsys|early",
+   "template_idx": 9,
+   "filler_idx": 5
+  },
+  {
+   "item": 425,
+   "id": "c0425",
+   "cell": "READYsys|early",
+   "template_idx": 10,
+   "filler_idx": 5
+  },
+  {
+   "item": 428,
+   "id": "c0428",
+   "cell": "READYsys|early",
+   "template_idx": 11,
+   "filler_idx": 2
+  },
+  {
+   "item": 431,
+   "id": "c0431",
+   "cell": "READYsys|early",
+   "template_idx": 11,
+   "filler_idx": 5
+  },
+  {
+   "item": 437,
+   "id": "c0437",
+   "cell": "READYsys|early",
+   "template_idx": 12,
+   "filler_idx": 5
+  },
+  {
+   "item": 447,
+   "id": "c0447",
+   "cell": "READYsys|early",
+   "template_idx": 14,
+   "filler_idx": 3
+  },
+  {
+   "item": 455,
+   "id": "c0455",
+   "cell": "READYsys|early",
+   "template_idx": 15,
+   "filler_idx": 5
+  },
+  {
+   "item": 456,
+   "id": "c0456",
+   "cell": "READYsys|early",
+   "template_idx": 16,
+   "filler_idx": 0
+  },
+  {
+   "item": 463,
+   "id": "c0463",
+   "cell": "READYsys|early",
+   "template_idx": 17,
+   "filler_idx": 1
+  },
+  {
+   "item": 465,
+   "id": "c0465",
+   "cell": "READYsys|early",
+   "template_idx": 17,
+   "filler_idx": 3
+  },
+  {
+   "item": 468,
+   "id": "c0468",
+   "cell": "READYsys|early",
+   "template_idx": 18,
+   "filler_idx": 0
+  },
+  {
+   "item": 474,
+   "id": "c0474",
+   "cell": "READYsys|early",
+   "template_idx": 19,
+   "filler_idx": 0
+  },
+  {
+   "item": 487,
+   "id": "c0487",
+   "cell": "READYsys|early",
+   "template_idx": 21,
+   "filler_idx": 1
+  },
+  {
+   "item": 489,
+   "id": "c0489",
+   "cell": "READYsys|early",
+   "template_idx": 21,
+   "filler_idx": 3
+  },
+  {
+   "item": 496,
+   "id": "c0496",
+   "cell": "READYsys|early",
+   "template_idx": 22,
+   "filler_idx": 4
+  },
+  {
+   "item": 500,
+   "id": "c0500",
+   "cell": "READYsys|early",
+   "template_idx": 23,
+   "filler_idx": 2
+  },
+  {
+   "item": 505,
+   "id": "c0505",
+   "cell": "READYsys|early",
+   "template_idx": 24,
+   "filler_idx": 1
+  },
+  {
+   "item": 506,
+   "id": "c0506",
+   "cell": "READYsys|early",
+   "template_idx": 24,
+   "filler_idx": 2
+  },
+  {
+   "item": 521,
+   "id": "c0521",
+   "cell": "READYsys|early",
+   "template_idx": 26,
+   "filler_idx": 5
+  },
+  {
+   "item": 526,
+   "id": "c0526",
+   "cell": "READYsys|early",
+   "template_idx": 27,
+   "filler_idx": 4
+  },
+  {
+   "item": 533,
+   "id": "c0533",
+   "cell": "READYsys|early",
+   "template_idx": 28,
+   "filler_idx": 5
+  },
+  {
+   "item": 537,
+   "id": "c0537",
+   "cell": "READYsys|early",
+   "template_idx": 29,
+   "filler_idx": 3
+  },
+  {
+   "item": 539,
+   "id": "c0539",
+   "cell": "READYsys|early",
+   "template_idx": 29,
+   "filler_idx": 5
+  },
+  {
+   "item": 541,
+   "id": "c0541",
+   "cell": "READYsys|late",
+   "template_idx": 0,
+   "filler_idx": 1
+  },
+  {
+   "item": 557,
+   "id": "c0557",
+   "cell": "READYsys|late",
+   "template_idx": 2,
+   "filler_idx": 5
+  },
+  {
+   "item": 561,
+   "id": "c0561",
+   "cell": "READYsys|late",
+   "template_idx": 3,
+   "filler_idx": 3
+  },
+  {
+   "item": 566,
+   "id": "c0566",
+   "cell": "READYsys|late",
+   "template_idx": 4,
+   "filler_idx": 2
+  },
+  {
+   "item": 575,
+   "id": "c0575",
+   "cell": "READYsys|late",
+   "template_idx": 5,
+   "filler_idx": 5
+  },
+  {
+   "item": 577,
+   "id": "c0577",
+   "cell": "READYsys|late",
+   "template_idx": 6,
+   "filler_idx": 1
+  },
+  {
+   "item": 582,
+   "id": "c0582",
+   "cell": "READYsys|late",
+   "template_idx": 7,
+   "filler_idx": 0
+  },
+  {
+   "item": 598,
+   "id": "c0598",
+   "cell": "READYsys|late",
+   "template_idx": 9,
+   "filler_idx": 4
+  },
+  {
+   "item": 605,
+   "id": "c0605",
+   "cell": "READYsys|late",
+   "template_idx": 10,
+   "filler_idx": 5
+  },
+  {
+   "item": 614,
+   "id": "c0614",
+   "cell": "READYsys|late",
+   "template_idx": 12,
+   "filler_idx": 2
+  },
+  {
+   "item": 620,
+   "id": "c0620",
+   "cell": "READYsys|late",
+   "template_idx": 13,
+   "filler_idx": 2
+  },
+  {
+   "item": 622,
+   "id": "c0622",
+   "cell": "READYsys|late",
+   "template_idx": 13,
+   "filler_idx": 4
+  },
+  {
+   "item": 626,
+   "id": "c0626",
+   "cell": "READYsys|late",
+   "template_idx": 14,
+   "filler_idx": 2
+  },
+  {
+   "item": 634,
+   "id": "c0634",
+   "cell": "READYsys|late",
+   "template_idx": 15,
+   "filler_idx": 4
+  },
+  {
+   "item": 639,
+   "id": "c0639",
+   "cell": "READYsys|late",
+   "template_idx": 16,
+   "filler_idx": 3
+  },
+  {
+   "item": 648,
+   "id": "c0648",
+   "cell": "READYsys|late",
+   "template_idx": 18,
+   "filler_idx": 0
+  },
+  {
+   "item": 659,
+   "id": "c0659",
+   "cell": "READYsys|late",
+   "template_idx": 19,
+   "filler_idx": 5
+  },
+  {
+   "item": 661,
+   "id": "c0661",
+   "cell": "READYsys|late",
+   "template_idx": 20,
+   "filler_idx": 1
+  },
+  {
+   "item": 662,
+   "id": "c0662",
+   "cell": "READYsys|late",
+   "template_idx": 20,
+   "filler_idx": 2
+  },
+  {
+   "item": 677,
+   "id": "c0677",
+   "cell": "READYsys|late",
+   "template_idx": 22,
+   "filler_idx": 5
+  },
+  {
+   "item": 680,
+   "id": "c0680",
+   "cell": "READYsys|late",
+   "template_idx": 23,
+   "filler_idx": 2
+  },
+  {
+   "item": 690,
+   "id": "c0690",
+   "cell": "READYsys|late",
+   "template_idx": 25,
+   "filler_idx": 0
+  },
+  {
+   "item": 694,
+   "id": "c0694",
+   "cell": "READYsys|late",
+   "template_idx": 25,
+   "filler_idx": 4
+  },
+  {
+   "item": 699,
+   "id": "c0699",
+   "cell": "READYsys|late",
+   "template_idx": 26,
+   "filler_idx": 3
+  },
+  {
+   "item": 704,
+   "id": "c0704",
+   "cell": "READYsys|late",
+   "template_idx": 27,
+   "filler_idx": 2
+  },
+  {
+   "item": 708,
+   "id": "c0708",
+   "cell": "READYsys|late",
+   "template_idx": 28,
+   "filler_idx": 0
+  }
+ ]
+}

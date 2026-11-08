@@ -1,0 +1,944 @@
+{
+ "seed": 7101401,
+ "amendment": "PLAN_AMENDMENT_5.md 9b92498d",
+ "source": "D:\\Resolve Research\\Prompt_Injection\\run\\prv02\\setup\\stimuli_contested.jsonl",
+ "source_sha256": "d4145f1add05ec293d210ce40fe2ad3b858cc6abc2a4b86761e6f04573e629b4",
+ "excluded_panel": [
+  62,
+  84,
+  144,
+  209,
+  239,
+  315,
+  454,
+  457,
+  525,
+  550,
+  668,
+  679
+ ],
+ "excluded_a4": [
+  1,
+  10,
+  22,
+  34,
+  41,
+  52,
+  63,
+  64,
+  68,
+  69,
+  86,
+  99,
+  102,
+  115,
+  118,
+  121,
+  127,
+  137,
+  145,
+  181,
+  189,
+  191,
+  192,
+  214,
+  223,
+  226,
+  235,
+  249,
+  259,
+  268,
+  275,
+  287,
+  291,
+  307,
+  312,
+  336,
+  339,
+  340,
+  354,
+  398,
+  440,
+  452,
+  472,
+  473,
+  482,
+  498,
+  501,
+  502,
+  503,
+  517,
+  520,
+  532,
+  548,
+  552,
+  556,
+  572,
+  580,
+  585,
+  587,
+  588,
+  596,
+  600,
+  606,
+  613,
+  619,
+  630,
+  646,
+  649,
+  651,
+  653,
+  670,
+  673,
+  674,
+  676,
+  685,
+  686,
+  692,
+  693,
+  702,
+  717
+ ],
+ "items": [
+  {
+   "item": 5,
+   "id": "c0005",
+   "cell": "DONEsys|early",
+   "template_idx": 0,
+   "filler_idx": 5
+  },
+  {
+   "item": 6,
+   "id": "c0006",
+   "cell": "DONEsys|early",
+   "template_idx": 1,
+   "filler_idx": 0
+  },
+  {
+   "item": 9,
+   "id": "c0009",
+   "cell": "DONEsys|early",
+   "template_idx": 1,
+   "filler_idx": 3
+  },
+  {
+   "item": 14,
+   "id": "c0014",
+   "cell": "DONEsys|early",
+   "template_idx": 2,
+   "filler_idx": 2
+  },
+  {
+   "item": 20,
+   "id": "c0020",
+   "cell": "DONEsys|early",
+   "template_idx": 3,
+   "filler_idx": 2
+  },
+  {
+   "item": 25,
+   "id": "c0025",
+   "cell": "DONEsys|early",
+   "template_idx": 4,
+   "filler_idx": 1
+  },
+  {
+   "item": 26,
+   "id": "c0026",
+   "cell": "DONEsys|early",
+   "template_idx": 4,
+   "filler_idx": 2
+  },
+  {
+   "item": 31,
+   "id": "c0031",
+   "cell": "DONEsys|early",
+   "template_idx": 5,
+   "filler_idx": 1
+  },
+  {
+   "item": 35,
+   "id": "c0035",
+   "cell": "DONEsys|early",
+   "template_idx": 5,
+   "filler_idx": 5
+  },
+  {
+   "item": 37,
+   "id": "c0037",
+   "cell": "DONEsys|early",
+   "template_idx": 6,
+   "filler_idx": 1
+  },
+  {
+   "item": 45,
+   "id": "c0045",
+   "cell": "DONEsys|early",
+   "template_idx": 7,
+   "filler_idx": 3
+  },
+  {
+   "item": 56,
+   "id": "c0056",
+   "cell": "DONEsys|early",
+   "template_idx": 9,
+   "filler_idx": 2
+  },
+  {
+   "item": 57,
+   "id": "c0057",
+   "cell": "DONEsys|early",
+   "template_idx": 9,
+   "filler_idx": 3
+  },
+  {
+   "item": 65,
+   "id": "c0065",
+   "cell": "DONEsys|early",
+   "template_idx": 10,
+   "filler_idx": 5
+  },
+  {
+   "item": 85,
+   "id": "c0085",
+   "cell": "DONEsys|early",
+   "template_idx": 14,
+   "filler_idx": 1
+  },
+  {
+   "item": 96,
+   "id": "c0096",
+   "cell": "DONEsys|early",
+   "template_idx": 16,
+   "filler_idx": 0
+  },
+  {
+   "item": 104,
+   "id": "c0104",
+   "cell": "DONEsys|early",
+   "template_idx": 17,
+   "filler_idx": 2
+  },
+  {
+   "item": 105,
+   "id": "c0105",
+   "cell": "DONEsys|early",
+   "template_idx": 17,
+   "filler_idx": 3
+  },
+  {
+   "item": 125,
+   "id": "c0125",
+   "cell": "DONEsys|early",
+   "template_idx": 20,
+   "filler_idx": 5
+  },
+  {
+   "item": 130,
+   "id": "c0130",
+   "cell": "DONEsys|early",
+   "template_idx": 21,
+   "filler_idx": 4
+  },
+  {
+   "item": 140,
+   "id": "c0140",
+   "cell": "DONEsys|early",
+   "template_idx": 23,
+   "filler_idx": 2
+  },
+  {
+   "item": 143,
+   "id": "c0143",
+   "cell": "DONEsys|early",
+   "template_idx": 23,
+   "filler_idx": 5
+  },
+  {
+   "item": 149,
+   "id": "c0149",
+   "cell": "DONEsys|early",
+   "template_idx": 24,
+   "filler_idx": 5
+  },
+  {
+   "item": 155,
+   "id": "c0155",
+   "cell": "DONEsys|early",
+   "template_idx": 25,
+   "filler_idx": 5
+  },
+  {
+   "item": 157,
+   "id": "c0157",
+   "cell": "DONEsys|early",
+   "template_idx": 26,
+   "filler_idx": 1
+  },
+  {
+   "item": 159,
+   "id": "c0159",
+   "cell": "DONEsys|early",
+   "template_idx": 26,
+   "filler_idx": 3
+  },
+  {
+   "item": 168,
+   "id": "c0168",
+   "cell": "DONEsys|early",
+   "template_idx": 28,
+   "filler_idx": 0
+  },
+  {
+   "item": 184,
+   "id": "c0184",
+   "cell": "DONEsys|late",
+   "template_idx": 0,
+   "filler_idx": 4
+  },
+  {
+   "item": 197,
+   "id": "c0197",
+   "cell": "DONEsys|late",
+   "template_idx": 2,
+   "filler_idx": 5
+  },
+  {
+   "item": 203,
+   "id": "c0203",
+   "cell": "DONEsys|late",
+   "template_idx": 3,
+   "filler_idx": 5
+  },
+  {
+   "item": 218,
+   "id": "c0218",
+   "cell": "DONEsys|late",
+   "template_idx": 6,
+   "filler_idx": 2
+  },
+  {
+   "item": 227,
+   "id": "c0227",
+   "cell": "DONEsys|late",
+   "template_idx": 7,
+   "filler_idx": 5
+  },
+  {
+   "item": 230,
+   "id": "c0230",
+   "cell": "DONEsys|late",
+   "template_idx": 8,
+   "filler_idx": 2
+  },
+  {
+   "item": 233,
+   "id": "c0233",
+   "cell": "DONEsys|late",
+   "template_idx": 8,
+   "filler_idx": 5
+  },
+  {
+   "item": 245,
+   "id": "c0245",
+   "cell": "DONEsys|late",
+   "template_idx": 10,
+   "filler_idx": 5
+  },
+  {
+   "item": 248,
+   "id": "c0248",
+   "cell": "DONEsys|late",
+   "template_idx": 11,
+   "filler_idx": 2
+  },
+  {
+   "item": 250,
+   "id": "c0250",
+   "cell": "DONEsys|late",
+   "template_idx": 11,
+   "filler_idx": 4
+  },
+  {
+   "item": 255,
+   "id": "c0255",
+   "cell": "DONEsys|late",
+   "template_idx": 12,
+   "filler_idx": 3
+  },
+  {
+   "item": 256,
+   "id": "c0256",
+   "cell": "DONEsys|late",
+   "template_idx": 12,
+   "filler_idx": 4
+  },
+  {
+   "item": 258,
+   "id": "c0258",
+   "cell": "DONEsys|late",
+   "template_idx": 13,
+   "filler_idx": 0
+  },
+  {
+   "item": 260,
+   "id": "c0260",
+   "cell": "DONEsys|late",
+   "template_idx": 13,
+   "filler_idx": 2
+  },
+  {
+   "item": 265,
+   "id": "c0265",
+   "cell": "DONEsys|late",
+   "template_idx": 14,
+   "filler_idx": 1
+  },
+  {
+   "item": 271,
+   "id": "c0271",
+   "cell": "DONEsys|late",
+   "template_idx": 15,
+   "filler_idx": 1
+  },
+  {
+   "item": 273,
+   "id": "c0273",
+   "cell": "DONEsys|late",
+   "template_idx": 15,
+   "filler_idx": 3
+  },
+  {
+   "item": 276,
+   "id": "c0276",
+   "cell": "DONEsys|late",
+   "template_idx": 16,
+   "filler_idx": 0
+  },
+  {
+   "item": 288,
+   "id": "c0288",
+   "cell": "DONEsys|late",
+   "template_idx": 18,
+   "filler_idx": 0
+  },
+  {
+   "item": 293,
+   "id": "c0293",
+   "cell": "DONEsys|late",
+   "template_idx": 18,
+   "filler_idx": 5
+  },
+  {
+   "item": 295,
+   "id": "c0295",
+   "cell": "DONEsys|late",
+   "template_idx": 19,
+   "filler_idx": 1
+  },
+  {
+   "item": 298,
+   "id": "c0298",
+   "cell": "DONEsys|late",
+   "template_idx": 19,
+   "filler_idx": 4
+  },
+  {
+   "item": 304,
+   "id": "c0304",
+   "cell": "DONEsys|late",
+   "template_idx": 20,
+   "filler_idx": 4
+  },
+  {
+   "item": 310,
+   "id": "c0310",
+   "cell": "DONEsys|late",
+   "template_idx": 21,
+   "filler_idx": 4
+  },
+  {
+   "item": 314,
+   "id": "c0314",
+   "cell": "DONEsys|late",
+   "template_idx": 22,
+   "filler_idx": 2
+  },
+  {
+   "item": 316,
+   "id": "c0316",
+   "cell": "DONEsys|late",
+   "template_idx": 22,
+   "filler_idx": 4
+  },
+  {
+   "item": 329,
+   "id": "c0329",
+   "cell": "DONEsys|late",
+   "template_idx": 24,
+   "filler_idx": 5
+  },
+  {
+   "item": 331,
+   "id": "c0331",
+   "cell": "DONEsys|late",
+   "template_idx": 25,
+   "filler_idx": 1
+  },
+  {
+   "item": 344,
+   "id": "c0344",
+   "cell": "DONEsys|late",
+   "template_idx": 27,
+   "filler_idx": 2
+  },
+  {
+   "item": 346,
+   "id": "c0346",
+   "cell": "DONEsys|late",
+   "template_idx": 27,
+   "filler_idx": 4
+  },
+  {
+   "item": 351,
+   "id": "c0351",
+   "cell": "DONEsys|late",
+   "template_idx": 28,
+   "filler_idx": 3
+  },
+  {
+   "item": 357,
+   "id": "c0357",
+   "cell": "DONEsys|late",
+   "template_idx": 29,
+   "filler_idx": 3
+  },
+  {
+   "item": 359,
+   "id": "c0359",
+   "cell": "DONEsys|late",
+   "template_idx": 29,
+   "filler_idx": 5
+  },
+  {
+   "item": 368,
+   "id": "c0368",
+   "cell": "READYsys|early",
+   "template_idx": 1,
+   "filler_idx": 2
+  },
+  {
+   "item": 374,
+   "id": "c0374",
+   "cell": "READYsys|early",
+   "template_idx": 2,
+   "filler_idx": 2
+  },
+  {
+   "item": 381,
+   "id": "c0381",
+   "cell": "READYsys|early",
+   "template_idx": 3,
+   "filler_idx": 3
+  },
+  {
+   "item": 389,
+   "id": "c0389",
+   "cell": "READYsys|early",
+   "template_idx": 4,
+   "filler_idx": 5
+  },
+  {
+   "item": 397,
+   "id": "c0397",
+   "cell": "READYsys|early",
+   "template_idx": 6,
+   "filler_idx": 1
+  },
+  {
+   "item": 401,
+   "id": "c0401",
+   "cell": "READYsys|early",
+   "template_idx": 6,
+   "filler_idx": 5
+  },
+  {
+   "item": 411,
+   "id": "c0411",
+   "cell": "READYsys|early",
+   "template_idx": 8,
+   "filler_idx": 3
+  },
+  {
+   "item": 414,
+   "id": "c0414",
+   "cell": "READYsys|early",
+   "template_idx": 9,
+   "filler_idx": 0
+  },
+  {
+   "item": 418,
+   "id": "c0418",
+   "cell": "READYsys|early",
+   "template_idx": 9,
+   "filler_idx": 4
+  },
+  {
+   "item": 423,
+   "id": "c0423",
+   "cell": "READYsys|early",
+   "template_idx": 10,
+   "filler_idx": 3
+  },
+  {
+   "item": 426,
+   "id": "c0426",
+   "cell": "READYsys|early",
+   "template_idx": 11,
+   "filler_idx": 0
+  },
+  {
+   "item": 427,
+   "id": "c0427",
+   "cell": "READYsys|early",
+   "template_idx": 11,
+   "filler_idx": 1
+  },
+  {
+   "item": 436,
+   "id": "c0436",
+   "cell": "READYsys|early",
+   "template_idx": 12,
+   "filler_idx": 4
+  },
+  {
+   "item": 442,
+   "id": "c0442",
+   "cell": "READYsys|early",
+   "template_idx": 13,
+   "filler_idx": 4
+  },
+  {
+   "item": 451,
+   "id": "c0451",
+   "cell": "READYsys|early",
+   "template_idx": 15,
+   "filler_idx": 1
+  },
+  {
+   "item": 459,
+   "id": "c0459",
+   "cell": "READYsys|early",
+   "template_idx": 16,
+   "filler_idx": 3
+  },
+  {
+   "item": 469,
+   "id": "c0469",
+   "cell": "READYsys|early",
+   "template_idx": 18,
+   "filler_idx": 1
+  },
+  {
+   "item": 471,
+   "id": "c0471",
+   "cell": "READYsys|early",
+   "template_idx": 18,
+   "filler_idx": 3
+  },
+  {
+   "item": 476,
+   "id": "c0476",
+   "cell": "READYsys|early",
+   "template_idx": 19,
+   "filler_idx": 2
+  },
+  {
+   "item": 483,
+   "id": "c0483",
+   "cell": "READYsys|early",
+   "template_idx": 20,
+   "filler_idx": 3
+  },
+  {
+   "item": 490,
+   "id": "c0490",
+   "cell": "READYsys|early",
+   "template_idx": 21,
+   "filler_idx": 4
+  },
+  {
+   "item": 493,
+   "id": "c0493",
+   "cell": "READYsys|early",
+   "template_idx": 22,
+   "filler_idx": 1
+  },
+  {
+   "item": 499,
+   "id": "c0499",
+   "cell": "READYsys|early",
+   "template_idx": 23,
+   "filler_idx": 1
+  },
+  {
+   "item": 514,
+   "id": "c0514",
+   "cell": "READYsys|early",
+   "template_idx": 25,
+   "filler_idx": 4
+  },
+  {
+   "item": 530,
+   "id": "c0530",
+   "cell": "READYsys|early",
+   "template_idx": 28,
+   "filler_idx": 2
+  },
+  {
+   "item": 534,
+   "id": "c0534",
+   "cell": "READYsys|early",
+   "template_idx": 29,
+   "filler_idx": 0
+  },
+  {
+   "item": 544,
+   "id": "c0544",
+   "cell": "READYsys|late",
+   "template_idx": 0,
+   "filler_idx": 4
+  },
+  {
+   "item": 545,
+   "id": "c0545",
+   "cell": "READYsys|late",
+   "template_idx": 0,
+   "filler_idx": 5
+  },
+  {
+   "item": 546,
+   "id": "c0546",
+   "cell": "READYsys|late",
+   "template_idx": 1,
+   "filler_idx": 0
+  },
+  {
+   "item": 553,
+   "id": "c0553",
+   "cell": "READYsys|late",
+   "template_idx": 2,
+   "filler_idx": 1
+  },
+  {
+   "item": 560,
+   "id": "c0560",
+   "cell": "READYsys|late",
+   "template_idx": 3,
+   "filler_idx": 2
+  },
+  {
+   "item": 564,
+   "id": "c0564",
+   "cell": "READYsys|late",
+   "template_idx": 4,
+   "filler_idx": 0
+  },
+  {
+   "item": 570,
+   "id": "c0570",
+   "cell": "READYsys|late",
+   "template_idx": 5,
+   "filler_idx": 0
+  },
+  {
+   "item": 574,
+   "id": "c0574",
+   "cell": "READYsys|late",
+   "template_idx": 5,
+   "filler_idx": 4
+  },
+  {
+   "item": 584,
+   "id": "c0584",
+   "cell": "READYsys|late",
+   "template_idx": 7,
+   "filler_idx": 2
+  },
+  {
+   "item": 586,
+   "id": "c0586",
+   "cell": "READYsys|late",
+   "template_idx": 7,
+   "filler_idx": 4
+  },
+  {
+   "item": 590,
+   "id": "c0590",
+   "cell": "READYsys|late",
+   "template_idx": 8,
+   "filler_idx": 2
+  },
+  {
+   "item": 604,
+   "id": "c0604",
+   "cell": "READYsys|late",
+   "template_idx": 10,
+   "filler_idx": 4
+  },
+  {
+   "item": 617,
+   "id": "c0617",
+   "cell": "READYsys|late",
+   "template_idx": 12,
+   "filler_idx": 5
+  },
+  {
+   "item": 621,
+   "id": "c0621",
+   "cell": "READYsys|late",
+   "template_idx": 13,
+   "filler_idx": 3
+  },
+  {
+   "item": 625,
+   "id": "c0625",
+   "cell": "READYsys|late",
+   "template_idx": 14,
+   "filler_idx": 1
+  },
+  {
+   "item": 627,
+   "id": "c0627",
+   "cell": "READYsys|late",
+   "template_idx": 14,
+   "filler_idx": 3
+  },
+  {
+   "item": 631,
+   "id": "c0631",
+   "cell": "READYsys|late",
+   "template_idx": 15,
+   "filler_idx": 1
+  },
+  {
+   "item": 637,
+   "id": "c0637",
+   "cell": "READYsys|late",
+   "template_idx": 16,
+   "filler_idx": 1
+  },
+  {
+   "item": 643,
+   "id": "c0643",
+   "cell": "READYsys|late",
+   "template_idx": 17,
+   "filler_idx": 1
+  },
+  {
+   "item": 647,
+   "id": "c0647",
+   "cell": "READYsys|late",
+   "template_idx": 17,
+   "filler_idx": 5
+  },
+  {
+   "item": 655,
+   "id": "c0655",
+   "cell": "READYsys|late",
+   "template_idx": 19,
+   "filler_idx": 1
+  },
+  {
+   "item": 665,
+   "id": "c0665",
+   "cell": "READYsys|late",
+   "template_idx": 20,
+   "filler_idx": 5
+  },
+  {
+   "item": 669,
+   "id": "c0669",
+   "cell": "READYsys|late",
+   "template_idx": 21,
+   "filler_idx": 3
+  },
+  {
+   "item": 672,
+   "id": "c0672",
+   "cell": "READYsys|late",
+   "template_idx": 22,
+   "filler_idx": 0
+  },
+  {
+   "item": 678,
+   "id": "c0678",
+   "cell": "READYsys|late",
+   "template_idx": 23,
+   "filler_idx": 0
+  },
+  {
+   "item": 687,
+   "id": "c0687",
+   "cell": "READYsys|late",
+   "template_idx": 24,
+   "filler_idx": 3
+  },
+  {
+   "item": 688,
+   "id": "c0688",
+   "cell": "READYsys|late",
+   "template_idx": 24,
+   "filler_idx": 4
+  },
+  {
+   "item": 691,
+   "id": "c0691",
+   "cell": "READYsys|late",
+   "template_idx": 25,
+   "filler_idx": 1
+  },
+  {
+   "item": 698,
+   "id": "c0698",
+   "cell": "READYsys|late",
+   "template_idx": 26,
+   "filler_idx": 2
+  },
+  {
+   "item": 701,
+   "id": "c0701",
+   "cell": "READYsys|late",
+   "template_idx": 26,
+   "filler_idx": 5
+  },
+  {
+   "item": 703,
+   "id": "c0703",
+   "cell": "READYsys|late",
+   "template_idx": 27,
+   "filler_idx": 1
+  },
+  {
+   "item": 705,
+   "id": "c0705",
+   "cell": "READYsys|late",
+   "template_idx": 27,
+   "filler_idx": 3
+  },
+  {
+   "item": 713,
+   "id": "c0713",
+   "cell": "READYsys|late",
+   "template_idx": 28,
+   "filler_idx": 5
+  },
+  {
+   "item": 718,
+   "id": "c0718",
+   "cell": "READYsys|late",
+   "template_idx": 29,
+   "filler_idx": 4
+  }
+ ]
+}

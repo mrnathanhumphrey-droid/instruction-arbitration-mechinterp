@@ -1,0 +1,18 @@
+{
+ "stage": "full",
+ "iid": "6a137566b70141f3b4bb020053036c8e",
+ "price_per_h": 3.29,
+ "verified": {
+  "REAL_a8_q0.npz": "ac69c879f8a2ffe06b9e62ceace8b7c4bc182c445f661ca19481d966c81b7801",
+  "REAL_a8_reread.npz": "7344135de90e575bec0ae4e8438f11a219cffe0daf0aed796bdbe40fa7e0c08d",
+  "REAL_a8_rowcheck.json": "cb3fd48ba9390364df9cdc632a2913a1d9348dd1079c2cc07de8c7a40a14b621",
+  "REAL_a8_gap_report.json": "f535fbbe43e23cb66adeb7d2c84e271a9188d5cf329797163545cfa1ee286354",
+  "REAL_ledger.json": "0c87ff003275cd8ac8e4db4d618a5e2229e8743179b637332e09f6e6426035a2",
+  "REAL_checks.json": "9f2849393a34f8638113fc608c61afd60e9527111d9a628db438a589b017a872",
+  "REAL_B_run.log": "812b2a846d25c2408b68a80d762d5ed9996eaa721c82096ea9b6bccf834e5446"
+ },
+ "missing": [],
+ "reason": "all-verified",
+ "rc": 0,
+ "attached": false
+}

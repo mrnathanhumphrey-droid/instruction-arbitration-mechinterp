@@ -1,0 +1,19 @@
+{
+ "stage": "full",
+ "iid": "365d40ad2a414af8be49ccf594b5f7c4",
+ "price_per_h": 3.29,
+ "verified": {
+  "REAL_b5_transcripts.npz": "8e25fcf436cc4aed943ebb419cb2caa82eae98b72f4258e0b84fbd55616b2fcb",
+  "REAL_b5_transcripts.jsonl": "d96ccd6da0474aeaaba3a2e9e9abaf6b769ae7e46d91decf5e906ea9f3f42dd4",
+  "REAL_b5_transcripts_manifest.json": "933a81233fdb036b658448b0dec8b4d8668ad217d4e9b1ae38ada9a3e2381764",
+  "REAL_b5_q0.npz": "161e4d197bd2e0e99d380ffe023eca68bbfe6d0499eaa6fccca688feb87826ca",
+  "REAL_b5_gap_report.json": "6429330435633f26a34f2795bfdf3951b4da1b20c9f454e63ba9bde3266db0d9",
+  "REAL_ledger.json": "c8e4a9f08afe57ce55c3d13310ed798b22a9f71d7271e3d299e40a40da5ddeb5",
+  "REAL_checks.json": "09f278ed291e43304ebd7b0ca646c4a3be59b0fdd5f42f32a8f527ad8e281a39",
+  "REAL_B_run.log": "aa664a3954e9cd781c8afaffdc1e89d424d67b5d0dbc6f853fc75c0b417ec68c"
+ },
+ "missing": [],
+ "reason": "all-verified",
+ "rc": 0,
+ "attached": false
+}

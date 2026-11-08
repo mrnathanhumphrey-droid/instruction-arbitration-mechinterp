@@ -1,0 +1,21 @@
+{
+ "stage": "full",
+ "iid": "c67b9152a13846ef9cb3b19cf6a5aa5e",
+ "price_per_h": 3.29,
+ "verified": {
+  "REAL_transcripts.npz": "1f2011f5b52693382690b004f9beef4029828b0ab0dda824df8d5c376b3b4ac5",
+  "REAL_transcripts.jsonl": "f38ac02b32511356e2306d4e8c540480b532e64546285b94966bc825f2ff4e99",
+  "REAL_transcripts_manifest.json": "cf1ed8a4fe37d3d9e1fb5321cda53fa90fe1a6828b79bf5f409415b2bd5f0089",
+  "REAL_q0.npz": "7fecf59fcdd9c5ee915993e45e31bbe216048d4ed022f30ce5c0c114fd159bf3",
+  "REAL_q1.npz": "6f452b84b366e029f2c4c37716cf33255eea463c295ab7bd5e2251d0bb0688ff",
+  "REAL_q1_full.npz": "4a083aa8c5bd97dd9c3ef140a975c998a6b1a822cb9b032e6d923ce2faa62475",
+  "REAL_phase4.npz": "5ed7d77925deebb67b71fe0838a52dac22849ee56194762e38bd84fdf24dbb8e",
+  "REAL_ledger.json": "ff3e82bf2026af7bcd6b1e13ebc123e92dc8c499b4bf426a98bc8f962bc638c8",
+  "REAL_checks.json": "42e91df410914fb7246de6b009434feb4b0bf54715c16cdd2c3f579d2477993a",
+  "REAL_run.log": "5ae39bfc49fb9347c0ab5b99171a0212e21f6dc21a393842ea45d0f46f3753f5",
+  "REAL_gap_report.json": "03a4faf87f2ab797347a6592c4679a201a64cee3749587f21e71353f22c73f2b"
+ },
+ "missing": [],
+ "reason": "all-verified",
+ "rc": 0
+}

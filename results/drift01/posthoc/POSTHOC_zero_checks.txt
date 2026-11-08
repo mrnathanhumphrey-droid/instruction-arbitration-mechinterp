@@ -1,0 +1,22 @@
+
+[full run Q0 (cond order = Q0_CONDS)] items 8 (READYsys 4) · transcripts 144
+  drift    k0 A -0.66 W +1.31 | k1 A -2.24 W -1.66 | k2 A -1.90 W -1.69 | k4 A -2.21 W -1.40 | k8 A -2.92 W -1.93 | k16 A -4.04 W -2.54 | k32 A -5.89 W -2.47
+  filler   k0 A -0.66 W +1.31 | k1 A -1.04 W -0.90 | k2 A -1.19 W -0.97 | k4 A -1.65 W -1.34 | k8 A -2.19 W -2.22 | k16 A -3.34 W -2.95 | k32 A -5.36 W -3.50
+  cross    k0 A -0.66 W +1.31 | k1 A -2.17 W -1.68 | k2 A -2.00 W -1.75 | k4 A -2.34 W -1.39 | k8 A -3.02 W -1.92 | k16 A -4.02 W -2.50 | k32 A -5.86 W -2.43
+  refresh  k0 A +1.42 W +0.43 | k1 A +1.11 W -0.09 | k2 A +0.10 W -0.12 | k4 A -0.89 W -0.26 | k8 A -1.59 W -0.55 | k16 A -2.34 W -1.08 | k32 A -3.23 W -0.61
+  none     k0 A -8.83 W +0.69 | k1 A -9.10 W +0.31 | k2 A -9.17 W -0.04 | k4 A -9.39 W -0.81 | k8 A -10.04 W -1.25 | k16 A -10.70 W -1.44 | k32 A -11.12 W -1.56
+
+[B-b b5_q0] items 8 (READYsys 4) · transcripts 108
+  drift    k0 A -0.75 W +1.36 | k1 A -2.15 W -1.95 | k2 A -2.34 W -1.91 | k4 A -2.73 W -1.66 | k8 A -3.11 W -2.13 | k16 A -4.20 W -2.75 | k32 A -5.82 W -2.78
+  filler   k0 A -0.75 W +1.36 | k1 A -0.94 W -0.94 | k2 A -1.45 W -1.20 | k4 A -2.25 W -1.59 | k8 A -2.56 W -2.57 | k16 A -3.50 W -3.41 | k32 A -5.12 W -3.80
+  none     k0 A -8.79 W +0.60 | k1 A -9.18 W +0.30 | k2 A -9.24 W -0.12 | k4 A -9.53 W -0.61 | k8 A -10.14 W -1.18 | k16 A -10.68 W -1.33 | k32 A -11.21 W -1.54
+
+[Q3 slide (drift − filler, rel. turn 1; + = toward system) vs Δ = mean_i Y_drift − Y_filler at k] per transcript, full run
+  k=8: ρ +0.27 [+0.11, +0.43] n 144 · within mode: M1 +0.20 (n 48) · M2 +0.06 (n 48) · M3 -0.15 (n 48)
+  k=16: ρ +0.10 [-0.06, +0.26] n 144 · within mode: M1 -0.01 (n 48) · M2 -0.09 (n 48) · M3 +0.04 (n 48)
+  k=32: ρ +0.10 [-0.06, +0.26] n 144 · within mode: M1 +0.18 (n 48) · M2 +0.13 (n 48) · M3 +0.14 (n 48)
+
+[prose reconstruction] ntok matches REAL_a5_prose.json for 96 / 96 transcripts
+[prose − filler W at k = 1 per transcript] mean -0.73 · transcripts with any family word in turn pair 1: 6 / 96
+  ρ(DONE − READY count, W) -0.39 [-0.29, +0.13]  (DONE lexical account predicts ρ < 0)
+  W where the first pair has NO family words: -0.72 (n 90) · with DONE > READY: -1.01 (n 5)

@@ -1,0 +1,16 @@
+{
+ "probe_draws": 960,
+ "arms": [
+  "obey",
+  "defer",
+  "agree",
+  "defy"
+ ],
+ "ns": [
+  1,
+  2,
+  4,
+  8
+ ],
+ "row_tokens_max": 356
+}

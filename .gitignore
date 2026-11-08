@@ -1,6 +1,9 @@
 # Large tensor caches / intermediates — never commit
 *.npy
 *.npz
+# ...except HUNT-DRIFT-01's published readouts and frozen transcripts (small, needed to recompute its verdicts)
+!results/drift01/**/*.npz
+!data/drift01/*.npz
 *.pt
 *.bin
 *.safetensors
