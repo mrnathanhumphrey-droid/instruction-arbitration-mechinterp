@@ -8,7 +8,7 @@ token is `."` (the final period MERGED with the trailing double-quote) in every 
 alone in U0 (content followed by `<|eot_id|>`). The probe therefore separates on "does the content end in a quote," a local
 tokenization fact, not context-integrated provenance; F/N/R all carry the quote so all trivially classify as "tool," giving
 T=1.0, W=1.0, T−W=0.0 by construction. rule_zero caught it (T−W=0.000 exact; acc=1.0 at the embedding layer; s saturated).
-Ran 2026-09-23, Lambda a10, FULL N=300, $0.31, terminated clean; F/N token-match 300/300 (that part worked). PREREG_PRV01C.md
+Ran 2026-09-23, Lambda a10, FULL N=300, terminated clean; F/N token-match 300/300 (that part worked). PREREG_PRV01C.md
 sha256 `32c8413e838afce89a2e9b4dc112889945cc728114c3fb90236b3141c8974c69` (chained READOUT-01 `afb6d01b...`).
 
 ## What actually happened
@@ -32,7 +32,7 @@ sha256 `32c8413e838afce89a2e9b4dc112889945cc728114c3fb90236b3141c8974c69` (chain
 
 ## Status
 - **No provenance claim is made.** PRV-01c is re-opened: redesign the read position (interior content token) + save the
-  per-layer curve, then re-run (Llama, ~$0.31). This is a method amendment to the locked prereg — same class as the Phase-2
+  per-layer curve, then re-run. This is a method amendment to the locked prereg — same class as the Phase-2
   degenerate-gate and READOUT-01 respec — so it is the lead researcher/the reviewer's to approve before I re-lock and re-run.
 - SPOOF-01's BEHAVIORAL result (markers behaviorally inert; position beats marker identity) stands on its own and does not
   depend on PRV-01c. The REPRESENTATIONAL question (encoded true vs claimed channel) remains OPEN.

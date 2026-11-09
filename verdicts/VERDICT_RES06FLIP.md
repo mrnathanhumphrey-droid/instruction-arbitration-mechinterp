@@ -8,7 +8,7 @@ BUT small (~6% of Σ) and localized: the per-region shift is entirely the INTERM
 spans S 0.996→0.997 (dM +0.001 [−0.02, +0.02]), markers K 0.512→0.511 (dM −0.002 [−0.07, +0.10]), readout R 0.965→0.988 (dM
 +0.023 [+0.014, +0.039]). So the redundancy — assignment redundantly encoded by S (≈1.0), K (≈0.51), R (≈0.97) — holds in
 BOTH orders; it is not an artifact of the system-then-user recency layout.** Ran 2026-09-23, Lambda a10, FULL n=720 both
-orders (0 skipped), twin-VOID = 1.000 both, $0.43, terminated clean; re-verified from the json/npz. PREREG_RES06FLIP.md
+orders (0 skipped), twin-VOID = 1.000 both, terminated clean; re-verified from the json/npz. PREREG_RES06FLIP.md
 sha256 `1ec3b2ab211a2fe1c04d95c7443b3ddedb767d43b26d2d2adb8a979770407365` (chained RES-06 `076b2701...`).
 
 ## Results (twin-patch, all layers L8–31; M_all = 1.000 both orders = construction identity holds)

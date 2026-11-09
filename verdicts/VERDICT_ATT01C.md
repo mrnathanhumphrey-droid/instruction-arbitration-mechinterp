@@ -1,8 +1,7 @@
 # VERDICT — ATT-01c: within-level control for the shared-sign artifact
 
 **TRUSTED. Verdict: PARTIAL (P = 0.1514).** Ran 2026-09-18, Lambda a100_sxm4, FULL n=720 (360/360 per
-counterbalance level, 30 template clusters each), terminated clean, $0.32 (+$0.26 SMOKE#1 that caught an
-unbalanced-subsample bug). PREREG_ATT01C.md sha256 `c99fdaa9ccea199d5e2cd3709cfacafb3ffd00f67499c6081337df6f26800a84`,
+counterbalance level, 30 template clusters each), terminated clean. PREREG_ATT01C.md sha256 `c99fdaa9ccea199d5e2cd3709cfacafb3ffd00f67499c6081337df6f26800a84`,
 chained to PRV-04 `a71824cf…`. Artifacts: `att01c.json`, `att01c_withinlevel.csv`, `att01c_peritem.npz`
 (per-item raw arrays — the persistence fix so no re-analysis needs the GPU again).
 

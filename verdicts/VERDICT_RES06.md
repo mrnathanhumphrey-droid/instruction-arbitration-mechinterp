@@ -4,7 +4,7 @@
 regions OVERLAP massively — span (0.997), readout (0.965), and markers (0.512) each independently carry most or half of
 the counterfactual assignment; intermediate content (0.004) carries NONE. This is the OPPOSITE of an interaction term:
 regions redundantly re-encode the assignment, they do not synergize.** Ran 2026-09-21, Lambda a100_sxm4, FULL n=720
-(0 skipped), terminated clean, $0.35. PREREG_RES06.md sha256 `076b270179f52c37c4f569f738544747fea63e90b226c8c7e24225afa8e79409`,
+(0 skipped), terminated clean. PREREG_RES06.md sha256 `076b270179f52c37c4f569f738544747fea63e90b226c8c7e24225afa8e79409`,
 chained to CAL-01 `32cf270f…`. Artifacts: `res06.json`, `res06_arms.csv`, `res06_peritem.npz`.
 
 ## Results (B=−3.8792, n=720; twin-patch, all layers L8–31)

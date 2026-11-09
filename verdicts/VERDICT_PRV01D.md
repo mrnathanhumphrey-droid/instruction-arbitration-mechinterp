@@ -12,8 +12,7 @@ denom Y(H)−Y(U) = +2.386 nats measured in-run. This is an **unplanned independ
 column** (header produces ~+2.4 nats un-serialized) on a separate run and pipeline — it materially strengthens the redundancy
 finding. Fit gates: G-CONSTRUCT 720/720, G0(L0) = 0.500 (chance by construction), G-VALIDITY(L1) = 0.999, d1 = 1.000 (v̂ is
 almost perfectly readable). **What is NOT earned:** anything about whether v̂ is or isn't the causal switch — the additive test
-with a non-separating null cannot address it. Ran 2026-09-24, Lambda a100_sxm4, FULL n=720, $0.37 (+$0.86 on a prior
-boot-timed-out box, terminated clean, no orphan), terminated clean; re-verified from json. PREREG_PRV01D.md sha256 `06eeb097...`
+with a non-separating null cannot address it. Ran 2026-09-24, Lambda a100_sxm4, FULL n=720, terminated clean; re-verified from json. PREREG_PRV01D.md sha256 `06eeb097...`
 (chained PRV-01f `0ba39250...`). (SMOKE ANCHOR-FAIL Y(U)=−4.617 was the 40-item biased subsample; FULL is the real check.)
 
 ## Numbers (copied from results/prv01d.json)

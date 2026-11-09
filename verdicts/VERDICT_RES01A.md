@@ -3,7 +3,7 @@
 **VERDICT: NON-LINEAR-PROVENANCE-EXISTS (§4-A positive).** After removing all LINEAR provenance a linear probe
 can find (k=50 iterative deflation → linear held-out ≈ chance, 0.54), an MLP still decodes provenance (role) at
 0.90–0.95 on the held-out group-disjoint split, at all three cached saturated layers (+ the cap-bound control).
-Ran 2026-09-19, Lambda a10, cached residuals, NO forwards, terminated clean, $2.49 (116 min). PREREG_RES01A.md
+Ran 2026-09-19, Lambda a10, cached residuals, NO forwards, terminated clean (116 min). PREREG_RES01A.md
 sha256 `7a098124afdae9ea3f6f7e06e996441675eccd13efe2b683eea42a239dcc7e37`, chained to PRV-04c `e33230a7…`.
 Artifacts: `res01a.json`, `res01a_arms.csv`.
 

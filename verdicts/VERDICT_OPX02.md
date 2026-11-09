@@ -7,7 +7,7 @@ arbitration follows recency while the per-span causal asymmetry follows role —
 
 - prereg: `PREREG_OPX02.md` sha256 `bce394380057a6811512d84dbcdf5634c5e7590c816cfe303299df1b99db0d82` (chained OPX-01
   `bd3604ac…`); runner sha256 `78778a56e80a1c9535c9c912e8708ccffd7f61e2317065ff84eb3ac85288f1a3`
-- run: a100_sxm4 @ us-east-1, FULL n=720, $0.28 (+$0.51 prior dead-boot, clean no-orphan; $0.79 total). B_normal −3.8792,
+- run: a100_sxm4 @ us-east-1, FULL n=720. B_normal −3.8792,
   B_flipped +1.6392. `results/opx02/opx02.json` + `opx02_arms.csv` + `opx02_peritem.npz`.
 
 ## Gates

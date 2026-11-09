@@ -25,7 +25,7 @@ On-instance P_e curve reproduces local at every shared layer: L8 0.0346 (local 0
 ## Verdict → Phase B
 Per the locked three-tier rule, **WEAK → Phase B subspace at the argmax-|M| layer = L8** (partial mediation). The single ŵ needle catches a ~3% sliver at the peak-recoverability layer; Phase B (deflation-built subspace, projection-exchange) tests whether the full subspace multiplies it (→ H1, provenance drives arbitration via a subspace) or it stays a sliver (→ leaning H3, arbitration is mostly non-residual / attention routing).
 
-Cost: $0.52 total (2 SMOKE catches + full run); instance terminated clean. Artifacts: `prv03_phaseA.json`, `prv03_full.log`, `prv03_phaseA_smoke.json`.
+Instance terminated clean. Artifacts: `prv03_phaseA.json`, `prv03_full.log`, `prv03_phaseA_smoke.json`.
 
 ---
 ## HUMAN RULING & READING — (reserved for the lead researcher; mechanical outcome above stands)

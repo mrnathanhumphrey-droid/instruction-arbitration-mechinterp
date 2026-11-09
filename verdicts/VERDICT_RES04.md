@@ -2,7 +2,7 @@
 
 **Mechanical verdict: PARTIAL-EXTENT (report band). The extent effect is REAL but SMALL. Substantively: the missing
 ~half is essentially NOT on the role markers — the widest in-block residual edit tops out at ~0.52.** Ran 2026-09-21,
-Lambda a100_sxm4 (us-east-1), FULL n=720 (0 skipped), VOID clean, terminated clean, $0.30. PREREG_RES04.md re-lock sha256
+Lambda a100_sxm4 (us-east-1), FULL n=720 (0 skipped), VOID clean, terminated clean. PREREG_RES04.md re-lock sha256
 `e1f1c6ea6741ec5fa7d76726e02679d3cb697c184259187d6b3f9a6feeba842b` (supersedes `3cea2712…`), chained to RES-02
 `66ec4cee…`. Artifacts: `res04.json`, `res04_arms.csv`, `res04_peritem.npz` (per-item Y all arms — persisted).
 

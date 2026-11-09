@@ -14,8 +14,7 @@ reparameterization** — its probe starts at 0.919 because L2 at fixed C=1.0 is 
 changes the estimator, not just the coordinates; it corroborates (necessity −0.017) but does not carry the claim. Because we
 varied the estimator (not only an invertible reparameterization at a preserved prediction problem), this is **three procedures
 disagreeing on what they remove with the causal conclusion holding across all three — NOT a clean empirical instance of
-2608.10566** (claiming one would repeat the over-reach the fetch corrected). → ROBUST-EXISTENTIAL (P1+P3).** Ran 2026-09-25, Lambda a100_sxm4, FULL n=720, $0.58 (+$0.27 on a SMOKE-caught tuple-unpack bug box,
-terminated clean, no orphan; $0.85 total), terminated clean; re-verified from json. PREREG_PRV01HR.md sha256 `b5b9faa8...`
+2608.10566** (claiming one would repeat the over-reach the fetch corrected). → ROBUST-EXISTENTIAL (P1+P3).** Ran 2026-09-25, Lambda a100_sxm4, FULL n=720, terminated clean; re-verified from json. PREREG_PRV01HR.md sha256 `b5b9faa8...`
 (re-locked after the SMOKE-caught bug; runner `76ac0838...`; chained PRV-01h `fdd4b552...`). (SMOKE ANCHOR-FAIL Y(U)=−4.617 was
 the 40-item subsample; FULL is the real check.)
 

@@ -6,7 +6,7 @@ the primary interior read — the token-identity artifact is gone), but the run 
 stub-padding used to equalize content-start offset is arm-correlated (each arm needs a different pad count) and therefore is
 itself a channel proxy. G0b NON-SATURATION fails at 32/33 layers ≥ 0.99: the tool-vs-user channel is ~100% linearly decodable
 at every layer ≥ 1, i.e. lexical/structural information is laundered forward at depth. The headline T − W_J = +0.095
-[0.091, 0.099] is NOT reportable — the run is VOID.** Ran 2026-09-23, Lambda a100, FULL N=297 (drops 3, 1.0%), $0.37,
+[0.091, 0.099] is NOT reportable — the run is VOID.** Ran 2026-09-23, Lambda a100, FULL N=297 (drops 3, 1.0%),
 terminated clean; re-verified from json. PREREG_PRV01C_R2.md sha256 `2f58285c...` (chained PRV-01c `32c8413e`).
 
 ## Gate readout

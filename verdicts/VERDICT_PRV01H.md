@@ -10,7 +10,7 @@ below the 0.597 bar), and mass stayed ~0.45, so all 25 rungs are interpretable �
 only by the deflation cap. Across that entire interpretable range the necessity curve is flat-to-negative: 0.008 (k=1) → peak
 0.077 (k=11) → −0.073 (k=25). Removing the top-25 decodable "provenance" directions does not reduce the header's resistance; at
 high k it slightly INCREASES it (Y(H⊥v)=−0.630 vs Y(H)=−0.805). → INFORMATION-NOT-NECESSARY over the swept subspace.** Ran
-2026-09-24, Lambda a100_sxm4, FULL n=720, $1.18 (+$0.86 on a prior unhealthy a10, terminated clean, no orphan; $2.04 total),
+2026-09-24, Lambda a100_sxm4, FULL n=720,
 terminated clean; re-verified from json. PREREG_PRV01H.md sha256 `fdd4b552...` (chained PRV-01g `d815b111...`). (SMOKE
 ANCHOR-FAIL Y(U)=−4.617 was the 40-item biased subsample; FULL is the real check.)
 

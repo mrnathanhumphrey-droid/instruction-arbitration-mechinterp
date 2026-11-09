@@ -7,7 +7,7 @@ multi-permutation G-SHUFFLE null — PRV-01e passes every gate and lands PROPAGA
 null). The propagation curve at the peak layer (L1) is 1.000 / 1.000 / 1.000 / 0.995 / 0.908 / 0.893 at d = 1/4/8/16/32/64:
 role-header provenance is ~89% linearly recoverable a full 64 tokens past a byte-identical (forged) payload — strongest at
 layer 1 and carried forward, consistent with attention copying the header identity downstream within one layer.** Ran
-2026-09-23, Lambda a100, FULL N=300, $0.50, terminated clean; re-verified from json. PREREG_PRV01E_V2.md sha256 `9350d4f2...`
+2026-09-23, Lambda a100, FULL N=300, terminated clean; re-verified from json. PREREG_PRV01E_V2.md sha256 `9350d4f2...`
 (chained PRV-01e `efd4d2f6`).
 
 ## Gates (all pass)

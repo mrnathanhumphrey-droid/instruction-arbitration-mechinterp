@@ -4,7 +4,7 @@
 = −2.75, and B_role stays flat at ~−0.5 at every distance. The pre-committed §2 reading that fires is "neither moves across
 16k → recency is ORDINAL, not metric": the last block wins regardless of how far the competitor is pushed away. This kills
 the padding attack — verbosity buys an attacker nothing — and the practical advice inverts.** Ran 2026-09-22, Lambda a100,
-Llama-3.1-8B-Instruct, system-vs-user contest, FULL n=720 (n=180 at 16k), $1.53, terminated clean; curve re-verified from
+Llama-3.1-8B-Instruct, system-vs-user contest, FULL n=720 (n=180 at 16k), terminated clean; curve re-verified from
 the per-item npz. PREREG_AUTH01.md sha256 `b2d1cc09d924470bb9d03e31ac988f13667c6437b49653e911e388ab09289f42`.
 
 ## The curve (primary placement = filler between competitors, varies the recency gap; +Y = obeys system)

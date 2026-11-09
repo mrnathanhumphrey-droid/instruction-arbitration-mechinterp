@@ -4,7 +4,7 @@
 PROVENANCE-DOMINANT.** The ~half residual-mediation ceiling (RES-02) decomposes into provenance ≈ 0.41 and a
 small position-import ≈ 0.06; the guard fires only because the position-only lever (early/late) imports half the
 position shift the cross-role swap does. Ran 2026-09-20, Lambda a100, FULL n=696 (24 skipped for span mismatch),
-terminated clean, $0.35. PREREG_RES03.md sha256
+terminated clean. PREREG_RES03.md sha256
 `befaa3ca84c50f9a67031808314f5322c0ded026a8304ac06040a4b3c939be5b`, chained to RES-02 `66ec4cee…`. Artifacts:
 `res03.json`, `res03_arms.csv`.
 

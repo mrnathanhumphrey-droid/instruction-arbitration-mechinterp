@@ -11,7 +11,7 @@ property of the arbitration under content-preserving exchange, not an artifact o
 **Mechanical string: PARTIAL** — because the pre-committed COHERENT bin required slope CI ∋ 0, and the slope came back
 significantly NEGATIVE. A negative slope is on the content-bound side of the lead researcher's own discriminator ("diverges with depth →
 incoherence"); it falls in neither pre-written bin, so the runner printed PARTIAL. The direction is unambiguous. Ran
-2026-09-21, Lambda a100_sxm4, FULL n=720 (0 skipped), terminated clean, $0.32. PREREG_DIST01.md sha256
+2026-09-21, Lambda a100_sxm4, FULL n=720 (0 skipped), terminated clean. PREREG_DIST01.md sha256
 `9f8f30080acb2ee1ed59b3d8a48dc4f32720133d4191a110e54095b1c0a5c445`, chained to RES-06 `076b2701…`. Artifacts:
 `dist01.json`, `dist01_curves.csv`, `dist01_peritem.npz`.
 

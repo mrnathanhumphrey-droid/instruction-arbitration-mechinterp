@@ -9,7 +9,7 @@ v1 detail below stands.
 **Verdict (v1, τ=0.10): INVALID (magnitude match failed) — directionally NOTHING-ROUTES.** The pre-registered match gate
 (§4: delivered swap_tv ∈ [0.08,0.12] per arm) fired: survivor_blk delivered only ~0.059 vs bookkeeper 0.081,
 so the arms are NOT at equal magnitude and the Δ comparison is not a valid matched test. Ran 2026-09-18, Lambda
-a100_sxm4, FULL n=720 (B=−3.8713), terminated clean, $0.34. PREREG_PRV04B.md sha256
+a100_sxm4, FULL n=720 (B=−3.8713), terminated clean. PREREG_PRV04B.md sha256
 `909748fbcf25c8732ef73044d82dcffb1c58971f9310a00aa2c7aaa299d9df05`, chained to PRV-04a `07d70822…`. Artifacts:
 `prv04b.json`, `prv04b_arms.csv`.
 
@@ -46,8 +46,8 @@ their capacity (~0.06), below the [0.08,0.12] window. Bookkeepers (higher block 
 The instrument cannot be validly matched at τ=0.10 because survivor capacity is lower than assumed. The
 DIRECTION is NOTHING-ROUTES / tracking-inert, but per the pre-registered gate it is not a locked verdict. To
 close it cleanly, re-run at **τ=0.05** (achievable by both — throttles bookkeeper to survivor capacity, valid
-match) + recentre the match window to [0.04,0.06]. This is a τ re-lock (superseding §2b), the lead researcher's call. Cheap
-($0.34). Alternative: accept the direction (bookkeeper collapse + universal ~0 at low magnitude) as the answer.
+match) + recentre the match window to [0.04,0.06]. This is a τ re-lock (superseding §2b), the lead researcher's call. Cheap.
+Alternative: accept the direction (bookkeeper collapse + universal ~0 at low magnitude) as the answer.
 
 ## Consequence for the arc (unchanged from PRV-04a direction, now reinforced)
 Tracking heads (ATT-01c survivors) show NO causal routing of the arbitration via block-attention at the readout,
@@ -65,7 +65,7 @@ lowest-capacity arm being compared.
 ---
 ## RE-RUN v2 (τ=0.05, RE-LOCKED 2026-09-19; the lead researcher "yes do the rerun")
 Prereg re-locked sha256 `49bbc89306355f4e139a266b6f81875097004dae92e4d08d670ce5cebd8dbeae` (only §2b τ and §4
-window changed). Lambda a100_sxm4, FULL n=720 (B=−3.8713), terminated clean, $0.35. Artifacts overwrote
+window changed). Lambda a100_sxm4, FULL n=720 (B=−3.8713), terminated clean. Artifacts overwrote
 `prv04b.json` / `prv04b_arms.csv` (v2).
 
 **Also INVALID** — survivor_blk_25 delivered 0.0357 (below the [0.04,0.06] window), bookkeeper 0.0448 (in),
@@ -100,7 +100,7 @@ magnitude) it is magnitude-driven, not tracking-driven.**
 
 ## To make it stampable (the lead researcher's call)
 (a) One per-head-matched run: restrict survivor arm to capacity ≥ τ heads so every compared head delivers
-exactly τ (airtight head-for-head match vs bookkeeper). ~$0.35, §3 arm re-lock. Selects the least
+exactly τ (airtight head-for-head match vs bookkeeper). One short run, §3 arm re-lock. Selects the least
 block-symmetric (most bookkeeper-like) survivors → a null there is the clean confirming case. OR (b) accept the
 two-run direction. Either way: structural-anchor gets NO causal leg; RDV-01 + KDR-01 stand; only
 generation-position block-total mass tested (positional/within-block/upstream untested).

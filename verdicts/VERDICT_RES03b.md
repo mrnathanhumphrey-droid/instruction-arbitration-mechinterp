@@ -10,7 +10,7 @@ Arm1−Arm2 = +0.422 (vs 0.04 floor): cross-role exchange produces a large, spec
 undecomposed is WHY (provenance or RoPE offset), not WHETHER.
 
 ## (superseded framing kept for the record) ~~STEEP-WITHIN-ARM; decomposition unresolved~~ Ran 2026-09-20, Lambda a100,
-FULL n=696, baseline + Arm P only, per-item PERSISTED (`res03b_peritem.npz`), terminated clean, $0.33. Chained to
+FULL n=696, baseline + Arm P only, per-item PERSISTED (`res03b_peritem.npz`), terminated clean. Chained to
 RES-03 `befaa3ca…`.
 
 ## Why this was needed

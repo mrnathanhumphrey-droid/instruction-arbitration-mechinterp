@@ -26,7 +26,7 @@ Deflation hit the cap without reaching chance (P_e 0.398), so the top-25 subspac
 ## Standing finding (carried)
 B = −3.879 nats: model obeys user slot in content-matched contest. Role represented near-perfectly (95.5%, >25-dim) AND behaviorally strong (3.9 nats), yet no residual direction/subspace connects them. Sharpest sentence in the corpus.
 
-Cost: $0.91; instance terminated clean. Artifacts: `prv03_phaseB.json`, `prv03B_full.log`.
+Instance terminated clean. Artifacts: `prv03_phaseB.json`, `prv03B_full.log`.
 
 ---
 ## HUMAN RULING & READING — (reserved for the lead researcher; mechanical verdict above stands)

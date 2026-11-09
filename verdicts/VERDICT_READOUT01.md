@@ -9,7 +9,7 @@ ORDER of all five cells is preserved exactly (Kendall τ = 1.0) — every direct
 MAGNITUDE: restatement recovery = genuine − baseline = +10.45 nats under the forced slot vs the +6.27 quoted (|Δ| = 4.2 >
 1.0), and genuine flips to net-obeying-system (Y = +1.93 > 0). Mechanical outcome: REGIME-LIMITED — the +6.27/+6.28 figure is
 replaced by the forced-slot value (both reported); the recovery is CONFIRMED and larger, so the Mistral thread takes a
-CORRECTION, not a retraction.** Ran 2026-09-23, Lambda a10, FULL n=720, $0.21, terminated clean; re-verified from the npz.
+CORRECTION, not a retraction.** Ran 2026-09-23, Lambda a10, FULL n=720, terminated clean; re-verified from the npz.
 PREREG_READOUT01.md sha256 `afb6d01b77201c39d6c8dc1620f4289204b433b237e322d0626fb1e814687191` (chained SPOOF-01 `02212d6d...`).
 
 ## Gate A — mass diagnostic (unprefixed); replication PASSED

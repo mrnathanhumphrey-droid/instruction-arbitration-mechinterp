@@ -68,4 +68,3 @@ speak for the 12 conversation types and 30 templates sampled; no causal internal
 - **bf16 prefill shape.** Readouts depend on how a prefix is chunked into the cache (single-pass vs fresh: median ≈ 0.1,
   max ≈ 0.5–0.7 nats); every later stage prefills each prefix in one pass, and the gap is reported per run.
 
-Cost: $116.93 of GPU time in the ledger (about $122 including one launch lost to a local machine failure).

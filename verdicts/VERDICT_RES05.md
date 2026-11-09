@@ -4,7 +4,7 @@
 before the output — net-of-floor is flat/below-span across the diagnostic mid-stack (L≤20) and rises only into the
 tautology gradient (L24→31). Combined accounting tops out at ~0.55 (CI-hi 0.67 < 0.80) → the rest is carried by NEITHER
 the block NOR the mid-layer readout → intermediate positions / a distributed computation.** Ran 2026-09-21, Lambda
-a100_sxm4 (us-east-1), FULL n=720 (0 skipped), VOID clean, terminated clean, $0.41. PREREG_RES05.md sha256
+a100_sxm4 (us-east-1), FULL n=720 (0 skipped), VOID clean, terminated clean. PREREG_RES05.md sha256
 `f0b75186bb0068442014cea854131c438183d10e78360eb9b1b157bd47ef3f3c`, chained to RES-04 `e1f1c6ea…`. Artifacts:
 `res05.json`, `res05_arms.csv`, `res05_peritem.npz` (per-item Y all arms — persisted).
 

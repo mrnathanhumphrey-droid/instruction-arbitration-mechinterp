@@ -22,7 +22,7 @@ condition, so it is USED, and "recoverable-and-unused" is false; (2) TOOL's d_ma
 — the marker ALONE (raw+ipython) confers +2.47 vs user; role and serialization are REDUNDANT this-is-data signals that saturate
 together (each ≈ does the job alone), so striking role→serialization is the RES-06 error and the TOOL verdicts are NOT struck.**
 Ran 2026-09-23, Lambda,
-FULL n=720, $0.14, terminated clean; re-verified from json + npz. PREREG_PRV01F.md sha256 `0ba39250...` (chained PRV-01e v2
+FULL n=720, terminated clean; re-verified from json + npz. PREREG_PRV01F.md sha256 `0ba39250...` (chained PRV-01e v2
 `9350d4f2`). (SMOKE showed Y(A)=−1.236 ANCHOR-FAIL — 40-item subsample noise; FULL Y(A)=+0.011 is the real check and passes.)
 
 ## Numbers

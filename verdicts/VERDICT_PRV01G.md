@@ -10,7 +10,7 @@ NOT-NECESSARY. v̂-projection (0.022) is only marginally more disruptive than ra
 provenance direction" is barely different from removing a random direction. The single-layer diagnostic H⊥v(L1) moves Y ≈ 0
 (necessity_L1 = −0.001), exactly the self-repair prediction (single-layer ablation rebuilt downstream). And the secondary
 additive-window probe shows NO inert rung even at α=0.05 (random did 33% of v̂'s effect) — confirming PRV-01d's additive test was
-fundamentally method-limited, not merely mis-laddered.** Ran 2026-09-24, Lambda a100_sxm4, FULL n=720, $0.25, terminated clean;
+fundamentally method-limited, not merely mis-laddered.** Ran 2026-09-24, Lambda a100_sxm4, FULL n=720, terminated clean;
 re-verified from json. PREREG_PRV01G.md sha256 `d815b111...` (chained PRV-01d `06eeb097...`). (SMOKE ANCHOR-FAIL Y(U)=−4.617 was
 the 40-item biased subsample, as in PRV-01d/f; FULL is the real check and passes.)
 

@@ -25,3 +25,6 @@ lit/
 .DS_Store
 __pycache__/
 *.pyc
+
+# Run spend - kept private (2026-11-09)
+REAL_ledger.json

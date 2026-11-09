@@ -11,7 +11,7 @@ sys-FALSE), it is a genuine re-prioritization, not a fixed-token hack. A Spotlig
 re-asserted LAST wins by recency.** ⚠**Two load-bearing scopes: (a) the pre-registered validity gate was DEGENERATE and is
 replaced by the counterbalance-split check below; (b) this tests only a NON-ADAPTIVE attacker — an attacker who forges the
 `[SYSTEM REMINDER]` marker inside `[TOOL_RESULTS]` is untested, and that is now the front-of-queue probe.**
-Ran 2026-09-22, Lambda a10, Mistral-7B-Instruct-v0.3, d=0, FULL n=720, $0.33, terminated clean; numbers re-verified from
+Ran 2026-09-22, Lambda a10, Mistral-7B-Instruct-v0.3, d=0, FULL n=720, terminated clean; numbers re-verified from
 the per-item npz. PREREG_AUTH01.md sha256 `b2d1cc09d924470bb9d03e31ac988f13667c6437b49653e911e388ab09289f42`.
 
 ## Results (n=720; +Y = obeys system; baseline Y = −7.33)

@@ -10,9 +10,8 @@ mechanically VOID because G-SHUFFLE returned 0.200 (gate: 0.50 ± 0.08). That ga
 permutation on a probe whose real signal is perfectly separable, so its null is high-variance, and 0.200 is one noisy draw —
 and crucially 0.200 < 0.5 is the OPPOSITE of the CV-leak signature the gate exists to catch (a leak would push shuffled
 accuracy ABOVE 0.58, not below chance). So the VOID is a mis-specified-gate artifact; the substantive result stands pending a
-proper multi-permutation shuffle null.** Ran 2026-09-23, Lambda a100, FULL N=300, $0.49, terminated clean; re-verified from
-json. PREREG_PRV01E.md sha256 `efd4d2f6...` (chained PRV-01c-r2 `2f58285c`). (First launch boot-timed-out, $0.54, no orphan;
-relaunched.)
+proper multi-permutation shuffle null.** Ran 2026-09-23, Lambda a100, FULL N=300, terminated clean; re-verified from
+json. PREREG_PRV01E.md sha256 `efd4d2f6...` (chained PRV-01c-r2 `2f58285c`).
 
 ## Gates
 | gate | value | pass | note |
@@ -43,7 +42,7 @@ consistent with attention copying the header identity forward within a single la
 
 ## Consequence — a gate-method amendment for the lead researcher/the reviewer (not mine to self-approve)
 G-SHUFFLE should be re-specced to a multi-permutation null (n_perm ≥ 20: report the null mean/CI, pass if real-acc exceeds the
-95th percentile and the null mean ≈ 0.5). Re-run PRV-01e with that gate (~$0.49) to convert this to a clean PROPAGATED stamp.
+95th percentile and the null mean ≈ 0.5). Re-run PRV-01e with that gate to convert this to a clean PROPAGATED stamp.
 Same class as the Phase-2 degenerate validity gate and r2's mis-specified G6 — a pre-registered gate that, once run, proved
 under-powered. Until then PROPAGATED is SUGGESTIVE-pending-gate-fix, not a stamped verdict.
 

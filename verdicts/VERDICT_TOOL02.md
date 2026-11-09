@@ -17,7 +17,7 @@ model's native tool channel is an injection AMPLIFIER, not a defense.** Distance
   ~6 nats, CI excludes 0. **Prediction ("in between 0 and +2.5") FAILED — opposite sign, largest magnitude.**
 
 Predicted ordering was llama > mistral > qwen ≈ 0. Actual: **llama (+2.49) > qwen (+1.22) ≫ mistral (−6.31).** Ran
-2026-09-22, Lambda a10, FULL n=720 per model (0 skipped), $0.28 total, terminated clean; numbers re-verified from the
+2026-09-22, Lambda a10, FULL n=720 per model (0 skipped), terminated clean; numbers re-verified from the
 per-item npz. PREREG_TOOL02.md sha256 `348608042a6ebbf5f83afc2050e6d4e92113a29ea88efd7d90f717d0c96221e0`, chained TOOL-01.
 
 ## Results (n=720/model; template-cluster bootstrap CI95; nats; +Y = obeys system)

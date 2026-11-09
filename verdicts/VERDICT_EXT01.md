@@ -8,7 +8,7 @@ marker.
 - prereg: `PREREG_EXT01.md` sha256 `86b066c70025e518f16abf009e752235b42b96997df209b27376e0d38962b9fe` (chained TPL-01
   Phase23 `08d2f082…`)
 - runner: `runners/ext01_lambda.py` sha256 `838799ffe141636bb314d7afc16c998c23eff613f9d7ba4d08be551d10aff3b0`
-- run: a10 @ us-east-1, FULL n=720 (0 skipped), $0.23, terminated clean, no orphan. `results/ext01/ext01.json` +
+- run: a10 @ us-east-1, FULL n=720 (0 skipped), terminated clean, no orphan. `results/ext01/ext01.json` +
   `ext01_arms.csv` + `ext01_peritem.npz`. B = −3.9086.
 - sharp 2-level form (graded sweep not well-posed on Llama — see prereg §0; only one cross-role-swappable
   role-distinguishing marker token exists, the role word).

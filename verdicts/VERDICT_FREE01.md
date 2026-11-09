@@ -8,7 +8,7 @@ stay injection-obeying — the same ordering the readout gives. HOWEVER the genu
 vs 27.6% baseline, +10 pts): a substantial part of restatement's "recovery" is the model declining to emit TRUE/FALSE at all,
 not switching to the system's answer. So "restatement makes the model obey the system prompt" is TRUE in direction and
 behaviorally real, but incomplete — it also converts wrong-answering into non-answering.** Ran 2026-09-23, Lambda a10, FULL
-n=720, generation, $0.32, terminated clean. ⚠**Runner had a sign-mapping bug (τ/per-item computed on raw R instead of
+n=720, generation, terminated clean. ⚠**Runner had a sign-mapping bug (τ/per-item computed on raw R instead of
 Y_signed); caught by rule_zero (τ=−0.8 contradicted the obvious compliance ranking) and corrected by recompute from the saved
 per-item npz — the forward Y was correct, reproducing READOUT-01 Gate B exactly (see below). Runner fixed for the record.**
 PREREG_FREE01.md sha256 `b0037006...` (chained PRV-01e `efd4d2f6`). Corrected numbers: `free01_corrected.json`.

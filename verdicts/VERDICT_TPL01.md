@@ -14,7 +14,7 @@ cells failed). The composite §5 TEMPLATE-PREDICTIVE label is **not earned** (it
 - prereg: `PREREG_TPL01_PHASE23.md` sha256 `08d2f0827031b1f4707052b438ae111696b56eb3583c733d3f0483c3cbb661d6` (chained Phase-1 `35e52e12…`)
 - runner: `runners/tpl01_phase23.py` sha256 `1ed0cd568d2043f603710cbbfc355cb675fe26bc784d9ea7ce320b37b4562b33`
 - battery: `stimuli_tool_contested_true_false.jsonl` sha256 `49856c3d…` (720, `tool_contested_cross`, TRUE/FALSE — TOOL lineage)
-- run: a100_sxm4 @ asia-south-1, FULL n=720, 6 models, transformers 4.46.0, $1.06 (+$0.92 prior FULL that exposed the forced bug = $1.98 across two FULLs; +$0.17 SMOKE-box earlier). Terminated clean, no orphan.
+- run: a100_sxm4 @ asia-south-1, FULL n=720, 6 models, transformers 4.46.0. Terminated clean, no orphan.
 - results: `results/tpl01/tpl01_phase23.json` + per-model `tpl01_{key}_peritem.npz`.
 
 ## Gates

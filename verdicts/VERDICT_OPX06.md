@@ -7,7 +7,7 @@ degeneracy and must not be reported as a finding.** Self-caught from the exact q
 
 - prereg: `PREREG_OPX06.md` sha256 `71ce191f2135d66b843d63750e44ae10c473d60cda6aa570880d961ee71e9cb7` (chained OPX-05
   `e110307e…`); runner sha256 `6d2db0e4667669384fb6744772a4ca05428b990ab2bae567c32780256524076d`
-- run: a10 @ us-east-1, FULL n=720, $0.31, terminated clean, no orphan. `results/opx06/` (json/csv/npz retained for the record).
+- run: a10 @ us-east-1, FULL n=720, terminated clean, no orphan. `results/opx06/` (json/csv/npz retained for the record).
 
 ## The degeneracy (proof)
 At JOINT both blocks are `[info-header][\n\n][imperative]`, identical **except the counterbalanced target token** (DONE vs READY).

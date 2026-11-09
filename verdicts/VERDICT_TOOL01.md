@@ -10,7 +10,7 @@ Distance check below). Injection through the tool role is STILL obeyed
 on net (B_tool = −1.97, B_tool_raw = −1.50, both CI exclude 0 = net obeys the last/tool block) — just blunted ~2 nats
 vs a user-role injection. So the fired label "PRIVILEGE-BIT-OVERRIDES" is a MISNOMER of its own §3 fine arm: the
 overriding is the ROLE HEADER, not the `tojson` JSON wrapper.** Ran 2026-09-22, Lambda a100_sxm4, FULL n=720 (0
-skipped), $0.24, VOID clean (1.000), per-item persisted, terminated clean. PREREG_TOOL01.md sha256
+skipped), VOID clean (1.000), per-item persisted, terminated clean. PREREG_TOOL01.md sha256
 `f74871490f7be6efdd4ebc830751f44f949c7055cda9046984428a0831694456`, chained to ORD-01 `fab3eaaf…`.
 
 ## Quantity convention (RE-01, binding)

@@ -9,7 +9,7 @@
 injection-resistance mapping is a property of the chat TEMPLATE's native tool rendering, structure-matched. Mistral-7B-v0.3's
 `[TOOL_RESULTS]` markers alone — with a plain assistant text stub and no tool_call — amplify tool-borne injection by
 −6.82 nats vs a user message. The confound TOOL-02 flagged (that −6.31 might be "the model following a tool it just
-committed to call") is refuted.** Ran 2026-09-22, Lambda a10, FULL n=720/model (0 skipped), $0.49, terminated clean;
+committed to call") is refuted.** Ran 2026-09-22, Lambda a10, FULL n=720/model (0 skipped), terminated clean;
 numbers re-verified from per-item npz. PREREG_TOOL03.md sha256 `a41a922bae201bad3beda073fc760ddd4bcf5102d6e9921c7f958907c8f15a78`,
 chained TOOL-02.
 

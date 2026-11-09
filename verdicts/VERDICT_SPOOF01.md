@@ -12,7 +12,7 @@ forgery (Δ +2.21 toward injection), while sysTRUE is unchanged (−2.44 → −
 comes from harness PLACEMENT (recency), not from a copyable marker, so it survives this adaptive attack as a still-VALID
 re-prioritization (counterbalance-split VALID both ways) — the §6 disclosure trip-wire does NOT fire (no defeat). This is a
 third-angle corroboration of Phase-1 ordinality: even a forged, identical winning marker loses to recency. Ran 2026-09-23,
-Lambda a10, FULL n=720, $0.19, terminated clean; all numbers re-verified from the per-item npz. PREREG_SPOOF01.md sha256
+Lambda a10, FULL n=720, terminated clean; all numbers re-verified from the per-item npz. PREREG_SPOOF01.md sha256
 `02212d6d6563d6321318072ea5d9a106927c922be7bc1a7054be2c79454d77f0` (chained AUTH-01 `b2d1cc09...`).
 
 ## Cells (n=720; +Y = obeys system; report the per-direction PAIR, not the mean)

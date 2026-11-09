@@ -2,7 +2,7 @@
 
 **Verdict: INSTRUMENT-FAILURE (pre-committed gate).** The bookkeeper control moved (M_att=+0.228), which by
 PREREG §6 (inherited from PRV-04 §6) renders the tracking-specific arms uninterpretable. Ran 2026-09-18, Lambda
-a100_sxm4, FULL n=720 (B=−3.8713), terminated clean, $0.43 (+SMOKE in the same run). PREREG_PRV04A.md sha256
+a100_sxm4, FULL n=720 (B=−3.8713), terminated clean (+SMOKE in the same run). PREREG_PRV04A.md sha256
 `07d708224e827d2a119355cbb27d281ec3959e64e65143aea293549b6c3a3962`, chained to ATT-01c `c99fdaa9…`. Supersedes
 PRV-04 (twin-swap). Artifacts: `prv04a_phaseA.json`, `prv04a_arms.csv`.
 

@@ -3,7 +3,7 @@
 **VERDICT: PROVENANCE-REAL-POSITION-INDEPENDENT (all layers).** RES-01a is confirmed: the non-linear provenance
 it found is not an absolute-position artifact. The confound was genuinely available (an MLP decodes position from
 the deflated residual at 0.62–0.72 vs 0.10 chance), but role decoding on a position-matched subset equals
-unmatched (gaps ≤ 0.008). Ran 2026-09-20, Lambda a10, cached, NO forwards, terminated clean, $3.56 (166 min).
+unmatched (gaps ≤ 0.008). Ran 2026-09-20, Lambda a10, cached, NO forwards, terminated clean (166 min).
 PREREG_RES01B.md sha256 `d00e885241a61246f9aabcd23abae9157488013d1b16e49b79bbe1eb9308d9b0`, chained to RES-01a
 `7a098124…`. Artifacts: `res01b.json`, `res01b_arms.csv`.
 

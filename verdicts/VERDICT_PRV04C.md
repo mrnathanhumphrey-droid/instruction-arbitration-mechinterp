@@ -2,7 +2,7 @@
 
 **LOCKED VERDICT: NOTHING-ROUTES.** At genuinely matched per-head magnitude (every arm delivers τ≈0.045, all
 match_ok, none VOID), NO head type causally routes the arbitration via generation-position block-attention.
-Ran 2026-09-19, Lambda a100_sxm4, FULL n=720 (B=−3.8713), terminated clean, $0.39. PREREG_PRV04C.md sha256
+Ran 2026-09-19, Lambda a100_sxm4, FULL n=720 (B=−3.8713), terminated clean. PREREG_PRV04C.md sha256
 `e33230a7b02e475c152dfefd3a7346beee60c85994376559e29a89d70450545c`, chained to PRV-04b `49bbc893…`. Artifacts:
 `prv04c.json`, `prv04c_arms.csv`.
 

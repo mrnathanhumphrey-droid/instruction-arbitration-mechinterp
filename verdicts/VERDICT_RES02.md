@@ -8,7 +8,7 @@
 
 **VERDICT: CEILING-HALF-OR-LESS.** Even complete, lens-free residual exchange at the imperative spans (all layers
 L8–31, no probe/subspace/linearity) moves behavior only ~half. Ran 2026-09-20, Lambda a100_sxm4, FULL n=720
-(all usable, 0 skipped), terminated clean, $0.25. PREREG_RES02.md sha256
+(all usable, 0 skipped), terminated clean. PREREG_RES02.md sha256
 `66ec4cee6f380fc9f33e308eb077fe73dbbc5eee94c163a21bc39a9809bb6cc5`, chained to RES-01b `d00e8852…`. Artifacts:
 `res02.json`, `res02_arms.csv`.
 

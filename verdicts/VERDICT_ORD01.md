@@ -5,7 +5,7 @@
 recency (obey-last), ~29% is role (user-over-system beyond position). Every M in the program divides by B, so the
 program's mediation numbers are normalized against a recency-dominated denominator and MUST be re-expressed. The flip is
 coherent (twin-VOID = 1.000 both orders), so this is a real property, not a broken-patch artifact.** Ran 2026-09-21,
-Lambda a100_sxm4, FULL n=720 (0 skipped), $0.28, per-item persisted, terminated clean. PREREG_ORD01.md sha256
+Lambda a100_sxm4, FULL n=720 (0 skipped), per-item persisted, terminated clean. PREREG_ORD01.md sha256
 `fab3eaafbe1f81c85e8288f4686022ca062f5478bd4b3d6a81359ced42198780`, chained to DIST-01 `9f8f3008…`.
 
 ## Results (n=720)
@@ -68,7 +68,7 @@ of arbitration" number.
 
 ## Method note
 This is why the denominator probe ran FIRST — everything was quoted in B's units, and B turned out to be mostly recency.
-A cheap ($0.28) order-flip caught a confound that CAL-01 (estimator) and DIST-01 (operation) could not, because it lives
+A cheap order-flip caught a confound that CAL-01 (estimator) and DIST-01 (operation) could not, because it lives
 in neither the estimator nor the operation but in what the baseline MEANS. unit_of_independence /
 feedback_the_numbers_resolution_must_match_the_decisions — the denominator has to denote what the decision needs, and
 here it denoted recency.

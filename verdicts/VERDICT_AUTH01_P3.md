@@ -10,7 +10,7 @@ system↔downstream separation) COSTS 0.5–1.2 nats, three of three CIs excludi
 (ordinality covers ~90%: the ~1-nat P2 cost against ~10.4 nats of recovery), and the residual is a burying-the-system cost
 that pure ordinality does not predict. Recovery stays net-obeying-system (Y > 0) in ALL 10 cells out to k=512 — the mitigation
 never collapses. The mechanical "LENGTH-ONLY" label is WITHDRAWN: P1 and P2 are the same length, and P1 does not degrade, so
-it is not length and not "P1 and P2 degrade together."** Ran 2026-09-23, Lambda a10, FULL n=720, $0.44, terminated clean;
+it is not length and not "P1 and P2 degrade together."** Ran 2026-09-23, Lambda a10, FULL n=720, terminated clean;
 re-verified from json. PREREG_AUTH01_P3.md sha256 `6cb999ba...` (chained PRV-01c-r2 `2f58285c`).
 
 ## Gates
