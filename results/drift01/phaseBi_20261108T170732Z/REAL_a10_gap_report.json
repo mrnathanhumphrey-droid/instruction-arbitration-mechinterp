@@ -1,0 +1,296 @@
+{
+ "n": 48,
+ "what": "prefill (+ descending-n crop for nested renderings) vs a fresh pass",
+ "max": 0.31237316131591797,
+ "median": 0.10832929611206055,
+ "rows": [
+  {
+   "render": "native",
+   "arm": "agree",
+   "n": 1,
+   "gap": 0.21837949752807617
+  },
+  {
+   "render": "native",
+   "arm": "defy",
+   "n": 4,
+   "gap": 0.2701396942138672
+  },
+  {
+   "render": "quoted",
+   "arm": "defy",
+   "n": 4,
+   "gap": 0.0460662841796875
+  },
+  {
+   "render": "quoted",
+   "arm": "defer",
+   "n": 1,
+   "gap": 0.06222820281982422
+  },
+  {
+   "render": "native",
+   "arm": "obey",
+   "n": 4,
+   "gap": 0.06250762939453125
+  },
+  {
+   "render": "stated",
+   "arm": "defy",
+   "n": 4,
+   "gap": 0.0004329681396484375
+  },
+  {
+   "render": "headers",
+   "arm": "defer",
+   "n": 4,
+   "gap": 0.0017619132995605469
+  },
+  {
+   "render": "quoted",
+   "arm": "obey",
+   "n": 8,
+   "gap": 0.0025968551635742188
+  },
+  {
+   "render": "headers",
+   "arm": "defy",
+   "n": 4,
+   "gap": 0.09384918212890625
+  },
+  {
+   "render": "quoted",
+   "arm": "agree",
+   "n": 8,
+   "gap": 0.1880784034729004
+  },
+  {
+   "render": "quoted",
+   "arm": "agree",
+   "n": 4,
+   "gap": 0.15330219268798828
+  },
+  {
+   "render": "stated",
+   "arm": "obey",
+   "n": 8,
+   "gap": 0.12430858612060547
+  },
+  {
+   "render": "headers",
+   "arm": "obey",
+   "n": 4,
+   "gap": 0.1137247085571289
+  },
+  {
+   "render": "headers",
+   "arm": "obey",
+   "n": 2,
+   "gap": 0.11793947219848633
+  },
+  {
+   "render": "quoted",
+   "arm": "defer",
+   "n": 8,
+   "gap": 0.14957904815673828
+  },
+  {
+   "render": "native",
+   "arm": "agree",
+   "n": 8,
+   "gap": 0.11124801635742188
+  },
+  {
+   "render": "stated",
+   "arm": "agree",
+   "n": 1,
+   "gap": 5.7220458984375e-06
+  },
+  {
+   "render": "headers",
+   "arm": "obey",
+   "n": 4,
+   "gap": 0.052443504333496094
+  },
+  {
+   "render": "native",
+   "arm": "defer",
+   "n": 8,
+   "gap": 0.0627756118774414
+  },
+  {
+   "render": "native",
+   "arm": "obey",
+   "n": 2,
+   "gap": 0.24993610382080078
+  },
+  {
+   "render": "quoted",
+   "arm": "defer",
+   "n": 8,
+   "gap": 0.12337017059326172
+  },
+  {
+   "render": "native",
+   "arm": "defer",
+   "n": 1,
+   "gap": 0.25176239013671875
+  },
+  {
+   "render": "native",
+   "arm": "defer",
+   "n": 2,
+   "gap": 0.0624542236328125
+  },
+  {
+   "render": "quoted",
+   "arm": "defer",
+   "n": 8,
+   "gap": 0.035045623779296875
+  },
+  {
+   "render": "quoted",
+   "arm": "defy",
+   "n": 4,
+   "gap": 0.12186241149902344
+  },
+  {
+   "render": "quoted",
+   "arm": "agree",
+   "n": 1,
+   "gap": 0.10489177703857422
+  },
+  {
+   "render": "native",
+   "arm": "agree",
+   "n": 4,
+   "gap": 0.03992509841918945
+  },
+  {
+   "render": "headers",
+   "arm": "agree",
+   "n": 1,
+   "gap": 0.16903114318847656
+  },
+  {
+   "render": "stated",
+   "arm": "obey",
+   "n": 2,
+   "gap": 0.12422752380371094
+  },
+  {
+   "render": "headers",
+   "arm": "agree",
+   "n": 1,
+   "gap": 0.21863174438476562
+  },
+  {
+   "render": "native",
+   "arm": "obey",
+   "n": 2,
+   "gap": 0.062408447265625
+  },
+  {
+   "render": "stated",
+   "arm": "defer",
+   "n": 8,
+   "gap": 0.1031179428100586
+  },
+  {
+   "render": "headers",
+   "arm": "defer",
+   "n": 8,
+   "gap": 0.0628972053527832
+  },
+  {
+   "render": "native",
+   "arm": "obey",
+   "n": 8,
+   "gap": 0.10541057586669922
+  },
+  {
+   "render": "headers",
+   "arm": "agree",
+   "n": 2,
+   "gap": 0.0006809234619140625
+  },
+  {
+   "render": "stated",
+   "arm": "defer",
+   "n": 8,
+   "gap": 1.9073486328125e-06
+  },
+  {
+   "render": "quoted",
+   "arm": "defy",
+   "n": 1,
+   "gap": 0.17043781280517578
+  },
+  {
+   "render": "headers",
+   "arm": "agree",
+   "n": 2,
+   "gap": 0.31237316131591797
+  },
+  {
+   "render": "stated",
+   "arm": "defy",
+   "n": 1,
+   "gap": 0.030857086181640625
+  },
+  {
+   "render": "native",
+   "arm": "defy",
+   "n": 1,
+   "gap": 0.22907447814941406
+  },
+  {
+   "render": "headers",
+   "arm": "obey",
+   "n": 4,
+   "gap": 0.0002231597900390625
+  },
+  {
+   "render": "native",
+   "arm": "defer",
+   "n": 2,
+   "gap": 0.1205434799194336
+  },
+  {
+   "render": "stated",
+   "arm": "defer",
+   "n": 8,
+   "gap": 0.12522602081298828
+  },
+  {
+   "render": "stated",
+   "arm": "defer",
+   "n": 8,
+   "gap": 0.0031943321228027344
+  },
+  {
+   "render": "headers",
+   "arm": "obey",
+   "n": 1,
+   "gap": 0.18412399291992188
+  },
+  {
+   "render": "quoted",
+   "arm": "agree",
+   "n": 4,
+   "gap": 2.574920654296875e-05
+  },
+  {
+   "render": "native",
+   "arm": "defer",
+   "n": 1,
+   "gap": 0.12363290786743164
+  },
+  {
+   "render": "quoted",
+   "arm": "defer",
+   "n": 2,
+   "gap": 0.12339305877685547
+  }
+ ]
+}

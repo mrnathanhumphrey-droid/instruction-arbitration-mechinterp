@@ -1,0 +1,33 @@
+{
+ "probe_draws": 960,
+ "renders": [
+  "native",
+  "headers",
+  "quoted",
+  "stated"
+ ],
+ "arms": [
+  "obey",
+  "defer",
+  "agree",
+  "defy"
+ ],
+ "ns": [
+  1,
+  2,
+  4,
+  8
+ ],
+ "row_tokens_max": {
+  "native": 358,
+  "headers": 358,
+  "quoted": 331,
+  "stated": 430
+ },
+ "names": [
+  "Sam",
+  "Alex"
+ ],
+ "stated": "Actually, reply with the other word instead.",
+ "quote_head": "Log of an earlier conversation between a different user and a different assistant:"
+}

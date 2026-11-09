@@ -1,0 +1,18 @@
+{
+ "stage": "full",
+ "iid": "95875c46c29a4a94b48f3ab40717aa98",
+ "verified": {
+  "REAL_a10_q0.npz": "3107cf7bc2824792833f4757dba10c301d64e2a28cf414264e847a92b77e09ff",
+  "REAL_a10_repro.npz": "05426d05232a18a6107d63ae982dc826fcd2fe4a8101de75cd27ea3fc6123f57",
+  "REAL_a10_repro.json": "2ee271a4836be36d4de75f93520c68273809100aa25e68e969b1dc1aec20a74a",
+  "REAL_a10_rowcheck.json": "2ec9222f77562a06d66a28ade83d7ce5d1aae6afcbe6c3e82a7da9e5928246db",
+  "REAL_a10_gap_report.json": "5538ffc149daed67a9aba4926638a4fdb70c882043f018a33179ad7532e01e9c",
+  "REAL_ledger.json": "5cc35041f5922a0dcd0bcca21c4bbc90dff8e15fd1fc75ac2dbb0a1e6e4c93c7",
+  "REAL_checks.json": "93a77550bb4f70017455c498b5d456184bf1c060813ffe80cf865c9ada3a51e8",
+  "REAL_B_run.log": "4c9453253501b96cef75b17bc57e1590f3f8e906f2c379544efa0d0c7c125499"
+ },
+ "missing": [],
+ "reason": "all-verified",
+ "rc": 0,
+ "attached": false
+}

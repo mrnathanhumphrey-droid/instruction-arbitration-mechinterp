@@ -16,7 +16,8 @@
 > - **Over a conversation, what the assistant has *done* about the user's requests carries authority; its own words do
 >   not (HUNT-DRIFT-01).** One-word replies that went against the user push the readout away from whatever the user asks
 >   (−15.85 nats when the user asks for the system word), and drift's short-distance damage runs through a compliant first
->   reply (−1.27) ([verdict](verdicts/VERDICT_DRIFT01.md)).
+>   reply (−1.27). Most of the demonstration effect is a word rule learned in context; about 30% depends on the role
+>   labels ([verdict](verdicts/VERDICT_DRIFT01.md)).
 > - Every design was sha256-locked before its run; the original locked files are in [`prereg/locked/`](prereg/locked/).
 
 A pre-registered mechanistic-interpretability program on **how an instruction-tuned language model decides which
@@ -218,18 +219,24 @@ frozen (hashed); every probe is teacher-forced on them. Full table and correctio
   target close to the readout (k 1–4: −1.32 [−1.79, −0.83]) and coherent prose strengthens it far from it (k 8–32: +1.48
   [+1.07, +1.95]); both pre-registered from a post-hoc split and supported on 120 fresh items (97.5% CIs). The effect is a
   property of the transcript (per-transcript agreement across disjoint items, ρ +0.99, post-hoc).
+- **The drift result holds against a natural-text baseline; the prose result partly does not.** Against token-matched
+  passages from 8 books across genres, drift still weakens the system target at k 1–4 (−1.21 [−1.80, −0.65]), but
+  word-pool filler itself weakens it at k = 32 (filler − natural text, k 8–32: −0.56 [−1.03, −0.08]), so part of "prose
+  strengthens" was "filler weakens". One coherent book still beats mixed natural text (+0.91, secondary).
 - **The agent's own words carry little authority.** The same line pulls ≈ 5 nats less from the assistant turn than from the
   user turn, and once layout and distance are matched the own turn discounts a quote like every other slot.
 - **What it has done about the user's requests carries a lot.** In a token-identical 2 × 2 of one-word demonstrations
   (demo user asks the competing or the system word × demo assistant gives the system or the competing word), I =
   (defer − obey) − (agree − defy) = +10.41, replicated at +10.19 on fresh items. When the probe user asks for the system
   word, the same contrast is −15.85: the demonstrations teach *going against the user*, not following the system. Copying
-  the demonstrated word is small (+0.5 to +0.7).
+  the demonstrated word is small (+0.5 to +0.7). Re-rendering the same demonstrations splits this: renaming the user /
+  assistant headers cuts it by about 30% (+3.06 [+2.29, +3.82], supported), but when every demonstrated user asks for the
+  other word it keeps its sign (+4.12, predicted negative, contradicted). Mostly a learned word rule, partly role-dependent.
 - **Drift's damage runs through the first reply.** Splicing frozen transcripts' first turns 2 × 2, a compliant answer
   weakens the system target more than a clarification request whichever user turn preceded it (−1.27 [−1.78, −0.78]), most
   of all when it answers the request that asked for it (interaction −0.95, secondary).
-- **Reading, not tested as a whole:** the model reads its history as evidence of what kind of assistant it is toward this
-  user. These are log-odds shifts, not flipped answers.
+- **Reading, not tested as a whole:** the model reads its history partly as evidence of what kind of assistant it is toward
+  this user; the larger part is a word rule learned in context. These are log-odds shifts, not flipped answers.
 
 ### The throughline
 
@@ -271,7 +278,8 @@ positions (the instruction span), untested.
 - **HUNT-DRIFT-01.** B-a's "own turn is exempt from the quote discount" was layout and distance, not voice (matched in
   Amendment 3: +0.01 [−1.04, +1.10]); B3's pre-registered yes is a design artifact (selection on the sampled word); the
   full run's attractor / loop flags are withdrawn (filler is flagged 144/144 by the same metric); Amendment 4's
-  starting-lean hypothesis did not replicate; the locked readout reads the leading-space token while one-word
+  starting-lean hypothesis did not replicate; Amendment 5's prose effect was partly word-pool filler weakening the
+  target (Amendment 11); the locked readout reads the leading-space token while one-word
   demonstrations use the no-space token (both stored from Amendment 6 on, r ≥ +0.97, same verdicts); two pre-fire errata
   (Amendments 7 and 8) corrected readings and wording before any data existed — `verdicts/VERDICT_DRIFT01.md`.
 
@@ -334,7 +342,8 @@ also surfaced and corrected the Mistral system-drop in TPL-02).
   `results/drift01/<run>/REAL_*.npz`, and `*_test.py` runs it end to end on a FAKE model (no GPU). File paths at the top of
   each script are the author's — point them at `data/` and `data/drift01/`. The locked files verify with
   `sha256sum -c prereg/DRIFT01_LOCKED.sha256` from `prereg/`. Not published: the full run's 144 MB pooled-residual file
-  (it backs the withdrawn loop metric) and the cloud launcher.
+  (it backs the withdrawn loop metric), the cloud launcher, and the locked plans for Amendments 9–11 (held privately;
+  their lock-time hashes are in `prereg/DRIFT01_LOCKED_HELD.sha256`).
 
 ## Scope and caveats
 

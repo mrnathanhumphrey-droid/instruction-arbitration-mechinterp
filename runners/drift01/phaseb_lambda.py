@@ -36,6 +36,17 @@ M1 / M3, generated ids as saved), drift + token-matched filler (keyed by the use
 A8 items (a8_items.json); + the re-read: the first 8 A5 items × every transcript, unspliced, drift / filler at k = 1
 (A5's q0_rows). Row checks on EVERY pair × cell × item (turns parsed back to their sources; filler lengths = drift's;
 unspliced cells = A5's q0_rows) → repeat check → projection → rows. Outputs a8_q0, a8_reread, a8_rowcheck, a8_gap_report.
+PHASEB=i (Amendment 10, cec4ef76…, locked; no transcripts, no generation): G's items, draws, arms and n, probe C only,
+under four renderings of the demos (a10_core.py: native / headers / quoted / stated) + the n = 0 anchor per probe → row
+checks on EVERY probe × draw × rendering (stop) → REPRO GATE: native rows of the first 8 probes vs A7's locked a7_q0 (C)
+within 0.05 nats (stop) → repeat check → projection → rows. Nested renderings: one prefill, descending-n crop; quoted: one
+prefill per n. Outputs a10_q0 (column "render"; anchors render −1), a10_repro, a10_rowcheck, a10_gap_report.
+PHASEB=j (Amendment 11, 9c4c627f…, locked; no generation): the 96 frozen B-b main transcripts (resume folder = B-b's
+b5_transcripts + manifest + A5's a5_q0, verified; REAL a5_q0 = the locked A5 run's) → REPRO GATE: the first 8 A5 items ×
+drift / filler / prose vs A5's a5_q0 (stop above 0.05 nats) → repeat check → projection → the 120 A5 items × the ONE new
+arm, diverse filler (a11_core.py: natural text, each turn from a different book of the 8-book pool, token-matched every
+row), single pass (A3.3). Outputs a11_q0 (cond index 4 = "diverse"), a11_repro, a11_gap_report, a11_diverse (per
+transcript: tokens, the book of every turn, target-family counts per book).
 Exit: 0 done · 2 a pin / guard refused · 3 a STOP rule (bit-check, freeze, slot, span, repeat, repro, prose) · 5 watchdog · 6 projection."""
 import hashlib, json, os, sys, time
 from pathlib import Path
@@ -49,7 +60,7 @@ PLANT = os.environ.get("PLANT", "")
 if FAKE == REAL: sys.exit("exactly one of FAKE=1 / REAL=1")
 if PLANT and not FAKE: sys.exit("PLANT is FAKE-only")
 PHASE = os.environ.get("PHASEB", "")
-if PHASE not in ("a", "b", "c", "d", "e", "f", "g", "h"): sys.exit(f"PHASEB={PHASE!r}: 'a' (B1, B3, B4), 'b' (B5, fresh generation), 'c' (Amendment 3), 'd' (Amendment 4), 'e' (Amendment 5), 'f' (Amendment 6), 'g' (Amendment 7) or 'h' (Amendment 8)")
+if PHASE not in ("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"): sys.exit(f"PHASEB={PHASE!r}: 'a' (B1, B3, B4), 'b' (B5, fresh generation), 'c' (Amendment 3), 'd' (Amendment 4), 'e' (Amendment 5), 'f' (Amendment 6), 'g' (Amendment 7), 'h' (Amendment 8), 'i' (Amendment 10) or 'j' (Amendment 11)")
 TAG = ("FAKE_" if FAKE else "REAL_") + ("SMOKE_" if SMOKE else "")
 INP, OUT = Path(os.environ["DRIFT_INPUTS"]), Path(os.environ["DRIFT_OUT"])
 OUT.mkdir(parents=True, exist_ok=True)
@@ -58,8 +69,8 @@ if any(p for p in OUT.iterdir() if not p.name.startswith(".")):     # dot-files 
 WATCH = float(os.environ.get("WATCH_USD", "22"))
 if not 0 < WATCH <= 60: sys.exit(f"WATCH_USD {WATCH} outside (0, 60]")
 RATE = float(os.environ.get("RATE_PER_H", "0" if FAKE else "nan"))
-if PHASE in ("a", "c", "d", "e", "h") and not os.environ.get("DRIFT_RESUME"): sys.exit("B-a / C / D / E / H run on frozen transcripts only: DRIFT_RESUME is required")
-if PHASE in ("b", "f", "g") and os.environ.get("DRIFT_RESUME"): sys.exit("B-b / F / G read no frozen transcripts: DRIFT_RESUME is not used")
+if PHASE in ("a", "c", "d", "e", "h", "j") and not os.environ.get("DRIFT_RESUME"): sys.exit("B-a / C / D / E / H / J run on frozen transcripts only: DRIFT_RESUME is required")
+if PHASE in ("b", "f", "g", "i") and os.environ.get("DRIFT_RESUME"): sys.exit("B-b / F / G / I read no frozen transcripts: DRIFT_RESUME is not used")
 T0 = float(os.environ.get("INSTANCE_T0", time.time()))
 if REAL and not np.isfinite(RATE): sys.exit("REAL needs RATE_PER_H (from the Lambda API)")
 LOG = []
@@ -89,18 +100,35 @@ if PHASE in ("d", "e"): PINS.update({"fresh_items.json": "f30d16a8b0055bc2ca8958
 if PHASE in ("e", "f", "h"): PINS["a5_items.json"] = "8b1a1e32d360ff2da2fff21750807bab669aeae7f235c8e241b566b1b120ebf7"
 if PHASE == "h": PINS["a8_items.json"] = "424638fd4cacf1740a5f1ca0b919013bcd7c832d7d772db07f05296e2e861769"
 if PHASE == "f": PINS["a6_demos.json"] = "6d4348c7fc902a7d0865db05abfd05a7193bba94e0afe0494734d75d649a7cca"
-if PHASE == "g": PINS.update({"a7_items.json": "28fb1335d5492fc92437bfead62615ceafe6976b9a91485b57f926c92e8d4f89",
-                               "a7_demos.json": "376b156fe6a88271f41ecf453f4a67ee71832d54e0b13d9cd37d518b0d5d6420"})
+if PHASE in ("g", "i"): PINS.update({"a7_items.json": "28fb1335d5492fc92437bfead62615ceafe6976b9a91485b57f926c92e8d4f89",
+                                      "a7_demos.json": "376b156fe6a88271f41ecf453f4a67ee71832d54e0b13d9cd37d518b0d5d6420"})
+if PHASE == "i" and REAL: PINS["REAL_a7_q0.npz"] = "8f9e4f83d963ff75ae72ba3ee68c6ec42922b10b9c3e7d54479970d74bab742f"   # A7's locked run (phaseBg_20261107T160254Z): the repro-gate reference
+if PHASE == "j": PINS.update({"a5_items.json": "8b1a1e32d360ff2da2fff21750807bab669aeae7f235c8e241b566b1b120ebf7",
+                               "pg1228_prose.txt": "164cc858001f47bd0cab0c7a6c3d39292386d5294edaf4c28a239972754f0ec3"})
+A5_REAL_Q0 = "012f407ea79e668bbc25d6a283a58797978ffa6b21ff6905cf8297965d0fff04"   # A5's locked run (phaseBe_20261105T050023Z): the A11 repro reference + old arms
+A11CORE_SHA = "f719bc2fda1118db"           # a11_core.py, recorded at build
+REPRO_TOL11 = 0.05                         # A11.1 repro gate (A5's)
 A6CORE_SHA = "3f69349e0246554c"          # a6_core.py, recorded at build
 A7CORE_SHA = "a6b630593d5594bd"            # a7_core.py, recorded at build
+A10CORE_SHA = "5c421fbefa422d75"           # a10_core.py, recorded at build
+REPRO_TOL10 = 0.05                         # A10.1 repro gate (A5's)
 A5_CONDS = ("drift", "filler", "prose")                  # A5.1: "none" dropped
 for n, h in PINS.items():
     if sha(INP / n) != h: stop(2, f"{n} hash mismatch")
 if sha(HERE / "drift01_core.py")[:16] != CORE_SHA: stop(2, "drift01_core.py is not the recorded piece-2 core")
 if REAL and sha(HERE / "phaseb_core.py")[:16] != PHB_SHA: stop(2, "phaseb_core.py is not the recorded Phase-B core")
-if PHASE in ("f", "g"):
+if PHASE in ("f", "g", "i"):
     if sha(HERE / "a6_core.py")[:16] != A6CORE_SHA: stop(2, "a6_core.py is not the recorded A6 core")
     import a6_core as A6
+if PHASE == "i":
+    if sha(HERE / "a10_core.py")[:16] != A10CORE_SHA: stop(2, "a10_core.py is not the recorded A10 core")
+    import a10_core as A10
+    if not (INP / (("FAKE_" if FAKE else "REAL_") + "a7_q0.npz")).exists(): stop(2, "A10 repro gate: A7's a7_q0.npz is not in the inputs")
+if PHASE == "j":
+    if sha(HERE / "a11_core.py")[:16] != A11CORE_SHA: stop(2, "a11_core.py is not the recorded A11 core")
+    import a11_core as A11
+    for n, h in A11.TEXT_SHA.items():
+        if not (INP / n).is_file() or sha(INP / n) != h: stop(2, f"{n} hash mismatch")
 if PHASE == "g":
     if sha(HERE / "a7_core.py")[:16] != A7CORE_SHA: stop(2, "a7_core.py is not the recorded A7 core")
     import a7_core as A7
@@ -190,6 +218,10 @@ class FakeBrancher:
         lp = self.m.lp(self.ids + list(suffix))
         if PLANT == "nondeterm": FakeBrancher.calls += 1; lp = lp + 1e-9 * FakeBrancher.calls
         return lp
+    def probe_h(self, suffix, layers):
+        """A9: probe + a stand-in 'residual after layer l' at the readout position (the toy's last hidden row, scaled per l)."""
+        lp = self.probe(suffix); h = self.m.hidden(self.ids + list(suffix))[-1]
+        return lp, np.stack([h * (1 + 0.05 * l) for l in layers]).astype(np.float16)
     def probe_span(self, suffix):
         """(readout lp, token log-probs aligned to the suffix; [0] = NaN) — one pass, every suffix logit kept."""
         s = list(suffix); R = self.m.lp_rows(self.ids + s, len(s))
@@ -291,6 +323,16 @@ class RealBrancher:
             out = self.m.mdl(input_ids=torch.tensor([list(suffix)], device="cuda:0"), past_key_values=self.cache, use_cache=True, num_logits_to_keep=1)
         self.cache.crop(self.n)
         return torch.log_softmax(out.logits[0, -1].float(), -1).cpu().numpy().astype(np.float64)
+    def probe_h(self, suffix, layers):
+        """A9: probe + the residual stream after each layer in `layers` at the readout position (the suffix's last token),
+        fp16. The same forward pass as probe() with output_hidden_states on (hidden_states[l] = after decoder layer l)."""
+        import torch
+        with torch.inference_mode():
+            out = self.m.mdl(input_ids=torch.tensor([list(suffix)], device="cuda:0"), past_key_values=self.cache, use_cache=True,
+                             num_logits_to_keep=1, output_hidden_states=True)
+            H = torch.stack([out.hidden_states[l][0, -1] for l in layers]).to(torch.float16).cpu().numpy()
+        self.cache.crop(self.n)
+        return torch.log_softmax(out.logits[0, -1].float(), -1).cpu().numpy().astype(np.float64), H
     def probe_span(self, suffix):
         import torch
         with torch.inference_mode():
@@ -967,6 +1009,205 @@ try:
                  cells=np.array([x[0] for x in CELLS8]), conds=np.array(["drift", "filler"]), pair_persona=np.array([BC[j][1] for j in range(NP)]),
                  pair_temp=np.array([BC[j][2] for j in range(NP)], np.float64), pair_seed=np.array([BC[j][3] for j in range(NP)], np.int64))
         say(f"A8 Q0: {len(R9)} rows; spend ${spend():.2f}")
+    if PHASE == "i":
+        import functools
+        PROBES = sorted(x["item"] for x in json.loads((INP / "a7_items.json").read_text(encoding="utf-8"))["items"])
+        DM = {x["item"]: x["draws"] for x in json.loads((INP / "a7_demos.json").read_text(encoding="utf-8"))["demos"]}
+        if sorted(DM) != PROBES or len(PROBES) != 120 or any(len(v) != 8 or any(len(l) != A6.NMAX for l in v) for v in DM.values()):
+            stop(2, "a7_demos.json: not 120 probes × 8 draws × 8 demos over the A7 items")
+        GATE = PROBES[:2] if SMOKE else PROBES[:8]                # A10.1: the first 8 A7 probes (sorted, as A7's rows)
+        if SMOKE: PROBES = PROBES[:4]
+        ND = 2 if SMOKE else 8; AI = {a: n for n, a in enumerate(A6.ARMS)}; ANCHOR = len(A6.ARMS); RI = {r: n for n, r in enumerate(A10.RENDERS)}
+        if PLANT == "a10hdr":                                     # FAKE plant: one headers row keeps a user header → the row check stops
+            _rw = A10.rows
+            def _bad(enc_, C_, p_, d_, r_):
+                R_, s_ = _rw(enc_, C_, p_, d_, r_)
+                if r_ == "headers" and p_ == PROBES[0]:
+                    R_["obey"] = {n: A10._sub(x, enc(D.H(A10.NAMES[0])), enc(D.H("user"))) for n, x in R_["obey"].items()}
+                return R_, s_
+            A10.rows = _bad
+        @functools.lru_cache(maxsize=8)
+        def build(p, d, r): return A10.rows(enc, C, p, DM[p][d], r)
+        say(f"A10 design: {len(PROBES)} probes × {ND} draws × {len(A6.ARMS)} arms × n ∈ {A6.NS} × renderings {A10.RENDERS}, probe C, + 1 anchor per probe")
+        # ---------------------------------------------------------- row checks on EVERY probe × draw × rendering (stop)
+        L0, LMAX = {}, {r: 0 for r in A10.RENDERS}
+        for p in PROBES:
+            L0[p] = len(A10.anchor(enc, C, p)[0])
+            for d in range(ND):
+                for r in A10.RENDERS:
+                    try: R_, suf = build(p, d, r)
+                    except AssertionError as e: stop(3, f"A10 rows ({C[p]['id']}, draw {d}, {r}): {e}")
+                    pr = A10.check(enc, C, p, DM[p][d], r, R_, suf)
+                    if pr: stop(3, f"A10 ROW CHECK FAILED ({C[p]['id']}, draw {d}, {r}): {'; '.join(pr[:3])}")
+                    LMAX[r] = max(LMAX[r], max(len(R_[a][A6.NMAX]) for a in A6.ARMS) + len(suf))
+        RCK = {"probe_draws": len(PROBES) * ND, "renders": list(A10.RENDERS), "arms": list(A6.ARMS), "ns": list(A6.NS), "row_tokens_max": LMAX,
+               "names": list(A10.NAMES), "stated": A10.STATED, "quote_head": A10.QUOTE_HEAD}
+        (OUT / f"{TAG}a10_rowcheck.json").write_text(json.dumps(RCK, indent=1), encoding="utf-8")
+        say(f"A10 row checks OK: {RCK['probe_draws']} probe × draw × {len(A10.RENDERS)} renderings, arms token-identical but for the "
+            f"DONE / READY swaps, native = a6_core.rows; longest rows {LMAX}")
+        def unit10(p, d, arm, r):
+            """One probe × draw × arm × rendering, n DESCENDING (A3.3): nested renderings one prefill + crop; quoted one prefill per n."""
+            R_, suf = build(p, d, r); res = {}; br = None
+            if A10.NESTED[r]: br = Brancher(M); br.prefill(R_[arm][A6.NMAX])
+            for n in sorted(A6.NS, reverse=True):
+                if A10.NESTED[r]: br.crop_to(len(R_[arm][n]))
+                else: br = Brancher(M); br.prefill(R_[arm][n])
+                lp = br.probe(suf); res[n] = (lp[TD], lp[TR], len(R_[arm][n]) - L0[p], lp[TD0], lp[TR0])
+            return res
+        if not FAKE and len({TD, TR, TD0, TR0}) != 4: stop(2, "A10: the no-space DONE / READY tokens coincide with the readout tokens")
+        # ---------------------------------------------------------- REPRO GATE: native vs A7's locked C rows (stop)
+        ref = np.load(INP / (("FAKE_" if FAKE else "REAL_") + "a7_q0.npz"))["rows"]
+        RF = {(int(x[0]), int(x[1]), int(x[2]), int(x[3])): (x[4], x[5]) for x in ref if int(x[9]) == 0}
+        RP, dev = [], []
+        for p in GATE:
+            ids, suf = A10.anchor(enc, C, p); br = Brancher(M); br.prefill(ids); lp = br.probe(suf)
+            RP.append((p, -1, ANCHOR, 0, lp[TD], lp[TR], *RF[(p, -1, ANCHOR, 0)]))
+            for d in range(ND):
+                for a in A6.ARMS:
+                    for n, v in unit10(p, d, a, "native").items(): RP.append((p, d, AI[a], n, v[0], v[1], *RF[(p, d, AI[a], n)]))
+        RP = np.array(RP, np.float64)
+        if PLANT == "reprooff": RP[0, 4] += 0.1
+        dev = np.abs(RP[:, 4:6] - RP[:, 6:8]).max(1); bw = int((RP[:, 4:6] == RP[:, 6:8]).all(1).sum())
+        np.savez(OUT / f"{TAG}a10_repro.npz", rows=RP, cols=np.array(["item", "draw", "arm", "n", "lpD", "lpR", "a7_lpD", "a7_lpR"]))
+        REP = {"n": len(RP), "bitwise": bw, "max": float(dev.max()), "median": float(np.median(dev)), "tol": REPRO_TOL10, "probes": [int(x) for x in GATE]}
+        (OUT / f"{TAG}a10_repro.json").write_text(json.dumps(REP, indent=1), encoding="utf-8")
+        if dev.max() > REPRO_TOL10: stop(3, f"REPRO GATE FAILED: native vs A7's C rows max |Δ| {dev.max():.4f} > {REPRO_TOL10} nats")
+        say(f"repro gate PASS: native vs A7's C rows, {len(RP)} rows, bitwise {bw}, max |Δ| {dev.max():.4f}, median {np.median(dev):.4f} nats")
+        # ---------------------------------------------------------- repeat check (stop) + single-pass vs fresh gap (reported)
+        KEYS = [(p, d, a, r) for p in PROBES for d in range(ND) for r in A10.RENDERS for a in A6.ARMS]
+        rng = np.random.default_rng(D.check_seed(D.SEED_BOOT)); tc = time.time(); NCHK = 6 if SMOKE else 48; rep_bad, gaps = [], []
+        for q in range(NCHK):
+            p, d, a, r = KEYS[int(rng.integers(0, len(KEYS)))]; r1, r2 = unit10(p, d, a, r), unit10(p, d, a, r)
+            if PLANT == "nondeterm": r2 = {n: (v[0] + 1e-9, *v[1:]) for n, v in r2.items()}
+            if np.array(list(r1.values())).tobytes() != np.array(list(r2.values())).tobytes(): rep_bad.append((C[p]["id"], d, a, r))
+            n = A6.NS[int(rng.integers(0, len(A6.NS)))]; R_, suf = build(p, d, r); fresh = M.lp(R_[a][n] + suf)
+            gaps.append({"render": r, "arm": a, "n": n, "gap": float(max(abs(r1[n][0] - fresh[TD]), abs(r1[n][1] - fresh[TR])))})
+        GAP = {"n": NCHK, "what": "prefill (+ descending-n crop for nested renderings) vs a fresh pass", "max": max(g["gap"] for g in gaps),
+               "median": float(np.median([g["gap"] for g in gaps])), "rows": gaps}
+        (OUT / f"{TAG}a10_gap_report.json").write_text(json.dumps(GAP, indent=1), encoding="utf-8")
+        if rep_bad: stop(3, f"REPEAT CHECK FAILED: A10 units not bitwise reproducible: {rep_bad[:5]}")
+        say(f"repeat check PASS ({NCHK} × 2, bitwise); gap vs fresh (reported): max {GAP['max']:.4f} median {GAP['median']:.4f} nats")
+        per = (time.time() - tc) / (2 * NCHK); p2 = per * len(KEYS); usd = spend() + p2 / 3600 * RATE
+        say(f"PROJECTION A10 units ≈ {p2 / 3600:.2f} h → spend ≈ ${usd:.2f} (watchdog ${WATCH})")
+        if usd >= WATCH or PLANT == "overbudget": stop(6, f"PROJECTION: A10 units would end at ≈ ${usd:.2f} ≥ ${WATCH}")
+        # ---------------------------------------------------------- rows: anchors (n = 0, once per probe, render −1) + every unit
+        R10 = []
+        for p in PROBES:
+            ids, suf = A10.anchor(enc, C, p); br = Brancher(M); br.prefill(ids); lp = br.probe(suf)
+            R10.append((p, -1, ANCHOR, 0, lp[TD], lp[TR], 0, lp[TD0], lp[TR0], -1))
+        for n_, (p, d, a, r) in enumerate(KEYS):
+            watch(); R10 += [(p, d, AI[a], n, *v, RI[r]) for n, v in unit10(p, d, a, r).items()]
+            if (n_ + 1) % 1000 == 0: say(f"A10 unit {n_ + 1} / {len(KEYS)}: spend ${spend():.2f}")
+        np.savez(OUT / f"{TAG}a10_q0.npz", rows=np.array(R10, np.float64),
+                 cols=np.array(["item", "draw", "arm", "n", "lpD", "lpR", "dist_tokens", "lpD_ns", "lpR_ns", "render"]),
+                 arms=np.array(A6.ARMS + ("anchor",)), renders=np.array(A10.RENDERS))
+        say(f"A10 Q0: {len(R10)} rows; one-pass prefill fell back to the 4,096 grid {Brancher.grid_used} time(s); spend ${spend():.2f}")
+    if PHASE == "j":
+        import re
+        DV = len(B.B6_CONDS)                                    # cond index 4 = "diverse" (B6_CONDS' 0–3 unchanged)
+        # ---------------------------------------------------------- RESUME: the frozen B-b transcripts, verified (as E)
+        BSEEDS = B.B5_SEEDS[:2] if SMOKE else B.B5_SEEDS
+        BC = [(m, p, t, s) for m in B.B5_MODES for p in PERS for t in TEMPS for s in BSEEDS]
+        R = INP / os.environ["DRIFT_RESUME"]; mf = R / f"{TAG}b5_transcripts_manifest.json"
+        if sha(mf) != os.environ.get("DRIFT_RESUME_MANIFEST_SHA", ""): stop(2, "RESUME: B-b transcripts manifest is not the pinned one")
+        man0 = json.loads(mf.read_text(encoding="utf-8"))
+        if [tuple(c) for c in man0["cells"]] != BC: stop(2, "RESUME: the frozen B-b transcripts are a different design")
+        Zr = np.load(R / f"{TAG}b5_transcripts.npz"); flat = {}
+        for q in range(len(Zr["tid"])): flat.setdefault(int(Zr["tid"][q]), []).append(Zr["ids"][Zr["off"][q]:Zr["off"][q + 1]].tolist())
+        T = {t: list(zip(v[0::2], v[1::2])) for t, v in flat.items()}
+        if PLANT == "resumetamper": u, a = T[0][0]; T[0][0] = (u, a[:-1] + [a[-1] + 1])
+        probs = D.verify_frozen(T, man0["sha"])
+        if probs: stop(3, "RESUME FREEZE: " + "; ".join(probs[:5]))
+        T = {t: p for t, p in T.items() if t < B.WI_TID0}
+        if sorted(T) != list(range(len(BC))): stop(2, f"RESUME: main transcripts {sorted(T)[:3]}… ≠ 0..{len(BC) - 1}")
+        say(f"RESUMED: {len(T)} frozen B-b main transcripts loaded + verified (manifest {sha(mf)[:16]})")
+        rf = R / f"{TAG}a5_q0.npz"
+        if not rf.is_file(): stop(2, "A11: A5's a5_q0.npz is not in the resume folder")
+        if REAL and sha(rf) != A5_REAL_Q0: stop(2, "A11: a5_q0.npz is not the locked A5 run's")
+        A5I = [x["item"] for x in json.loads((INP / "a5_items.json").read_text(encoding="utf-8"))["items"]]
+        if len(A5I) != 120 or len(set(A5I)) != 120: stop(2, "a5_items.json: not 120 distinct items")
+        REPI = A5I[:2] if SMOKE else A5I[:8]                     # A11.1 gate: the first 8 A5 items (a5_items.json order)
+        ITEMS = A5I[:4] if SMOKE else A5I
+        PROSE = enc((INP / "pg1228_prose.txt").read_text(encoding="utf-8"))
+        BOOKS = [enc((INP / f).read_text(encoding="utf-8")) for f in A11.FILES]
+        if PLANT == "diversebreak":                              # FAKE plant: one diverse turn a token short → the match check stops it
+            _dp = A11.diverse_pairs
+            A11.diverse_pairs = lambda bk, pa, t: (lambda o: ([(o[0][0][0][:-1], o[0][0][1])] + o[0][1:], o[1]))(_dp(bk, pa, t))
+        if PLANT == "samebook":                                  # FAKE plant: turn 2 reuses turn 1's book → the book check stops it
+            _dp2 = A11.diverse_pairs
+            A11.diverse_pairs = lambda bk, pa, t: (lambda o: (o[0], o[1][:1] + o[1][:1] + o[1][2:]))(_dp2(bk, pa, t))
+        say(f"A11 design: {len(T)} transcripts × ({len(REPI)} A5 items × 3 repro + {len(ITEMS)} A5 items × diverse), k ∈ {KQ0}; "
+            f"books {[(g, len(b)) for (g, _), b in zip(A11.POOL, BOOKS)]} tokens")
+        PER = {t: D.PERSONAS[BC[t][1]] for t in T}
+        def unit_j(t, i):
+            """One (transcript, item), diverse arm: ONE prefill pass, probes in DESCENDING k (A3.3)."""
+            try: ids, cut, suf, bix = A11.diverse_row(enc, BOOKS, C[i], PER[t], T[t], t, KQ0)
+            except AssertionError as e: stop(3, f"A11 diverse row ({C[i]['id']}, t{t}): {e}")
+            ks = sorted((k for k in KQ0 if k in cut), reverse=True); br = Brancher(M); br.prefill(ids[:cut[ks[0]]]); res = {}
+            for k in ks:
+                br.crop_to(cut[k]); lp = br.probe(suf); res[k] = (lp[TD], lp[TR], D.distance(cut, k))
+            return res, (ids, cut, suf), bix
+        # ---------------------------------------------------------- REPRO GATE: the first 8 A5 items × drift / filler / prose vs A5's a5_q0 (stop)
+        ref = {tuple(int(x) for x in r[:4]): r[4:6] for r in np.load(rf)["rows"]}
+        RP, tp = [], time.time()
+        for t in T:
+            for i in REPI:
+                watch()
+                try: rows = B.b6_rows(enc, POOL, PROSE, C[i], PER[t], T[t], t, KQ0)
+                except AssertionError as e: stop(3, f"A11 gate rows ({C[i]['id']}, t{t}): {e}")
+                for cond in ("drift", "filler", "prose"):
+                    c = B.B6_CONDS.index(cond); ids, cut, suf = rows[cond]; ks = sorted((k for k in KQ0 if k in cut), reverse=True)
+                    br = Brancher(M); br.prefill(ids[:cut[ks[0]]])
+                    for k in ks:
+                        br.crop_to(cut[k]); lp = br.probe(suf); key = (t, i, c, k)
+                        if key not in ref: stop(2, f"A11 REPRO GATE: a5_q0 row missing {key}")
+                        got = np.array([lp[TD], lp[TR]]) + (1.0 if PLANT == "reprobreak" and key == (0, REPI[0], 1, 4) else 0.0)
+                        RP.append((t, i, c, k, *got, *ref[key], D.distance(cut, k)))
+        RP = np.array(RP, np.float64); dmax = np.abs(RP[:, 4:6] - RP[:, 6:8]).max(1)
+        np.savez(OUT / f"{TAG}a11_repro.npz", rows=RP, cols=np.array(["tid", "item", "cond", "k", "lpD", "lpR", "a5_lpD", "a5_lpR", "dist_tokens"]))
+        REP = {"n": len(RP), "bitwise": int((RP[:, 4:6] == RP[:, 6:8]).all(1).sum()), "max": float(dmax.max()), "median": float(np.median(dmax)),
+               "tol": REPRO_TOL11, "items": [int(x) for x in REPI]}
+        (OUT / f"{TAG}a11_repro.json").write_text(json.dumps(REP, indent=1), encoding="utf-8")
+        say(f"A11 REPRO GATE vs A5 a5_q0: {REP['n']} rows, bitwise {REP['bitwise']} / {REP['n']}, max |Δ| {REP['max']:.4g}, median {REP['median']:.4g} nats, {time.time() - tp:.0f} s, spend ${spend():.2f}")
+        if not REP["max"] <= REPRO_TOL11: stop(3, f"A11 REPRO GATE FAILED: max |Δ| {REP['max']:.4g} > {REPRO_TOL11} nats vs A5's a5_q0")
+        # ---------------------------------------------------------- repeat check (stop) + single-pass vs fresh gap (reported)
+        J_ = [(t, i) for t in T for i in ITEMS]
+        rng = np.random.default_rng(D.check_seed(D.SEED_BOOT)); tc = time.time(); NCHK = 6 if SMOKE else 48; rep_bad, gaps = [], []
+        for q in range(NCHK):
+            t, i = J_[int(rng.integers(0, len(J_)))]; r1, rows, _ = unit_j(t, i); r2, _, _ = unit_j(t, i)
+            if PLANT == "nondeterm": r2 = {k: (v[0] + 1e-9, *v[1:]) for k, v in r2.items()}
+            if np.array(list(r1.values())).tobytes() != np.array(list(r2.values())).tobytes(): rep_bad.append((t, C[i]["id"]))
+            k = sorted(r1)[int(rng.integers(0, len(r1)))]; fresh = M.lp(D.row(*rows, k))
+            gaps.append({"k": k, "gap": float(max(abs(r1[k][0] - fresh[TD]), abs(r1[k][1] - fresh[TR])))})
+        GAP = {"n": NCHK, "what": "single-pass prefill + descending-k crop vs a fresh pass", "max": max(g["gap"] for g in gaps),
+               "median": float(np.median([g["gap"] for g in gaps])), "rows": gaps}
+        (OUT / f"{TAG}a11_gap_report.json").write_text(json.dumps(GAP, indent=1), encoding="utf-8")
+        if rep_bad: stop(3, f"REPEAT CHECK FAILED: A11 units not bitwise reproducible: {rep_bad[:5]}")
+        say(f"repeat check PASS ({NCHK} × 2, bitwise); gap vs fresh (reported): max {GAP['max']:.4f} median {GAP['median']:.4f} nats")
+        per = (time.time() - tc) / (2 * NCHK); p2 = per * len(J_); usd = spend() + p2 / 3600 * RATE
+        say(f"PROJECTION A11 units ≈ {p2 / 3600:.2f} h → spend ≈ ${usd:.2f} (watchdog ${WATCH})")
+        if usd >= WATCH or PLANT == "overbudget": stop(6, f"PROJECTION: A11 units would end at ≈ ${usd:.2f} ≥ ${WATCH}; repro gate kept")
+        # ---------------------------------------------------------- diverse passages: book per turn + target-family counts per book (A11.4 S6, reported)
+        RX = {w: re.compile(r"\b(" + "|".join(v) + r")\b", re.I) for w, v in
+              {"DONE": ("done", "finished", "complete", "completed"), "READY": ("ready", "prepared", "set")}.items()}
+        DI = {}
+        for t in T:
+            dp, bix = A11.diverse_pairs(BOOKS, T[t][:max(KQ0)], t); turns = [x for pr in dp for x in pr]
+            pb = {g: {"ntok": 0, "DONE": 0, "READY": 0, "turns": 0} for g, _ in A11.POOL}
+            for ids_, b in zip(turns, bix):
+                g = A11.POOL[b][0]; txt = dec(ids_); pb[g]["ntok"] += len(ids_); pb[g]["turns"] += 1
+                for w, rx in RX.items(): pb[g][w] += len(rx.findall(txt))
+            DI[t] = {"ntok": sum(len(x) for x in turns), "books": [A11.POOL[b][0] for b in bix], "per_book": pb,
+                     **{w: sum(v[w] for v in pb.values()) for w in RX}}
+        (OUT / f"{TAG}a11_diverse.json").write_text(json.dumps(DI, indent=1), encoding="utf-8")
+        # ---------------------------------------------------------- the 120 A5 items × diverse (cond index 4)
+        R11 = []
+        for n_, (t, i) in enumerate(J_):
+            watch(); res, _, _ = unit_j(t, i); R11 += [(t, i, DV, k, *v) for k, v in res.items()]
+            if (n_ + 1) % 1000 == 0: say(f"A11 unit {n_ + 1} / {len(J_)}: spend ${spend():.2f}")
+        np.savez(OUT / f"{TAG}a11_q0.npz", rows=np.array(R11, np.float64), cols=np.array(["tid", "item", "cond", "k", "lpD", "lpR", "dist_tokens"]),
+                 conds=np.array(B.B6_CONDS + ("diverse",)))
+        say(f"A11 Q0: {len(R11)} rows; one-pass prefill fell back to the 4,096 grid {Brancher.grid_used} time(s); spend ${spend():.2f}")
     status, code = "DONE", 0
 except Watchdog as e:
     status, code = f"WATCHDOG: {e} — outputs written so far are PARTIAL", 5
