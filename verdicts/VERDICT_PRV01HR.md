@@ -44,6 +44,17 @@ the 40-item subsample; FULL is the real check.)
    statement is "three procedures disagree on what they remove, and the causal conclusion holds across all three" — operationally
    what we wanted, but claiming a clean theorem instance would repeat the over-reach the fetch corrected. Stating the result
    existentially (never "the code is X-dimensional") remains exactly right.
+
+   > **Correction (2026-11-10): "largely orthogonal subspaces" is not supported as a P1-vs-P3 difference; the causal
+   > result is unaffected.** An estimator check rebuilt this run's features (the same 29,112 × 4,096 pool, layer-0
+   > content span), reproduced P1 exactly (k* = 37) and the P1↔P3 angle spectrum (top 5.7°, tail to ~89°), then fit
+   > each procedure on two disjoint halves of the train items. P1 against itself overlaps at cos_mean 0.34 (0.42 at a
+   > matched rank of 18); P3 against itself at 0.57; P1↔P3 at 0.47. The cross-procedure overlap is not below the
+   > within-procedure split-half overlap, so the angles above reflect the deflation fit's own instability, not a
+   > difference between the parameterizations. P3's k* is itself sensitive: its curve plateaus at 0.552–0.555, just
+   > above the 0.55 bar, and a ~0.01 numerical shift moves k* from 18 to 12. What holds: one shared leading direction
+   > (~6°) and partial overlap on the next few. Necessity stayed near zero under every removed subspace, so the
+   > existential (decodability and causal role come apart) stands, and if anything is broadened.
 3. **P2 is the WEAKEST arm, not the sharpest — struck.** Its probe starts at 0.919 (vs 0.999), because L2 at fixed C=1.0 is not
    scale-equivariant: dropping the scaler changes the estimator's strength, not just the coordinates. So P2's k*=2 is "a weaker
    reader crosses the error bar after two directions," NOT "decodability collapses after two raw directions." It corroborates the
