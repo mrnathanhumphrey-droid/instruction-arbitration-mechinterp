@@ -1,0 +1,15 @@
+{
+ "versions": {
+  "torch": "2.7.0",
+  "transformers": "4.46.0",
+  "cuda": "12.8",
+  "gpu": "NVIDIA H100 PCIe",
+  "nvidia_smi": "NVIDIA H100 PCIe, 81559 MiB, 570.148.08",
+  "attn": "sdpa",
+  "revision": "0e9e39f249a16976918f6564b8830bc894c89659",
+  "cublas_ws": ":4096:8"
+ },
+ "status": "DONE",
+ "plant": null,
+ "phase": "B-k"
+}

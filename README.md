@@ -17,7 +17,8 @@
 >   not (HUNT-DRIFT-01).** One-word replies that went against the user push the readout away from whatever the user asks
 >   (−15.85 nats when the user asks for the system word), and drift's short-distance damage runs through a compliant first
 >   reply (−1.27). Most of the demonstration effect is a word rule learned in context; about 30% depends on the role
->   labels ([verdict](verdicts/VERDICT_DRIFT01.md)).
+>   labels. Inside the model, one layer-14 direction at the readout separates those histories at held-out AUROC 0.956,
+>   where a frozen text encoder on the same transcript reaches 0.563 ([verdict](verdicts/VERDICT_DRIFT01.md)).
 > - Every design was sha256-locked before its run; the original locked files are in [`prereg/locked/`](prereg/locked/).
 
 A pre-registered mechanistic-interpretability program on **how an instruction-tuned language model decides which
@@ -235,6 +236,11 @@ frozen (hashed); every probe is teacher-forced on them. Full table and correctio
 - **Drift's damage runs through the first reply.** Splicing frozen transcripts' first turns 2 × 2, a compliant answer
   weakens the system target more than a clarification request whichever user turn preceded it (−1.27 [−1.78, −0.78]), most
   of all when it answers the request that asked for it (interaction −0.95, secondary).
+- **The history is a readable internal state (A9b, read-only).** At the readout position, a layer-14 direction fit on
+  held-out templates separates flip from copy demonstrations at AUROC 0.956 [0.929, 0.978]; a frozen text encoder
+  (Qwen3-Embedding-8B) on the same transcript reaches 0.563. Renaming the role headers halves Llama's separation but not
+  the encoder's (DD +1.13 [+1.02, +1.24]). Its pooled-embedding control turned out unable to fail under the
+  counterbalanced labels, so the encoder is the baseline that counts. Readable, not yet shown causal.
 - **Reading, not tested as a whole:** the model reads its history partly as evidence of what kind of assistant it is toward
   this user; the larger part is a word rule learned in context. These are log-odds shifts, not flipped answers.
 
@@ -338,12 +344,14 @@ also surfaced and corrected the Mistral system-drop in TPL-02).
   files are in [`prereg/locked/`](prereg/locked/), byte for byte, and 53 of 54 verify against their sidecars** (the
   original of `PRV01c` was not retained). [`prereg/locked/VERIFY.md`](prereg/locked/VERIFY.md) has the one-loop check.
 - **HUNT-DRIFT-01** (`runners/drift01/`): `drift01_lambda.py` generated and froze the transcripts; `phaseb_lambda.py`
-  (`PHASEB=a…h`) runs every later stage on them; each stage's `*_analysis.py` recomputes its verdict from the published
+  (`PHASEB=a…k`) runs every later stage on them; each stage's `*_analysis.py` recomputes its verdict from the published
   `results/drift01/<run>/REAL_*.npz`, and `*_test.py` runs it end to end on a FAKE model (no GPU). File paths at the top of
   each script are the author's — point them at `data/` and `data/drift01/`. The locked files verify with
   `sha256sum -c prereg/DRIFT01_LOCKED.sha256` from `prereg/`. Not published: the full run's 144 MB pooled-residual file
-  (it backs the withdrawn loop metric), the cloud launcher, and the locked plans for Amendments 9–11 (held privately;
-  their lock-time hashes are in `prereg/DRIFT01_LOCKED_HELD.sha256`).
+  (it backs the withdrawn loop metric), A9b's 5.4 GB of hidden states, input embeddings and encoder vectors (too large;
+  `PHASEB=k` + `a9b_encode.py` regenerate them, hashes in its `launch_record.json`), so `a9b_analysis.py` needs them
+  regenerated first; the cloud launcher; and the locked plans for Amendments 9, 9b, 10 and 11 (held privately; their
+  lock-time hashes are in `prereg/DRIFT01_LOCKED_HELD.sha256`).
 
 ## Scope and caveats
 
@@ -357,7 +365,8 @@ also surfaced and corrected the Mistral system-drop in TPL-02).
 - **Synthetic battery, log-probability readout.** Results are on a constructed imperative battery read at the first
   assistant token, not on free-form agentic traces. No serialization swap is a deployment configuration.
 - **HUNT-DRIFT-01 is exploratory:** one model, one task family (one-word DONE / READY rules), teacher-forced on frozen
-  task-less transcripts; its intervals speak for the 12 conversation types and 30 templates sampled.
+  task-less transcripts; its intervals speak for the 12 conversation types and 30 templates sampled; its internals are
+  read-only so far (A9b).
 - **The internal baseline is recency-confounded** (ORD-01); treat any "fraction of the arbitration" statement as under
   re-expression.
 - **Living record.** Findings, and their corrections, are updated as the program continues.

@@ -1,0 +1,30 @@
+{
+ "versions": {
+  "torch": "2.7.0",
+  "transformers": "4.51.3",
+  "repo": "Qwen/Qwen3-Embedding-8B",
+  "revision": "1d8ad4ca9b3dd8059ad90a75d4983776a23d44af",
+  "gpu": "NVIDIA H100 PCIe",
+  "dtype": "bfloat16",
+  "attn": "sdpa",
+  "pooling": "last token, L2",
+  "instruction": null,
+  "cublas_ws": ":4096:8",
+  "last_token": "<|endoftext|>"
+ },
+ "rows": 61560,
+ "d": 4096,
+ "tokens": {
+  "min": 115,
+  "median": 257.0,
+  "max": 730
+ },
+ "truncated": 0,
+ "determinism": {
+  "rows": 1032,
+  "bitwise": 1032,
+  "bad": []
+ },
+ "minutes": 36.04140369494756,
+ "sha256_enc": "50e02c91f7a522132c9a3f7d57aa8da57f4d95550b61b83296126ddf72f492d9"
+}

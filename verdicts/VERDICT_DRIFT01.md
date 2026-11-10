@@ -3,7 +3,7 @@
 Model: Llama-3.1-8B-Instruct @ `0e9e39f2`, bf16, SDPA, one H100 PCIe. Readout: `Y = lp(system target) − lp(competing
 target)` at the first assistant position, on the DONE / READY battery (`data/stimuli_contested.jsonl`, 720 items, 30
 templates). Every stage was sha256-locked before its run; the locked files and their hashes are in
-`prereg/locked/drift01/` and `prereg/DRIFT01_LOCKED.sha256`. The locked plans for Amendments 9–11 are held privately;
+`prereg/locked/drift01/` and `prereg/DRIFT01_LOCKED.sha256`. The locked plans for Amendments 9, 9b, 10 and 11 are held privately;
 their sha256 hashes, recorded at lock, are in `prereg/DRIFT01_LOCKED_HELD.sha256`, and the files can be checked against
 them on request. Exploratory throughout: one model, one task family.
 
@@ -33,13 +33,15 @@ an agent's own output gain instruction authority?
 | Amendment 10 P2 | I when every demonstrated user asks for the other word (predicted −) | +4.12 [+2.97, +5.25] (97.5%) | **contradicted** |
 | Amendment 11 P1 | drift − natural-text filler (8 books, one per turn), aligned part, k 1–4 (predicted −) | −1.21 [−1.80, −0.65] (97.5%) | **supported** |
 | Amendment 11 P2 | word-pool filler − natural-text filler, aligned part, k 8–32 (predicted −) | −0.56 [−1.03, −0.08] (97.5%) | **supported** |
+| A9b P1 | held-out AUROC of a flip-vs-copy direction in the residual stream at the readout, native rows (predicted > 0.5) | 0.956 [0.929, 0.978] (98.33%) | **supported** |
+| A9b P2 | DD: Llama's native − renamed-headers drop in separation, minus a frozen text encoder's (predicted +) | +1.13 [+1.02, +1.24] (98.33%) | **supported** |
+| A9b P3 | Amendment 8's reply effect on that direction (predicted −) | −0.04 [−0.07, −0.00] (98.33%) | **supported** (at the edge) |
 
-Amendment 9 (a read-only stance probe in the residual stream) was locked but not built; it will be re-locked before
-any run.
+Amendment 9 (a read-only stance probe) was locked but never built; A9b re-locked it with a new design and ran it.
 
 Run folders: `results/drift01/<run>/REAL_*_ANALYSIS.md` (full run `full_20261025T121206Z`, B-a `phaseBa_…`, Amendment 3
 `phaseBc_…`, B-b `phaseBb_…`, Amendment 4 `phaseBd_…`, Amendment 5 `phaseBe_…`, Amendment 6 `phaseBf_…`, Amendment 7
-`phaseBg_…`, Amendment 8 `phaseBh_…`, Amendment 10 `phaseBi_…`, Amendment 11 `phaseBj_…`). Amendment 11's natural-text
+`phaseBg_…`, Amendment 8 `phaseBh_…`, Amendment 10 `phaseBi_…`, Amendment 11 `phaseBj_…`, A9b `phaseBk_…`). Amendment 11's natural-text
 filler is in `data/drift01/diverse/` (Project Gutenberg texts, editorial matter removed by `runners/drift01/diverse_build.py`).
 
 ## Amendment 10: re-rendering the demonstrations
@@ -65,6 +67,33 @@ transcripts × 120 items: each turn a token-matched passage from a different boo
   book nearest the probe, all 8 books give a positive difference (+0.65 to +1.17) (secondary).
 - Amendment 5's rows were reproduced bit for bit (16,128 / 16,128) before the new arm ran.
 
+## A9b: what the readout-position state encodes
+A read-only look inside the model. A9b reads Llama's residual stream at the readout position (layers 8, 14, 16, 20, 26)
+on Amendment 10's rows in all four renderings, Amendment 7's probe N and 60 Amendment 8 items (100,080 rows; nothing
+generated). Per held-out template fold (3 folds, layer chosen on inner splits) it fits one direction, the class-mean
+difference between flip (defer, defy) and copy (obey, agree) demonstrations on native rows. Two controls read the same
+rows: the mean of the input embeddings (Control 1) and a frozen text encoder, Qwen3-Embedding-8B @ `1d8ad4ca`, on the
+rendered transcript (Control 2).
+- P1 supported: layer 14 was chosen in every fold; held-out AUROC 0.956 against a shuffled-label null whose 97.5th
+  percentile is 0.509. The text encoder reaches 0.563 [0.553, 0.578]; Llama − encoder +0.393 [+0.364, +0.413]. By layer:
+  0.747 (L8), 0.956 (L14), 0.925 (L16), 0.849 (L20), 0.812 (L26).
+- P2 supported: renaming the role headers halves Llama's separation (G, Cohen's d units: native 2.33, headers 1.17;
+  quoted log 0.60, stated request 1.46) while the encoder's barely moves (0.23, 0.21, 0.18, 0.31). DD is in absolute d
+  units, so equal proportional drops cancel only when the native values match.
+- On native rows the separation grows with the number of demonstrations (+0.20 per doubling; encoder −0.04). Amendment
+  7's probe N reads the same direction (AUROC 0.944).
+- P3 supported but small: about a tenth of a within-class SD (−0.04 against 0.49); the user-turn effect on the same
+  direction is larger (−0.16 [−0.20, −0.13], 95%).
+- **Control 1 could not fail in this design** (found after the run, read-only; no verdict changes). The arm labels are
+  relative to the system word, which is counterbalanced, and flip vs copy is the XOR of the demonstrated user's and
+  assistant's words, so both classes carry the same token counts and pooled embeddings sit at AUROC 0.500 exactly. Within
+  one counterbalance half they separate the single words perfectly. P1's "above Control 1" clause therefore carried no
+  weight; Control 2 is the informative baseline. Llama's layer 14, by contrast, separates "the user asked for the system
+  word" across both halves (AUROC 0.974): it codes a word's role, not the word.
+- Amendments 10, 7 and 8 were reproduced bit for bit (5,904 / 5,904 rows) before the read; the encoder's second pass
+  matched on 1,032 / 1,032 rows; no transcript was truncated (max 730 tokens). The hidden-state arrays (5.4 GB) are not
+  published; `phaseb_lambda.py` (`PHASEB=k`) and `a9b_encode.py` regenerate them, and the launch record lists their hashes.
+
 ## Reading (separate from the verdicts)
 One candidate account joins the supported parts; the account as a whole is not itself tested.
 - The agent's own **words** carry little authority: the same line pulls about 5 nats less from its own turn than from
@@ -80,10 +109,15 @@ One candidate account joins the supported parts; the account as a whole is not i
   secondary).
 - So the model appears to read its history partly as evidence of what kind of assistant it is toward this user; after
   Amendment 10 the larger part is a word rule learned in context, and the role-dependent part is the smaller one.
+- A9b finds that history as a readable state: one direction at layer 14 separates flip from copy demonstrations, far
+  beyond what a frozen text encoder reads from the same transcript, and renaming the role headers halves it. Readable is
+  not causal (the program's own throughline); whether that direction carries the behaviour is the next, interventional
+  question.
 
 Limits: one model; one task family (one-word DONE / READY rules); shifts in log-odds, not flipped answers (after one
 defer demonstration on a no-conflict probe the model still mostly gives the system word: median p 0.30 vs 0.05); intervals
-speak for the 12 conversation types and 30 templates sampled; no causal internals yet.
+speak for the 12 conversation types and 30 templates sampled; internals so far are read-only (A9b), with no causal
+intervention yet.
 
 ## Corrections on the record
 - **B-a's own-turn exemption from the quote discount was layout.** The full-run comparison mixed slot with layout and
