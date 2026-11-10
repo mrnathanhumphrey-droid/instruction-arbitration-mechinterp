@@ -90,6 +90,10 @@ rendered transcript (Control 2).
   one counterbalance half they separate the single words perfectly. P1's "above Control 1" clause therefore carried no
   weight; Control 2 is the informative baseline. Llama's layer 14, by contrast, separates "the user asked for the system
   word" across both halves (AUROC 0.974): it codes a word's role, not the word.
+- Post-hoc (exploratory): a held-out non-linear XOR score on the same pooled embeddings reaches 1.000, so the flip
+  information is fully present in the input; Llama's own XOR score at L14 is 0.890 and its linear read 0.956. In
+  proportional units P2 holds: Llama keeps 0.50 of its separation under renamed headers, the encoder 0.91 (proportional
+  DD +0.40 [+0.31, +0.50], 98.33%).
 - Amendments 10, 7 and 8 were reproduced bit for bit (5,904 / 5,904 rows) before the read; the encoder's second pass
   matched on 1,032 / 1,032 rows; no transcript was truncated (max 730 tokens). The hidden-state arrays (5.4 GB) are not
   published; `phaseb_lambda.py` (`PHASEB=k`) and `a9b_encode.py` regenerate them, and the launch record lists their hashes.
@@ -110,7 +114,9 @@ One candidate account joins the supported parts; the account as a whole is not i
 - So the model appears to read its history partly as evidence of what kind of assistant it is toward this user; after
   Amendment 10 the larger part is a word rule learned in context, and the role-dependent part is the smaller one.
 - A9b finds that history as a readable state: one direction at layer 14 separates flip from copy demonstrations, far
-  beyond what a frozen text encoder reads from the same transcript, and renaming the role headers halves it. Readable is
+  beyond what a frozen text encoder reads linearly from the same transcript (the information is in the tokens: a
+  non-linear XOR read of pooled embeddings reaches AUROC 1.000, post-hoc; what Llama adds is making it linearly readable
+  at layer 14), and renaming the role headers halves it. Readable is
   not causal (the program's own throughline); whether that direction carries the behaviour is the next, interventional
   question.
 

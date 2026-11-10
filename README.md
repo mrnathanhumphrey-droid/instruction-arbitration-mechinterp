@@ -18,7 +18,9 @@
 >   (−15.85 nats when the user asks for the system word), and drift's short-distance damage runs through a compliant first
 >   reply (−1.27). Most of the demonstration effect is a word rule learned in context; about 30% depends on the role
 >   labels. Inside the model, one layer-14 direction at the readout separates those histories at held-out AUROC 0.956,
->   where a frozen text encoder on the same transcript reaches 0.563 ([verdict](verdicts/VERDICT_DRIFT01.md)).
+>   where a frozen text encoder on the same transcript reaches 0.563 ([verdict](verdicts/VERDICT_DRIFT01.md)); the
+>   information is in the tokens (a non-linear read of the input gets it perfectly), and what the model adds is making it
+>   linearly readable.
 > - Every design was sha256-locked before its run; the original locked files are in [`prereg/locked/`](prereg/locked/).
 
 A pre-registered mechanistic-interpretability program on **how an instruction-tuned language model decides which
@@ -240,7 +242,8 @@ frozen (hashed); every probe is teacher-forced on them. Full table and correctio
   held-out templates separates flip from copy demonstrations at AUROC 0.956 [0.929, 0.978]; a frozen text encoder
   (Qwen3-Embedding-8B) on the same transcript reaches 0.563. Renaming the role headers halves Llama's separation but not
   the encoder's (DD +1.13 [+1.02, +1.24]). Its pooled-embedding control turned out unable to fail under the
-  counterbalanced labels, so the encoder is the baseline that counts. Readable, not yet shown causal.
+  counterbalanced labels, so the encoder is the baseline that counts. A non-linear read of the pooled input reaches 1.000
+  (post-hoc), so the model linearizes information the tokens already hold; the proportional DD is +0.40 [+0.31, +0.50]. Readable, not yet shown causal.
 - **Reading, not tested as a whole:** the model reads its history partly as evidence of what kind of assistant it is toward
   this user; the larger part is a word rule learned in context. These are log-odds shifts, not flipped answers.
 
