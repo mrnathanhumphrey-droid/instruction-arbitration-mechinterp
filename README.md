@@ -21,16 +21,35 @@
 >   where a frozen text encoder on the same transcript reaches 0.563 ([verdict](verdicts/VERDICT_DRIFT01.md)); the
 >   information is in the tokens (a non-linear read of the input gets it perfectly), and what the model adds is making it
 >   linearly readable.
+> - **Track A Stage 1 (Llama-3.1-8B): the model knows which instruction came from the system — and lets the later
+>   message win anyway.** When a system and a user message conflict, which came last moves the answer about 3× more than
+>   which role sent it (−3.12 vs −1.04 nats; role, where it matters, favours the user). Role and order are both decodable
+>   from activations at ≥ 0.99. Erasing all linearly decodable role from the instruction text at layer 8 moves the answer
+>   by under 0.1 nats (on the role headers, 0.2–0.3); an edit to role at layer 8 is carried, not repaired, to the last
+>   layer — persisting because role lives in high-variance directions, and staying on the role readout because it is role.
+>   The pre-registered gate came back INDETERMINATE and every number carries that label
+>   ([verdict](verdicts/VERDICT_TRACKA_STAGE1.md)).
+> - **Instrument note:** on the cloud H100 hosts used here (Xeon 8480+), numpy 1.21.5's bundled OpenBLAS 0.3.20 returns
+>   wrong square matrix products, QR and eigensolves (relative error ≈ 1.5 at n = 4,096); it silently broke one analysis
+>   arm before it was caught. Dense linear algebra now runs in torch on the GPU.
 > - Every design was sha256-locked before its run; the original locked files are in [`prereg/locked/`](prereg/locked/).
 
 A pre-registered mechanistic-interpretability program on **how an instruction-tuned language model decides which
 instruction to obey when instructions conflict** — the mechanism underneath prompt injection and the "instruction
-hierarchy." It runs two joined threads:
+hierarchy." The program is now **authority in the forward pass**: where it is decided whose instruction wins (system,
+user, tool, the assistant's own earlier turns), how to trace that decision through the model, and whether what the model
+*says* about it tracks what happens inside. Three strands, one method (pre-registered, sha256-locked, a control that can
+fail before any readout is read as a state):
 
-1. **Internally**, in a single model, *where and how* does the arbitration happen — is the role an instruction came from
-   (its "provenance") represented, and is that representation what actually drives which instruction wins?
-2. **Externally**, across models, does that mechanism surface in the **chat template a vendor ships** — well enough that you
-   could inspect a template and rank a model's injection resistance before deploying it?
+1. **Prompt injection / instruction arbitration.** Internally, in a single model: is the role an instruction came from
+   (its "provenance") represented, and is that representation what actually drives which instruction wins? Externally,
+   across models: does that mechanism surface in the **chat template a vendor ships** — well enough that you could inspect
+   a template and rank a model's injection resistance before deploying it?
+2. **Authority over a conversation** — HUNT-DRIFT-01 (what a conversation's history does to authority) and Track A
+   Stage 1 (the instruction-hierarchy gate: role vs order, represented vs causal).
+3. **Next, in order:** comparability on a second model (Qwen2.5-7B) and with full-sentence replies; steering along the
+   readable history direction to test whether it is causal; then whether the model's self-report tracks what steering
+   moved.
 
 The program probes, empirically and causally, the separation of *instructions* from *data* — the setting of the
 impossibility results in [*On the Inseparability of Instructions and Data in Shared-Embedding Sequence
@@ -152,6 +171,9 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   mechanism under OPX-02: the asymmetry only *looked* role-anchored because the role word travels with its block's content. It also
   completes a dissociation across the line — none of marker/preamble/filler carries the effect's **magnitude** (OPX-03/04), while the
   **content** is what binds the effect to a block rather than a position (OPX-07). ROLE reproduces OPX-02 to the digit.
+- **A curvature (holonomy) test of the role frame across layers and block order was INDETERMINATE (PIHOL-01).** Its
+  pre-registered power gate failed in both gauges, so the below-band result is not a "flat" finding; the thread is closed
+  ([verdict](verdicts/VERDICT_PIHOL01.md)).
 
 ### At the real injection surface, across models
 
@@ -211,6 +233,11 @@ spans six open-weight families — Llama-3.1, Qwen2.5, Mistral-v0.3, Mistral-Nem
   cross-family delimiter, or a naked span). The pre-registered next step is a double-wrap vs single-wrap idempotence check.
   (This run also caught that Mistral's chat template silently drops the system message on tool-final turns → its TPL-02 bC was
   measured system-absent and has been withdrawn; see the TPL-02 correction.)
+- **Nesting a host's own delimiter is idempotent (TPL-04).** The pre-registered double-wrap vs single-wrap check: the
+  same-family dose G is +0.000 [−0.014, +0.015] on Llama, −0.052 [−0.160, +0.041] on Qwen, +0.023 [−0.010, +0.059] on
+  Gemma — IDEMPOTENT, as predicted. TPL-03's near-null was idempotence, not low power; nesting is a dead operator for
+  testing delimiter type, which needs a cross-family delimiter or a naked span
+  ([verdict](verdicts/VERDICT_TPL04.md)).
 
 ### Over a conversation: HUNT-DRIFT-01 (Llama-3.1-8B)
 
@@ -247,6 +274,27 @@ frozen (hashed); every probe is teacher-forced on them. Full table and correctio
 - **Reading, not tested as a whole:** the model reads its history partly as evidence of what kind of assistant it is toward
   this user; the larger part is a word rule learned in context. These are log-odds shifts, not flipped answers.
 
+### The instruction-hierarchy gate: Track A Stage 1 (Llama-3.1-8B)
+
+A pre-registered study of conflicting system and user instructions, run once and re-read bit-exactly by every later
+analysis. Full numbers, labels and locked hashes: [`VERDICT_TRACKA_STAGE1`](verdicts/VERDICT_TRACKA_STAGE1.md). Every
+result is conditional on a gate that did not pass (INDETERMINATE) and, until a reference-implementation pass runs, on an
+implementation not validated against reference.
+
+- **Order beats role.** The later message wins by −3.12 [−3.55, −2.70] nats; role contributes −1.04 [−1.30, −0.78], in the
+  user's favour. The same ≈ 2–3× ratio appears with the IHDec metric on our own stimuli.
+- **Both are represented.** Held-out decodability L8–L16: role ≥ 0.994 (logistic), order 1.00.
+- **A role edit at layer 8 is carried, not repaired.** Along each layer's role readout, in raw units, the edit's effect
+  is ≈ 0.5 of its L8 size at L12–16 and back to ≈ 1.1 at L31; the fraction is the same at every dose and layout.
+- **Persistence is a variance property; staying on the role readout is the role-specific part.** Against random
+  directions at matched variance, the role edit sits on the variance curve; but a push along role keeps 54–64% of its
+  displacement on the role readout at L9 where matched pushes keep 2–14%.
+- **Erasing role on the instruction text does not change the answer; erasing it on the role headers does, a little.**
+  Complete linear erasure (LEACE) of role on the instruction text at layer 8 moves behaviour by −0.06 to +0.09 nats. The
+  same erasure on the role-header tokens pulls the answer toward zero by 0.21–0.32 nats in every layout (≈ 5–15% of the
+  decision); by layer 16 the headers no longer matter. Most of the decision is carried elsewhere.
+- **The gate itself: INDETERMINATE** (behaviour leg −0.42 [−0.80, −0.05] against a ±0.50 bound).
+
 ### The throughline
 
 Repeatedly, at several levels, a **readable structural feature that correlates with the arbitration turns out to be, at
@@ -267,6 +315,10 @@ under block reversal, on a recency-tilted baseline (the same 71/29 recency/role 
 its causal carrier behind readable *correlates* in one place exposes a clean, separable, role-weighted mechanism in another.
 Both are true of it. Where the *arbitration's* bulk carrier lives remains open — a candidate is attention at non-generation
 positions (the instruction span), untested.
+
+**Stage 1 sharpens it.** The model represents who sent an instruction almost perfectly, yet the later message wins; and
+removing that representation from the instruction text at layer 8 leaves the answer where it was. Removing it from the
+role headers moves the answer, but only by 5–15%. Readable, carried forward faithfully, and still mostly not what decides.
 
 ### Corrections on the record
 
@@ -298,6 +350,7 @@ positions (the instruction span), untested.
 prereg/     PREREG_*.md + PREREG_*.md.sha256   — pre-registrations and their locked hashes (chained)
 runners/    *_lambda.py, *_toy.py, watchdog.py — the experiment code (GPU/CPU runners; cloud launchers are not published)
 verdicts/   VERDICT_*.md                        — the written verdict for each probe (facts; reading labeled separately)
+            VERDICT_TRACKA_STAGE1.md            — Track A Stage 1 (its code and locked files to follow)
 results/    <probe>/*.json, *.csv              — the numeric results the verdicts are computed from
 data/       make_*stimuli*.py, stimuli_*.jsonl — the constructed batteries
 */drift01/  HUNT-DRIFT-01: locked plan + amendments + errata (prereg/locked/drift01, hashes in prereg/DRIFT01_LOCKED.sha256),

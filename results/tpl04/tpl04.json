@@ -1,0 +1,365 @@
+{
+  "prereg": "PREREG_TPL04_PHASE1.md",
+  "phase1_lock": "PENDING_SEAL",
+  "SMOKE": false,
+  "transformers": "4.46.0",
+  "n": 720,
+  "seed": 20260927,
+  "boot": 5000,
+  "anchored_hosts": [
+    "llama",
+    "qwen"
+  ],
+  "dosing_hosts": [],
+  "malformed_hosts": [],
+  "verdict": "IDEMPOTENT -- both anchored same-family dose G CIs include 0: a 2nd copy of the host's own delimiter adds nothing beyond a 2nd inert token. Confirms TPL-03 (near-null was idempotence, not under-power); the own-family operator is DEAD for testing delimiter-type -> defer Design B (cross-family / naked-span).",
+  "results": {
+    "llama": {
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "kind": "llama",
+      "anchored": true,
+      "bC": -0.519,
+      "pred_sign": 1,
+      "effects": {
+        "forced": {
+          "D_own1": {
+            "eff": -0.017426216271189343,
+            "ci": [
+              -0.031911893470419415,
+              -0.0037651967381436722
+            ]
+          },
+          "D_own2": {
+            "eff": -0.0170030427475778,
+            "ci": [
+              -0.03365912708764289,
+              0.0009014141269853664
+            ]
+          },
+          "dose_own": {
+            "eff": 0.015201827718152483,
+            "ci": [
+              -0.027858338165613294,
+              0.057912884880271506
+            ]
+          },
+          "dose_inert": {
+            "eff": 0.014778654194540941,
+            "ci": [
+              -0.025805398296150982,
+              0.05703668801734838
+            ]
+          },
+          "G_samefamily_dose": {
+            "eff": 0.0004231735236115419,
+            "ci": [
+              -0.013986547365785695,
+              0.015039055363998698
+            ]
+          }
+        },
+        "raw": {
+          "D_own1": {
+            "eff": 0.00907117856873385,
+            "ci": [
+              -0.006587873217132894,
+              0.023807566935817384
+            ]
+          },
+          "D_own2": {
+            "eff": -0.003406311074892532,
+            "ci": [
+              -0.019363984242081987,
+              0.011547208461496558
+            ]
+          },
+          "dose_own": {
+            "eff": -0.09557808240254717,
+            "ci": [
+              -0.1438346612619028,
+              -0.05021991666820361
+            ]
+          },
+          "dose_inert": {
+            "eff": -0.08310059275892079,
+            "ci": [
+              -0.12763225912219964,
+              -0.03845047276881062
+            ]
+          },
+          "G_samefamily_dose": {
+            "eff": -0.012477489643626383,
+            "ci": [
+              -0.0292861368175997,
+              0.003406860422756508
+            ]
+          }
+        }
+      },
+      "G_ci_excl0": false,
+      "sign_recovered_at_dose2": false,
+      "abs_D_own1": 0.017426216271189343,
+      "abs_D_own2": 0.0170030427475778,
+      "monotone_grows": false,
+      "malformed_cells": [],
+      "cell_Yf": {
+        "native_absent": 2.6866644918090765,
+        "native_present": -1.6133246542678938,
+        "own1_absent": 2.547970914343993,
+        "own1_present": -1.7932291662527455,
+        "own2_absent": 2.563172742062145,
+        "own2_present": -1.8733940957734982,
+        "inert1_absent": 2.5653971306151813,
+        "inert1_present": -1.772526037858592,
+        "inert2_absent": 2.5801757848097218,
+        "inert2_present": -1.868967013888889
+      },
+      "cell_mass": {
+        "native_absent": 0.30624547822407816,
+        "native_present": 0.7732333484604453,
+        "own1_absent": 0.2722792395551491,
+        "own1_present": 0.7556134941959325,
+        "own2_absent": 0.2733197373929066,
+        "own2_present": 0.7541862814308499,
+        "inert1_absent": 0.2732701958915473,
+        "inert1_present": 0.753093973104457,
+        "inert2_absent": 0.27609052413691476,
+        "inert2_present": 0.7524433512493658
+      },
+      "gconstruct_ok": true,
+      "realized_ok": true
+    },
+    "qwen": {
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "kind": "qwen",
+      "anchored": true,
+      "bC": 0.935,
+      "pred_sign": -1,
+      "effects": {
+        "forced": {
+          "D_own1": {
+            "eff": 0.047387010397182294,
+            "ci": [
+              -0.062226593491310746,
+              0.17536846869832215
+            ]
+          },
+          "D_own2": {
+            "eff": -0.004780745340718262,
+            "ci": [
+              -0.10900292173649065,
+              0.12894992018325577
+            ]
+          },
+          "dose_own": {
+            "eff": 0.12255622868736626,
+            "ci": [
+              0.04943304981001488,
+              0.22650187179860373
+            ]
+          },
+          "dose_inert": {
+            "eff": 0.17472398442526682,
+            "ci": [
+              0.08778371384470914,
+              0.28818244071573834
+            ]
+          },
+          "G_samefamily_dose": {
+            "eff": -0.052167755737900556,
+            "ci": [
+              -0.15988523763190637,
+              0.040907396292315615
+            ]
+          }
+        },
+        "raw": {
+          "D_own1": {
+            "eff": 0.12676515421933843,
+            "ci": [
+              0.010542364310888131,
+              0.27107623902253
+            ]
+          },
+          "D_own2": {
+            "eff": 0.1979426929106305,
+            "ci": [
+              0.07654105187186688,
+              0.33895392302837496
+            ]
+          },
+          "dose_own": {
+            "eff": 0.16498684084249682,
+            "ci": [
+              0.08686209893475175,
+              0.2500907265943382
+            ]
+          },
+          "dose_inert": {
+            "eff": 0.09380930215120475,
+            "ci": [
+              -0.0214358253031967,
+              0.23297183451139264
+            ]
+          },
+          "G_samefamily_dose": {
+            "eff": 0.07117753869129206,
+            "ci": [
+              -0.06704316399267349,
+              0.19408079947344903
+            ]
+          }
+        }
+      },
+      "G_ci_excl0": false,
+      "sign_recovered_at_dose2": false,
+      "abs_D_own1": 0.047387010397182294,
+      "abs_D_own2": 0.004780745340718262,
+      "monotone_grows": false,
+      "malformed_cells": [],
+      "cell_Yf": {
+        "native_absent": 6.7160084143280985,
+        "native_present": -4.153103297452132,
+        "own1_absent": 6.468036559886403,
+        "own1_present": -4.393261710637145,
+        "own2_absent": 6.590592788573768,
+        "own2_present": -4.370030379957623,
+        "inert1_absent": 6.42064954948922,
+        "inert1_present": -4.219194874539971,
+        "inert2_absent": 6.595373533914486,
+        "inert2_present": -4.206608069481121
+      },
+      "cell_mass": {
+        "native_absent": 0.6204776657730553,
+        "native_present": 0.9046787126731228,
+        "own1_absent": 0.5873429955321127,
+        "own1_present": 0.8924375175058075,
+        "own2_absent": 0.6026828194202144,
+        "own2_present": 0.8932862157980637,
+        "inert1_absent": 0.581686505787944,
+        "inert1_present": 0.8900725586613084,
+        "inert2_absent": 0.5920133734850519,
+        "inert2_present": 0.8857223843540579
+      },
+      "gconstruct_ok": true,
+      "realized_ok": true
+    },
+    "gemma": {
+      "model_id": "google/gemma-2-9b-it",
+      "kind": "gemma",
+      "anchored": false,
+      "bC": 0.121,
+      "pred_sign": -1,
+      "effects": {
+        "forced": {
+          "D_own1": {
+            "eff": -0.0779513923658266,
+            "ci": [
+              -0.11449869866379501,
+              -0.03750000370252386
+            ]
+          },
+          "D_own2": {
+            "eff": -0.05512152148617755,
+            "ci": [
+              -0.10277994397406806,
+              0.0042556496730283624
+            ]
+          },
+          "dose_own": {
+            "eff": -0.07812499478459456,
+            "ci": [
+              -0.11310763311882814,
+              -0.04383462940446179
+            ]
+          },
+          "dose_inert": {
+            "eff": -0.10095486566424361,
+            "ci": [
+              -0.1561653699932823,
+              -0.05173611605125912
+            ]
+          },
+          "G_samefamily_dose": {
+            "eff": 0.02282987087964905,
+            "ci": [
+              -0.010329856891185296,
+              0.05850911995189038
+            ]
+          }
+        },
+        "raw": {
+          "D_own1": {
+            "eff": -0.009212243391409913,
+            "ci": [
+              -0.046072592495216336,
+              0.029927828187742242
+            ]
+          },
+          "D_own2": {
+            "eff": 0.07202691038449505,
+            "ci": [
+              0.023652343418861733,
+              0.12804361616985568
+            ]
+          },
+          "dose_own": {
+            "eff": -0.12766926437616277,
+            "ci": [
+              -0.16725313437067718,
+              -0.08420084269096513
+            ]
+          },
+          "dose_inert": {
+            "eff": -0.20890841815206773,
+            "ci": [
+              -0.25360460001975166,
+              -0.1660465455386389
+            ]
+          },
+          "G_samefamily_dose": {
+            "eff": 0.08123915377590496,
+            "ci": [
+              0.054296327754856176,
+              0.11250190470367875
+            ]
+          }
+        }
+      },
+      "G_ci_excl0": false,
+      "sign_recovered_at_dose2": false,
+      "abs_D_own1": 0.0779513923658266,
+      "abs_D_own2": 0.05512152148617755,
+      "monotone_grows": false,
+      "malformed_cells": [],
+      "cell_Yf": {
+        "native_absent": 3.6659722211460273,
+        "native_present": -4.188802081594864,
+        "own1_absent": 3.8179687486754523,
+        "own1_present": -4.4151909713115955,
+        "own2_absent": 3.7398437538908587,
+        "own2_present": -4.598263889965084,
+        "inert1_absent": 3.895920141041279,
+        "inert1_present": -4.497656248013178,
+        "inert2_absent": 3.7949652753770353,
+        "inert2_present": -4.717447914762629
+      },
+      "cell_mass": {
+        "native_absent": 0.6506278202233564,
+        "native_present": 0.84112512152928,
+        "own1_absent": 0.6427254266489602,
+        "own1_present": 0.8406634418644393,
+        "own2_absent": 0.6116466269373632,
+        "own2_present": 0.8497985019464269,
+        "inert1_absent": 0.6591580871947833,
+        "inert1_present": 0.8456259524660203,
+        "inert2_absent": 0.6273402791959168,
+        "inert2_present": 0.8615076686103446
+      },
+      "gconstruct_ok": true,
+      "realized_ok": true
+    }
+  },
+  "scope": "Dose-response disambiguation of TPL-03. PRIMARY = same-family dose G = (own2-own1)-(inert2-inert1) @ inj-absent, forced Y_signed. Both anchored G CI incl 0 -> IDEMPOTENT (operator dead, defer B); any excl 0 -> DOSE-RESPONSE (re-open sign test, report sign-recovery). Not a delimiter-type verdict -- it decides whether TPL-03's operator CAN test the question. gemma reported (magnitude). mistral+phi excluded.",
+  "runtime_s": 3008.3
+}
