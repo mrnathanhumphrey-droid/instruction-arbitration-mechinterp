@@ -3,7 +3,7 @@
 **Date fired/landed:** 2026-11-10 · **Verdict (mechanical, pre-registered): IDEMPOTENT**
 
 - Prereg `prereg/PREREG_TPL04_PHASE1.md` sha256 `75e7e9083a2bff94f347e4861e80d3139d3dc154758d493b0e1bcc2afe7ceb6a` (sidecar written; chained TPL-03 `bf778543`).
-- Runner `runners/tpl04_lambda.py` (to be added) sha256 `17798b1a1e782176e288375a6d88aff3eedfecefad2e05263bb5464543fb8662` (matches sidecar at fire time).
+- Runner `runners/tpl04_lambda.py` sha256 `17798b1a1e782176e288375a6d88aff3eedfecefad2e05263bb5464543fb8662` (matches sidecar at fire time).
 - Results `results/tpl04/tpl04.json` sha256 `25a1271ecc4d4e2e206d57fcd8525701e7a35a9b6ea34d09858a479ad137df91`; full n=720, seed 20260927, 5000 template-bootstrap, transformers 4.46.0. SMOKE passed first.
 - **Provenance note:** the result JSON's `phase1_lock` field reads `PENDING_SEAL`. Unlike TPL-03, the lock hash was not stamped into the runner before hashing. The binding is the runner and prereg sha256 sidecars above, which match. This is a cosmetic gap, not a lock break.
 
