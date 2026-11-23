@@ -278,8 +278,8 @@ frozen (hashed); every probe is teacher-forced on them. Full table and correctio
 
 A pre-registered study of conflicting system and user instructions, run once and re-read bit-exactly by every later
 analysis. Full numbers, labels and locked hashes: [`VERDICT_TRACKA_STAGE1`](verdicts/VERDICT_TRACKA_STAGE1.md). Every
-result is conditional on a gate that did not pass (INDETERMINATE) and, until a reference-implementation pass runs, on an
-implementation not validated against reference.
+result is conditional on a gate that did not pass (INDETERMINATE). Our implementation of the IHDec metric has been
+validated against the reference recipe in fp32 (max |Δ| 1.3e-5, 300 items, same machine).
 
 - **Order beats role.** The later message wins by −3.12 [−3.55, −2.70] nats; role contributes −1.04 [−1.30, −0.78], in the
   user's favour. The same ≈ 2–3× ratio appears with the IHDec metric on our own stimuli.

@@ -1,9 +1,13 @@
 # VERDICT — Track A, Stage 1: the instruction-hierarchy gate (Llama-3.1-8B-Instruct)
 
-> **DRAFT for review — not published.** Every number below carries two labels: **conditional on a gate that did not
-> pass (INDETERMINATE)**, and **implementation not validated against reference** (the fp32 ours-vs-reference pass, Q3,
-> has not run yet; until it does, no Stage 1 number should be cited as a comparison point). Calls are per-readout at 90%,
+> Every number below is **conditional on a gate that did not pass (INDETERMINATE)**. Calls are per-readout at 90%,
 > uncorrected (a Holm column is reported beside them, descriptive).
+>
+> **Update (reference check).** Our implementation of the IHDec metric (§2's last bullet, the only Stage 1 readout that
+> uses it) has been validated against the reference recipe in fp32: max |Δ| 1.3e-5 over 300 items, both run on the
+> same machine, against a pre-stated 1e-3 bar. An earlier bf16 comparison had shown a gap (188/300 items within 0.01); that
+> gap matches each implementation's own bf16 rounding, which is unbiased (signed mean bf16 − fp32 within ±6e-4, every
+> interval containing zero). The earlier label "implementation not validated against reference" is withdrawn.
 
 ## What Stage 1 is
 A pre-registered study (prereg manifest `c5c4f7c2…`, gate control locked `3e82eb0d…`; amendments locked before each
@@ -28,7 +32,9 @@ On contested items (Y = log-odds of the system's target; > 0 favours the system)
 - Same sign in every item source; a bridge to the older ORD-01 battery agrees (difference +0.15 [−0.08, +0.39]).
 - The paper metric of IHDec computed on our own twin stimuli tells the same story: a position term +0.164 [+0.134, +0.194]
   about 2.3× a role term +0.071 [+0.057, +0.085]. (IHDec's own published baseline was **not** reproduced on IHEval with our
-  reconstruction of their pipeline; IHEval outputs are not published here under its licence.)
+  reconstruction of their pipeline. Our metric code matches theirs in fp32, so the code is not the cause; what remains is
+  their unreleased data converter, the pass definition, generation settings and how the bars are pooled. IHEval outputs
+  are not published here under its licence.)
 
 ## 3. Representation: the model knows who said what
 Held-out decodability (19 held-out templates), layers 8–16: role 0.78–0.95 (mean-difference probe) / ≥ 0.994 (logistic);
